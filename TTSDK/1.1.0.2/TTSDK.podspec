@@ -117,6 +117,19 @@ Pod::Spec.new do |spec|
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore'
     end
+
+    spec.subspec 'Image' do |subspec|
+      subspec.public_header_files = [
+        'TTSDK/BDWebImageToB/**/*.h',
+      ]
+      subspec.source_files = [
+        'TTSDK/BDWebImageToB/**/*',
+      ]
+      subspec.vendored_libraries = [
+        'TTSDK/BDWebImageToB/**/*.a'
+      ]
+      subspec.dependency 'libwebp'
+    end
   
   end
   
