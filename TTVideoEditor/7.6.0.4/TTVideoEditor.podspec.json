@@ -1,7 +1,7 @@
 {
   "summary" : "TTVideoEditor",
   "source" : {
-      "http":"https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTVideoEditor/0.0.6/TTVideoEditor.zip"
+      "http":"https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTVideoEditor/0.0.7/TTVideoEditor.zip"
   },
   "authors" : {
     "zhouyi.ysj" : "zhouyi.ysj@bytedance.com"
