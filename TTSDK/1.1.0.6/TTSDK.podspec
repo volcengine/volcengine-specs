@@ -18,6 +18,8 @@ Pod::Spec.new do |spec|
     
     spec.default_subspecs = 'Core', 'TTFFmpeg', 'PlayerCore', 'LivePull', 'LivePush', 'Player', 'Image'
   
+    spec.static_framework = true
+  
     spec.subspec 'Core' do |subspec|
       subspec.public_header_files = [
         'TTSDK/VCloudPandora/**/*.h',
@@ -31,26 +33,6 @@ Pod::Spec.new do |spec|
       ]
       subspec.dependency 'RangersAppLog', '>= 3.2.5'
       subspec.libraries = 'stdc++'
-    end
-
-    spec.subspec 'TTFFmpegFramework' do |subspec|
-      subspec.vendored_frameworks = [
-        'TTSDK/TTFFmpegFramework/TTFFmpegFramework.framework'
-      ]
-      subspec.vendored_libraries = [
-        'TTSDK/boringssl/**/*.a',
-      ]
-      subspec.frameworks = [
-        'CoreMotion',
-        'CoreMedia',
-        'MetalKit',
-        'OpenAL',
-        'VideoToolBox',
-        'AudioToolBox',
-        'AVFoundation',
-        'SystemConfiguration',
-      ]
-      subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
     end
 
     spec.subspec 'TTFFmpeg' do |subspec|
@@ -96,6 +78,7 @@ Pod::Spec.new do |spec|
         'SystemConfiguration',
       ]
       subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
+      subspec.dependency 'TTSDK/TTFFmpeg'
     end
   
     spec.subspec 'LivePull' do |subspec|
