@@ -26,7 +26,9 @@ Pod::Spec.new do |s|
   SceneModels.each do |m|
     s.subspec m do |s|
       s.requires_arc = false
-        s.ios.resource_bundles = {m => ['scenes/%s/*'%m,]}
+        s.ios.resource_bundles = {m => ['VolCPSDKSceneModels/scenes/%s/*'%m,]}
     end
   end
+
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
 end

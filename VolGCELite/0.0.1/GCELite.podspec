@@ -27,6 +27,7 @@ Pod::Spec.new do |s|
   
   s.module_name = 'GCELite'
   s.library = 'c++'
-  s.vendored_frameworks = "GCELite.framework"
+  s.vendored_frameworks = "VolGCELite/GCELite.framework"
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
 
 end
