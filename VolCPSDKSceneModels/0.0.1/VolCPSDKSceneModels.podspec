@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "VolCPSDKSceneModels"
-  s.version      = "1.0.0"
+  s.version      = "0.0.1"
   s.summary      = "VolCPSDKSceneModels"
   s.homepage     = 'https://github.com/volcengine/volcengine-specs'
   s.author       = { "zhangzijin" => "zhangzijin.ccc@bytedance.com" }
