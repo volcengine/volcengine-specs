@@ -27,7 +27,7 @@
         "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
     },
     "static_framework": true,
-    "preserve_paths": "RangersAPM/**/*.sh",
+    "preserve_paths": "**/*.sh",
     "subspecs": [
         {
             "name": "Public",
