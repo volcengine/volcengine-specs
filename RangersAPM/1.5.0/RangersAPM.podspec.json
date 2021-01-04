@@ -27,7 +27,7 @@
         "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
     },
     "static_framework": true,
-    "preserve_paths": "RangersAPM/**/APMInsight_DSYMUploader.sh",
+    "preserve_paths": "RangersAPM/**/*.sh",
     "subspecs": [
         {
             "name": "Public",
