@@ -27,7 +27,6 @@
         "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
     },
     "static_framework": true,
-    "preserve_paths": "**/*",
     "subspecs": [
         {
             "name": "Public",
@@ -41,6 +40,7 @@
         {
             "name": "Core",
             "vendored_libraries": "RangersAPM/Core/**/*.a",
+            "preserve_paths": "RangersAPM/*.sh",
             "libraries": [
                 "c++",
                 "z",
