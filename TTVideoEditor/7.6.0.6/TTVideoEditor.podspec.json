@@ -23,7 +23,7 @@
   "platforms" : {
     "ios" : "8.0"
   },
-  "homepage" : "https:\/\/code.byted.org\/ugc-android\/ttvideoeditor\/",
+  "homepage" : "https://github.com/volcengine",
   "requires_arc" : true,
   "pod_target_xcconfig" : {
     "CLANG_WARN_DOCUMENTATION_COMMENTS" : "NO",

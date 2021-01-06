@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary = "TTVideoEditor"
   s.license = "MIT"
   s.authors = {"zhouyi.ysj"=>"zhouyi.ysj@bytedance.com"}
-  s.homepage = "https://code.byted.org/ugc-android/ttvideoeditor/"
+  s.homepage = "https://github.com/volcengine"
   s.description = "ttvideoeditor"
   s.frameworks = ["AVFoundation", "Foundation", "UIKit", "CoreTelephony", "AudioToolbox", "CoreMotion", "MediaToolbox", "GLKit", "OpenGLES", "VideoToolbox", "CoreMedia", "MetalPerformanceShaders", "MobileCoreServices"]
   s.libraries = ["xml2", "iconv", "compression", "z", "c++"]
