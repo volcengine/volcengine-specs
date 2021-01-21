@@ -1,48 +1,51 @@
 {
-  "summary" : "TTVideoEditor",
+  "homepage" : "https:\/\/github.com\/volcengine",
   "source" : {
-      "http":"https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTVideoEditor/0.0.7/TTVideoEditor.zip"
+      "http":"https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTVideoEditor/7.6.0.11/TTVideoEditor.zip"
   },
-  "authors" : {
-    "zhouyi.ysj" : "zhouyi.ysj@bytedance.com"
-  },
+  "requires_arc" : true,
+  "version" : "7.6.0.12",
   "name" : "TTVideoEditor",
-  "version" : "7.6.0.6",
   "frameworks" : [
     "AVFoundation",
     "Foundation",
     "UIKit",
     "CoreTelephony",
     "AudioToolbox",
-    "VideoToolbox",
     "CoreMotion",
     "MediaToolbox",
     "GLKit",
-    "OpenGLES"
+    "OpenGLES",
+    "VideoToolbox",
+    "CoreMedia",
+    "CoreServices"
   ],
-  "platforms" : {
-    "ios" : "8.0"
-  },
-  "homepage" : "https://github.com/volcengine",
-  "requires_arc" : true,
+  "description" : "ttvideoeditor",
+  "license" : "MIT",
+  "summary" : "TTVideoEditor",
   "pod_target_xcconfig" : {
     "CLANG_WARN_DOCUMENTATION_COMMENTS" : "NO",
     "GCC_PREPROCESSOR_DEFINITIONS" : "EditorVersion=\\\"760\\\" NDEBUG=1 __IOS__=1 ENABLE_EFFECT_SDK=1",
     "CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF" : "NO"
   },
-  "libraries" : [
-    "xml2",
-    "iconv"
-  ],
-  "license" : "MIT",
   "ios" : {
     "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
   },
+  "libraries" : [
+    "xml2",
+    "iconv",
+    "z",
+    "c++",
+    "compression"
+  ],
+  "authors" : {
+    "zhouyi.ysj" : "zhouyi.ysj@bytedance.com"
+  },
+  "platforms" : {
+    "ios" : "8.0"
+  },
   "subspecs" : [
     {
-      "ios" : {
-        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      },
       "dependencies" : {
         "TTVideoEditor\/VEEffectMock" : [
 
@@ -54,31 +57,31 @@
         "proj\/ios\/IESVideoEditor\/IESMMBaseUtils\/IESMMDeviceUtil\/**\/*.h"
       ],
       "frameworks" : "CoreMotion",
-      "name" : "IESBaseUtil",
+      "ios" : {
+        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
+      },
       "source_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMBaseUtils\/IESBaseUtil\/**\/*.h",
         "proj\/ios\/IESVideoEditor\/IESMMBaseUtils\/IESBaseUtil\/**\/*.m*.{h}",
         "proj\/ios\/IESVideoEditor\/IESMMBaseUtils\/IESMMMediaUtil\/**\/*.h",
         "proj\/ios\/IESVideoEditor\/IESMMBaseUtils\/IESMMDeviceUtil\/**\/*.h"
-      ]
+      ],
+      "name" : "IESBaseUtil"
     },
     {
-      "ios" : {
-        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      },
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMCameraDeviceUtils\/**\/*.h"
       ],
-      "name" : "IESMMCameraDeviceUtils",
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMCameraDeviceUtils\/**\/*.h",
-        "proj\/ios\/IESVideoEditor\/IESMMCameraDeviceUtils\/**\/*.m*.{h}"
-      ]
-    },
-    {
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMCameraDeviceUtils\/**\/*.h",
+        "proj\/ios\/IESVideoEditor\/IESMMCameraDeviceUtils\/**\/*.m*.{h}"
+      ],
+      "name" : "IESMMCameraDeviceUtils"
+    },
+    {
       "dependencies" : {
         "TTVideoEditor\/IESMMEffect" : [
 
@@ -90,116 +93,122 @@
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMImage\/**\/*.h"
       ],
-      "name" : "IESMMImage",
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMImage\/**\/*.h"
-      ]
-    },
-    {
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMImage\/**\/*.h"
+      ],
+      "name" : "IESMMImage"
+    },
+    {
       "dependencies" : {
         "TTVideoEditor\/IESBaseUtil" : [
 
         ]
       },
+      "public_header_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMCanvas\/**\/*.h"
+      ],
       "pod_target_xcconfig" : {
         "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMCanvasEnable=1"
       },
-      "public_header_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMCanvas\/**\/*.h"
-      ],
-      "name" : "IESMMCanvas",
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMCanvas\/**\/*.h"
-      ]
-    },
-    {
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMCanvas\/**\/*.h"
+      ],
+      "name" : "IESMMCanvas"
+    },
+    {
       "dependencies" : {
         "TTVideoEditor\/IESBaseUtil" : [
 
         ]
       },
-      "private_header_files" : [
-        "proj\/ios\/IESVideoEditor\/Core\/IESMMCapture\/*{P,p}rivate.h"
-      ],
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/Core\/IESMMCapture\/**\/*.h"
       ],
-      "name" : "IESMMCapture",
+      "private_header_files" : [
+        "proj\/ios\/IESVideoEditor\/Core\/IESMMCapture\/*{P,p}rivate.h"
+      ],
+      "ios" : {
+        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
+      },
       "source_files" : [
         "proj\/ios\/IESVideoEditor\/Core\/IESMMCapture\/**\/*.h"
-      ]
+      ],
+      "name" : "IESMMCapture"
     },
     {
-      "name" : "VERecorderMode",
+      "public_header_files" : [
+        "proj\/ios\/IESVideoEditor\/VERecorder\/**\/*.h"
+      ],
+      "ios" : {
+        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
+      },
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/VERecorder\/**\/*.h"
+      ],
       "dependencies" : {
         "TTVideoEditor\/IESMMCamera" : [
 
         ]
       },
+      "name" : "VERecorderMode",
       "pod_target_xcconfig" : {
         "GCC_PREPROCESSOR_DEFINITIONS" : "VERecorderMode=1"
       },
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/VERecorder\/**\/*.h"
-      ],
       "private_header_files" : [
         "proj\/ios\/IESVideoEditor\/VERecorder\/**\/*{P,p}rivate.h",
         "proj\/ios\/IESVideoEditor\/VERecorder\/Private\/**\/*.h"
-      ],
-      "ios" : {
-        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      },
-      "public_header_files" : [
-        "proj\/ios\/IESVideoEditor\/VERecorder\/**\/*.h"
       ]
     },
     {
-      "name" : "IESMMCamera",
+      "public_header_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMCamera\/**\/*.h"
+      ],
+      "frameworks" : "AVFoundation",
+      "ios" : {
+        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
+      },
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMCamera\/**\/*.h"
+      ],
       "dependencies" : {
-        "TTVideoEditor\/IESVideoAndPic" : [
-
-        ],
-        "TTVideoEditor\/VEEffectAudioPlayer" : [
-
-        ],
         "TTVideoEditor\/IESMMEffect" : [
 
         ],
         "TTVideoEditor\/Core" : [
 
         ],
-        "TTVideoEditor\/IESMMCameraDeviceUtils" : [
+        "TTVideoEditor\/IESMMTranscoder" : [
 
         ],
-        "TTVideoEditor\/IESMMTranscoder" : [
+        "TTVideoEditor\/IESVideoAndPic" : [
+
+        ],
+        "TTVideoEditor\/VEEffectAudioPlayer" : [
+
+        ],
+        "TTVideoEditor\/IESMMCameraDeviceUtils" : [
 
         ]
       },
+      "name" : "IESMMCamera",
       "pod_target_xcconfig" : {
         "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMCameraMode=1"
       },
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMCamera\/**\/*.h"
-      ],
       "private_header_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMCamera\/**\/*{P,p}rivate.h"
-      ],
-      "ios" : {
-        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      },
-      "frameworks" : "AVFoundation",
-      "public_header_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMCamera\/**\/*.h"
       ]
     },
     {
       "name" : "IESMMUnits",
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMUnits=1"
+      },
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMUnits\/*.h",
         "proj\/ios\/IESVideoEditor\/IESMMUnits\/VEProcessor\/*.h",
@@ -208,27 +217,30 @@
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMUnits=1"
-      },
-      "private_header_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMUnits\/*{P,p}rivate.h"
-      ],
       "source_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMUnits\/**\/*.h"
+      ],
+      "private_header_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMUnits\/*{P,p}rivate.h"
       ]
     },
     {
       "name" : "VEFFmpeg",
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "TTVEFFmpeg=1"
+      },
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "TTVEFFmpeg=1"
+      "dependencies" : {
+        
       }
     },
     {
       "name" : "IESMMFFmpeg",
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMFFmpeg=1"
+      },
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMFFmpeg\/VEFFAudioDecoder.h",
         "proj\/ios\/IESVideoEditor\/IESMMFFmpeg\/VEFFmpegReaderUnit.h",
@@ -236,9 +248,6 @@
       ],
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      },
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMFFmpeg=1"
       },
       "source_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMFFmpeg\/**\/*.h"
@@ -250,10 +259,10 @@
       }
     },
     {
+      "name" : "Core",
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "name" : "Core",
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/Core\/Public\/**\/*.h",
         "proj\/ios\/IESVideoEditor\/Core\/IESGLes\/**\/*.h",
@@ -269,9 +278,6 @@
         "proj\/ios\/IESVideoEditor\/Core\/IESMMLogger\/**\/*.h",
         "ttvebase\/src\/basedefine\/TEEffectABDef.h"
       ],
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMCore=1"
-      },
       "dependencies" : {
         "TTVideoEditor\/IESVideoAndPic" : [
 
@@ -279,17 +285,16 @@
         "KVOController" : [
 
         ],
+        "TTVideoEditor\/IESBaseUtil" : [
+
+        ],
         "TTVideoEditor\/IESMMTranscoder" : [
 
         ],
         "TTVideoEditor\/IESMMUnits" : [
 
-        ],
-        "TTVideoEditor\/IESBaseUtil" : [
-
         ]
       },
-      "libraries" : "compression",
       "source_files" : [
         "proj\/ios\/IESVideoEditor\/Core\/Public\/**\/*.h",
         "proj\/ios\/IESVideoEditor\/Core\/Private\/**\/*.h",
@@ -305,9 +310,26 @@
         "proj\/ios\/IESVideoEditor\/Core\/module\/**\/*.h",
         "proj\/ios\/IESVideoEditor\/Core\/IESMMLogger\/**\/*.h",
         "ttvebase\/src\/basedefine\/TEEffectABDef.h"
-      ]
+      ],
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMCore=1"
+      },
+      
+      "libraries" : "compression"
     },
     {
+      "ios" : {
+        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
+      },
+      "dependencies" : {
+        "KVOController" : [
+
+        ]
+      },
+      "name" : "LVCore",
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMCore=1"
+      },
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/VELVEditor\/**\/*.h",
         "proj\/ios\/IESVideoEditor\/Core\/Public\/**\/*.h",
@@ -318,9 +340,6 @@
         "proj\/ios\/IESVideoEditor\/Core\/Private\/**\/*.h",
         "proj\/ios\/IESVideoEditor\/IESMMTracker\/**\/*.h"
       ],
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMCore=1"
-      },
       "source_files" : [
         "proj\/ios\/IESVideoEditor\/VELVEditor\/**\/*.h",
         "proj\/ios\/IESVideoEditor\/Core\/Public\/**\/*.h",
@@ -330,18 +349,18 @@
         "proj\/ios\/IESVideoEditor\/Core\/IESPublic\/**\/*.h",
         "proj\/ios\/IESVideoEditor\/IESMMTracker\/**\/*.h",
         "proj\/ios\/IESVideoEditor\/Core\/CameraType\/**\/*.h"
-      ],
-      "name" : "LVCore",
-      "ios" : {
-        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      },
-      "dependencies" : {
-        "KVOController" : [
-
-        ]
-      }
+      ]
     },
     {
+      "dependencies" : {
+        "TTVideoEditor\/VEEffectMock" : [
+
+        ]
+      },
+      "name" : "IESMMEffect",
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMEffect\/**\/*.h"
+      ],
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMEffect\/public\/**\/*.h"
       ],
@@ -351,68 +370,59 @@
       "private_header_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMEffect\/private\/**\/*.h"
       ],
-      "name" : "IESMMEffect",
-      "dependencies" : {
-        "TTVideoEditor\/VEEffectMock" : [
-
-        ]
-      },
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMEffect\/**\/*.h"
-      ],
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       }
     },
     {
+      "dependencies" : {
+        "TTVideoEditor\/VEEffectMock" : [
+
+        ]
+      },
       "source_files" : [
         "proj\/ios\/IESVideoEditor\/VEEffectAudioPlayer\/**\/*.h"
       ],
       "name" : "VEEffectAudioPlayer",
-      "ios" : {
-        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      },
       "private_header_files" : [
         "proj\/ios\/IESVideoEditor\/VEEffectAudioPlayer\/**\/*.h"
       ],
-      "dependencies" : {
-        "TTVideoEditor\/VEEffectMock" : [
-
-        ]
+      "ios" : {
+        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       }
     },
     {
+      "dependencies" : {
+        "TTVideoEditor\/IES2DAnimation" : [
+
+        ]
+      },
       "source_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMTranscoder\/**\/*.h"
       ],
+      "name" : "IESMMTranscoder",
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMTranscoder\/**\/*.h"
       ],
-      "name" : "IESMMTranscoder",
       "pod_target_xcconfig" : {
         "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMTranscoderEnable=1"
       },
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      },
-      "dependencies" : {
-        "TTVideoEditor\/IES2DAnimation" : [
-
-        ]
       }
     },
     {
-      "name" : "EffectFilter",
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "EffectFilterMode=1"
+      "dependencies" : {
+        "TTVideoEditor\/Core" : [
+
+        ]
       },
+      "name" : "EffectFilter",
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "dependencies" : {
-        "TTVideoEditor\/Core" : [
-
-        ]
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "EffectFilterMode=1"
       }
     },
     {
@@ -421,32 +431,32 @@
 
         ]
       },
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/Core\/IESFakeFace\/**\/*.h"
+      ],
+      "private_header_files" : [
+        "proj\/ios\/IESVideoEditor\/Core\/IESFakeFace\/**\/*.h"
+      ],
       "name" : "LiveStreamMode",
       "pod_target_xcconfig" : {
         "GCC_PREPROCESSOR_DEFINITIONS" : "LiveStreamMode=1"
       },
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      },
-      "private_header_files" : [
-        "proj\/ios\/IESVideoEditor\/Core\/IESFakeFace\/**\/*.h"
-      ],
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/Core\/IESFakeFace\/**\/*.h"
-      ]
+      }
     },
     {
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/VEEffectMock\/**\/*.{h}"
+      ],
       "name" : "VEEffectMock",
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "VEEffectMockEnable=1"
-      },
-      "libraries" : "z",
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/VEEffectMock\/**\/*.{h}"
-      ]
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "VEEffectMockEnable=1"
+      },
+      "libraries" : "z"
     },
     {
       "dependencies" : {
@@ -454,31 +464,30 @@
 
         ]
       },
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "VEEffectSkinTone=1"
-      },
+      "name" : "VEEffectSkinTone",
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "name" : "VEEffectSkinTone"
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "VEEffectSkinTone=1"
+      }
     },
     {
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/IES2DAnimation\/**\/*.h"
+      ],
       "name" : "IES2DAnimation",
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/IES2DAnimation\/**\/*.h"
       ],
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "IES2DAnimation=1"
-      },
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/IES2DAnimation\/**\/*.h"
-      ]
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "IES2DAnimation=1"
+      }
     },
     {
-      "name" : "SLAM",
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
@@ -486,68 +495,69 @@
         "TTVideoEditor\/Core" : [
 
         ]
-      }
+      },
+      "name" : "SLAM"
     },
     {
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMAudioProcess=1"
-      },
+      "libraries" : "c++",
+      "public_header_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMAudioProcess\/**\/*.h"
+      ],
       "dependencies" : {
         "TTVideoEditor\/IESMMAudioEffect" : [
 
         ]
       },
-      "libraries" : "c++",
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMAudioProcess\/**\/*.{h}"
-      ],
-      "name" : "IESMMAudioProcess",
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "public_header_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMAudioProcess\/**\/*.h"
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMAudioProcess=1"
+      },
+      "name" : "IESMMAudioProcess",
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMAudioProcess\/**\/*.{h}"
       ]
     },
     {
-      "pod_target_xcconfig" : {
-        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMAudioEffectEnable=1"
-      },
-      "dependencies" : {
-        "TTVideoEditor\/VEAudioSDKMock" : [
-
-        ],
-        "TTVideoEditor\/IESBaseUtil" : [
-
-        ]
-      },
       "private_header_files" : [
         "proj\/ios\/IESVideoEditor\/IESMMAudioEffect\/VEAudioFile.h"
       ],
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMAudioEffect\/**\/*.{h}"
+      "public_header_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMAudioEffect\/**\/*.h"
       ],
-      "name" : "IESMMAudioEffect",
+      "dependencies" : {
+        "TTVideoEditor\/IESBaseUtil" : [
+
+        ],
+        "TTVideoEditor\/VEAudioSDKMock" : [
+
+        ]
+      },
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "public_header_files" : [
-        "proj\/ios\/IESVideoEditor\/IESMMAudioEffect\/**\/*.h"
+      "pod_target_xcconfig" : {
+        "GCC_PREPROCESSOR_DEFINITIONS" : "IESMMAudioEffectEnable=1"
+      },
+      "name" : "IESMMAudioEffect",
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/IESMMAudioEffect\/**\/*.{h}"
       ]
     },
     {
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/VEAudioSDKMock\/**\/*.{h}"
-      ],
       "pod_target_xcconfig" : {
         "GCC_PREPROCESSOR_DEFINITIONS" : "AudioSDKMockEnable=1"
       },
       "name" : "VEAudioSDKMock",
+      "public_header_files" : [
+        "proj\/ios\/IESVideoEditor\/VEAudioSDKMock\/**\/*.h"
+      ],
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "public_header_files" : [
-        "proj\/ios\/IESVideoEditor\/VEAudioSDKMock\/**\/*.h"
+      "source_files" : [
+        "proj\/ios\/IESVideoEditor\/VEAudioSDKMock\/**\/*.{h}"
       ]
     },
     {
@@ -561,153 +571,131 @@
       "resources" : "proj\/ios\/IESVideoEditor\/Core\/Resources\/IESPhoto.bundle"
     },
     {
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/IESPhotoEffect\/**\/*.h"
-      ],
       "pod_target_xcconfig" : {
         "GCC_PREPROCESSOR_DEFINITIONS" : "IESPhotoEffectEnable=1"
       },
       "name" : "IESPhotoEffect",
+      "public_header_files" : [
+        "proj\/ios\/IESVideoEditor\/IESPhotoEffect\/**\/*.h"
+      ],
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "public_header_files" : [
+      "source_files" : [
         "proj\/ios\/IESVideoEditor\/IESPhotoEffect\/**\/*.h"
       ]
     },
     {
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/VETobLicense\/**\/*.h"
-      ],
       "pod_target_xcconfig" : {
         "GCC_PREPROCESSOR_DEFINITIONS" : "VETobLicenseEnable=1"
       },
       "name" : "VETobLicense",
-      "dependencies" : {
-        "TTVideoEditor\/IESBaseUtil" : [
-
-        ],
-        "TTVideoEditor\/LicbagSDK" : [
-
-        ]
-      },
       "public_header_files" : [
         "proj\/ios\/IESVideoEditor\/VEToBLicense\/**\/*.h"
       ],
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      }
-    },
-    {
+      },
       "source_files" : [
-        "proj\/ios\/IESVideoEditor\/LicbagSDK\/**\/*.h"
+        "proj\/ios\/IESVideoEditor\/VETobLicense\/**\/*.h"
       ],
-      "pod_target_xcconfig" : {
-        "HEADER_SEARCH_PATHS" : "\b${PODS_ROOT}\/TTVideoEditor\/LicbagSDK\/inc\/"
-      },
-      "vendored_libraries" : [
-        "proj\/ios\/IESVideoEditor\/LicbagSDK\/**\/*.a"
-      ],
-      "name" : "LicbagSDK",
-      "ios" : {
-        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
-      },
-      "public_header_files" : [
-        "proj\/ios\/IESVideoEditor\/LicbagSDK\/**\/*.h"
-      ]
+      "dependencies" : {
+        "TTVideoEditor\/IESBaseUtil" : [
+
+        ]
+      }
     },
     {
       "pod_target_xcconfig" : {
         "GCC_PREPROCESSOR_DEFINITIONS" : "VETobMode=1"
       },
       "name" : "VETobMode",
+      "ios" : {
+        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
+      },
       "dependencies" : {
-        "TTVideoEditor\/IESMMFFmpeg" : [
-
-        ],
-        "TTVideoEditor\/VERecorderMode" : [
-
-        ],
-        "TTVideoEditor\/IESVideoAndPic" : [
-
-        ],
-        "TTVideoEditor\/HTSPhotoResource" : [
-
-        ],
-        "TTVideoEditor\/VEEffectMock" : [
-
-        ],
-        "TTVideoEditor\/IESMMUnits" : [
-
-        ],
-        "TTVideoEditor\/IESMMTranscoder" : [
-
-        ],
-        "TTVideoEditor\/IESMMCamera" : [
-
-        ],
-        "TTVideoEditor\/IESPhotoEffect" : [
-
-        ],
-        "TTVideoEditor\/IESMMAudioEffect" : [
-
-        ],
-        "TTVideoEditor\/IES2DAnimation" : [
-
-        ],
-        "TTVideoEditor\/IESMMEffect" : [
-
-        ],
-        "TTVideoEditor\/IESMMImage" : [
-
-        ],
-        "TTVideoEditor\/VETobLicense" : [
-
-        ],
-        "TTVideoEditor\/IESMMCanvas" : [
-
-        ],
-        "TTVideoEditor\/IESMMAudioProcess" : [
-
-        ],
-        "TTVideoEditor\/EffectFilter" : [
-
-        ],
-        "TTVideoEditor\/LVCore" : [
-
-        ],
-        "TTVideoEditor\/SLAM" : [
+        "TTVideoEditor\/IESMMCapture" : [
 
         ],
         "TTVideoEditor\/LiveStreamMode" : [
 
         ],
-        "TTVideoEditor\/IESMMCapture" : [
+        "TTVideoEditor\/IES2DAnimation" : [
+
+        ],
+        "TTVideoEditor\/IESMMCamera" : [
+
+        ],
+        "TTVideoEditor\/IESMMAudioEffect" : [
+
+        ],
+        "TTVideoEditor\/IESMMEffect" : [
+
+        ],
+        "TTVideoEditor\/IESMMTranscoder" : [
+
+        ],
+        "TTVideoEditor\/VERecorderMode" : [
+
+        ],
+        "TTVideoEditor\/SLAM" : [
+
+        ],
+        "TTVideoEditor\/IESMMAudioProcess" : [
+
+        ],
+        "TTVideoEditor\/IESPhotoEffect" : [
+
+        ],
+        "TTVideoEditor\/HTSPhotoResource" : [
+
+        ],
+        "TTVideoEditor\/IESMMUnits" : [
+
+        ],
+        "TTVideoEditor\/IESMMFFmpeg" : [
+
+        ],
+        "TTVideoEditor\/LVCore" : [
+
+        ],
+        "TTVideoEditor\/IESMMCanvas" : [
+
+        ],
+        "TTVideoEditor\/IESVideoAndPic" : [
+
+        ],
+        "TTVideoEditor\/EffectFilter" : [
+
+        ],
+        "TTVideoEditor\/VEEffectMock" : [
 
         ],
         "TTVideoEditor\/VEEffectSkinTone" : [
 
+        ],
+        "TTVideoEditor\/VETobLicense" : [
+
+        ],
+        "TTVideoEditor\/IESMMImage" : [
+
         ]
-      },
-      "ios" : {
-        "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       }
     },
     {
-      "source_files" : [
-        "proj\/ios\/IESVideoEditor\/IESVideoAndPic\/**\/*.h"
-      ],
       "pod_target_xcconfig" : {
         "GCC_PREPROCESSOR_DEFINITIONS" : "IESVideoAndPicEnable=1"
       },
       "name" : "IESVideoAndPic",
+      "public_header_files" : [
+        "proj\/ios\/IESVideoEditor\/IESVideoAndPic\/**\/*.h"
+      ],
       "ios" : {
         "vendored_libraries" : "binaries\/ios\/libTTVideoEditor.a"
       },
-      "public_header_files" : [
+      "source_files" : [
         "proj\/ios\/IESVideoEditor\/IESVideoAndPic\/**\/*.h"
       ]
     }
-  ],
-  "description" : "ttvideoeditor"
+  ]
 }
