@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'BaseKit' do |d|
     d.frameworks =  'Foundation'
+    d.source_files = 'OneKit/BaseKit/**/*.h'
     d.public_header_files = 'OneKit/BaseKit/**/*.h'
     d.vendored_library = 'OneKit/BaseKit/**/*.a'
   end
@@ -23,18 +24,21 @@ Pod::Spec.new do |s|
   s.subspec 'Defaults' do |d|
     d.dependency 'OneKit/BaseKit'
     d.frameworks =  'Foundation'
+    d.source_files = 'OneKit/Defaults/**/*.h'
     d.public_header_files = 'OneKit/Defaults/**/*.h'
     d.vendored_library = 'OneKit/Defaults/**/*.a'
   end
 
   s.subspec 'Reachability' do |d|
     d.frameworks =  'Foundation', 'CoreTelephony', 'SystemConfiguration', 'CoreFoundation', 'UIKit'
+    d.source_files = 'OneKit/Reachability/**/*.h'
     d.public_header_files = 'OneKit/Reachability/**/*.h'
     d.vendored_library = 'OneKit/Reachability/**/*.a'
   end
 
   s.subspec 'Service' do |d|
     d.frameworks =  'Foundation'
+    d.source_files = 'OneKit/Service/**/*.h'
     d.public_header_files = 'OneKit/Service/**/*.h'
     d.vendored_library = 'OneKit/Service/**/*.a'
   end
@@ -43,6 +47,7 @@ Pod::Spec.new do |s|
     d.frameworks =  'Foundation'
     d.library = 'sqlite3'
     d.dependency 'OneKit/Service'
+    d.source_files = 'OneKit/Database/**/*.h'
     d.public_header_files = 'OneKit/Database/**/*.h'
     d.vendored_library = 'OneKit/Database/**/*.a'
   end
@@ -51,6 +56,7 @@ Pod::Spec.new do |s|
     d.frameworks =  'Foundation'
     d.dependency 'OneKit/BaseKit'
     d.dependency 'OneKit/Reachability'
+    d.source_files = 'OneKit/StartUp/**/*.h'
     d.public_header_files = 'OneKit/StartUp/Headers/*.h'
     d.vendored_library = 'OneKit/StartUp/**/*.a'
   end
@@ -59,6 +65,7 @@ Pod::Spec.new do |s|
     d.frameworks =  'AdSupport'
     d.dependency 'OneKit/Service'
     d.dependency 'OneKit/StartUp'
+    d.source_files = 'OneKit/IDFA/**/*.h'
     d.public_header_files = 'OneKit/IDFA/**/*.h'
     d.vendored_library = 'OneKit/IDFA/**/*.a'
   end
