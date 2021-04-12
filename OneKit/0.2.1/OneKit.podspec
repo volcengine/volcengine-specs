@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'BaseKit' do |d|
     d.frameworks =  'Foundation'
+    d.library = 'z'
     d.source_files = 'OneKit/BaseKit/**/*.h'
     d.public_header_files = 'OneKit/BaseKit/**/*.h'
     d.vendored_library = 'OneKit/BaseKit/**/*.a'
