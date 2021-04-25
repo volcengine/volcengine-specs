@@ -22,26 +22,39 @@ Pod::Spec.new do |s|
     d.vendored_library = 'OneKit/BaseKit/*.a'
   end
 
-  s.subspec 'Defaults' do |d|
-    d.dependency 'OneKit/BaseKit'
+  s.subspec 'BDMantle' do |d|
     d.frameworks =  'Foundation'
-    d.source_files = 'OneKit/Defaults/*.h'
-    d.public_header_files = 'OneKit/Defaults/*.h'
-    d.vendored_library = 'OneKit/Defaults/*.a'
+    d.source_files = 'OneKit/BDMantle/*.h'
+    d.public_header_files = 'OneKit/BDMantle/*.h'
+    d.vendored_library = 'OneKit/BDMantle/*.a'
   end
 
-  s.subspec 'Reachability' do |d|
-    d.frameworks =  'Foundation', 'CoreTelephony', 'SystemConfiguration', 'CoreFoundation', 'UIKit'
-    d.source_files = 'OneKit/Reachability/*.h'
-    d.public_header_files = 'OneKit/Reachability/*.h'
-    d.vendored_library = 'OneKit/Reachability/*.a'
+  # for TTNet
+  s.subspec 'boringssl' do |d|
+    d.vendored_libraries = [
+      "OneKit/boringssl/libcrcrypto.a",
+      "OneKit/boringssl/libboringssl.a",
+      "OneKit/boringssl/libboringssl_asm.a"
+    ]
+    d.libraries = "boringssl","crcrypto","boringssl_asm"
+    d.xcconfig = {
+      # 'USE_HEADERMAP' => 'NO',
+      'HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/boringssl/include"',
+      # 'ALWAYS_SEARCH_USER_PATHS' => 'NO'
+    }
   end
 
-  s.subspec 'Service' do |d|
-    d.frameworks =  'Foundation'
-    d.source_files = 'OneKit/Service/*.h'
-    d.public_header_files = 'OneKit/Service/*.h'
-    d.vendored_library = 'OneKit/Service/*.a'
+  s.subspec 'ByteDanceKit' do |d|
+    d.subspec 'Foundation' do |foundation|
+      foundation.source_files = ['OneKit/ByteDanceKit/Foundation/*.h', 'OneKit/ByteDanceKit/*.h']
+      foundation.public_header_files = ['OneKit/ByteDanceKit/Foundation/*.h', 'OneKit/ByteDanceKit/*.h']
+      foundation.vendored_library = 'OneKit/ByteDanceKit/Foundation/*.a'
+    end
+    d.subspec 'UIKit' do |uikit|
+      uikit.dependency 'OneKit/ByteDanceKit/Foundation'
+      uikit.frameworks = 'UIKit','QuartzCore','Accelerate','CoreTelephony'
+      uikit.vendored_library = 'OneKit/ByteDanceKit/UIKit/*.a'
+    end
   end
 
   s.subspec 'Database' do |d|
@@ -53,13 +66,12 @@ Pod::Spec.new do |s|
     d.vendored_library = 'OneKit/Database/*.a'
   end
 
-  s.subspec 'StartUp' do |d|
-    d.frameworks =  'Foundation'
+  s.subspec 'Defaults' do |d|
     d.dependency 'OneKit/BaseKit'
-    d.dependency 'OneKit/Reachability'
-    d.source_files = 'OneKit/StartUp/*.h'
-    d.public_header_files = 'OneKit/StartUp/*.h'
-    d.vendored_library = 'OneKit/StartUp/*.a'
+    d.frameworks =  'Foundation'
+    d.source_files = 'OneKit/Defaults/*.h'
+    d.public_header_files = 'OneKit/Defaults/*.h'
+    d.vendored_library = 'OneKit/Defaults/*.a'
   end
 
   s.subspec 'IDFA' do |d|
@@ -80,32 +92,35 @@ Pod::Spec.new do |s|
       auth.vendored_library = 'OneKit/MARS/Auth/*.a'
     end
   end
-  
-  s.subspec 'ByteDanceKit' do |d|
-    d.subspec 'Foundation' do |foundation|
-      foundation.source_files = ['OneKit/ByteDanceKit/Foundation/*.h', 'OneKit/ByteDanceKit/*.h']
-      foundation.public_header_files = ['OneKit/ByteDanceKit/Foundation/*.h', 'OneKit/ByteDanceKit/*.h']
-      foundation.vendored_library = 'OneKit/ByteDanceKit/Foundation/*.a'
-    end
-    d.subspec 'UIKit' do |uikit|
-      uikit.dependency 'OneKit/ByteDanceKit/Foundation'
-      uikit.frameworks = 'UIKit','QuartzCore','Accelerate','CoreTelephony'
-      uikit.vendored_library = 'OneKit/ByteDanceKit/UIKit/*.a'
-    end
+
+  s.subspec 'Reachability' do |d|
+    d.frameworks =  'Foundation', 'CoreTelephony', 'SystemConfiguration', 'CoreFoundation', 'UIKit'
+    d.source_files = 'OneKit/Reachability/*.h'
+    d.public_header_files = 'OneKit/Reachability/*.h'
+    d.vendored_library = 'OneKit/Reachability/*.a'
   end
-  
-  # for TTNet
-  s.subspec 'boringssl' do |d|
-    d.vendored_libraries = [
-      "OneKit/boringssl/libcrcrypto.a",
-      "OneKit/boringssl/libboringssl.a",
-      "OneKit/boringssl/libboringssl_asm.a"
-    ]
-    d.libraries = "boringssl","crcrypto","boringssl_asm"
-    d.xcconfig = {
-      # 'USE_HEADERMAP' => 'NO',
-      'HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/boringssl/include"',
-      # 'ALWAYS_SEARCH_USER_PATHS' => 'NO'
-    }
+
+  s.subspec 'Screenshot' do |d|
+    d.frameworks =  'Foundation'
+    d.source_files = 'OneKit/Screenshot/*.h'
+    d.public_header_files = 'OneKit/Screenshot/*.h'
+    d.vendored_library = 'OneKit/Screenshot/*.a'
   end
+
+  s.subspec 'Service' do |d|
+    d.frameworks =  'Foundation'
+    d.source_files = 'OneKit/Service/*.h'
+    d.public_header_files = 'OneKit/Service/*.h'
+    d.vendored_library = 'OneKit/Service/*.a'
+  end
+
+  s.subspec 'StartUp' do |d|
+    d.frameworks =  'Foundation'
+    d.dependency 'OneKit/BaseKit'
+    d.dependency 'OneKit/Reachability'
+    d.source_files = 'OneKit/StartUp/*.h'
+    d.public_header_files = 'OneKit/StartUp/*.h'
+    d.vendored_library = 'OneKit/StartUp/*.a'
+  end
+
 end
