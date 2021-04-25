@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
       core.requires_arc = true
       core.vendored_libraries = 'BDH5WebView/Classes/Core/*.a'
       core.public_header_files = 'BDH5WebView/Classes/Core/*.h','BDH5WebView/Classes/Core/extension/BDWebViewExtension.h','BDH5WebView/Classes/Core/util/*.h','BDH5WebView/Classes/Core/monitor/BDWebViewMonitorExtension.h','BDH5WebView/Classes/Core/network/BDWebView+BDServerTrust.h','BDH5WebView/Classes/Core/Private/*.h'
+      core.source_files = 'BDH5WebView/Classes/Core/*.h','BDH5WebView/Classes/Core/extension/BDWebViewExtension.h','BDH5WebView/Classes/Core/util/*.h','BDH5WebView/Classes/Core/monitor/BDWebViewMonitorExtension.h','BDH5WebView/Classes/Core/network/BDWebView+BDServerTrust.h','BDH5WebView/Classes/Core/Private/*.h'
       core.frameworks = 'Foundation','UIKit'
       # core.dependency 'TTKitchen'
       # core.dependency 'BDTrackerProtocol'
@@ -58,6 +59,7 @@ Pod::Spec.new do |s|
       offline.requires_arc = true
       offline.vendored_libraries = 'BDH5WebView/Classes/Offline/*.a'
       offline.public_header_files = 'BDH5WebView/Classes/Offline/*.h'
+      offline.source_files = 'BDH5WebView/Classes/Offline/*.h'
       offline.dependency 'BDH5WebView/Core'
       offline.dependency 'BDWebKitToB/Offline'
   end
