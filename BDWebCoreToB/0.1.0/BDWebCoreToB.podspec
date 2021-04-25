@@ -40,6 +40,7 @@ TODO: Add long description of the pod here.
 
   s.subspec 'Core' do |ss|
     ss.public_header_files = 'BDWebCoreToB/Classes/Core/*.h'
+    ss.source_files = 'BDWebCoreToB/Classes/Core/*.h'
     ss.vendored_libraries = 'BDWebCoreToB/Classes/Core/*.a'
 #    ss.dependency 'BDMonitorProtocol'
   end
