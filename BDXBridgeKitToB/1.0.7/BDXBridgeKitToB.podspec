@@ -120,7 +120,6 @@ Pod::Spec.new do |s|
     methods.subspec 'ScreenShot' do |screenShot|
       screenShot.vendored_libraries = 'BDXBridgeKitToB/Classes/Methods/ScreenShot/*.a'
       screenShot.dependency 'OneKit/Screenshot'
-      screenShot.frameworks = 'PhotoKit'
     end
   end
 
