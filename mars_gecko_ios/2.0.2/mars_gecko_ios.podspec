@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/volcengine/volcengine-specs/tree/master/OneKit'
   s.license          = { 
     :type => 'Copyright',
-    :file => 'LICENSE', 
+    :file => 'mars_gecko_ios/LICENSE', 
     :text => <<-LICENSE
             Bytedance copyright
     LICENSE
