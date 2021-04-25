@@ -49,6 +49,7 @@ TODO: Add long description of the pod here.
   s.subspec 'WebView' do |w|
     w.vendored_libraries = 'ByteWebKit/Classes/WebView/*.a'
     w.public_header_files = 'ByteWebKit/Classes/WebView/*.h'
+    w.source_files = 'ByteWebKit/Classes/WebView/*.h'
     w.dependency 'BDH5WebView/Core'
     w.dependency 'BDWebKitToB/Offline'
     w.dependency 'OneKit/Service'
@@ -58,6 +59,7 @@ TODO: Add long description of the pod here.
   s.subspec 'JSBridge' do |j|
     j.vendored_libraries = 'ByteWebKit/Classes/JSBridge/*.a'
     j.public_header_files = 'ByteWebKit/Classes/JSBridge/*.h'
+    j.source_files = 'ByteWebKit/Classes/JSBridge/*.h'
     j.dependency 'BDXBridgeKitToB', '>=1.0.6'
   end
 
@@ -72,6 +74,7 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.source_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.default_subspecs =  'Core', 'JSBridge', 'WebView'
