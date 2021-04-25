@@ -41,8 +41,9 @@ TODO: Add long description of the pod here.
   s.subspec 'Core' do |c|
     c.vendored_libraries = 'ByteWebKit/Classes/Core/*.a'
     c.public_header_files = 'ByteWebKit/Classes/Core/*.h'
-    s.dependency 'OneKit/StartUp'
-    s.dependency 'mars_gecko_ios/Core'
+    c.source_files = 'ByteWebKit/Classes/Core/*.h'
+    c.dependency 'OneKit/StartUp'
+    c.dependency 'mars_gecko_ios/Core'
   end
   
   s.subspec 'WebView' do |w|
