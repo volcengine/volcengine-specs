@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'WebView' do |webview|
-      webview.source_files = 'BDPreloadSDKToB/Classes/WebView/*.a'
+      webview.vendored_libraries = 'BDPreloadSDKToB/Classes/WebView/*.a'
       webview.dependency 'BDPreloadSDKToB/Core'
       webview.dependency 'YYCache'
   end
