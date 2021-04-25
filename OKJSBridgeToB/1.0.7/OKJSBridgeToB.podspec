@@ -48,8 +48,9 @@ TODO: Add long description of the pod here.
     d.dependency 'OneKit/BaseKit'
     d.dependency 'BDWebCoreToB'
     d.dependency 'TTNetworkManager'
-    s.vendored_libraries = 'OKJSBridgeToB/Classes/JSBridge/*.a'
+    d.vendored_libraries = 'OKJSBridgeToB/Classes/JSBridge/*.a'
     d.public_header_files = 'OKJSBridgeToB/Classes/JSBridge/**/*.h'
+    d.source_files = 'OKJSBridgeToB/Classes/JSBridge/**/*.h'
   end
   s.default_subspecs = 'JSBridge'
 end
