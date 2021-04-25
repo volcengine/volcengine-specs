@@ -6,12 +6,8 @@ Pod::Spec.new do |s|
                        A solution for online resource downloading & management.
                        DESC
   s.homepage         = 'https://github.com/volcengine/volcengine-specs/tree/master/OneKit'
-  s.license          = { 
-    :type => 'MIT',
-    :text => <<-LICENSE
-            Bytedance copyright
-    LICENSE
-  }
+  s.license          = { :type => 'MIT', :file => 'mars_gecko_ios/LICENSE' }
+
   s.author           = { 'Mars' => 'mars@bytedance.com' }
   s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/mars_gecko_ios/#{s.version.to_s}/mars_gecko_ios.zip" }
 
