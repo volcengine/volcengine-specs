@@ -50,6 +50,7 @@ TODO: Add long description of the pod here.
   
   s.subspec 'Falcon' do |ss|
     ss.public_header_files = 'BDWebKitToB/Classes/Falcon/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/Falcon/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/Falcon/*.a'
     ss.dependency 'BDWebKitToB/Core'
     ss.dependency 'BDWebKitToB/Interceptor'
@@ -64,6 +65,7 @@ TODO: Add long description of the pod here.
   s.subspec 'Offline' do |ss|
     ss.requires_arc = true
     ss.public_header_files = 'BDWebKitToB/Classes/Offline/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/Offline/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/Offline/*.a'
     ss.dependency 'BDWebKitToB/Falcon'
     ss.dependency 'BDWebKitToB/Resource'
@@ -74,6 +76,7 @@ TODO: Add long description of the pod here.
   s.subspec 'Resource' do |ss|
     ss.requires_arc = true
     ss.public_header_files = 'BDWebKitToB/Classes/Resource/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/Resource/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/Resource/*.a'
     ss.dependency 'mars_gecko_ios/Core'
   end
@@ -81,6 +84,7 @@ TODO: Add long description of the pod here.
   s.subspec 'Interceptor' do |ss|
     ss.requires_arc = true
     ss.public_header_files = 'BDWebKitToB/Classes/Interceptor/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/Interceptor/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/Interceptor/*.a'
 
     ss.frameworks = 'Foundation','UIKit'
@@ -89,18 +93,21 @@ TODO: Add long description of the pod here.
   s.subspec 'Precreator' do |ss|
     ss.requires_arc = true
     ss.public_header_files = 'BDWebKitToB/Classes/Precreator/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/Precreator/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/Precreator/*.a'
     ss.frameworks = 'Foundation','UIKit'
   end
 
   s.subspec 'Cookie' do |ss|
     ss.public_header_files = 'BDWebKitToB/Classes/Cookie/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/Cookie/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/Cookie/*.a'
     ss.dependency 'BDWebKitToB/Core'
   end
   
   s.subspec 'Keyboard' do |ss|
     ss.public_header_files = 'BDWebKitToB/Classes/Keyboard/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/Keyboard/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/Keyboard/*.a'
     ss.frameworks = 'Foundation','UIKit'
   end
@@ -108,6 +115,7 @@ TODO: Add long description of the pod here.
   s.subspec 'BlankDetect' do |ss|
     ss.requires_arc = true
     ss.public_header_files = 'BDWebKitToB/Classes/BlankDetect/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/BlankDetect/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/BlankDetect/*.a'
     ss.dependency 'BDWebKitToB/Core'
   end
@@ -115,6 +123,7 @@ TODO: Add long description of the pod here.
   s.subspec 'CrashFix' do |ss|
     ss.requires_arc = true
     ss.public_header_files = 'BDWebKitToB/Classes/CrashFix/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/CrashFix/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/CrashFix/*.a'
     ss.dependency 'BDWebKitToB/Core'
   end
@@ -122,6 +131,7 @@ TODO: Add long description of the pod here.
   s.subspec 'SSL' do |ss|
     ss.requires_arc = true
     ss.public_header_files = 'BDWebKitToB/Classes/SSL/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/SSL/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/SSL/*.a'
     ss.dependency 'BDWebKitToB/Core'
     ss.dependency 'BDWebKitToB/CrashFix'
@@ -132,6 +142,7 @@ TODO: Add long description of the pod here.
   s.subspec 'TTNet' do |ss|
     ss.requires_arc = true
     ss.public_header_files = 'BDWebKitToB/Classes/TTNet/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/TTNet/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/TTNet/*.a'
     ss.dependency 'BDWebKitToB/Core'
     ss.dependency 'BDWebKitToB/Precreator'
