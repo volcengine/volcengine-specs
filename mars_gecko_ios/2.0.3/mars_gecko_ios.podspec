@@ -55,6 +55,6 @@ Pod::Spec.new do |s|
       'mars_gecko_ios/IESGeckoKit/Core/Network/Model/IESGeckoResourceModel.h',
       'mars_gecko_ios/IESGeckoKit/Core/Network/Model/IESGurdNetworkResponse.h' ]
 
-    # ss.source_files = 'mars_gecko_ios/IESGeckoKit/Core/**/*.{h,m}'
+    ss.source_files = 'mars_gecko_ios/IESGeckoKit/Core/**/*.{h,m}'
   end
 end
