@@ -42,6 +42,7 @@ TODO: Add long description of the pod here.
   s.subspec 'Core' do |ss|  
     ss.requires_arc = true
     ss.public_header_files = 'BDWebKitToB/Classes/Core/*.h'
+    ss.source_files = 'BDWebKitToB/Classes/Core/*.h'
     ss.vendored_libraries = 'BDWebKitToB/Classes/Core/*.a'
     ss.dependency 'OneKit/ByteDanceKit/Foundation'
     ss.dependency 'OneKit/BaseKit'
