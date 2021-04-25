@@ -26,6 +26,7 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |core|
     core.vendored_libraries = 'BDXBridgeKitToB/Classes/Core/**/*.a'
     core.public_header_files = 'BDXBridgeKitToB/Classes/Core/*.h'
+    core.source_files = 'BDXBridgeKitToB/Classes/Core/*.h'
     core.dependency 'OneKit/BDMantle'
   end
   
