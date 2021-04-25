@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'mars_gecko_ios'
-  s.version          = '2.0.3'
+  s.version          = '2.0.4'
   s.summary          = 'A solution for online resource downloading & management'
   s.description      = <<-DESC
                        A solution for online resource downloading & management.
