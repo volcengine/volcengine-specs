@@ -56,6 +56,7 @@ TODO: Add long description of the pod here.
     ss.subspec 'WebP' do |wp|
         wp.vendored_libraries = 'BDWebKitToB/Classes/Falcon/WebP/*.a'
         wp.dependency 'libwebp'
+        wp.frameworks = 'MobileCoreServices'
     end
   end
 
