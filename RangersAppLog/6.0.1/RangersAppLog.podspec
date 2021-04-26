@@ -89,5 +89,13 @@ Pod::Spec.new do |s|
       bd.public_header_files = 'RangersAppLog/Classes/Picker/*.h'
     end
   
+    s.subspec 'OneKit' do |onekit|
+      onekit.vendored_library = 'RangersAppLog/Classes/OneKit/*.a'
+      onekit.dependency 'RangersAppLog/Core'
+      onekit.dependency 'OneKit/StartUp'
+      onekit.dependency 'OneKit/Service'
+      onekit.source_files = 'RangersAppLog/Classes/OneKit/Tasks/**/*.h'
+      onekit.public_header_files = 'RangersAppLog/Classes/OneKit/Tasks/**/*.h'
+    end
   end
   
