@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
     'DEFINES_MODULE' => 'YES',
   }
+  s.default_subspecs = ['BaseKit', 'MARS/Auth']
 
   s.subspec 'BaseKit' do |d|
     d.frameworks =  'Foundation'
