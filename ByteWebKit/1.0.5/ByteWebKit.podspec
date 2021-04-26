@@ -39,17 +39,17 @@ TODO: Add long description of the pod here.
   }
   
   s.subspec 'Core' do |c|
-    c.vendored_libraries = 'ByteWebKit/Classes/Core/*.a'
-    c.public_header_files = 'ByteWebKit/Classes/Core/*.h'
-    c.source_files = 'ByteWebKit/Classes/Core/*.h'
+    c.vendored_libraries = 'ByteWebKit/Core/*.a'
+    c.public_header_files = 'ByteWebKit/Core/*.h'
+    c.source_files = 'ByteWebKit/Core/*.h'
     c.dependency 'OneKit/StartUp'
     c.dependency 'mars_gecko_ios/Core'
   end
   
   s.subspec 'WebView' do |w|
-    w.vendored_libraries = 'ByteWebKit/Classes/WebView/*.a'
-    w.public_header_files = 'ByteWebKit/Classes/WebView/*.h'
-    w.source_files = 'ByteWebKit/Classes/WebView/*.h'
+    w.vendored_libraries = 'ByteWebKit/WebView/*.a'
+    w.public_header_files = 'ByteWebKit/WebView/*.h'
+    w.source_files = 'ByteWebKit/WebView/*.h'
     w.dependency 'BDH5WebView/Core'
     w.dependency 'BDWebKitToB/Offline'
     w.dependency 'OneKit/Service'
@@ -57,15 +57,15 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec 'JSBridge' do |j|
-    j.vendored_libraries = 'ByteWebKit/Classes/JSBridge/*.a'
-    j.public_header_files = 'ByteWebKit/Classes/JSBridge/*.h'
-    j.source_files = 'ByteWebKit/Classes/JSBridge/*.h'
+    j.vendored_libraries = 'ByteWebKit/JSBridge/*.a'
+    j.public_header_files = 'ByteWebKit/JSBridge/*.h'
+    j.source_files = 'ByteWebKit/JSBridge/*.h'
     j.dependency 'BDXBridgeKitToB', '>=1.0.6'
   end
 
 #  s.subspec 'WebView' do |w|
-#    w.vendored_libraries = 'ByteWebKit/Classes/WebView/*.a'
-#    w.private_header_files = 'ByteWebKit/Classes/WebView/*.h'
+#    w.vendored_libraries = 'ByteWebKit/WebView/*.a'
+#    w.private_header_files = 'ByteWebKit/WebView/*.h'
 #    w.dependency 'ByteWebView'
 #  end
   
