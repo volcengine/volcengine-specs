@@ -42,18 +42,18 @@ TODO: Add long description of the pod here.
     c.vendored_libraries = 'ByteWebKit/Core/*.a'
     c.public_header_files = 'ByteWebKit/Core/*.h'
     c.source_files = 'ByteWebKit/Core/*.h'
-    c.dependency 'OneKit/StartUp'
-    c.dependency 'mars_gecko_ios/Core'
+    c.dependency 'OneKit/StartUp', '1.0.4'
+    c.dependency 'mars_gecko_ios/Core', '2.0.4'
   end
   
   s.subspec 'WebView' do |w|
     w.vendored_libraries = 'ByteWebKit/WebView/*.a'
     w.public_header_files = 'ByteWebKit/WebView/*.h'
     w.source_files = 'ByteWebKit/WebView/*.h'
-    w.dependency 'BDH5WebView/Core'
-    w.dependency 'BDWebKitToB/Offline'
-    w.dependency 'OneKit/Service'
-    w.dependency 'OneKit/StartUp'
+    w.dependency 'BDH5WebView/Core', '0.1.1'
+    w.dependency 'BDWebKitToB/Offline', '0.1.4'
+    w.dependency 'OneKit/Service', '1.0.4'
+    w.dependency 'OneKit/StartUp', '1.0.4'
   end
   
   s.subspec 'JSBridge' do |j|
