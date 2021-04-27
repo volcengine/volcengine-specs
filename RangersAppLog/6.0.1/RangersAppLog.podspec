@@ -27,8 +27,8 @@ Pod::Spec.new do |s|
       bd.vendored_library = 'RangersAppLog/Classes/Core/*.a'
       bd.frameworks = 'UIKit','Foundation','Security','AdSupport','CoreTelephony','CoreFoundation','SystemConfiguration','CoreGraphics', 'WebKit'
       bd.library = 'z','sqlite3'
-      bd.dependency 'OneKit/BaseKit'
-      bd.dependency 'OneKit/StartUp'
+      bd.dependency 'OneKit/BaseKit', '1.1.4'
+      bd.dependency 'OneKit/StartUp', '1.1.4'
       bd.public_header_files = 'RangersAppLog/Classes/Core/*.h'
       bd.resource_bundles = {
         'RangersAppLog' => ['RangersAppLog/Asserts/Core/*.js']
@@ -92,8 +92,8 @@ Pod::Spec.new do |s|
     s.subspec 'OneKit' do |onekit|
       onekit.vendored_library = 'RangersAppLog/Classes/OneKit/*.a'
       onekit.dependency 'RangersAppLog/Core'
-      onekit.dependency 'OneKit/StartUp'
-      onekit.dependency 'OneKit/Service'
+      onekit.dependency 'OneKit/StartUp', '1.1.4'
+      onekit.dependency 'OneKit/Service', '1.1.4'
       onekit.source_files = 'RangersAppLog/Classes/OneKit/Tasks/**/*.h'
       onekit.public_header_files = 'RangersAppLog/Classes/OneKit/Tasks/**/*.h'
     end
