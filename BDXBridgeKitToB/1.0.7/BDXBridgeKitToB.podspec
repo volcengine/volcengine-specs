@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
     
     methods.subspec 'System' do |system|
       system.vendored_libraries = 'BDXBridgeKitToB/Classes/Methods/System/*.a'
-      system.frameworks = 'MessageUI'
+      system.frameworks = 'MessageUI', 'EventKit'
     end
 
     methods.subspec 'Network' do |network|
