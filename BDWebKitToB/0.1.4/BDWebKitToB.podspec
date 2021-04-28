@@ -22,7 +22,12 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/volcengine/volcengine-specs'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = {
+    :type => 'Copyright',
+    :text => <<-LICENSE
+              Bytedance copyright
+    LICENSE
+  }
   s.author           = 'Bytedance, Inc.'
   s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/#{s.name}/#{s.version}/#{s.name}.zip" }
 

@@ -12,7 +12,12 @@ version = "5.0.29.18"
                        DESC
   s.homepage         = 'https://github.com/volcengine/volcengine-specs'
 
-  s.license          = 'MIT'
+  s.license          = {
+    :type => 'Copyright',
+    :text => <<-LICENSE
+              Bytedance copyright
+    LICENSE
+  }
   s.author           = { "zhangchenlong" => "zhangchenlong@bytedance.com" }
 
   s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/#{s.name}/#{s.version}/#{s.name}.zip" }

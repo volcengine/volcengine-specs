@@ -4,7 +4,12 @@ Pod::Spec.new do |s|
   s.summary          = 'OneSDK Kit.'
   s.description      = 'an iOS base Framework.'
   s.homepage         = "https://github.com/volcengine/volcengine-specs/tree/master/OneKit"
-  s.license          = { :type => 'MIT', :file => 'OneKit/LICENSE' }
+  s.license          = {
+    :type => 'Copyright',
+    :text => <<-LICENSE
+              Bytedance copyright
+    LICENSE
+  }
   s.author           = { 'chenyi' => 'chenyi.0@bytedance.com' }
   s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/OneKit/#{s.version}/OneKit.zip" }
   s.ios.deployment_target = '9.0'

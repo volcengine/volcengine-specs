@@ -23,7 +23,12 @@ TODO: Add long description of the pod here.
 
   s.homepage         = 'https://github.com/volcengine/volcengine-specs'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = {
+    :type => 'Copyright',
+    :text => <<-LICENSE
+              Bytedance copyright
+    LICENSE
+  }
   s.author           = { 'lixiaopeng' => 'lixiaopeng.dev@bytedance.com' }
   s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/#{s.name}/#{s.version}/#{s.name}.zip" }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'

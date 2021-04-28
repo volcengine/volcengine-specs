@@ -4,7 +4,12 @@ Pod::Spec.new do |s|
     s.summary          = 'ByteDance Rangers AppLog.'
     s.description      = 'ByteDance Rangers AppLog SDK.'
     s.homepage         = 'https://github.com/bytedance/RangersAppLog'
-    s.license          = { :type => 'MIT', :file => 'LICENSE' }
+    s.license          = {
+      :type => 'Copyright',
+      :text => <<-LICENSE
+                Bytedance copyright
+      LICENSE
+    }
     s.author           = { 'zhuyuanqing' => 'zhuyuanqing@bytedance.com' }
     s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/RangersAppLog/#{s.version}/RangersAppLog.zip"}
     

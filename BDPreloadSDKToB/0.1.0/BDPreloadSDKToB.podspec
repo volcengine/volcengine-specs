@@ -16,7 +16,12 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/volcengine/volcengine-specs'
-  s.license          = { :type => 'MIT', :file => 'BDPreloadSDKToB/LICENSE' }
+  s.license          = {
+    :type => 'Copyright',
+    :text => <<-LICENSE
+              Bytedance copyright
+    LICENSE
+  }
   s.author           = { 'caiweilong' => 'caiweilong@bytedance.com' }
   s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDPreloadSDKToB/#{s.version}/BDPreloadSDKToB.zip" }
 
