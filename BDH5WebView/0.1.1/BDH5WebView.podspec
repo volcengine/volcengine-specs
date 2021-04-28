@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.summary          = 'ByteDance WebView.'
   s.description      = 'ByteDance WebView'
   s.homepage         = 'https://github.com/volcengine/volcengine-specs'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT' }
   s.author           = { 'linyong' => 'linyong.ly@bytedance.com' }
   s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/#{s.name}/#{s.version}/#{s.name}.zip" }
 
