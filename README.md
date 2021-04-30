@@ -7,7 +7,7 @@ Volcengine CocoaPods specs.
 ## Usage
 
 ```
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 source 'https://github.com/volcengine/volcengine-specs.git'
 ```
 
