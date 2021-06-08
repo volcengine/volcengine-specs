@@ -1,4 +1,4 @@
-version = "5.0.29.24"  
+version = "5.0.29.25"  
 Pod::Spec.new do |s|
   s.name             = "TTNetworkManager"
   s.version          = version
