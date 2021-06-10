@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
       LICENSE
     }
     s.author           = { 'chenyi' => 'chenyi.0@bytedance.com' }
-    s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/OneKit/#{s.version}/OneKit.zip" }
+    s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/OneKit/1.1.12.1/OneKit.zip" }
     s.ios.deployment_target = '9.0'
     s.requires_arc = true
     s.static_framework = true
