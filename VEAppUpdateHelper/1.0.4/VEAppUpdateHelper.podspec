@@ -30,6 +30,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'VEUpdateHelper' do |d|
     d.source_files        = "VEAppUpdateHelper/VEUpdateHelper/*.h"
+    d.vendored_library    = 'VEAppUpdateHelper/VEUpdateHelper/*.a'
     d.dependency 'JSONModel'
     d.dependency 'OneKit/ByteDanceKit'
     d.dependency 'OneKit/StartUp'
@@ -40,6 +41,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'VEUpdateView' do |v|
     v.source_files        = "VEAppUpdateHelper/VEUpdateView/*.h"
+    v.vendored_library    = 'VEAppUpdateHelper/VEUpdateView/*.a'
     v.resource_bundles    = {
       'TTUpdateView' => ["VEAppUpdateHelper/VEUpdateView/Assets/*"],
     }
