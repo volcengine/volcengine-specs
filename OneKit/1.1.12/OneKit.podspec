@@ -121,8 +121,8 @@ Pod::Spec.new do |s|
   
     s.subspec 'Service' do |d|
       d.frameworks =  'Foundation'
-      d.source_files = 'OneKit/Service/*.h'
-      d.public_header_files = 'OneKit/Service/*.{h,m}'
+      d.source_files = 'OneKit/Service/*.{h, m}'
+      d.public_header_files = 'OneKit/Service/*.h'
       d.vendored_library = 'OneKit/Service/*.a'
     end
   
