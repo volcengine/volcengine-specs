@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
       LICENSE
     }
     s.author           = { 'chenyi' => 'chenyi.0@bytedance.com' }
-    s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/OneKit/1.1.12.1/OneKit.zip" }
+    s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/OneKit/1.1.12.2/OneKit.zip" }
     s.ios.deployment_target = '9.0'
     s.requires_arc = true
     s.static_framework = true
@@ -134,5 +134,8 @@ Pod::Spec.new do |s|
       d.public_header_files = 'OneKit/StartUp/*.h'
       d.vendored_library = 'OneKit/StartUp/*.a'
     end
-  
+    
+    s.subspec 'Dummy' do |d|
+      d.source_files = 'OneKit/Dummy/*.{m}'
+    end
   end
