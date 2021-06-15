@@ -136,6 +136,7 @@ Pod::Spec.new do |s|
     end
     
     s.subspec 'Dummy' do |d|
-      d.source_files = 'OneKit/Dummy/*.{m}'
+      d.frameworks =  'Foundation'
+      d.source_files = 'OneKit/Dummy/*.m'
     end
   end
