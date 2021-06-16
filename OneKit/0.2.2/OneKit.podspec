@@ -42,12 +42,12 @@ Pod::Spec.new do |s|
         "OneKit/boringssl/libboringssl.a",
         "OneKit/boringssl/libboringssl_asm.a"
       ]
-      d.public_header_files = 'OneKit/boringssl/include/openssl/*.h'
-      d.source_files = 'OneKit/boringssl/include/openssl/*.h'
+      d.public_header_files = 'OneKit/boringssl/**/*.h'
+      d.source_files = 'OneKit/boringssl/**/*.h'
       d.libraries = "boringssl","crcrypto","boringssl_asm"
       d.xcconfig = {
         # 'USE_HEADERMAP' => 'NO',
-        'HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/OneKit/boringssl/include/openssl"',
+        'HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/OneKit/boringssl/include"',
         # 'ALWAYS_SEARCH_USER_PATHS' => 'NO'
       }
     end
