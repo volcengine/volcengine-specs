@@ -48,7 +48,10 @@
                 "OneKit/BaseKit": [
                     "1.1.13"
                 ]
-            }
+            },
+            "resources": [
+                "RangersAPM/Assets/Core/**/APMInsightCore.bundle"
+            ]
         },
         {
             "name": "Crash",
