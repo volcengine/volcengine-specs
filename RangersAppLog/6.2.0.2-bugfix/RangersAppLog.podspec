@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
       LICENSE
     }
     s.author           = { 'zhuyuanqing' => 'zhuyuanqing@bytedance.com' }
-    s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/RangersAppLog/#{s.version}.2/RangersAppLog.zip"}
+    s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/RangersAppLog/#{s.version}/RangersAppLog.zip"}
     
     s.ios.deployment_target = '9.0'
     s.requires_arc = true
