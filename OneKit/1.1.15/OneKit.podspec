@@ -47,7 +47,7 @@ Pod::Spec.new do |s|
       d.libraries = "boringssl","crcrypto","boringssl_asm"
       d.xcconfig = {
         # 'USE_HEADERMAP' => 'NO',
-        'HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/OneKit/boringssl/include"',
+        'HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/OneKit/OneKit/boringssl/include/openssl"',
         # 'ALWAYS_SEARCH_USER_PATHS' => 'NO'
       }
     end
