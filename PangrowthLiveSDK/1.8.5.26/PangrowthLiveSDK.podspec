@@ -9,6 +9,7 @@ PangrowthLiveSDK provides live sdk for our business partners.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.authors          = { 'Sun Xianglin' => 'sunxianglin@bytedance.com' }
   s.source           = { :http => 'https://sf3-fe-tos.pglstatp-toutiao.com/obj/pangle-empower/PangrowthLiveSDK/1.8.5.26/PangrowthLiveSDK-1.8.5.26.zip' }
+  s.framework        = 'CoreML'
   s.vendored_frameworks = 'IESLiveSaaSKit/*.framework'
   s.resources        = 'IESLiveSaaSKit/*.bundle'
   s.preserve_paths   = 'IESLiveSaaSKit/*.framework', 'IESLiveSaaSKit/*.bundle', 'LICENSE'
