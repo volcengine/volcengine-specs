@@ -21,9 +21,9 @@ Pod::Spec.new do |s|
   s.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'c++abi'
   s.resource = 'BDNovelOpenSDK/novel/bundle/BDNovelResource.bundle'
 
-  s.dependency 'Ads-CN/BUAdSDK', '>=3.6.1.5'
-  s.dependency 'Ads-CN/Domestic' ,'>=3.6.1.5'
-  s.dependency 'Ads-CN/BUFoundation', '>=3.6.1.5'
+  # s.dependency 'Ads-CN/BUAdSDK', '>=3.6.1.5'
+  # s.dependency 'Ads-CN/Domestic' ,'>=3.6.1.5'
+  # s.dependency 'Ads-CN/BUFoundation', '>=3.6.1.5'
 
   s.dependency 'RangersAppLog/Host/CN', '~>5.6.3'
   s.dependency 'RangersAppLog/Core','~>5.6.3'
