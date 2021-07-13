@@ -15,7 +15,7 @@ Pangrowth is an SDK that integrates novels, media, and live broadcasts.
 
 #  s.source_files = 'Pangrowth/Classes/**/*'
   
-  s.dependency 'Ads-CN','>= 3.6.1.5'
+  # s.dependency 'Ads-CN','>= 3.6.1.5'
   s.dependency 'RangersAppLog', '5.6.6'
   s.dependency 'RangersAPM', '2.0.5'
   
