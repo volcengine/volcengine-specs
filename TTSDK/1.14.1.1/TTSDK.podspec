@@ -164,10 +164,18 @@
         'TTSDK/BDWebImageToB/**/*',
       ]
       subspec.vendored_libraries = [
-        'TTSDK/BDWebImageToB/**/*.a'
+        'TTSDK/BDWebImageToB/**/*.a',
+        'TTSDK/TTNetworkManager/**/*.a',
+        'TTSDK/boringssl/**/*.a',
+        'TTSDK/protobuf_lite/**/*.a',
+        'TTSDK/lib_h_dec/**/*.a',
       ]
+      subspec.ios.frameworks = 'CFNetwork', 'MobileCoreServices', 'SystemConfiguration', 'JavaScriptCore'
+      subspec.libraries = "c++", "resolv", "sscronet"
       subspec.dependency 'libwebp'
       subspec.dependency 'MMKV'
+      subspec.dependency 'AFNetworking'
+      subspec.dependency 'AFgzipRequestSerializer'
     end
     spec.subspec 'Uploader' do |subspec|
       subspec.public_header_files = [
