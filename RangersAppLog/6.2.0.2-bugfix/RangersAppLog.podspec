@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
     }
   
-    s.default_subspecs = 'Core'
+    s.default_subspecs = ['Core','Host/CN','UITracker']
     
     s.subspec 'Core' do |bd|
       bd.vendored_library = 'RangersAppLog/Classes/Core/*.a'
