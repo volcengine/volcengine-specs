@@ -170,12 +170,13 @@
         'TTSDK/protobuf_lite/**/*.a',
         'TTSDK/lib_h_dec/**/*.a',
       ]
-      subspec.ios.frameworks = 'CFNetwork', 'MobileCoreServices', 'SystemConfiguration', 'JavaScriptCore'
+      subspec.ios.frameworks = 'CFNetwork', 'MobileCoreServices', 'SystemConfiguration', 'JavaScriptCore', 'Accelerate'
       subspec.libraries = "c++", "resolv", "sscronet"
       subspec.dependency 'libwebp'
       subspec.dependency 'MMKV'
       subspec.dependency 'AFNetworking'
       subspec.dependency 'AFgzipRequestSerializer'
+
     end
     spec.subspec 'Uploader' do |subspec|
       subspec.public_header_files = [
@@ -185,7 +186,8 @@
         'TTSDK/TTFileUploadClientb/**/*',
       ]
       subspec.vendored_libraries = [
-        'TTSDK/TTFileUploadClientb/**/*.a'
+        'TTSDK/TTFileUploadClientb/**/*.a',
+        'TTSDK/VCNVCloudNetwork/**/*.a'
       ]
       subspec.dependency 'TTSDK/Core'
     end
