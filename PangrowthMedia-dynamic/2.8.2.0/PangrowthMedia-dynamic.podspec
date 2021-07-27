@@ -18,8 +18,11 @@ Pod::Spec.new do |s|
   s.frameworks = 'MetalKit', 'CoreMotion', 'SystemConfiguration', 'OpenAL', 'VideoToolbox'
   s.libraries = 'c++', 'z', 'iconv', 'xml2', 'bz2', 'c++abi'
 
-  s.ios.dependency 'RangersAPM/WatchDog', '>= 2.0.5'
+  s.ios.dependency 'RangersAPM/Core', '>= 2.0.5'
+  s.ios.dependency 'RangersAPM/Public', '>= 2.0.5'
   s.ios.dependency 'RangersAPM/Crash', '>= 2.0.5'
+  s.ios.dependency 'RangersAPM/HMD', '>= 2.0.5'
+  s.ios.dependency 'RangersAPM/EventMonitor', '>= 2.0.5'
   s.ios.dependency 'RangersAppLog/Core', '~> 5.6'
   s.ios.dependency 'RangersAppLog/Log', '~> 5.6'
   s.ios.dependency 'RangersAppLog/Host/CN', '~> 5.6'
