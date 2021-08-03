@@ -25,19 +25,32 @@
         'TTSDK/VCloudPandora/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/VCloudPandora/**/*',
+        'TTSDK/VCloudPandora/**/*.h',
       ]
       subspec.vendored_libraries = [
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_Core_ios.a',
-        'TTSDK/TTVideoSetting/**/*.a',
       ]
-      subspec.dependency 'RangersAppLog', '>= 3.2.5'
+      subspec.dependency 'RangersAppLog', '< 6.0.0'
       subspec.libraries = 'stdc++'
+    end
+
+    spec.subspec 'Tools' do |subspec| 
+      subspec.vendored_libraries = [
+        'TTSDK/boringssl/**/*.a',
+        'TTSDK/lib_h_dec/**/*.a'
+      ]
+      subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
+    end
+
+    spec.subspec 'Net' do |subspec| 
+      subspec.vendored_libraries = [
+        'TTSDK/VCNVCloudNetwork/**/*.a',
+        'TTSDK/TTNetworkManager/**/*.a'
+      ]
     end
 
     spec.subspec 'TTFFmpeg' do |subspec|
       subspec.vendored_libraries = [
-        'TTSDK/boringssl/**/*.a',
         'TTSDK/TTFFmpeg/**/*.a',
       ]
       subspec.frameworks = [
@@ -50,6 +63,7 @@
         'AVFoundation',
         'SystemConfiguration',
       ]
+      subspec.dependency 'TTSDK/Tools'
       subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
     end
 
@@ -81,7 +95,6 @@
       ]
       subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
       subspec.dependency 'TTSDK/TTFFmpeg'
-
     end
 
     spec.subspec 'LivePull' do |subspec|
@@ -103,6 +116,7 @@
     spec.subspec 'LivePush' do |subspec|
       subspec.public_header_files = [
         'TTSDK/LiveStreamFramework/prj/ios/LiveStreamFramework/**/*.h',
+        'TTSDK/LiveStreamFramework/prj/ios/LiveStreamAudioEffect/**/*.h',
       ]
       subspec.source_files = [
         'TTSDK/LiveStreamFramework/**/*',
@@ -118,36 +132,27 @@
         'CoreMedia',
         'AVFoundation',
         'SystemConfiguration',
+        'GLKit',
+        'imageIO'
       ]
       subspec.dependency 'TTSDK/Core'
       subspec.libraries = 'stdc++'
     end
 
     spec.subspec 'Player' do |subspec|
+      class_name = 'TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS'
       subspec.public_header_files = [
-        'TTSDK/TTVideoEngine/**/*.h',
-        'TTSDK/ABRInterface/**/*.h',
-        'TTSDK/VCPreloadStrategy/**/*.h',
-        'TTSDK/TTNetworkPredict/**/*.h',
+        "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.source_files = [
-        'TTSDK/TTVideoEngine/**/*',
-        'TTSDK/ABRInterface/**/*',
-        'TTSDK/VCPreloadStrategy/**/*',
-        'TTSDK/TTNetworkPredict/**/*',
+        "TTSDK/{#{class_name}}/**/*"
       ]
       subspec.exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h',
       ]
+      lib_name = "#{class_name},MDLMediaDataLoader,VCNVCloudNetwork,TTTopSignature,TTVideoSetting"
       subspec.vendored_libraries = [
-        'TTSDK/TTVideoEngine/**/*.a',
-        'TTSDK/TTTopSignature/**/*.a',
-        'TTSDK/MDLMediaDataLoader/**/*.a',
-        'TTSDK/VCNVCloudNetwork/**/*.a',
-        'TTSDK/VCPreloadStrategy/**/*.a',
-        'TTSDK/TTNetworkPredict/**/*.a',
-        'TTSDK/lib_h_dec/**/*.a',
-        'TTSDK/ABRInterface/**/*.a',
+        "TTSDK/{#{lib_name}}/**/*.a"
       ]
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore'
@@ -161,23 +166,92 @@
         'TTSDK/BDWebImageToB/**/*',
       ]
       subspec.vendored_libraries = [
-        'TTSDK/BDWebImageToB/**/*.a'
-      ]
-      subspec.dependency 'libwebp'
-      subspec.dependency 'MMKV'
-    end
-    spec.subspec 'Uploader' do |subspec|
-      subspec.public_header_files = [
-        'TTSDK/TTUploader/TTUploader/**/*.h',
-      ]
-      subspec.source_files = [
-        'TTSDK/TTUploader/**/*',
-      ]
-      subspec.vendored_libraries = [
-        'TTSDK/TTUploader/*.a'
+        'TTSDK/BDWebImageToB/**/*.a',
+        'TTSDK/protobuf_lite/**/*.a',
+        'TTSDK/libttheif_ios/**/*.a'
       ]
       subspec.dependency 'TTSDK/Core'
+      subspec.dependency 'TTSDK/Net'
+      subspec.dependency 'TTSDK/Tools'
+      #
+      subspec.ios.frameworks = 'CFNetwork', 'MobileCoreServices', 'SystemConfiguration', 'JavaScriptCore', 'Accelerate'
+      subspec.libraries = "c++", "resolv"
+      subspec.dependency 'libwebp'
+      subspec.dependency 'MMKV'
+      subspec.dependency 'AFNetworking'
+      subspec.dependency 'AFgzipRequestSerializer'
     end
 
+    spec.subspec 'Uploader' do |subspec|
+      subspec.public_header_files = [
+        'TTSDK/TTFileUploadClientb/**/*.h',
+      ]
+      subspec.source_files = [
+        'TTSDK/TTFileUploadClientb/**/*',
+      ]
+      subspec.vendored_libraries = [
+        "TTSDK/{TTVideoSetting,TTFileUploadClientb}/**/*.a"
+      ]
+      subspec.dependency 'TTSDK/Core'
+      subspec.dependency 'TTSDK/Net'
+      subspec.dependency 'TTSDK/Tools'
+    end
+
+    # Lite Pod Spec , Use With Caution! If there is no symbol conflict, Should not intergrate subspecs below
+
+    spec.subspec 'PlayerCore-Lite' do |subspec|
+      subspec.public_header_files = [
+        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/TTPlayerDef.h',
+        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/TTAVPlayerLoadControlInterface.h',
+      ]
+      subspec.source_files = [
+        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/TTPlayerDef.h',
+        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/TTAVPlayerLoadControlInterface.h',
+      ]
+      subspec.vendored_libraries = [
+        'TTSDK/TTPlayerSDK/**/*.a',
+        'TTSDK/lib_h_dec/**/*.a'
+      ]
+      subspec.resources = [
+        'TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib',
+      ]
+      subspec.frameworks = ['CoreMotion', 'CoreMedia', 'MetalKit', 'OpenAL', 'VideoToolBox', 'AudioToolBox', 'AVFoundation', 'SystemConfiguration']
+      subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
+    end
+
+    spec.subspec 'Player-Lite' do |subspec|
+      class_name = 'TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS'
+      subspec.public_header_files = [
+        "TTSDK/{#{class_name}}/**/*.h"
+      ]
+      subspec.source_files = [
+        "TTSDK/{#{class_name}}/**/*"
+      ]
+      subspec.exclude_files = [
+        'TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h',
+      ]
+      lib_name = "#{class_name},MDLMediaDataLoader,VCNVCloudNetwork,TTTopSignature,TTVideoSetting"
+      subspec.vendored_libraries = [
+        "TTSDK/{#{lib_name}}/**/*.a"
+      ]
+      subspec.dependency 'TTSDK/Core'
+      subspec.dependency 'TTSDK/PlayerCore-Lite'
+    end
+
+    spec.subspec 'LivePull-Lite' do |subspec|
+      subspec.public_header_files = [
+        'TTSDK/TTVideoLive/**/*.h',
+      ]
+      subspec.source_files = [
+        'TTSDK/TTVideoLive/**/*',
+      ]
+      subspec.vendored_libraries = [
+        'TTSDK/TTVideoLive/**/*.a',
+        'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePull_ios.a',
+      ]
+      subspec.dependency 'TTSDK/Core'
+      subspec.dependency 'TTSDK/PlayerCore-Lite'
+      subspec.dependency 'CocoaAsyncSocket', '~> 7.6.4'
+    end
   end
 
