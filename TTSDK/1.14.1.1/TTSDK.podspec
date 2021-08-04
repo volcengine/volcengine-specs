@@ -187,7 +187,8 @@
       ]
       subspec.vendored_libraries = [
         'TTSDK/TTFileUploadClientb/**/*.a',
-        'TTSDK/VCNVCloudNetwork/**/*.a'
+        'TTSDK/VCNVCloudNetwork/**/*.a',
+        'TTSDK/boringssl/**/*.a'
       ]
       subspec.dependency 'TTSDK/Core'
     end

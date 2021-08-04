@@ -150,13 +150,12 @@
       subspec.exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h',
       ]
-      lib_name = "#{class_name},MDLMediaDataLoader,TTTopSignature,TTVideoSetting"
+      lib_name = "#{class_name},MDLMediaDataLoader,VCNVCloudNetwork,TTTopSignature,TTVideoSetting"
       subspec.vendored_libraries = [
         "TTSDK/{#{lib_name}}/**/*.a"
       ]
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore'
-      subspec.dependency 'TTSDK/Net'
     end
 
     spec.subspec 'Image' do |subspec|
@@ -231,13 +230,12 @@
       subspec.exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h',
       ]
-      lib_name = "#{class_name},MDLMediaDataLoader,TTTopSignature,TTVideoSetting"
+      lib_name = "#{class_name},MDLMediaDataLoader,VCNVCloudNetwork,TTTopSignature,TTVideoSetting"
       subspec.vendored_libraries = [
         "TTSDK/{#{lib_name}}/**/*.a"
       ]
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore-Lite'
-      subspec.dependency 'TTSDK/Net'
     end
 
     spec.subspec 'LivePull-Lite' do |subspec|
