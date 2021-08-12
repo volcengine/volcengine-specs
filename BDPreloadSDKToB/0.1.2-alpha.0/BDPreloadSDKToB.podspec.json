@@ -1,0 +1,71 @@
+{
+    "prepare_command": "", 
+    "default_subspecs": [
+        "Core"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "requires_arc": true, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ]
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDPreloadSDKToB/0.1.2-alpha.0/BDPreloadSDKToB.framework.tar.xz"
+    }, 
+    "version": "0.1.2-alpha.0", 
+    "authors": {
+        "caiweilong": "caiweilong@bytedance.com"
+    }, 
+    "platforms": {
+        "ios": "8.0"
+    }, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20312", 
+    "subspecs": [
+        {
+            "public_header_files": "BDPreloadSDK/Classes/Core/*.h", 
+            "name": "Core", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "Foundation", 
+                "UIKit"
+            ], 
+            "dependencies": {
+                "OneKit/Reachability": []
+            }, 
+            "source_files": "BDPreloadSDK/Classes/Core/**/*.{h,m,mm}"
+        }, 
+        {
+            "public_header_files": "BDPreloadSDK/Classes/WebView/*.h", 
+            "name": "WebView", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_WebView_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "YYCache": [], 
+                "BDPreloadSDKToB/Core": []
+            }, 
+            "source_files": "BDPreloadSDK/Classes/WebView/**/*.{h,m,mm}"
+        }
+    ], 
+    "name": "BDPreloadSDKToB"
+}
