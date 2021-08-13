@@ -25,13 +25,13 @@
         'TTSDK/VCloudPandora/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/VCloudPandora/**/*',
+        'TTSDK/VCloudPandora/**/*.h',
       ]
       subspec.vendored_libraries = [
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_Core_ios.a',
         'TTSDK/TTVideoSetting/**/*.a',
       ]
-      subspec.dependency 'RangersAppLog', '>= 3.2.5'
+      subspec.dependency 'RangersAppLog', '< 6.0.0'
       subspec.libraries = 'stdc++'
     end
 
@@ -103,6 +103,7 @@
     spec.subspec 'LivePush' do |subspec|
       subspec.public_header_files = [
         'TTSDK/LiveStreamFramework/prj/ios/LiveStreamFramework/**/*.h',
+        'TTSDK/LiveStreamFramework/prj/ios/LiveStreamAudioEffect/**/*.h',
       ]
       subspec.source_files = [
         'TTSDK/LiveStreamFramework/**/*',
@@ -118,6 +119,8 @@
         'CoreMedia',
         'AVFoundation',
         'SystemConfiguration',
+        'GLKit',
+        'imageIO'
       ]
       subspec.dependency 'TTSDK/Core'
       subspec.libraries = 'stdc++'
@@ -129,12 +132,15 @@
         'TTSDK/ABRInterface/**/*.h',
         'TTSDK/VCPreloadStrategy/**/*.h',
         'TTSDK/TTNetworkPredict/**/*.h',
+        'TTSDK/VCVodSettings/**/*.h',
+        'TTSDK/BDHTTPDNS/**/*.h',
       ]
       subspec.source_files = [
         'TTSDK/TTVideoEngine/**/*',
         'TTSDK/ABRInterface/**/*',
         'TTSDK/VCPreloadStrategy/**/*',
         'TTSDK/TTNetworkPredict/**/*',
+        'TTSDK/VCVodSettings/**/*'
       ]
       subspec.exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h',
@@ -148,6 +154,8 @@
         'TTSDK/TTNetworkPredict/**/*.a',
         'TTSDK/lib_h_dec/**/*.a',
         'TTSDK/ABRInterface/**/*.a',
+        'TTSDK/VCVodSettings/**/*.a',
+        'TTSDK/BDHTTPDNS/**/*.a',
       ]
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore'
@@ -168,13 +176,13 @@
     end
     spec.subspec 'Uploader' do |subspec|
       subspec.public_header_files = [
-        'TTSDK/TTUploader/TTUploader/**/*.h',
+        'TTSDK/TTFileUploadClientb/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/TTUploader/**/*',
+        'TTSDK/TTFileUploadClientb/**/*',
       ]
       subspec.vendored_libraries = [
-        'TTSDK/TTUploader/*.a'
+        'TTSDK/TTFileUploadClientb/**/*.a'
       ]
       subspec.dependency 'TTSDK/Core'
     end
