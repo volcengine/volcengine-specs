@@ -182,8 +182,13 @@
         'TTSDK/TTFileUploadClientb/**/*',
       ]
       subspec.vendored_libraries = [
-        'TTSDK/TTFileUploadClientb/**/*.a'
+        'TTSDK/TTFileUploadClientb/**/*.a',
+        'TTSDK/boringssl/**/*.a',
+        'TTSDK/lib_h_dec/**/*.a',
+        'TTSDK/VCNVCloudNetwork/**/*.a',
+        'TTSDK/TTNetworkManager/**/*.a'
       ]
+      subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
       subspec.dependency 'TTSDK/Core'
     end
 
