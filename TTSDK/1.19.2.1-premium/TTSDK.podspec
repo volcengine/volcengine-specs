@@ -189,11 +189,11 @@
         'TTSDK/TTFileUploadClientb/**/*',
       ]
       subspec.vendored_libraries = [
-        "TTSDK/{TTVideoSetting,TTFileUploadClientb}/**/*.a"
+        "TTSDK/{TTVideoSetting,TTFileUploadClientb,VCNVCloudNetwork,protobuf_lite}/**/*.a"
       ]
       subspec.dependency 'TTSDK/Core'
-      subspec.dependency 'TTSDK/Net'
       subspec.dependency 'TTSDK/Tools'
+      subspec.dependency 'AFNetworking'
     end
 
     # Lite Pod Spec , Use With Caution! If there is no symbol conflict, Should not intergrate subspecs below
