@@ -45,7 +45,8 @@
     spec.subspec 'Net' do |subspec| 
       subspec.vendored_libraries = [
         'TTSDK/VCNVCloudNetwork/**/*.a',
-        'TTSDK/TTNetworkManager/**/*.a'
+        'TTSDK/TTNetworkManager/**/*.a',
+        'TTSDK/protobuf_lite/**/*.a'
       ]
     end
 
@@ -166,7 +167,6 @@
       ]
       subspec.vendored_libraries = [
         'TTSDK/BDWebImageToB/**/*.a',
-        'TTSDK/protobuf_lite/**/*.a',
         'TTSDK/libttheif_ios/**/*.a'
       ]
       subspec.dependency 'TTSDK/Core'
