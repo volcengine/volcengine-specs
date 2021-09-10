@@ -81,7 +81,8 @@ Pod::Spec.new do |s|
     # Apple Search Ads
     s.subspec 'ASA' do |asa|
         asa.vendored_library = 'RangersAppLog/Classes/ASA/*.a'
-        asa.frameworks = 'AdServices', 'iAd'
+        asa.frameworks =  'iAd'
+        asa.weak_frameworks = 'AdServices'
         asa.dependency 'RangersAppLog/Core'
         asa.source_files = 'RangersAppLog/Classes/ASA/*.{h,m}'
         asa.public_header_files = 'RangersAppLog/Classes/ASA/*.h'
