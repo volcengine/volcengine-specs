@@ -1,0 +1,118 @@
+{
+    "prepare_command": "", 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "default_subspecs": [
+        "Core", 
+        "JSBridge", 
+        "WebView", 
+        "OneKit"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "source_files": [
+        "VEH5Kit-bitdummy.m"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VEH5Kit_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/VEH5Kit/1.0.18/VEH5Kit.framework.tar.xz"
+    }, 
+    "version": "1.0.18", 
+    "dependencies": {
+        "OneKit/StartUp": [], 
+        "mars_gecko_ios/Core": []
+    }, 
+    "authors": {
+        "lixiaopeng": "lixiaopeng.dev@bytedance.com"
+    }, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20318", 
+    "subspecs": [
+        {
+            "public_header_files": "VEH5Kit/Classes/Core/*.h", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "name": "Core", 
+            "source_files": [
+                "VEH5Kit/Classes/Core/**/*.{h,m}", 
+                "VEH5Kit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "VEH5Kit/Classes/WebView/*.h", 
+            "name": "WebView", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_WebView_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "BDWebKitToB/Offline": [
+                    ">=0.0.1"
+                ], 
+                "OneKit/StartUp": [], 
+                "OneKit/Service": [], 
+                "BDH5WebView/Core": []
+            }, 
+            "source_files": [
+                "VEH5Kit/Classes/WebView/**/*.{h,m}", 
+                "VEH5Kit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "VEH5Kit/Classes/JSBridge/*.h", 
+            "name": "JSBridge", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_JSBridge_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "BDXBridgeKitToB": []
+            }, 
+            "source_files": [
+                "VEH5Kit/Classes/JSBridge/**/*.{h,m}", 
+                "VEH5Kit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "VEH5Kit/Classes/OneKit/Tasks/*.h", 
+            "name": "OneKit", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OneKit_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/StartUp": []
+            }, 
+            "source_files": [
+                "VEH5Kit/Classes/OneKit/**/*.{h,m}", 
+                "VEH5Kit-bitdummy.m"
+            ]
+        }
+    ], 
+    "name": "VEH5Kit"
+}
