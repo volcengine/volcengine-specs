@@ -79,14 +79,15 @@ Pod::Spec.new do |s|
     end
 
     # Apple Search Ads
-    s.subspec 'ASA' do |asa|
-        asa.vendored_library = 'RangersAppLog/Classes/ASA/*.a'
-        asa.frameworks =  'iAd'
-        asa.weak_frameworks = 'AdServices'
-        asa.dependency 'RangersAppLog/Core'
-        asa.source_files = 'RangersAppLog/Classes/ASA/*.{h,m}'
-        asa.public_header_files = 'RangersAppLog/Classes/ASA/*.h'
-    end
+    # Please use v6.3.2+ for ASA
+    # s.subspec 'ASA' do |asa|
+    #     asa.vendored_library = 'RangersAppLog/Classes/ASA/*.a'
+    #     asa.frameworks =  'iAd'
+    #     asa.weak_frameworks = 'AdServices'
+    #     asa.dependency 'RangersAppLog/Core'
+    #     asa.source_files = 'RangersAppLog/Classes/ASA/*.{h,m}'
+    #     asa.public_header_files = 'RangersAppLog/Classes/ASA/*.h'
+    # end
     
     # disable or enable features
     s.subspec 'Flags' do |flags|
