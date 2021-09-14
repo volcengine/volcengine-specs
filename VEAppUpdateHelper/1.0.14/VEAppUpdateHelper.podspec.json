@@ -1,0 +1,90 @@
+{
+    "prepare_command": "", 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "default_subspecs": [
+        "VEUpdateHelper"
+    ], 
+    "name": "VEAppUpdateHelper", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "source_files": [
+        "VEAppUpdateHelper-bitdummy.m"
+    ], 
+    "ios": {
+        "frameworks": [
+            "Foundation", 
+            "UIKit", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VEAppUpdateHelper_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/VEAppUpdateHelper/1.0.14/VEAppUpdateHelper.framework.tar.xz"
+    }, 
+    "version": "1.0.14", 
+    "frameworks": "Foundation", 
+    "authors": {
+        "dengjinan": "dengjinan@bytedance.com"
+    }, 
+    "static_framework": true, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20540", 
+    "subspecs": [
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "dependencies": {
+                "OneKit/StartUp": [], 
+                "OneKit/ByteDanceKit": [], 
+                "JSONModel": [], 
+                "OneKit/MARS/Auth": [], 
+                "OneKit/Reachability": []
+            }, 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_VEUpdateHelper_*awesome_*.a"
+            }, 
+            "name": "VEUpdateHelper", 
+            "source_files": [
+                "VEAppUpdateHelper/Classes/TTUpdateHelper/*.{h,m}", 
+                "VEAppUpdateHelper-bitdummy.m"
+            ]
+        }, 
+        {
+            "name": "VEUpdateView", 
+            "resource_bundles": {
+                "TTUpdateView": [
+                    "VEAppUpdateHelper/Classes/TTUpdateView/Assets/*"
+                ]
+            }, 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_VEUpdateView_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/ByteDanceKit/UIKit": [], 
+                "SSZipArchive": [], 
+                "OneKit/ByteDanceKit/Foundation": [], 
+                "VEAppUpdateHelper/VEUpdateHelper": [], 
+                "lottie-ios": [
+                    "2.5.3"
+                ]
+            }, 
+            "source_files": [
+                "VEAppUpdateHelper/Classes/TTUpdateView/*.{h,m}", 
+                "VEAppUpdateHelper-bitdummy.m"
+            ]
+        }
+    ], 
+    "description": "framework_description"
+}
