@@ -23,9 +23,9 @@ Pod::Spec.new do |s|
   s.ios.dependency 'RangersAPM/Crash', '>= 2.0.5'
   s.ios.dependency 'RangersAPM/HMD', '>= 2.0.5'
   s.ios.dependency 'RangersAPM/EventMonitor', '>= 2.0.5'
-  s.ios.dependency 'RangersAppLog/Core', '~> 5.6'
-  s.ios.dependency 'RangersAppLog/Log', '~> 5.6'
-  s.ios.dependency 'RangersAppLog/Host/CN', '~> 5.6'
+  s.ios.dependency 'RangersAppLog/Core', '>= 5.6'
+  s.ios.dependency 'RangersAppLog/Log', '>= 5.6'
+  s.ios.dependency 'RangersAppLog/Host/CN', '>= 5.6'
 
   s.preserve_paths = 'PangrowthMedia-live/*.framework', 'PangrowthMedia-live/*.bundle', 'LICENSE'
   s.vendored_frameworks = 'PangrowthMedia-live/LCDSDK.framework'
