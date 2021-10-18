@@ -1,0 +1,173 @@
+{
+    "prepare_command": "", 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "default_subspecs": [
+        "Core", 
+        "URL"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "8.0"
+    }, 
+    "source_files": [
+        "BDTBInstall-bitdummy.m"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_BDTBInstall_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDTBInstall/0.0.1-alpha.1/BDTBInstall.framework.tar.xz"
+    }, 
+    "version": "0.0.1-alpha.1", 
+    "authors": {
+        "hongkaibin": "hongkaibin@bytedance.com"
+    }, 
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES"
+    }, 
+    "homepage": "https://github.com/bytedance/BDTBInstall", 
+    "repoId": "21927", 
+    "subspecs": [
+        {
+            "public_header_files": "BDTBInstall/Classes/Core/Public/*.h", 
+            "name": "Core", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "Security", 
+                "CoreTelephony"
+            ], 
+            "dependencies": {
+                "OneKit/StartUp": [], 
+                "OneKit/Reachability": [], 
+                "OneKit/BaseKit": [], 
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "BDTBInstall/Classes/Core/**/*.{h,m,c}", 
+                "BDTBInstall-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDTBInstall/Classes/IDFA/**/*.h", 
+            "name": "IDFA", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IDFA_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "AdSupport"
+            ], 
+            "dependencies": {
+                "BDTBInstall/Core": []
+            }, 
+            "source_files": [
+                "BDTBInstall/Classes/IDFA/**/*.{h,m,c}", 
+                "BDTBInstall-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDTBInstall/Classes/CAID/**/*.h", 
+            "name": "CAID", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_CAID_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "BDTBInstall/Core": []
+            }, 
+            "source_files": [
+                "BDTBInstall/Classes/CAID/**/*.{h,m,c}", 
+                "BDTBInstall-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDTBInstall/Classes/OneKit/**/*.h", 
+            "name": "OneKit", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OneKit_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "BDTBInstall/Core": []
+            }, 
+            "source_files": [
+                "BDTBInstall/Classes/OneKit/**/*.{h,m,c}", 
+                "BDTBInstall-bitdummy.m"
+            ]
+        }, 
+        {
+            "name": "URL", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_URL_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "BDTBInstall/Core": []
+            }, 
+            "source_files": [
+                "BDTBInstall-bitdummy.m"
+            ], 
+            "subspecs": [
+                {
+                    "public_header_files": "BDTBInstall/Classes/URL/CN/**/*.h", 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_CN_*awesome_*.a"
+                    }, 
+                    "name": "CN", 
+                    "source_files": [
+                        "BDTBInstall/Classes/URL/CN/**/*.{h,m,c}", 
+                        "BDTBInstall-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "public_header_files": "BDTBInstall/Classes/URL/SG/**/*.h", 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_SG_*awesome_*.a"
+                    }, 
+                    "name": "SG", 
+                    "source_files": [
+                        "BDTBInstall/Classes/URL/SG/**/*.{h,m,c}", 
+                        "BDTBInstall-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "public_header_files": "BDTBInstall/Domain/URL/VA/**/*.h", 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_VA_*awesome_*.a"
+                    }, 
+                    "name": "VA", 
+                    "source_files": [
+                        "BDTBInstall/Classes/URL/VA/**/*.{h,m,c}", 
+                        "BDTBInstall-bitdummy.m"
+                    ]
+                }
+            ]
+        }
+    ], 
+    "name": "BDTBInstall"
+}
