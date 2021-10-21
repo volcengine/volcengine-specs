@@ -1,0 +1,51 @@
+{
+    "prepare_command": "", 
+    "public_header_files": [
+        "GMPPopupKit/Classes/GMPPopupManager.h", 
+        "GMPPopupKit/Classes/GMPPopupKitConfig.h"
+    ], 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "resource_bundles": {
+        "GMPPopupKit": [
+            "GMPPopupKit/Assets/*.xcassets"
+        ]
+    }, 
+    "source_files": [
+        "GMPPopupKit/Classes/**/*", 
+        "GMPPopupKit-bitdummy.m"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_GMPPopupKit_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/GMPPopupKit/0.0.1-alpha.9/GMPPopupKit.framework.tar.xz"
+    }, 
+    "version": "0.0.1-alpha.9", 
+    "dependencies": {
+        "RangersAppLog": [], 
+        "SDWebImage": [], 
+        "SocketRocket": []
+    }, 
+    "authors": {
+        "liaozhangcheng": "liaozhangcheng@bytedance.com"
+    }, 
+    "homepage": "https://github.com/liaozhangcheng/GMPPopupKit", 
+    "repoId": "22127", 
+    "name": "GMPPopupKit"
+}
