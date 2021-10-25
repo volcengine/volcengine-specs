@@ -117,7 +117,8 @@
         'TTSDK/LiveCore/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/LiveCore/**/*'
+        'TTSDK/LiveCore/**/*',
+        'TTSDK/LiveStreamFramework/**/*'
       ]
       subspec.vendored_libraries = [
         'TTSDK/LiveCore/**/*.a',
