@@ -1,0 +1,47 @@
+{
+    "prepare_command": "", 
+    "public_header_files": [
+        "GMPBannerKit/Classes/GMPBannerKit.h", 
+        "GMPBannerKit/Classes/GMPBannerConfig.h", 
+        "GMPBannerKit/Classes/GMPBannerData.h", 
+        "GMPBannerKit/Classes/GMPBannerItem.h", 
+        "GMPBannerKit/Classes/GMPBannerTracker.h"
+    ], 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "source_files": [
+        "GMPBannerKit/Classes/**/*", 
+        "GMPBannerKit-bitdummy.m"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_GMPBannerKit_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/GMPBannerKit/1.0.1-alpha.0/GMPBannerKit.framework.tar.xz"
+    }, 
+    "version": "1.0.1-alpha.0", 
+    "dependencies": {
+        "RangersAppLog": []
+    }, 
+    "authors": {
+        "liaozhangcheng": "liaozhangcheng@bytedance.com"
+    }, 
+    "homepage": "https://github.com/liaozhangcheng/GMPBannerKit", 
+    "repoId": "22045", 
+    "name": "GMPBannerKit"
+}

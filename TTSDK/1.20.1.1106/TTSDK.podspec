@@ -1,7 +1,7 @@
   Pod::Spec.new do |spec|
 
     spec.name         = "TTSDK"
-    spec.version      = "1.21.1.3-standard"
+    spec.version      = "1.20.1.1106"
     spec.summary      = "A comprehensive multimedia SDK."
     spec.description  = <<-DESC
       A comprehensive multimedia SDK which provides live streaming, VOD and the other related abilities.
@@ -84,8 +84,8 @@
       ]
       subspec.vendored_libraries = [
         'TTSDK/TTPlayerSDK/**/*.a',
-        'TTSDK/videoprocessor/**/*.a',
         'TTSDK/lens/**/*.a',
+        'TTSDK/videoprocessor/**/*.a'
       ]
       subspec.resources = [
         'TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib',
@@ -117,8 +117,7 @@
         'TTSDK/LiveCore/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/LiveCore/**/*',
-        'TTSDK/LiveStreamFramework/**/*'
+        'TTSDK/LiveCore/**/*'
       ]
       subspec.vendored_libraries = [
         'TTSDK/LiveCore/**/*.a',
@@ -145,7 +144,7 @@
     end
 
     spec.subspec 'Player' do |subspec|
-      class_name = 'TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS'
+      class_name = 'TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS,lens,videoprocessor'
       subspec.public_header_files = [
         "TTSDK/{#{class_name}}/**/*.h"
       ]
@@ -213,8 +212,8 @@
       subspec.vendored_libraries = [
         'TTSDK/TTPlayerSDK/**/*.a',
         'TTSDK/lib_h_dec/**/*.a',
-        'TTSDK/videoprocessor/**/*.a',
         'TTSDK/lens/**/*.a',
+        'TTSDK/videoprocessor/**/*.a'
       ]
       subspec.resources = [
         'TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib',
@@ -306,8 +305,6 @@
       subspec.vendored_libraries = [
         'TTSDK/TTPlayerSDK/**/*.a',
         'TTSDK/audiosdk/**/*.a',
-        'TTSDK/videoprocessor/**/*.a',
-        'TTSDK/lens/**/*.a',
       ]
       subspec.resources = [
         'TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib',
