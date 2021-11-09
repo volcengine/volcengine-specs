@@ -31,7 +31,8 @@
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_Core_ios.a',
         'TTSDK/TTVideoSetting/**/*.a',
       ]
-      subspec.dependency 'RangersAppLog', '>= 3.2.5'
+      subspec.dependency 'RangersAppLog/Core', '>= 3.2.5'
+      subspec.dependency 'RangersAppLog/Host/CN', '>= 3.2.5'
       subspec.libraries = 'stdc++'
     end
 
