@@ -19,9 +19,9 @@ Pangrowth is an SDK that integrates novels, media, and live broadcasts.
 
   s.dependency 'RangersAppLog/Core', '5.6.6'
   s.dependency 'RangersAppLog/Host/CN', '5.6.6'
-  # s.dependency 'RangersAppLog/Log', '5.6.6'
-  # s.dependency 'RangersAppLog/Picker', '5.6.6'
-  # s.dependency 'RangersAppLog/UITracker', '5.6.6'
+  s.dependency 'RangersAppLog/Log', '5.6.6'
+  s.dependency 'RangersAppLog/Picker', '5.6.6'
+  s.dependency 'RangersAppLog/UITracker', '5.6.6'
 
   s.dependency 'RangersAPM/Core', '2.0.5'
   s.dependency 'RangersAPM/Crash', '2.0.5'
