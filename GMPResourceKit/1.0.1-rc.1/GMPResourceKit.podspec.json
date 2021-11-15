@@ -1,0 +1,47 @@
+{
+    "prepare_command": "", 
+    "public_header_files": [
+        "GMPResourceKit/GMPResourceKit/Classes/GMPResourceKit.h", 
+        "GMPResourceKit/GMPResourceKit/Classes/GMPResourceKitConfig.h", 
+        "GMPResourceKit/GMPResourceKit/Classes/Data/GMPResourceData.h", 
+        "GMPResourceKit/GMPResourceKit/Classes/Data/GMPResourceItem.h", 
+        "GMPResourceKit/GMPResourceKit/Classes/Track/GMPResourceTracker.h"
+    ], 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "source_files": [
+        "GMPResourceKit/GMPResourceKit/Classes/**/*", 
+        "GMPResourceKit-bitdummy.m"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_GMPResourceKit_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/GMPResourceKit/1.0.1-rc.1/GMPResourceKit.framework.tar.xz"
+    }, 
+    "version": "1.0.1-rc.1", 
+    "dependencies": {
+        "RangersAppLog": []
+    }, 
+    "authors": {
+        "liaozhangcheng": "liaozhangcheng@bytedance.com"
+    }, 
+    "homepage": "https://github.com/liaozhangcheng/GMPResourceKit", 
+    "repoId": "23153", 
+    "name": "GMPResourceKit"
+}
