@@ -30,7 +30,8 @@
       subspec.vendored_libraries = [
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_Core_ios.a',
       ]
-      subspec.dependency 'RangersAppLog', '< 6.0.0'
+      subspec.dependency 'RangersAppLog/Core', '< 6.0.0'
+      subspec.dependency 'RangersAppLog/Host', '< 6.0.0'
       subspec.libraries = 'stdc++'
     end
 
