@@ -1,0 +1,117 @@
+{
+    "prepare_command": "", 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "source_files": [
+        "GMPReachSDK-bitdummy.m"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_GMPReachSDK_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/GMPReachSDK/1.0.0-rc.0/GMPReachSDK.framework.tar.xz"
+    }, 
+    "version": "1.0.0-rc.0", 
+    "authors": {
+        "liaozhangcheng": "liaozhangcheng@bytedance.com"
+    }, 
+    "homepage": "https://github.com/liaozhangcheng/GMPReachSDK", 
+    "repoId": "23540", 
+    "subspecs": [
+        {
+            "public_header_files": "", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "name": "Core", 
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Core/**/*", 
+                "GMPReachSDK-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Resource/GMPResourceManager.h", 
+                "GMPReachSDK/GMPReachSDK/Classes/Resource/Data/GMPResourceData.h", 
+                "GMPReachSDK/GMPReachSDK/Classes/Resource/Data/GMPResourceItem.h", 
+                "GMPReachSDK/GMPReachSDK/Classes/Resource/Track/GMPResourceTracker.h"
+            ], 
+            "name": "Resource", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Resource_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "RangersAppLog": [], 
+                "GMPReachSDK/Core": []
+            }, 
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Resource/**/*", 
+                "GMPReachSDK-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "GMPReachSDK/GMPReachSDK/Classes/Popup/GMPPopupManager.h", 
+            "name": "Popup", 
+            "resource_bundles": {
+                "GMPReachSDK": [
+                    "GMPReachSDK/GMPReachSDK/Assets/Popup/*.xcassets"
+                ]
+            }, 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Popup_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "RangersAppLog": [], 
+                "GMPReachSDK/Core": [], 
+                "SDWebImage": [], 
+                "GMPReachSDK/WebSocket": []
+            }, 
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Popup/**/*", 
+                "GMPReachSDK-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "", 
+            "name": "WebSocket", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_WebSocket_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "SocketRocket": []
+            }, 
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/WebSocket/**/*", 
+                "GMPReachSDK-bitdummy.m"
+            ]
+        }
+    ], 
+    "name": "GMPReachSDK"
+}
