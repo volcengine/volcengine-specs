@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.author           = { 'yuxuri' => 'yuxuri@bytedance.com' }
 
   s.homepage         = 'https://www.csjplatform.com/'
-  s.source           = { :http => "https://sf3-fe-tos.pglstatp-toutiao.com/obj/pangle-empower/TTVideoEngine/dynamic/#{s.version.to_s}/PangrowthTTVideoEngine-#{s.version.to_s}.zip" }
+  s.source           = { :http => "https://sf3-fe-tos.pglstatp-toutiao.com/obj/pangle-empower/TTVideoEngine/dynamic/#{s.version.to_s}/PangrowthTTVideoEngine-dynamic-#{s.version.to_s}.zip" }
 
   s.vendored_frameworks = ['PangrowthTTVideoEngine-dynamic/TTVideoEngine.framework']
 end
