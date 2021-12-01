@@ -1,0 +1,62 @@
+{
+    "prepare_command": "", 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "default_subspecs": [
+        "JSBridge"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "source_files": [
+        "OKJSBridgeToB/Classes/JSBridge/**/*.{h,m}", 
+        "OKJSBridgeToB-bitdummy.m"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_OKJSBridgeToB_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/OKJSBridgeToB/1.0.16/OKJSBridgeToB.framework.tar.xz"
+    }, 
+    "version": "1.0.16", 
+    "authors": {
+        "lixiaopeng": "lixiaopeng.dev@bytedance.com"
+    }, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20316", 
+    "subspecs": [
+        {
+            "public_header_files": "OKJSBridgeToB/Classes/JSBridge/**/*.h", 
+            "name": "JSBridge", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_JSBridge_*awesome_*.a"
+            }, 
+            "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/BaseKit": [], 
+                "BDWebCoreToB": [], 
+                "OneKit/MARS/Auth": [], 
+                "TTNetworkManager": []
+            }, 
+            "source_files": [
+                "OKJSBridgeToB-bitdummy.m"
+            ]
+        }
+    ], 
+    "name": "OKJSBridgeToB"
+}
