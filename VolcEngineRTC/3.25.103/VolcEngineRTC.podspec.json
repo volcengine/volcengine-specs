@@ -1,0 +1,34 @@
+{
+    "default_subspecs": [
+        "Core"
+    ], 
+    "name": "VolcEngineRTC", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/VolcEngineRTC/3.25.103/VolcEngineRTC.zip"
+    }, 
+    "version": "3.25.103", 
+    "authors": {
+        "bytertc": "bytertc@bytedance.com"
+    }, 
+    "homepage": "https://github.com/volcengine/VolcEngineRTC", 
+    "repoId": "22965", 
+    "subspecs": [
+        {
+            "vendored_frameworks": "VolcEngineRTC.xcframework", 
+            "name": "Core"
+        }, 
+        {
+            "vendored_frameworks": "VolcEngineRTCScreenCapturer.xcframework", 
+            "name": "ScreenCapture"
+        }
+    ], 
+    "description": "framework_description"
+}
