@@ -1,0 +1,105 @@
+{
+    "prepare_command": "", 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "default_subspecs": [
+        "Core", 
+        "Image", 
+        "Video"
+    ], 
+    "name": "BDNativeWebComponentToB", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDNativeWebComponentToB/0.0.4/BDNativeWebComponentToB.framework.tar.xz"
+    }, 
+    "source_files": [
+        "BDNativeWebComponentToB-bitdummy.m"
+    ], 
+    "requires_arc": true, 
+    "ios": {
+        "frameworks": [
+            "WebKit", 
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_BDNativeWebComponentToB_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "platforms": {
+        "ios": "8.0"
+    }, 
+    "version": "0.0.4", 
+    "frameworks": "WebKit", 
+    "authors": {
+        "liuyunxuan": "liuyunxuan@bytedance.com"
+    }, 
+    "static_framework": true, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "23918", 
+    "subspecs": [
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "name": "Core", 
+            "source_files": [
+                "BDNativeWebComponentToB/Core/**.{h,m,mm}", 
+                "BDNativeWebComponentToB/Core/**/**.{h,m,mm}", 
+                "BDNativeWebComponentToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "name": "Image", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Image_*awesome_*.a"
+            }, 
+            "frameworks": "CoreServices", 
+            "dependencies": {
+                "BDNativeWebComponentToB/Core": [], 
+                "SDWebImage": []
+            }, 
+            "source_files": [
+                "BDNativeWebComponentToB/Image/**.{h,m,mm}", 
+                "BDNativeWebComponentToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "name": "Video", 
+            "resource_bundles": {
+                "BDNativeVideoResource": [
+                    "BDNativeWebComponentToB/Video/resource/**.*"
+                ]
+            }, 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Video_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "AVFoundation", 
+                "AVKit"
+            ], 
+            "dependencies": {
+                "BDNativeWebComponentToB/Core": [], 
+                "SDWebImage": []
+            }, 
+            "source_files": [
+                "BDNativeWebComponentToB/Video/**.{h,m,mm}", 
+                "BDNativeWebComponentToB-bitdummy.m"
+            ]
+        }
+    ], 
+    "description": "framework_description"
+}
