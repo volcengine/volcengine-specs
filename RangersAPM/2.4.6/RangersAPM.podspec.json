@@ -231,23 +231,6 @@
                 "RangersAPM/HMD": [],
                 "RangersAPM/Public": []
             }
-        },
-        {
-            "name": "APMLog",
-            "source_files": "RangersAPM/APMLog/**/*.{h,m}",
-            "vendored_libraries": "RangersAPM/APMLog/**/*.a",
-            "public_header_files": "RangersAPM/APMLog/**/*.h",
-            "dependencies": {
-                "RangersAPM/Core": [],
-                "RangersAPM/HMD": [],
-                "RangersAPM/Zip": [],
-                "RangersAPM/Public": []
-            },
-            "libraries": [
-                "c++",
-                "z",
-                "resolv"
-            ]
         }
     ],
     "source": {
