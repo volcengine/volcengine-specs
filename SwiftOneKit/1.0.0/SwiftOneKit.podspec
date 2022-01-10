@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   }
   s.author           = { 'duanwenbin' => 'bob170731@gmail.com' }
   s.source           = {
-    :git => 'git@github.com:volcengine/veMARS_SwiftOneKit.git',
+    :git => 'https://github.com/volcengine/veMARS_SwiftOneKit.git',
     :tag => s.version.to_s
   }
   s.ios.deployment_target = '9.0'
