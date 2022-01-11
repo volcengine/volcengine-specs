@@ -37,6 +37,7 @@
     "pod_target_xcconfig": {
         "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
     }, 
+    "static_framework": true, 
     "homepage": "https://github.com/volcengine/volcengine-specs", 
     "repoId": "20313", 
     "subspecs": [
