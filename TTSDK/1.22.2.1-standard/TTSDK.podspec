@@ -142,6 +142,7 @@
         'MetalPerformanceShaders'
       ]
       subspec.dependency 'TTSDK/Core'
+      subspec.dependency 'TTSDK/TTFFmpeg'
       subspec.libraries = 'stdc++'
     end
 
