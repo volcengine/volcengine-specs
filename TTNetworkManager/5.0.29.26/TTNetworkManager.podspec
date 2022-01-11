@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   s.user_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
-  
+  s.static_framework = true
   s.ios.frameworks = 'WebKit', 'JavaScriptCore'
   s.libraries = "c++"
   
