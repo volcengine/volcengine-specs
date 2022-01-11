@@ -263,6 +263,43 @@
       subspec.dependency 'TTSDK/PlayerCore-Lite'
     end
 
+    spec.subspec 'LivePush-Lite' do |subspec|
+      subspec.public_header_files = [
+        'TTSDK/LiveStreamFramework/prj/ios/LiveStreamFramework/**/*.h',
+        'TTSDK/LiveStreamFramework/prj/ios/LiveStreamAudioEffect/**/*.h',
+        'TTSDK/LiveCore/**/*.h',
+      ]
+      subspec.source_files = [
+        'TTSDK/LiveCore/**/*',
+        'TTSDK/LiveStreamFramework/**/*'
+      ]
+      subspec.vendored_libraries = [
+        'TTSDK/LiveCore/**/*.a',
+        "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_{base,glbase,session,webrtc,base_webrtc,ntp,audio-effect}_ios.a",
+        'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePush_ios.a',
+        'TTSDK/TTFFmpeg/**/*.a',
+        'TTSDK/libyuv-iOS/**/*.a'
+      ]
+      subspec.vendored_frameworks = [
+        'TTSDK/ByteAudio/*.framework',
+      ]
+      subspec.frameworks = [
+        'VideoToolBox',
+        'AudioToolBox',
+        'CoreMotion',
+        'CoreMedia',
+        'AVFoundation',
+        'SystemConfiguration',
+        'GLKit',
+        'imageIO',
+        'OpenAL',
+        'MetalKit',
+        'MetalPerformanceShaders'
+      ]
+      subspec.dependency 'TTSDK/Core'
+      subspec.libraries = 'stdc++'
+    end
+
     # MARK: - Stripped Pod Spec , Use With Caution! If there is no ssl symbol conflict, Should not intergrate subspecs below.
     
     spec.subspec 'Player-Strip' do |subspec|
@@ -328,36 +365,6 @@
       ]
       subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
       subspec.dependency 'TTSDK/TTFFmpeg-Strip'
-    end
-
-    spec.subspec 'LivePush-Strip' do |subspec|
-      subspec.public_header_files = [
-        'TTSDK/LiveStreamFramework/prj/ios/LiveStreamFramework/**/*.h',
-        'TTSDK/LiveStreamFramework/prj/ios/LiveStreamAudioEffect/**/*.h',
-        'TTSDK/LiveCore/**/*.h',
-      ]
-      subspec.source_files = [
-        'TTSDK/LiveCore/**/*',
-        'TTSDK/LiveStreamFramework/**/*'
-      ]
-      subspec.vendored_libraries = [
-        'TTSDK/LiveCore/**/*.a',
-        "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_{base,glbase,session,webrtc,base_webrtc,ntp,audio-effect}_ios.a",
-        'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePush_ios.a',
-        'TTSDK/libyuv-iOS/**/*.a'
-      ]
-      subspec.vendored_frameworks = [
-        'TTSDK/ByteAudio/*.framework',
-      ]
-      subspec.frameworks = [
-        'SystemConfiguration',
-        'GLKit',
-        'imageIO',
-        'MetalPerformanceShaders'
-      ]
-      subspec.dependency 'TTSDK/Core'
-      subspec.dependency 'TTSDK/TTFFmpeg-Strip'
-      subspec.libraries = 'stdc++'
     end
 
     spec.subspec 'TTFFmpeg-Strip' do |subspec|
