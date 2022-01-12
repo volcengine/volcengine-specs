@@ -1,0 +1,151 @@
+{
+    "prepare_command": "", 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "default_subspecs": [
+        "Core", 
+        "OneKit"
+    ], 
+    "name": "VERemoteConfig", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "source_files": [
+        "VERemoteConfig-bitdummy.m"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VERemoteConfig_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/VERemoteConfig/1.0.2/VERemoteConfig.framework.tar.xz"
+    }, 
+    "version": "1.0.2", 
+    "authors": {
+        "yanghao.ada": "yanghao.ada@bytedance.com"
+    }, 
+    "static_framework": true, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "22873", 
+    "subspecs": [
+        {
+            "public_header_files": "VERemoteConfig/Classes/Core/**/*.h", 
+            "name": "Core", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "VERemoteConfig/ConfigFetcher": [], 
+                "VERemoteConfig/ConfigCacher": []
+            }, 
+            "source_files": [
+                "VERemoteConfig/Classes/Core/**/*.{h,m}", 
+                "VERemoteConfig-bitdummy.m"
+            ]
+        }, 
+        {
+            "private_header_files": "VERemoteConfig/Classes/OneKit/**/*.h", 
+            "name": "OneKit", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OneKit_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/StartUp": [], 
+                "OneKit/Service": [], 
+                "OneKit/MARS": [], 
+                "VERemoteConfig/Core": []
+            }, 
+            "source_files": [
+                "VERemoteConfig/Classes/OneKit/**/*.{h,m}", 
+                "VERemoteConfig-bitdummy.m"
+            ]
+        }, 
+        {
+            "private_header_files": "VERemoteConfig/Classes/ConfigCacher/**/*.h", 
+            "name": "ConfigCacher", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_ConfigCacher_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "MMKV": []
+            }, 
+            "source_files": [
+                "VERemoteConfig/Classes/ConfigCacher/**/*.{h,m}", 
+                "VERemoteConfig-bitdummy.m"
+            ]
+        }, 
+        {
+            "private_header_files": "VERemoteConfig/Classes/ConfigFetcher/**/*.h", 
+            "name": "ConfigFetcher", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_ConfigFetcher_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "VERemoteConfig/BaseNetwork": []
+            }, 
+            "source_files": [
+                "VERemoteConfig/Classes/ConfigFetcher/**/*.{h,m}", 
+                "VERemoteConfig-bitdummy.m"
+            ]
+        }, 
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "private_header_files": "VERemoteConfig/Classes/BaseNetwork/**/*.h", 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_BaseNetwork_*awesome_*.a"
+            }, 
+            "name": "BaseNetwork", 
+            "source_files": [
+                "VERemoteConfig/Classes/BaseNetwork/**/*.{h,m}", 
+                "VERemoteConfig-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "VERemoteConfig/Classes/TestPage/**/TestPageViewController.h", 
+            "name": "TestPage", 
+            "resource_bundles": {
+                "TestPageResource": [
+                    "VERemoteConfig/Assets/*"
+                ]
+            }, 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_TestPage_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "VERemoteConfig/Core": []
+            }, 
+            "source_files": [
+                "VERemoteConfig/Classes/TestPage/**/*.{h,m}", 
+                "VERemoteConfig-bitdummy.m"
+            ]
+        }
+    ], 
+    "description": "framework_description"
+}
