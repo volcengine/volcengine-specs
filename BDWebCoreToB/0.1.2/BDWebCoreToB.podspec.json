@@ -1,0 +1,68 @@
+{
+    "prepare_command": "", 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "default_subspecs": [
+        "Core"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "8.0"
+    }, 
+    "source_files": [
+        "BDWebCoreToB-bitdummy.m"
+    ], 
+    "user_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "WebKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_BDWebCoreToB_*awesome_*.a"
+    }, 
+    "static_framework": true, 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDWebCoreToB/0.1.2/BDWebCoreToB.framework.tar.xz"
+    }, 
+    "version": "0.1.2", 
+    "frameworks": [
+        "UIKit", 
+        "WebKit"
+    ], 
+    "authors": {
+        "li keliang": "likeliang@bytedance.com"
+    }, 
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES", 
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "summary": "framework_summary", 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20313", 
+    "subspecs": [
+        {
+            "public_header_files": "BDWebCore/Core/*.h", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "name": "Core", 
+            "source_files": [
+                "BDWebCore/Core/*.{h,m}", 
+                "BDWebCoreToB-bitdummy.m"
+            ]
+        }
+    ], 
+    "name": "BDWebCoreToB"
+}
