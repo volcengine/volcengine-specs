@@ -1,0 +1,150 @@
+{
+    "public_header_files": "Pod/Classes/Core/**/*.h", 
+    "default_subspecs": [
+        "Core", 
+        "Offline"
+    ], 
+    "static_framework": true, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "user_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES", 
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDH5WebView/0.1.3/BDH5WebView.framework.tar.xz"
+    }, 
+    "version": "0.1.3", 
+    "source_files": [
+        "BDH5WebView-bitdummy.m"
+    ], 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20310", 
+    "subspecs": [
+        {
+            "public_header_files": [
+                "ByteWebView/Classes/Core/*.h", 
+                "ByteWebView/Classes/Core/extension/BDWebViewExtension.h", 
+                "ByteWebView/Classes/Core/util/*.h", 
+                "ByteWebView/Classes/Core/monitor/BDWebViewMonitorExtension.h", 
+                "ByteWebView/Classes/Core/network/BDWebView+BDServerTrust.h", 
+                "ByteWebView/Classes/Core/Private/*.h"
+            ], 
+            "name": "Core", 
+            "frameworks": [
+                "Foundation", 
+                "UIKit"
+            ], 
+            "resource_bundles": {
+                "ByteWebView": [
+                    "ByteWebView/Assets/*.xcassets", 
+                    "ByteWebView/Assets/wk_hookajax.js"
+                ]
+            }, 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "dependencies": {
+                "BDWebKitToB/Precreator": [
+                    ">=0.0.1"
+                ], 
+                "BDWebKitToB/TTNet": [
+                    ">=0.0.1"
+                ], 
+                "BDWebKitToB/BlankDetect": [
+                    ">=0.0.1"
+                ], 
+                "BDWebKitToB/Interceptor": [
+                    ">=0.0.1"
+                ], 
+                "BDWebKitToB/Core": [
+                    ">=0.0.1"
+                ], 
+                "OneKit/ByteDanceKit/Foundation": [], 
+                "BDWebKitToB/Cookie": [
+                    ">=0.0.1"
+                ], 
+                "BDWebKitToB/SSL": [
+                    ">=0.0.1"
+                ], 
+                "BDWebKitToB/CrashFix": [
+                    ">=0.0.1"
+                ], 
+                "BDWebCoreToB": [], 
+                "RSSwizzle": [], 
+                "TTNetworkManager": []
+            }, 
+            "source_files": [
+                "ByteWebView/Classes/Core/**/*.{h,m,mm}", 
+                "BDH5WebView-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "ByteWebView/Classes/Offline/*.h", 
+            "name": "Offline", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Offline_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "dependencies": {
+                "BDWebKitToB/Offline": [
+                    ">=0.0.1"
+                ], 
+                "BDH5WebView/Core": []
+            }, 
+            "source_files": [
+                "ByteWebView/Classes/Offline/**/*.{h,m,mm}", 
+                "BDH5WebView-bitdummy.m"
+            ]
+        }
+    ], 
+    "prepare_command": "", 
+    "description": "framework_description", 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_BDH5WebView_*awesome_*.a"
+    }, 
+    "testspecs": [
+        {
+            "test_type": "unit", 
+            "dependencies": {
+                "BDH5WebView/Native": [], 
+                "BDH5WebView/JSBridge": [], 
+                "BDALog": [], 
+                "CodeCoverageForXcode": [
+                    "~> 1.1.1"
+                ], 
+                "BDH5WebView/TemplateTestResources": []
+            }, 
+            "name": "Tests", 
+            "source_files": "ByteWebView/Classes/Tests/**/*.{h,m,mm}"
+        }
+    ], 
+    "authors": {
+        "linyong": "linyong.ly@bytedance.com"
+    }, 
+    "name": "BDH5WebView", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "summary": "framework_summary"
+}
