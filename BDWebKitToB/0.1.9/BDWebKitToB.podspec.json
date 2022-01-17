@@ -1,0 +1,329 @@
+{
+    "default_subspecs": [
+        "Core"
+    ], 
+    "static_framework": true, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "user_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES", 
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDWebKitToB/0.1.9/BDWebKitToB.framework.tar.xz"
+    }, 
+    "version": "0.1.9", 
+    "source_files": [
+        "BDWebKitToB-bitdummy.m"
+    ], 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20314", 
+    "subspecs": [
+        {
+            "public_header_files": "BDWebKit/Classes/Core/*.h", 
+            "name": "Core", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "dependencies": {
+                "OneKit/BaseKit": [], 
+                "OneKit/ByteDanceKit/Foundation": []
+            }, 
+            "source_files": [
+                "BDWebKit/Classes/Core/**/*.{h,m}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/Falcon/*.h", 
+            "name": "Falcon", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Falcon_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "mars_gecko_ios/Core": [], 
+                "BDWebKitToB/Core": [], 
+                "BDWebKitToB/Interceptor": []
+            }, 
+            "source_files": [
+                "BDWebKit/Classes/Falcon/**/*", 
+                "BDWebKitToB-bitdummy.m"
+            ], 
+            "subspecs": [
+                {
+                    "frameworks": "MobileCoreServices", 
+                    "dependencies": {
+                        "libwebp": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_WebP_*awesome_*.a"
+                    }, 
+                    "name": "WebP", 
+                    "source_files": [
+                        "BDWebKit/Classes/Falcon/WebP/**/*", 
+                        "BDWebKitToB-bitdummy.m"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/Offline/*.h", 
+            "name": "Offline", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Offline_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "dependencies": {
+                "BDWebKitToB/Falcon": [], 
+                "BDWebKitToB/Core": [], 
+                "BDPreloadSDKToB/WebView": [], 
+                "BDWebKitToB/Resource": []
+            }, 
+            "source_files": [
+                "BDWebKit/Classes/Offline/**/*.{h,m}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/Resource/*.h", 
+            "name": "Resource", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Resource_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "dependencies": {
+                "mars_gecko_ios/Core": []
+            }, 
+            "source_files": [
+                "BDWebKit/Classes/Resource/**/*.{h,m}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/Interceptor/*.h", 
+            "name": "Interceptor", 
+            "frameworks": [
+                "Foundation", 
+                "UIKit"
+            ], 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Interceptor_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "source_files": [
+                "BDWebKit/Classes/Interceptor/**/*.{h,m,mm}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/Precreator/*.h", 
+            "name": "Precreator", 
+            "frameworks": [
+                "Foundation", 
+                "UIKit"
+            ], 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Precreator_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "source_files": [
+                "BDWebKit/Classes/Precreator/**/*.{h,m,mm}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/Cookie/*.h", 
+            "name": "Cookie", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Cookie_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "BDWebKitToB/Core": []
+            }, 
+            "source_files": [
+                "BDWebKit/Classes/Cookie/*.{h,m}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/Keyboard/*.h", 
+            "name": "Keyboard", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Keyboard_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "Foundation", 
+                "UIKit"
+            ], 
+            "source_files": [
+                "BDWebKit/Classes/Keyboard/**/*.{h,m,mm}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/BlankDetect/*.h", 
+            "name": "BlankDetect", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_BlankDetect_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "dependencies": {
+                "BDWebKitToB/Core": []
+            }, 
+            "source_files": [
+                "BDWebKit/Classes/BlankDetect/**/*.{h,m}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/CrashFix/*.h", 
+            "name": "CrashFix", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_CrashFix_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "dependencies": {
+                "BDWebKitToB/Core": []
+            }, 
+            "source_files": [
+                "BDWebKit/Classes/CrashFix/**/*.{h,m}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/SSL/*.h", 
+            "name": "SSL", 
+            "frameworks": [
+                "Foundation", 
+                "UIKit"
+            ], 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_SSL_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "dependencies": {
+                "BDWebKitToB/CrashFix": [], 
+                "OneKit/ByteDanceKit/UIKit": [], 
+                "BDWebKitToB/Core": []
+            }, 
+            "source_files": [
+                "BDWebKit/Classes/SSL/**/*.{h,m,mm}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDWebKit/Classes/TTNet/*.h", 
+            "name": "TTNet", 
+            "frameworks": [
+                "Foundation", 
+                "UIKit"
+            ], 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_TTNet_*awesome_*.a"
+            }, 
+            "requires_arc": true, 
+            "dependencies": {
+                "BDWebKitToB/Precreator": [], 
+                "BDWebKitToB/Interceptor": [], 
+                "BDWebKitToB/Core": [], 
+                "BDWebKitToB/SSL": [], 
+                "TTNetworkManager": []
+            }, 
+            "source_files": [
+                "BDWebKit/Classes/TTNet/**/*.{h,m,mm}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "name": "Preload", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Preload_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "Foundation", 
+                "UIKit"
+            ], 
+            "dependencies": {
+                "BDWebKitToB/Precreator": [], 
+                "BDWebKitToB/Core": []
+            }, 
+            "source_files": [
+                "BDWebKit/Classes/Preload/**/*.{h,m,mm}", 
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }
+    ], 
+    "prepare_command": "", 
+    "description": "framework_description", 
+    "ios": {
+        "frameworks": [
+            "Foundation", 
+            "UIKit", 
+            "WebKit", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_BDWebKitToB_*awesome_*.a"
+    }, 
+    "dependencies": {
+        "BDWebCoreToB": []
+    }, 
+    "authors": "Bytedance, Inc.", 
+    "name": "BDWebKitToB", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "summary": "framework_summary", 
+    "frameworks": [
+        "Foundation", 
+        "UIKit", 
+        "WebKit"
+    ]
+}
