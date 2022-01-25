@@ -28,6 +28,7 @@ Pangrowth is an SDK that integrates novels, media, and live broadcasts.
   s.dependency 'RangersAPM/EventMonitor', '2.4.1'
   s.dependency 'RangersAPM/HMD', '2.4.1'
   s.dependency 'RangersAPM/Public', '2.4.1'
+  s.dependency 'RangersAPM/CN', '2.4.1'
   
   # 小说
   s.subspec 'novel' do |ss|
