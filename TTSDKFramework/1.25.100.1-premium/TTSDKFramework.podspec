@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.static_framework = false
   spec.vendored_frameworks = [
-    "TTSDKFramework-#{spec.version}-ta/TTSDKFramework.framework",
-    "TTSDKFramework-#{spec.version}-ta/byteaudio.framework"
+    "TTSDKFramework.framework",
+    "byteaudio.framework"
   ]
 end
