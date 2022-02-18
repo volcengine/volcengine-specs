@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.author       = { "shangjincheng-bd" => "shangjincheng@bytedance.com" }
   spec.platform     = :ios, "8.0"
 
-  spec.source       = { :http => "https://console.byteplus.com/vod/download\?tosKey\=ttsdk/iOS/TTSDKFramework-#{spec.version}-ta.zip" }
+  spec.source       = { :http => "https://console.byteplus.com/vod/download\?tosKey\=ttsdk/iOS/TTSDKFramework-#{spec.version}-ta.zip", :type => :zip }
 
   spec.static_framework = false
   spec.vendored_frameworks = [
