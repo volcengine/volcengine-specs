@@ -139,7 +139,7 @@
                 "vendored_libraries": "ios-arch-iphone/*_Database_*awesome_*.a"
             }, 
             "frameworks": "Foundation", 
-            "libraries": "sqlite3"
+            "libraries": "sqlite3",
             "dependencies": {
                 "OneKit/Service": []
             }, 
