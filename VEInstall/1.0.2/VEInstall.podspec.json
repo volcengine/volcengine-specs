@@ -1,0 +1,173 @@
+{
+    "prepare_command": "", 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "default_subspecs": [
+        "Core", 
+        "URL"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "8.0"
+    }, 
+    "source_files": [
+        "VEInstall-bitdummy.m"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VEInstall_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/VEInstall/1.0.2/VEInstall.framework.tar.xz"
+    }, 
+    "version": "1.0.2", 
+    "authors": {
+        "hongkaibin": "hongkaibin@bytedance.com"
+    }, 
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES"
+    }, 
+    "homepage": "https://github.com/bytedance/VEInstall", 
+    "repoId": "22249", 
+    "subspecs": [
+        {
+            "public_header_files": "VEInstall/Classes/Core/Public/*.h", 
+            "name": "Core", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "Security", 
+                "CoreTelephony"
+            ], 
+            "dependencies": {
+                "OneKit/StartUp": [], 
+                "OneKit/Reachability": [], 
+                "OneKit/BaseKit": [], 
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "VEInstall/Classes/Core/**/*.{h,m,c}", 
+                "VEInstall-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "VEInstall/Classes/IDFA/**/*.h", 
+            "name": "IDFA", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IDFA_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "AdSupport"
+            ], 
+            "dependencies": {
+                "VEInstall/Core": []
+            }, 
+            "source_files": [
+                "VEInstall/Classes/IDFA/**/*.{h,m,c}", 
+                "VEInstall-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "VEInstall/Classes/CAID/**/*.h", 
+            "name": "CAID", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_CAID_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "VEInstall/Core": []
+            }, 
+            "source_files": [
+                "VEInstall/Classes/CAID/**/*.{h,m,c}", 
+                "VEInstall-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "VEInstall/Classes/OneKit/**/*.h", 
+            "name": "OneKit", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OneKit_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "VEInstall/Core": []
+            }, 
+            "source_files": [
+                "VEInstall/Classes/OneKit/**/*.{h,m,c}", 
+                "VEInstall-bitdummy.m"
+            ]
+        }, 
+        {
+            "name": "URL", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_URL_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "VEInstall/Core": []
+            }, 
+            "source_files": [
+                "VEInstall-bitdummy.m"
+            ], 
+            "subspecs": [
+                {
+                    "public_header_files": "VEInstall/Classes/URL/CN/**/*.h", 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_CN_*awesome_*.a"
+                    }, 
+                    "name": "CN", 
+                    "source_files": [
+                        "VEInstall/Classes/URL/CN/**/*.{h,m,c}", 
+                        "VEInstall-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "public_header_files": "VEInstall/Classes/URL/SG/**/*.h", 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_SG_*awesome_*.a"
+                    }, 
+                    "name": "SG", 
+                    "source_files": [
+                        "VEInstall/Classes/URL/SG/**/*.{h,m,c}", 
+                        "VEInstall-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "public_header_files": "VEInstall/Classes/URL/VA/**/*.h", 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_VA_*awesome_*.a"
+                    }, 
+                    "name": "VA", 
+                    "source_files": [
+                        "VEInstall/Classes/URL/VA/**/*.{h,m,c}", 
+                        "VEInstall-bitdummy.m"
+                    ]
+                }
+            ]
+        }
+    ], 
+    "name": "VEInstall"
+}
