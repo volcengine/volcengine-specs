@@ -12,7 +12,7 @@
     "gejunchen": "gejunchen@bytedance.com"
   },
   "source": {
-    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/Timor/1.1.0/Timor.zip"
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/Timor/1.1.0/Timor_1_1_0.zip"
   },
   "default_subspecs": [
       "App/AppNative/PageWebView",
@@ -277,7 +277,7 @@
         ],
         "vendored_libraries": [
           "Timor/Core/**/*.o",
-          "libTimor-b7f1c5f.a"
+          "Timor/libTimor-b7f1c5f.a"
         ]
       },
       "vendored_libraries": [
@@ -318,7 +318,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Config/Chinese/**/*.o",
-              "libTimor-9336377.a"
+              "Timor/libTimor-9336377.a"
             ]
           }
         }
@@ -429,7 +429,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OneKit/LicenseCenter/**/*.o",
-              "libTimor-d9bd5d6.a"
+              "Timor/libTimor-d9bd5d6.a"
             ]
           }
         },
@@ -453,7 +453,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OneKit/StartUpTask/**/*.o",
-              "libTimor-117e173.a"
+              "Timor/libTimor-117e173.a"
             ]
           }
         }
@@ -522,7 +522,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/Containers/NativeApp/Common/**/*.o",
-                  "libTimor-7299c14.a"
+                  "Timor/libTimor-7299c14.a"
                 ]
               }
             },
@@ -551,7 +551,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/Containers/NativeApp/WebView/**/*.o",
-                  "libTimor-743414b.a"
+                  "Timor/libTimor-743414b.a"
                 ]
               }
             }
@@ -880,7 +880,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/App/Native/NativeAppCommon/Register/NoPrivacy/*.o",
-                      "libTimor-4adc1a9.a"
+                      "Timor/libTimor-4adc1a9.a"
                     ]
                   }
                 },
@@ -921,7 +921,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/App/Native/NativeAppCommon/Register/LocationPrivacy/*.o",
-                      "libTimor-fe990b9.a"
+                      "Timor/libTimor-fe990b9.a"
                     ]
                   }
                 },
@@ -950,7 +950,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/App/Native/NativeAppCommon/Register/MicrophonePrivacy/*.o",
-                      "libTimor-cb7c1cb.a"
+                      "Timor/libTimor-cb7c1cb.a"
                     ]
                   }
                 }
@@ -1056,7 +1056,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BDP-API/Register/NoPrivacy/**/*.o",
-              "libTimor-f40accd.a"
+              "Timor/libTimor-f40accd.a"
             ]
           }
         },
@@ -1082,7 +1082,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BDP-API/Register/LocationPrivacy/**/*.o",
-              "libTimor-4be29f0.a"
+              "Timor/libTimor-4be29f0.a"
             ]
           }
         }
@@ -1117,7 +1117,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/Base/**/*.o",
-              "libTimor-c3e8cb2.a"
+              "Timor/libTimor-c3e8cb2.a"
             ]
           }
         },
@@ -1147,7 +1147,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/RuntimeGlobalConfiguration/**/*.o",
-              "libTimor-1e7ed30.a"
+              "Timor/libTimor-1e7ed30.a"
             ]
           }
         },
@@ -1173,7 +1173,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/Anchor/**/*.o",
-              "libTimor-8936bfe.a"
+              "Timor/libTimor-8936bfe.a"
             ]
           }
         },
@@ -1183,7 +1183,7 @@
             "frameworks": "CoreLocation",
             "vendored_libraries": [
               "Timor/HostInterfaces/Location/**/*.o",
-              "libTimor-86e1bf5.a"
+              "Timor/libTimor-86e1bf5.a"
             ]
           },
           "source_files": [
@@ -1233,7 +1233,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/HostInterfaces/Component/ContentPlayer/VideoPlayer/**/*.o",
-                  "libTimor-e58333e.a"
+                  "Timor/libTimor-e58333e.a"
                 ]
               }
             },
@@ -1256,7 +1256,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/HostInterfaces/Component/ContentPlayer/LivePlayer/**/*.o",
-                  "libTimor-7d80d22.a"
+                  "Timor/libTimor-7d80d22.a"
                 ]
               }
             },
@@ -1274,7 +1274,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/HostInterfaces/Component/AudioPlayer/**/*.o",
-                  "libTimor-844e368.a"
+                  "Timor/libTimor-844e368.a"
                 ]
               }
             },
@@ -1292,7 +1292,7 @@
                 "frameworks": "CoreLocation",
                 "vendored_libraries": [
                   "Timor/HostInterfaces/Component/Map/**/*.o",
-                  "libTimor-994b4d5.a"
+                  "Timor/libTimor-994b4d5.a"
                 ]
               },
               "source_files": [
@@ -1322,7 +1322,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/HostInterfaces/Component/Picker/CustomPicker/**/*.o",
-                      "libTimor-273cf14.a"
+                      "Timor/libTimor-273cf14.a"
                     ]
                   }
                 },
@@ -1340,7 +1340,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/HostInterfaces/Component/Picker/DatePicker/**/*.o",
-                      "libTimor-559c748.a"
+                      "Timor/libTimor-559c748.a"
                     ]
                   }
                 },
@@ -1363,7 +1363,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/HostInterfaces/Component/Picker/RegionPicker/**/*.o",
-                      "libTimor-62f02f0.a"
+                      "Timor/libTimor-62f02f0.a"
                     ]
                   }
                 },
@@ -1381,7 +1381,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/HostInterfaces/Component/Picker/ImagePicker/**/*.o",
-                      "libTimor-68f2e7b.a"
+                      "Timor/libTimor-68f2e7b.a"
                     ]
                   }
                 },
@@ -1399,7 +1399,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/HostInterfaces/Component/Picker/VideoPicker/**/*.o",
-                      "libTimor-c3abd42.a"
+                      "Timor/libTimor-c3abd42.a"
                     ]
                   }
                 }
@@ -1439,7 +1439,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/Address/**/*.o",
-              "libTimor-298d7e8.a"
+              "Timor/libTimor-298d7e8.a"
             ]
           }
         },
@@ -1472,7 +1472,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/HostInterfaces/Follow/NormalFollow/**/*.o",
-                  "libTimor-43de275.a"
+                  "Timor/libTimor-43de275.a"
                 ]
               }
             }
@@ -1581,7 +1581,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/ScanCode/**/*.o",
-              "libTimor-c8b158b.a"
+              "Timor/libTimor-c8b158b.a"
             ]
           }
         },
@@ -1599,7 +1599,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/Share/**/*.o",
-              "libTimor-962fd67.a"
+              "Timor/libTimor-962fd67.a"
             ]
           }
         },
@@ -1617,7 +1617,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/Media/**/*.o",
-              "libTimor-cc705d2.a"
+              "Timor/libTimor-cc705d2.a"
             ]
           }
         },
@@ -1659,7 +1659,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/UIWidget/**/*.o",
-              "libTimor-eb082c8.a"
+              "Timor/libTimor-eb082c8.a"
             ]
           }
         },
@@ -1701,7 +1701,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/Log/**/*.o",
-              "libTimor-f6187a2.a"
+              "Timor/libTimor-f6187a2.a"
             ]
           }
         },
@@ -1731,7 +1731,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/HostChat/**/*.o",
-              "libTimor-cc91a97.a"
+              "Timor/libTimor-cc91a97.a"
             ]
           }
         },
@@ -1773,7 +1773,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/VideoPreload/**/*.o",
-              "libTimor-170a6e6.a"
+              "Timor/libTimor-170a6e6.a"
             ]
           }
         },
@@ -1803,7 +1803,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/OtherInterfaces/**/*.o",
-              "libTimor-17737d8.a"
+              "Timor/libTimor-17737d8.a"
             ]
           }
         },
@@ -1821,7 +1821,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/HostInterfaces/OAuthInterface/**/*.o",
-              "libTimor-3423d22.a"
+              "Timor/libTimor-3423d22.a"
             ]
           }
         },
@@ -1856,7 +1856,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/ErrorPage/**/*.o",
-              "libTimor-045e02d.a"
+              "Timor/libTimor-045e02d.a"
             ]
           }
         },
@@ -1877,7 +1877,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/ShareMenu/PageShareMenu/**/*.o",
-                  "libTimor-6f8f147.a"
+                  "Timor/libTimor-6f8f147.a"
                 ]
               }
             }
@@ -1897,7 +1897,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/ClipBoard/**/*.o",
-              "libTimor-3b8331f.a"
+              "Timor/libTimor-3b8331f.a"
             ]
           }
         },
@@ -1923,7 +1923,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Advertisement/App/**/*.o",
-                  "libTimor-35431cb.a"
+                  "Timor/libTimor-35431cb.a"
                 ]
               }
             }
@@ -1954,7 +1954,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Follow/Common/**/*.o",
-                  "libTimor-d26b8c3.a"
+                  "Timor/libTimor-d26b8c3.a"
                 ]
               }
             },
@@ -1977,7 +1977,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Follow/AppFollow/**/*.o",
-                  "libTimor-da68f1b.a"
+                  "Timor/libTimor-da68f1b.a"
                 ]
               }
             },
@@ -2006,7 +2006,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Follow/AwemeFollow/**/*.o",
-                  "libTimor-da9d785.a"
+                  "Timor/libTimor-da9d785.a"
                 ]
               }
             }
@@ -2052,7 +2052,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Component/VideoPlayer/**/*.o",
-                  "libTimor-84774b3.a"
+                  "Timor/libTimor-84774b3.a"
                 ]
               }
             },
@@ -2077,7 +2077,7 @@
                 ],
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Component/Camera/**/*.o",
-                  "libTimor-462f499.a"
+                  "Timor/libTimor-462f499.a"
                 ]
               },
               "source_files": [
@@ -2099,7 +2099,7 @@
                 ],
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Component/HeliumCamera/**/*.o",
-                  "libTimor-c4acd47.a"
+                  "Timor/libTimor-c4acd47.a"
                 ]
               },
               "dependencies": {
@@ -2174,7 +2174,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Component/Canvas/Common/**/*.o",
-                      "libTimor-9ad56fb.a"
+                      "Timor/libTimor-9ad56fb.a"
                     ]
                   }
                 },
@@ -2200,7 +2200,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Component/Canvas/WebView/**/*.o",
-                      "libTimor-5f8e2c2.a"
+                      "Timor/libTimor-5f8e2c2.a"
                     ]
                   }
                 }
@@ -2237,7 +2237,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Component/LivePlayer/**/*.o",
-                  "libTimor-1aab691.a"
+                  "Timor/libTimor-1aab691.a"
                 ]
               }
             },
@@ -2266,7 +2266,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Component/AudioPlayer/**/*.o",
-                  "libTimor-0c5d90f.a"
+                  "Timor/libTimor-0c5d90f.a"
                 ]
               }
             },
@@ -2276,7 +2276,7 @@
                 "frameworks": "MediaPlayer",
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Component/BackgroundAudioPlayer/**/*.o",
-                  "libTimor-a146a7d.a"
+                  "Timor/libTimor-a146a7d.a"
                 ]
               },
               "dependencies": {
@@ -2303,7 +2303,7 @@
                 "frameworks": "CoreLocation",
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Component/Map/**/*.o",
-                  "libTimor-3e1c494.a"
+                  "Timor/libTimor-3e1c494.a"
                 ]
               },
               "dependencies": {
@@ -2352,7 +2352,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Component/Picker/CustomPicker/**/*.o",
-                      "libTimor-685184c.a"
+                      "Timor/libTimor-685184c.a"
                     ]
                   }
                 },
@@ -2375,7 +2375,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Component/Picker/DatePicker/**/*.o",
-                      "libTimor-db13780.a"
+                      "Timor/libTimor-db13780.a"
                     ]
                   }
                 },
@@ -2398,7 +2398,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Component/Picker/RegionPicker/**/*.o",
-                      "libTimor-876c421.a"
+                      "Timor/libTimor-876c421.a"
                     ]
                   }
                 },
@@ -2427,7 +2427,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Component/Picker/ImagePicker/**/*.o",
-                      "libTimor-b8ba3f8.a"
+                      "Timor/libTimor-b8ba3f8.a"
                     ]
                   }
                 },
@@ -2456,7 +2456,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Component/Picker/VideoPicker/**/*.o",
-                      "libTimor-ae78c9e.a"
+                      "Timor/libTimor-ae78c9e.a"
                     ]
                   }
                 }
@@ -2476,7 +2476,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Component/InteractionView/**/*.o",
-                  "libTimor-0bfc7d3.a"
+                  "Timor/libTimor-0bfc7d3.a"
                 ]
               }
             },
@@ -2505,7 +2505,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Component/Input/AppInput/**/*.o",
-                      "libTimor-14b1cf2.a"
+                      "Timor/libTimor-14b1cf2.a"
                     ]
                   }
                 }
@@ -2551,7 +2551,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Component/WebView/WebViewComponent/**/*.o",
-                      "libTimor-e67dbbe.a"
+                      "Timor/libTimor-e67dbbe.a"
                     ]
                   }
                 },
@@ -2583,7 +2583,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Component/WebView/ModalWebViewComponent/**/*.o",
-                      "libTimor-704bbb4.a"
+                      "Timor/libTimor-704bbb4.a"
                     ]
                   }
                 }
@@ -2603,7 +2603,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Component/MaskView/**/*.o",
-                  "libTimor-e7b5c46.a"
+                  "Timor/libTimor-e7b5c46.a"
                 ]
               }
             }
@@ -2634,7 +2634,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/AdContainer/BusinessAdContainer/**/*.o",
-                  "libTimor-69b5868.a"
+                  "Timor/libTimor-69b5868.a"
                 ]
               }
             },
@@ -2652,7 +2652,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/AdContainer/PublicAdContainer/**/*.o",
-                  "libTimor-cc8d5f4.a"
+                  "Timor/libTimor-cc8d5f4.a"
                 ]
               }
             }
@@ -2677,7 +2677,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/Address/**/*.o",
-              "libTimor-f338ee7.a"
+              "Timor/libTimor-f338ee7.a"
             ]
           }
         },
@@ -2697,9 +2697,9 @@
               "Timor/OpenAPIs/Tracker/**/*.o",
               "Timor/OpenAPIs/Tracker/**/*.o",
               "Timor/OpenAPIs/Tracker/**/*.o",
-              "libTimor-7175f79.a",
-              "libTimor-39c79ce.a",
-              "libTimor-671a71b.a"
+              "Timor/libTimor-7175f79.a",
+              "Timor/libTimor-39c79ce.a",
+              "Timor/libTimor-671a71b.a"
             ]
           },
           "subspecs": [
@@ -2728,7 +2728,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Tracker/PluginTracker/PublicPluginTracker/**/*.o",
-                      "libTimor-39c79ce.a"
+                      "Timor/libTimor-39c79ce.a"
                     ]
                   }
                 },
@@ -2757,7 +2757,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Tracker/PluginTracker/BusinessPluginTracker/**/*.o",
-                      "libTimor-7175f79.a"
+                      "Timor/libTimor-7175f79.a"
                     ]
                   }
                 }
@@ -2777,7 +2777,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Tracker/Umeng/**/*.o",
-                  "libTimor-671a71b.a"
+                  "Timor/libTimor-671a71b.a"
                 ]
               }
             }
@@ -2795,7 +2795,7 @@
                 ],
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Wifi/PublicWifi/**/*.o",
-                  "libTimor-a7608d2.a"
+                  "Timor/libTimor-a7608d2.a"
                 ]
               },
               "dependencies": {
@@ -2827,7 +2827,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Wifi/BusinessWifi/**/*.o",
-                  "libTimor-23c73f8.a"
+                  "Timor/libTimor-23c73f8.a"
                 ]
               }
             }
@@ -2845,7 +2845,7 @@
                 ],
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Location/BusinessLocation/**/*.o",
-                  "libTimor-dd5297d.a"
+                  "Timor/libTimor-dd5297d.a"
                 ]
               },
               "dependencies": {
@@ -2900,7 +2900,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Location/PublicLocation/**/*.o",
-                  "libTimor-ed12313.a"
+                  "Timor/libTimor-ed12313.a"
                 ]
               }
             }
@@ -2912,7 +2912,7 @@
             "frameworks": "CoreLocation",
             "vendored_libraries": [
               "Timor/OpenAPIs/Compass/**/*.o",
-              "libTimor-3ab991d.a"
+              "Timor/libTimor-3ab991d.a"
             ]
           },
           "dependencies": {
@@ -2936,7 +2936,7 @@
             "frameworks": "CoreMotion",
             "vendored_libraries": [
               "Timor/OpenAPIs/Accelerometer/**/*.o",
-              "libTimor-408a0f4.a"
+              "Timor/libTimor-408a0f4.a"
             ]
           },
           "dependencies": {
@@ -2973,7 +2973,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/ScreenBrightness/**/*.o",
-              "libTimor-14fc5ab.a"
+              "Timor/libTimor-14fc5ab.a"
             ]
           }
         },
@@ -2991,7 +2991,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/ScreenVolume/**/*.o",
-              "libTimor-2bccfc1.a"
+              "Timor/libTimor-2bccfc1.a"
             ]
           }
         },
@@ -3014,7 +3014,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/VideoPreload/**/*.o",
-              "libTimor-93446b2.a"
+              "Timor/libTimor-93446b2.a"
             ]
           }
         },
@@ -3030,7 +3030,7 @@
                 ],
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Recorder/VoiceRecorder/**/*.o",
-                  "libTimor-1018bbf.a"
+                  "Timor/libTimor-1018bbf.a"
                 ]
               },
               "dependencies": {
@@ -3090,7 +3090,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/Favorite/**/*.o",
-              "libTimor-5762c48.a"
+              "Timor/libTimor-5762c48.a"
             ]
           }
         },
@@ -3122,7 +3122,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/UIWidget/PublicUIWidget/**/*.o",
-                  "libTimor-ce6564d.a"
+                  "Timor/libTimor-ce6564d.a"
                 ]
               }
             },
@@ -3151,7 +3151,7 @@
                       "ios": {
                         "vendored_libraries": [
                           "Timor/OpenAPIs/UIWidget/BusinessUIWidget/SwipeBack/AppSwipeBack/**/*.o",
-                          "libTimor-42d8286.a"
+                          "Timor/libTimor-42d8286.a"
                         ]
                       }
                     },
@@ -3182,7 +3182,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/UIWidget/BusinessUIWidget/TabBar/**/*.o",
-                      "libTimor-dcca1c2.a"
+                      "Timor/libTimor-dcca1c2.a"
                     ]
                   }
                 },
@@ -3200,7 +3200,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/UIWidget/BusinessUIWidget/NavigationBar/**/*.o",
-                      "libTimor-8a54179.a"
+                      "Timor/libTimor-8a54179.a"
                     ]
                   }
                 },
@@ -3218,7 +3218,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/UIWidget/BusinessUIWidget/ToolBar/**/*.o",
-                      "libTimor-7ba261a.a"
+                      "Timor/libTimor-7ba261a.a"
                     ]
                   }
                 },
@@ -3236,7 +3236,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/UIWidget/BusinessUIWidget/Text/**/*.o",
-                      "libTimor-822e7f4.a"
+                      "Timor/libTimor-822e7f4.a"
                     ]
                   }
                 }
@@ -3266,7 +3266,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/CustomerService/**/*.o",
-              "libTimor-5f67736.a"
+              "Timor/libTimor-5f67736.a"
             ]
           }
         },
@@ -3292,7 +3292,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/FacialRecognition/**/*.o",
-              "libTimor-0ba1bfc.a"
+              "Timor/libTimor-0ba1bfc.a"
             ]
           }
         },
@@ -3326,7 +3326,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Router/BusinessRouter/**/*.o",
-                  "libTimor-09d621b.a"
+                  "Timor/libTimor-09d621b.a"
                 ]
               }
             },
@@ -3349,7 +3349,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Router/PublicRouter/**/*.o",
-                  "libTimor-3b363ae.a"
+                  "Timor/libTimor-3b363ae.a"
                 ]
               }
             }
@@ -3380,7 +3380,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/Payment/**/*.o",
-              "libTimor-fdb1fd7.a"
+              "Timor/libTimor-fdb1fd7.a"
             ]
           }
         },
@@ -3409,7 +3409,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/FileSystem/**/*.o",
-              "libTimor-be0087c.a"
+              "Timor/libTimor-be0087c.a"
             ]
           }
         },
@@ -3443,7 +3443,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Pigeon/BusinessPigeon/**/*.o",
-                  "libTimor-9571541.a"
+                  "Timor/libTimor-9571541.a"
                 ]
               }
             },
@@ -3466,7 +3466,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Pigeon/PublicPigeon/**/*.o",
-                  "libTimor-3b565fb.a"
+                  "Timor/libTimor-3b565fb.a"
                 ]
               }
             }
@@ -3494,7 +3494,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/ScanCode/BusinessScanCode/**/*.o",
-                  "libTimor-75b6bb3.a"
+                  "Timor/libTimor-75b6bb3.a"
                 ]
               }
             },
@@ -3512,7 +3512,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/ScanCode/PublicScanCode/**/*.o",
-                  "libTimor-1ef416f.a"
+                  "Timor/libTimor-1ef416f.a"
                 ]
               }
             }
@@ -3540,7 +3540,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Share/ShareCommonPlugin/**/*.o",
-                  "libTimor-b96bbca.a"
+                  "Timor/libTimor-b96bbca.a"
                 ]
               }
             },
@@ -3566,7 +3566,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Share/AppShare/**/*.o",
-                  "libTimor-779db48.a"
+                  "Timor/libTimor-779db48.a"
                 ]
               }
             }
@@ -3609,7 +3609,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/Authorization/**/*.o",
-              "libTimor-1b2544b.a"
+              "Timor/libTimor-1b2544b.a"
             ]
           }
         },
@@ -3635,7 +3635,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Storage/BusinessStorage/**/*.o",
-                  "libTimor-b2e39f4.a"
+                  "Timor/libTimor-b2e39f4.a"
                 ]
               }
             },
@@ -3658,7 +3658,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Storage/PublicStorage/**/*.o",
-                  "libTimor-52d75fc.a"
+                  "Timor/libTimor-52d75fc.a"
                 ]
               }
             }
@@ -3700,7 +3700,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/User/UserInfo/BusinessUserInfo/**/*.o",
-                      "libTimor-22c719f.a"
+                      "Timor/libTimor-22c719f.a"
                     ]
                   }
                 },
@@ -3718,7 +3718,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/User/UserInfo/PublicUserInfo/**/*.o",
-                      "libTimor-f48d7b2.a"
+                      "Timor/libTimor-f48d7b2.a"
                     ]
                   }
                 }
@@ -3746,7 +3746,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/User/PhoneNumber/PublicPhoneNumber/**/*.o",
-                      "libTimor-9ae5c32.a"
+                      "Timor/libTimor-9ae5c32.a"
                     ]
                   }
                 },
@@ -3764,7 +3764,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/User/PhoneNumber/BusinessPhoneNumber/**/*.o",
-                      "libTimor-6c7b197.a"
+                      "Timor/libTimor-6c7b197.a"
                     ]
                   }
                 }
@@ -3798,7 +3798,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/User/Subscribe/**/*.o",
-                  "libTimor-f054fcf.a"
+                  "Timor/libTimor-f054fcf.a"
                 ]
               }
             },
@@ -3821,7 +3821,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/User/RecentTask/**/*.o",
-                  "libTimor-d4d2481.a"
+                  "Timor/libTimor-d4d2481.a"
                 ]
               }
             }
@@ -3867,7 +3867,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Network/Request/**/*.o",
-                  "libTimor-401ebb3.a"
+                  "Timor/libTimor-401ebb3.a"
                 ]
               }
             },
@@ -3898,7 +3898,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Network/Socket/BusinessSocket/**/*.o",
-                      "libTimor-27eec79.a"
+                      "Timor/libTimor-27eec79.a"
                     ]
                   }
                 },
@@ -3921,7 +3921,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/OpenAPIs/Network/Socket/PublicSocket/**/*.o",
-                      "libTimor-ef01d07.a"
+                      "Timor/libTimor-ef01d07.a"
                     ]
                   }
                 }
@@ -3953,7 +3953,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Device/PublicDevice/**/*.o",
-                  "libTimor-c29fb64.a"
+                  "Timor/libTimor-c29fb64.a"
                 ]
               }
             },
@@ -3982,7 +3982,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Device/BusinessDevice/**/*.o",
-                  "libTimor-ffe94b8.a"
+                  "Timor/libTimor-ffe94b8.a"
                 ]
               }
             }
@@ -4007,7 +4007,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/Media/**/*.o",
-              "libTimor-be52345.a"
+              "Timor/libTimor-be52345.a"
             ]
           }
         },
@@ -4053,7 +4053,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Application/BusinessApplication/**/*.o",
-                  "libTimor-9a03e99.a"
+                  "Timor/libTimor-9a03e99.a"
                 ]
               }
             },
@@ -4076,7 +4076,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/OpenAPIs/Application/PublicApplication/**/*.o",
-                  "libTimor-9341ff1.a"
+                  "Timor/libTimor-9341ff1.a"
                 ]
               }
             }
@@ -4101,7 +4101,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/HostChat/**/*.o",
-              "libTimor-853965e.a"
+              "Timor/libTimor-853965e.a"
             ]
           }
         },
@@ -4127,7 +4127,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/OpenDocument/**/*.o",
-              "libTimor-90957d7.a"
+              "Timor/libTimor-90957d7.a"
             ]
           }
         },
@@ -4150,7 +4150,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/RemoteDebug/**/*.o",
-              "libTimor-4c89134.a"
+              "Timor/libTimor-4c89134.a"
             ]
           }
         },
@@ -4168,7 +4168,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/POI/**/*.o",
-              "libTimor-f7f2561.a"
+              "Timor/libTimor-f7f2561.a"
             ]
           }
         },
@@ -4186,7 +4186,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/OpenAPIs/Order/**/*.o",
-              "libTimor-f4a8335.a"
+              "Timor/libTimor-f4a8335.a"
             ]
           }
         }
@@ -4234,7 +4234,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessLocalFile/**/*.o",
-              "libTimor-b39ae7a.a"
+              "Timor/libTimor-b39ae7a.a"
             ]
           }
         },
@@ -4244,7 +4244,7 @@
             "libraries": "compression",
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessCompression/**/*.o",
-              "libTimor-c1351ce.a"
+              "Timor/libTimor-c1351ce.a"
             ]
           },
           "dependencies": {
@@ -4311,7 +4311,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessOffline/**/*.o",
-              "libTimor-9dc602e.a"
+              "Timor/libTimor-9dc602e.a"
             ]
           }
         },
@@ -4343,7 +4343,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/BusinessUtils/BusinessController/XScreen/**/*.o",
-                  "libTimor-a896a48.a"
+                  "Timor/libTimor-a896a48.a"
                 ]
               }
             }
@@ -4368,7 +4368,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessDevice/**/*.o",
-              "libTimor-2990df3.a"
+              "Timor/libTimor-2990df3.a"
             ]
           }
         },
@@ -4469,7 +4469,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/BusinessUtils/BusinessContainerBase/NavigationContainer/**/*.o",
-                  "libTimor-ca92510.a"
+                  "Timor/libTimor-ca92510.a"
                 ]
               }
             },
@@ -4561,7 +4561,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/BusinessUtils/BusinessContainerBase/Load/**/*.o",
-                  "libTimor-b67f76d.a"
+                  "Timor/libTimor-b67f76d.a"
                 ]
               }
             }
@@ -4613,7 +4613,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessSchema/**/*.o",
-              "libTimor-c7820cb.a"
+              "Timor/libTimor-c7820cb.a"
             ]
           }
         },
@@ -4642,7 +4642,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/ApplicationExit/**/*.o",
-              "libTimor-a947ea3.a"
+              "Timor/libTimor-a947ea3.a"
             ]
           }
         },
@@ -4671,7 +4671,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/HostEventListeners/**/*.o",
-              "libTimor-9091015.a"
+              "Timor/libTimor-9091015.a"
             ]
           }
         },
@@ -4727,7 +4727,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessAppList/**/*.o",
-              "libTimor-e1b64c4.a"
+              "Timor/libTimor-e1b64c4.a"
             ]
           }
         },
@@ -4756,7 +4756,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/PerformancePanel/**/*.o",
-              "libTimor-aa632a6.a"
+              "Timor/libTimor-aa632a6.a"
             ]
           }
         },
@@ -4827,7 +4827,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/FeedBack/**/*.o",
-              "libTimor-72e33af.a"
+              "Timor/libTimor-72e33af.a"
             ]
           }
         },
@@ -4853,7 +4853,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/DynamicPlugin/**/*.o",
-              "libTimor-13c4bd0.a"
+              "Timor/libTimor-13c4bd0.a"
             ]
           }
         },
@@ -4891,7 +4891,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/BusinessUtils/BusinessUIUtils/BubbleTip/**/*.o",
-                  "libTimor-a07f9c2.a"
+                  "Timor/libTimor-a07f9c2.a"
                 ]
               }
             }
@@ -4928,7 +4928,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessStorage/**/*.o",
-              "libTimor-f553f16.a"
+              "Timor/libTimor-f553f16.a"
             ]
           }
         },
@@ -4954,7 +4954,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/VConsole/**/*.o",
-              "libTimor-ad9a37b.a"
+              "Timor/libTimor-ad9a37b.a"
             ]
           }
         },
@@ -4992,7 +4992,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessAPIUtil/**/*.o",
-              "libTimor-98d9baa.a"
+              "Timor/libTimor-98d9baa.a"
             ]
           }
         },
@@ -5030,7 +5030,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessEventUtil/**/*.o",
-              "libTimor-351553d.a"
+              "Timor/libTimor-351553d.a"
             ]
           }
         },
@@ -5056,7 +5056,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/Session/**/*.o",
-              "libTimor-282c22a.a"
+              "Timor/libTimor-282c22a.a"
             ]
           }
         },
@@ -5088,7 +5088,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/Share/**/*.o",
-              "libTimor-daf0cc0.a"
+              "Timor/libTimor-daf0cc0.a"
             ]
           }
         },
@@ -5111,7 +5111,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessBridge/**/*.o",
-              "libTimor-e93562b.a"
+              "Timor/libTimor-e93562b.a"
             ]
           }
         },
@@ -5134,7 +5134,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessServiceCenter/**/*.o",
-              "libTimor-de45778.a"
+              "Timor/libTimor-de45778.a"
             ]
           }
         },
@@ -5172,7 +5172,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/Anchor/**/*.o",
-              "libTimor-a3b51fe.a"
+              "Timor/libTimor-a3b51fe.a"
             ]
           }
         },
@@ -5204,7 +5204,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/AppFullscreen/**/*.o",
-              "libTimor-27be6f8.a"
+              "Timor/libTimor-27be6f8.a"
             ]
           }
         },
@@ -5242,7 +5242,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/APIInterruption/**/*.o",
-              "libTimor-1246192.a"
+              "Timor/libTimor-1246192.a"
             ]
           }
         },
@@ -5271,7 +5271,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/ApplicationInterruption/**/*.o",
-              "libTimor-27af6d0.a"
+              "Timor/libTimor-27af6d0.a"
             ]
           }
         },
@@ -5303,7 +5303,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/AudioControl/**/*.o",
-              "libTimor-c71d1e8.a"
+              "Timor/libTimor-c71d1e8.a"
             ]
           }
         },
@@ -5321,7 +5321,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/OneCard/**/*.o",
-              "libTimor-e8f847c.a"
+              "Timor/libTimor-e8f847c.a"
             ]
           }
         },
@@ -5361,7 +5361,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/BusinessUtils/Monitor/Base/**/*.o",
-                  "libTimor-b505555.a"
+                  "Timor/libTimor-b505555.a"
                 ]
               }
             },
@@ -5379,7 +5379,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/BusinessUtils/Monitor/Timeline/**/*.o",
-                  "libTimor-39615f0.a"
+                  "Timor/libTimor-39615f0.a"
                 ]
               }
             }
@@ -5413,7 +5413,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/BusinessUtils/Permission/Authorizer/**/*.o",
-                  "libTimor-d4975b4.a"
+                  "Timor/libTimor-d4975b4.a"
                 ]
               }
             },
@@ -5434,7 +5434,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionCenter/PermissionScopeRegister/**/*.o",
-                      "libTimor-6769cc2.a"
+                      "Timor/libTimor-6769cc2.a"
                     ]
                   }
                 },
@@ -5472,7 +5472,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionCenter/PermissionScopeOperator/**/*.o",
-                      "libTimor-a5ed82d.a"
+                      "Timor/libTimor-a5ed82d.a"
                     ]
                   }
                 }
@@ -5500,7 +5500,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionScopes/Microphone/**/*.o",
-                      "libTimor-3786d4f.a"
+                      "Timor/libTimor-3786d4f.a"
                     ]
                   }
                 },
@@ -5518,7 +5518,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionScopes/Camera/**/*.o",
-                      "libTimor-396146e.a"
+                      "Timor/libTimor-396146e.a"
                     ]
                   }
                 },
@@ -5536,7 +5536,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionScopes/Location/**/*.o",
-                      "libTimor-eae64ed.a"
+                      "Timor/libTimor-eae64ed.a"
                     ]
                   }
                 },
@@ -5554,7 +5554,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionScopes/Address/**/*.o",
-                      "libTimor-a5fb04e.a"
+                      "Timor/libTimor-a5fb04e.a"
                     ]
                   }
                 },
@@ -5580,7 +5580,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionScopes/UserInfo/**/*.o",
-                      "libTimor-f7dc403.a"
+                      "Timor/libTimor-f7dc403.a"
                     ]
                   }
                 },
@@ -5598,7 +5598,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionScopes/Album/**/*.o",
-                      "libTimor-567c9c0.a"
+                      "Timor/libTimor-567c9c0.a"
                     ]
                   }
                 },
@@ -5616,7 +5616,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionScopes/Clipboard/**/*.o",
-                      "libTimor-e11bef4.a"
+                      "Timor/libTimor-e11bef4.a"
                     ]
                   }
                 },
@@ -5634,7 +5634,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionScopes/PictureInPicture/**/*.o",
-                      "libTimor-10c806a.a"
+                      "Timor/libTimor-10c806a.a"
                     ]
                   }
                 },
@@ -5652,7 +5652,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionScopes/GeneralInfo/**/*.o",
-                      "libTimor-b18ec82.a"
+                      "Timor/libTimor-b18ec82.a"
                     ]
                   }
                 },
@@ -5670,7 +5670,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PermissionScopes/UserProfile/**/*.o",
-                      "libTimor-a2321ad.a"
+                      "Timor/libTimor-a2321ad.a"
                     ]
                   }
                 }
@@ -5690,7 +5690,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/BusinessUtils/Permission/PrivacyAccessCenter/**/*.o",
-                  "libTimor-e1f3414.a"
+                  "Timor/libTimor-e1f3414.a"
                 ]
               }
             },
@@ -5721,7 +5721,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PrivacyAccessScopes/Location/**/*.o",
-                      "libTimor-1cd4c18.a"
+                      "Timor/libTimor-1cd4c18.a"
                     ]
                   }
                 },
@@ -5739,7 +5739,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/Permission/PrivacyAccessScopes/Microphone/**/*.o",
-                      "libTimor-07af338.a"
+                      "Timor/libTimor-07af338.a"
                     ]
                   }
                 }
@@ -5775,7 +5775,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/BusinessUtils/MorePanel/MorePanelCenter/**/*.o",
-                  "libTimor-723476e.a"
+                  "Timor/libTimor-723476e.a"
                 ]
               }
             },
@@ -5818,7 +5818,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/MorePanel/MorePanelItems/AboutProvider/**/*.o",
-                      "libTimor-fd15ff3.a"
+                      "Timor/libTimor-fd15ff3.a"
                     ]
                   }
                 },
@@ -5844,7 +5844,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/MorePanel/MorePanelItems/DebugProvider/**/*.o",
-                      "libTimor-4a29413.a"
+                      "Timor/libTimor-4a29413.a"
                     ]
                   }
                 },
@@ -5873,7 +5873,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/MorePanel/MorePanelItems/FeedbackProvider/**/*.o",
-                      "libTimor-c687f5e.a"
+                      "Timor/libTimor-c687f5e.a"
                     ]
                   }
                 },
@@ -5896,7 +5896,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/MorePanel/MorePanelItems/PerformanceProvider/**/*.o",
-                      "libTimor-69cfbe7.a"
+                      "Timor/libTimor-69cfbe7.a"
                     ]
                   }
                 },
@@ -5919,7 +5919,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/MorePanel/MorePanelItems/RebootProvider/**/*.o",
-                      "libTimor-ed00185.a"
+                      "Timor/libTimor-ed00185.a"
                     ]
                   }
                 },
@@ -5942,7 +5942,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/MorePanel/MorePanelItems/SettingsProvider/**/*.o",
-                      "libTimor-ca1cbf9.a"
+                      "Timor/libTimor-ca1cbf9.a"
                     ]
                   }
                 },
@@ -5965,7 +5965,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/MorePanel/MorePanelItems/TimelineProvider/**/*.o",
-                      "libTimor-aef343e.a"
+                      "Timor/libTimor-aef343e.a"
                     ]
                   }
                 }
@@ -5992,7 +5992,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessLocation/**/*.o",
-              "libTimor-8c6a64b.a"
+              "Timor/libTimor-8c6a64b.a"
             ]
           }
         },
@@ -6015,7 +6015,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessNetwork/**/*.o",
-              "libTimor-b5ba8ca.a"
+              "Timor/libTimor-b5ba8ca.a"
             ]
           }
         },
@@ -6044,7 +6044,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BridgeWebView/**/*.o",
-              "libTimor-c8e171f.a"
+              "Timor/libTimor-c8e171f.a"
             ]
           }
         },
@@ -6070,7 +6070,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/VersionManager/**/*.o",
-              "libTimor-483357a.a"
+              "Timor/libTimor-483357a.a"
             ]
           }
         },
@@ -6156,7 +6156,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessFrontendSDK/**/*.o",
-              "libTimor-b533ebe.a"
+              "Timor/libTimor-b533ebe.a"
             ]
           }
         },
@@ -6182,7 +6182,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/UniqueID/**/*.o",
-              "libTimor-fcce7c1.a"
+              "Timor/libTimor-fcce7c1.a"
             ]
           }
         },
@@ -6270,7 +6270,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/BusinessUtils/BusinessEngine/WebApp/**/*.o",
-                  "libTimor-9be92ee.a"
+                  "Timor/libTimor-9be92ee.a"
                 ]
               }
             },
@@ -6308,7 +6308,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/BusinessEngine/NativeEngine/Common/**/*.o",
-                      "libTimor-201266c.a"
+                      "Timor/libTimor-201266c.a"
                     ]
                   }
                 },
@@ -6349,7 +6349,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/BusinessUtils/BusinessEngine/NativeEngine/NativeApp/**/*.o",
-                      "libTimor-24ecb06.a"
+                      "Timor/libTimor-24ecb06.a"
                     ]
                   }
                 }
@@ -6376,7 +6376,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/SensitiveAPI/**/*.o",
-              "libTimor-cb6416e.a"
+              "Timor/libTimor-cb6416e.a"
             ]
           }
         },
@@ -6408,7 +6408,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/Trace/**/*.o",
-              "libTimor-2a4a892.a"
+              "Timor/libTimor-2a4a892.a"
             ]
           }
         },
@@ -6437,7 +6437,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessAutoTest/**/*.o",
-              "libTimor-8dc9837.a"
+              "Timor/libTimor-8dc9837.a"
             ]
           }
         },
@@ -6478,7 +6478,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/DebugServer/**/*.o",
-              "libTimor-3a0835c.a"
+              "Timor/libTimor-3a0835c.a"
             ]
           }
         },
@@ -6534,7 +6534,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/BusinessUtils/BusinessLaunch/**/*.o",
-              "libTimor-a5bd6c8.a"
+              "Timor/libTimor-a5bd6c8.a"
             ]
           }
         }
@@ -6594,7 +6594,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/BDModel/**/*.o",
-              "libTimor-3a20404.a"
+              "Timor/libTimor-3a20404.a"
             ]
           }
         },
@@ -6612,7 +6612,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/BDAssert/**/*.o",
-              "libTimor-51d0af1.a"
+              "Timor/libTimor-51d0af1.a"
             ]
           }
         },
@@ -6635,7 +6635,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Protector/*.o",
-              "libTimor-d4731a5.a"
+              "Timor/libTimor-d4731a5.a"
             ]
           }
         },
@@ -6653,7 +6653,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/SchedulerUtil/*.o",
-              "libTimor-1f19121.a"
+              "Timor/libTimor-1f19121.a"
             ]
           }
         },
@@ -6682,7 +6682,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Bridge/**/*.o",
-              "libTimor-2d274f6.a"
+              "Timor/libTimor-2d274f6.a"
             ]
           }
         },
@@ -6705,7 +6705,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/BlankScreenDetect/**/*.o",
-              "libTimor-0efc7a9.a"
+              "Timor/libTimor-0efc7a9.a"
             ]
           }
         },
@@ -6728,7 +6728,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Bootstrap/**/*.o",
-              "libTimor-1ebf954.a"
+              "Timor/libTimor-1ebf954.a"
             ]
           }
         },
@@ -6754,7 +6754,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Bundle/**/*.o",
-              "libTimor-04a5a88.a"
+              "Timor/libTimor-04a5a88.a"
             ]
           }
         },
@@ -6789,7 +6789,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/ClassExtension/**/*.o",
-              "libTimor-0b21d23.a"
+              "Timor/libTimor-0b21d23.a"
             ]
           }
         },
@@ -6827,7 +6827,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/ViewController/**/*.o",
-              "libTimor-0003393.a"
+              "Timor/libTimor-0003393.a"
             ]
           }
         },
@@ -6856,7 +6856,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/CommonUtil/**/*.o",
-              "libTimor-2af54dd.a"
+              "Timor/libTimor-2af54dd.a"
             ]
           }
         },
@@ -6874,7 +6874,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/DataStructure/**/*.o",
-              "libTimor-8365116.a"
+              "Timor/libTimor-8365116.a"
             ]
           }
         },
@@ -6897,7 +6897,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Define/**/*.o",
-              "libTimor-de99604.a"
+              "Timor/libTimor-de99604.a"
             ]
           }
         },
@@ -6920,7 +6920,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/HardCode/**/*.o",
-              "libTimor-a32aba1.a"
+              "Timor/libTimor-a32aba1.a"
             ]
           }
         },
@@ -6949,7 +6949,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Helper/**/*.o",
-              "libTimor-55a29bf.a"
+              "Timor/libTimor-55a29bf.a"
             ]
           }
         },
@@ -6987,7 +6987,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/I18n/**/*.o",
-              "libTimor-c4e386f.a"
+              "Timor/libTimor-c4e386f.a"
             ]
           }
         },
@@ -7013,7 +7013,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Keyboard/**/*.o",
-              "libTimor-a28fd7a.a"
+              "Timor/libTimor-a28fd7a.a"
             ]
           }
         },
@@ -7048,7 +7048,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/LocationUtil/**/*.o",
-              "libTimor-61213d5.a"
+              "Timor/libTimor-61213d5.a"
             ]
           }
         },
@@ -7074,7 +7074,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Log/**/*.o",
-              "libTimor-fbff659.a"
+              "Timor/libTimor-fbff659.a"
             ]
           }
         },
@@ -7097,7 +7097,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/MessageCenter/**/*.o",
-              "libTimor-22ce76a.a"
+              "Timor/libTimor-22ce76a.a"
             ]
           }
         },
@@ -7115,7 +7115,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/MultiDelegate/**/*.o",
-              "libTimor-133a78f.a"
+              "Timor/libTimor-133a78f.a"
             ]
           }
         },
@@ -7141,7 +7141,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/NativeRender/**/*.o",
-              "libTimor-45302b0.a"
+              "Timor/libTimor-45302b0.a"
             ]
           }
         },
@@ -7162,7 +7162,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/Utils/Network/UserAgent/**/*.o",
-                  "libTimor-13a8593.a"
+                  "Timor/libTimor-13a8593.a"
                 ]
               }
             },
@@ -7200,7 +7200,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/Utils/Network/Requester/**/*.o",
-                  "libTimor-b8cecdb.a"
+                  "Timor/libTimor-b8cecdb.a"
                 ]
               }
             },
@@ -7229,7 +7229,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/Utils/Network/Cookie/**/*.o",
-                  "libTimor-3fbbe8a.a"
+                  "Timor/libTimor-3fbbe8a.a"
                 ]
               }
             }
@@ -7249,7 +7249,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Promise/**/*.o",
-              "libTimor-4bac142.a"
+              "Timor/libTimor-4bac142.a"
             ]
           }
         },
@@ -7281,7 +7281,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Schema/**/*.o",
-              "libTimor-c5f17c9.a"
+              "Timor/libTimor-c5f17c9.a"
             ]
           }
         },
@@ -7304,7 +7304,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/SDKConfig/**/*.o",
-              "libTimor-aef86d3.a"
+              "Timor/libTimor-aef86d3.a"
             ]
           }
         },
@@ -7354,7 +7354,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Settings/**/*.o",
-              "libTimor-e8be19d.a"
+              "Timor/libTimor-e8be19d.a"
             ]
           }
         },
@@ -7372,7 +7372,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Security/**/*.o",
-              "libTimor-9099d98.a"
+              "Timor/libTimor-9099d98.a"
             ]
           }
         },
@@ -7390,7 +7390,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/ServiceCenter/**/*.o",
-              "libTimor-15e3d7c.a"
+              "Timor/libTimor-15e3d7c.a"
             ]
           }
         },
@@ -7408,7 +7408,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/CommonParams/**/*.o",
-              "libTimor-cebd761.a"
+              "Timor/libTimor-cebd761.a"
             ]
           }
         },
@@ -7426,7 +7426,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/EventTracer/**/*.o",
-              "libTimor-bcad208.a"
+              "Timor/libTimor-bcad208.a"
             ]
           }
         },
@@ -7458,7 +7458,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Slardar/**/*.o",
-              "libTimor-3991344.a"
+              "Timor/libTimor-3991344.a"
             ]
           }
         },
@@ -7487,7 +7487,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Tracker/**/*.o",
-              "libTimor-03021b8.a"
+              "Timor/libTimor-03021b8.a"
             ]
           }
         },
@@ -7516,7 +7516,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Storage/**/*.o",
-              "libTimor-9655b7e.a"
+              "Timor/libTimor-9655b7e.a"
             ]
           }
         },
@@ -7539,7 +7539,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Timer/**/*.o",
-              "libTimor-3dd23c6.a"
+              "Timor/libTimor-3dd23c6.a"
             ]
           }
         },
@@ -7582,7 +7582,7 @@
               "ios": {
                 "vendored_libraries": [
                   "Timor/Utils/UIWidget/Appearance/**/*.o",
-                  "libTimor-8ebb0d3.a"
+                  "Timor/libTimor-8ebb0d3.a"
                 ]
               }
             },
@@ -7616,7 +7616,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/LoadingAnimationView/**/*.o",
-                      "libTimor-4dd65f4.a"
+                      "Timor/libTimor-4dd65f4.a"
                     ]
                   }
                 },
@@ -7634,7 +7634,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/Button/**/*.o",
-                      "libTimor-914af20.a"
+                      "Timor/libTimor-914af20.a"
                     ]
                   }
                 },
@@ -7660,7 +7660,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/AlertController/**/*.o",
-                      "libTimor-0233ad9.a"
+                      "Timor/libTimor-0233ad9.a"
                     ]
                   }
                 },
@@ -7678,7 +7678,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/CheckBox/**/*.o",
-                      "libTimor-0d9a62f.a"
+                      "Timor/libTimor-0d9a62f.a"
                     ]
                   }
                 },
@@ -7696,7 +7696,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/ImageView/**/*.o",
-                      "libTimor-49e83c5.a"
+                      "Timor/libTimor-49e83c5.a"
                     ]
                   }
                 },
@@ -7714,7 +7714,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/Indicator/**/*.o",
-                      "libTimor-55311c7.a"
+                      "Timor/libTimor-55311c7.a"
                     ]
                   }
                 },
@@ -7746,7 +7746,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/PermissionAlertController/**/*.o",
-                      "libTimor-ebd8b68.a"
+                      "Timor/libTimor-ebd8b68.a"
                     ]
                   }
                 },
@@ -7764,7 +7764,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/PrivacyPolicyController/**/*.o",
-                      "libTimor-4cdd0ab.a"
+                      "Timor/libTimor-4cdd0ab.a"
                     ]
                   }
                 },
@@ -7782,7 +7782,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/Switch/**/*.o",
-                      "libTimor-d041d69.a"
+                      "Timor/libTimor-d041d69.a"
                     ]
                   }
                 },
@@ -7800,7 +7800,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/TextField/**/*.o",
-                      "libTimor-ec8ee9e.a"
+                      "Timor/libTimor-ec8ee9e.a"
                     ]
                   }
                 },
@@ -7818,7 +7818,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/TextView/**/*.o",
-                      "libTimor-9526768.a"
+                      "Timor/libTimor-9526768.a"
                     ]
                   }
                 },
@@ -7836,7 +7836,7 @@
                   "ios": {
                     "vendored_libraries": [
                       "Timor/Utils/UIWidget/Component/View/**/*.o",
-                      "libTimor-0c73146.a"
+                      "Timor/libTimor-0c73146.a"
                     ]
                   }
                 }
@@ -7863,7 +7863,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/WebImage/**/*.o",
-              "libTimor-6771c91.a"
+              "Timor/libTimor-6771c91.a"
             ]
           }
         },
@@ -7881,7 +7881,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/UserDefaults/**/*.o",
-              "libTimor-dcc2b44.a"
+              "Timor/libTimor-dcc2b44.a"
             ]
           }
         },
@@ -7904,7 +7904,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/WeakProxy/**/*.o",
-              "libTimor-dfd091f.a"
+              "Timor/libTimor-dfd091f.a"
             ]
           }
         },
@@ -7927,7 +7927,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/WebPImage/**/*.o",
-              "libTimor-d05d565.a"
+              "Timor/libTimor-d05d565.a"
             ]
           }
         },
@@ -7953,7 +7953,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/Orientation/**/*.o",
-              "libTimor-40bea93.a"
+              "Timor/libTimor-40bea93.a"
             ]
           }
         },
@@ -7976,7 +7976,7 @@
           "ios": {
             "vendored_libraries": [
               "Timor/Utils/VersionUtil/**/*.o",
-              "libTimor-499f888.a"
+              "Timor/libTimor-499f888.a"
             ]
           }
         }
