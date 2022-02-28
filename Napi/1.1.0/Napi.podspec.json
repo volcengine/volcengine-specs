@@ -1,0 +1,87 @@
+{
+  "name": "Napi",
+  "version": "1.1.0",
+  "summary": "node-addon-api implementations.",
+  "license": {
+    "type": "Copyright",
+    "text": "Bytedance copyright"
+  },
+  "homepage": "https://github.com/volcengine/volcengine-specs",
+  "authors": "haoyoufeng <haoyoufeng@bytedance.com>",
+  "source": {
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/Napi/1.1.0/Napi.zip"
+  },
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.11.0"
+  },
+  "requires_arc": false,
+  "compiler_flags": [
+    "-Wall",
+    "-Werror"
+  ],
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": [
+        "Napi/napi/*.{h,cc}",
+        "Napi/napi/common/*.{h,cc}"
+      ],
+      "public_header_files": [
+        "Napi/napi/*.h",
+        "Napi/napi/common/*.h"
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "Napi/libNapi-e1fa65e.a"
+        ]
+      }
+    },
+    {
+      "name": "Env",
+      "source_files": "Napi/napi/env/*.{h,cc}",
+      "public_header_files": "Napi/napi/env/*.h",
+      "dependencies": {
+        "Napi/Core": [
+
+        ]
+      },
+      "ios": {
+        "vendored_libraries": [
+          "Napi/libNapi-8dd6afe.a"
+        ]
+      }
+    },
+    {
+      "name": "JSC",
+      "source_files": "Napi/napi/jsc/*.{h,cc}",
+      "public_header_files": "Napi/napi/jsc/napi_env_jsc.h",
+      "dependencies": {
+        "Napi/Core": [
+
+        ]
+      },
+      "ios": {
+        "vendored_libraries": [
+          "Napi/libNapi-d2ea775.a"
+        ]
+      }
+    },
+    {
+      "name": "V8",
+      "public_header_files": "Napi/napi/v8/*.h",
+      "source_files": "Napi/napi/v8/*.{h,cc}",
+      "compiler_flags": "-D_NAPI_V8_EXPORT_SOURCE_ONLY_",
+      "dependencies": {
+        "Napi/Core": [
+
+        ]
+      },
+      "ios": {
+        "vendored_libraries": [
+          "Napi/libNapi-3ed9cd0.a"
+        ]
+      }
+    }
+  ]
+}
