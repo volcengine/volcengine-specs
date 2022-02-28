@@ -12,7 +12,7 @@
     "gejunchen": "gejunchen@bytedance.com"
   },
   "source": {
-    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/Timor/1.1.0/Timor_1_1_0.zip"
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/Timor/1.1.0/Timor_1_1_0_.zip"
   },
   "default_subspecs": [
       "App/AppNative/PageWebView",
