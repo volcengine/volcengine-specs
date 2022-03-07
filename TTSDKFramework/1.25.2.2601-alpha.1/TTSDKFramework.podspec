@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.author       = { "shangjincheng-bd" => "shangjincheng@bytedance.com" }
   spec.platform     = :ios, "8.0"
 
-  spec.source       = { :http => "http://tosv.byted.org/obj/cloud-common/ttsdk/iOS/TTSDKFramework-1.25.2.2601-alpha.1-ta.zip", :type => :zip }
+  spec.source       = { :http => "https://sf1-hscdn-tos.pstatp.com/obj/cloud-common/ttsdk/iOS/TTSDKFramework-1.25.2.2601-alpha.1-ta.zip", :type => :zip }
 
   spec.static_framework = false
   spec.vendored_frameworks = [
