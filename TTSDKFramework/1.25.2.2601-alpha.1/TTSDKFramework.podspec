@@ -15,9 +15,14 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :http => "https://sf1-hscdn-tos.pstatp.com/obj/cloud-common/ttsdk/iOS/TTSDKFramework-1.25.2.2601-alpha.1-ta.zip", :type => :zip }
 
-  spec.static_framework = false
-  spec.vendored_frameworks = [
+  spec.source_files = [
     "TTSDKFramework.framework/**/**",
     "byteaudio.framework/**/**"
+  ]
+
+  spec.static_framework = false
+  spec.vendored_frameworks = [
+    "TTSDKFramework.framework",
+    "byteaudio.framework"
   ]
 end
