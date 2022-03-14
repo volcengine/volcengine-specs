@@ -17,8 +17,6 @@ Pod::Spec.new do |spec|
 
   spec.static_framework = false
 
-  spec.source_files = '**/*'
-
   spec.vendored_frameworks = [
     "TTSDKFramework.framework",
     "byteaudio.framework"
