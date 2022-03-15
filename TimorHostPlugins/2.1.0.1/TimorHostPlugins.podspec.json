@@ -11,12 +11,25 @@
     "yangqihang": "yangqihang@bytedance.com"
   },
   "source": {
-    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TimorHostPlugins/1.1.0/TimorHostPlugins_1_1_0.zip"
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TimorHostPlugins/2.1.0.1/TimorHostPlugins.zip"
   },
-  "description": "小程序SDK宿主接口默认实现",
+  "description": "The default implication of Mars MiniApp SDK",
   "platforms": {
     "ios": "9.0"
   },
+  "default_subspecs": [
+    "ActionSheet",
+    "Media",
+    "Picker",
+    "Location",
+    "Map-MapKit",
+    "Pigeon",
+    "ContentPlayer",
+    "VideoPlayer",
+    "Reachability-Open",
+    "WebImage-SDWebImage",
+    "DeviceOrientation"
+  ],
   "dependencies": {
     "OneKit/ByteDanceKit/UIKit": [
 
@@ -32,6 +45,7 @@
       "source_files": [
         "TimorHostPlugins/Classes/ActionSheet/**/*.{h,m}"
       ],
+      "private_header_files": "TimorHostPlugins/Classes/ActionSheet/**/*.{h}",
       "dependencies": {
         "Timor/HostInterfaces/UIWidgetInterface": [
 
@@ -55,6 +69,7 @@
       "source_files": [
         "TimorHostPlugins/Classes/ScanCode/**/*.{h,m}"
       ],
+      "private_header_files": "TimorHostPlugins/Classes/ScanCode/**/*.{h}",
       "dependencies": {
         "Timor/HostInterfaces/ScanCodeInterface": [
 
@@ -78,6 +93,7 @@
       "source_files": [
         "TimorHostPlugins/Classes/Media/**/*.{h,m}"
       ],
+      "private_header_files": "TimorHostPlugins/Classes/Media/**/*.{h}",
       "dependencies": {
         "Timor/HostInterfaces/MediaInterface": [
 
@@ -107,6 +123,7 @@
           "source_files": [
             "TimorHostPlugins/Classes/Picker/CustomPicker/**/*.{h,m}"
           ],
+          "private_header_files": "TimorHostPlugins/Classes/Picker/CustomPicker/**/*.{h}",
           "dependencies": {
             "Timor/HostInterfaces/ComponentInterface/PickerInterface/CustomPickerInterface": [
 
@@ -130,6 +147,7 @@
           "source_files": [
             "TimorHostPlugins/Classes/Picker/RegionPicker/**/*.{h,m}"
           ],
+          "private_header_files": "TimorHostPlugins/Classes/Picker/RegionPicker/**/*.{h}",
           "dependencies": {
             "Timor/HostInterfaces/ComponentInterface/PickerInterface/RegionPickerInterface": [
 
@@ -156,6 +174,7 @@
           "source_files": [
             "TimorHostPlugins/Classes/Picker/DatePicker/**/*.{h,m}"
           ],
+          "private_header_files": "TimorHostPlugins/Classes/Picker/DatePicker/**/*.{h}",
           "dependencies": {
             "Timor/HostInterfaces/ComponentInterface/PickerInterface/DatePickerInterface": [
 
@@ -190,6 +209,7 @@
           "source_files": [
             "TimorHostPlugins/Classes/Picker/ImagePicker-PH/**/*.{h,m}"
           ],
+          "private_header_files": "TimorHostPlugins/Classes/Picker/ImagePicker-PH/**/*.{h}",
           "dependencies": {
             "Timor/HostInterfaces/ComponentInterface/PickerInterface/ImagePickerInterface": [
 
@@ -210,6 +230,7 @@
           "source_files": [
             "TimorHostPlugins/Classes/Picker/VideoPicker/**/*.{h,m}"
           ],
+          "private_header_files": "TimorHostPlugins/Classes/Picker/VideoPicker/**/*.{h}",
           "dependencies": {
             "Timor/HostInterfaces/ComponentInterface/PickerInterface/VideoPickerInterface": [
 
@@ -242,6 +263,7 @@
           "TimorHostPlugins/libTimorHostPlugins-44557b1.a"
         ]
       },
+      "private_header_files": "TimorHostPlugins/Classes/Location/**/*.{h}",
       "dependencies": {
         "Timor/HostInterfaces/LocationInterface": [
 
@@ -258,10 +280,44 @@
       ]
     },
     {
+      "name": "Map-Amap",
+      "source_files": [
+        "TimorHostPlugins/Classes/Map-AMap/**/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/Map-BaiduMap/**/*.{h}",
+      "dependencies": {
+        "AMap2DMap-NO-IDFA": [
+
+        ],
+        "AMapFoundation-NO-IDFA": [
+
+        ],
+        "Timor/HostInterfaces/ComponentInterface/MapInterface": [
+
+        ],
+        "Timor/OpenAPIs/Component/Map": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/Map-AMap/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/Map-AMap/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-4bd2ee7.a"
+        ]
+      }
+    },
+    {
       "name": "Map-BaiduMap",
       "source_files": [
         "TimorHostPlugins/Classes/Map-BaiduMap/**/*.{h,m}"
       ],
+      "private_header_files": "TimorHostPlugins/Classes/Map-BaiduMap/**/*.{h}",
       "dependencies": {
         "Timor/HostInterfaces/ComponentInterface/MapInterface": [
 
@@ -287,12 +343,40 @@
       }
     },
     {
+      "name": "Map-MapKit",
+      "ios": {
+        "frameworks": "MapKit",
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/Map-MapKit/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-660ec34.a"
+        ]
+      },
+      "source_files": [
+        "TimorHostPlugins/Classes/Map-MapKit/**/*.{h,m}"
+      ],
+      "dependencies": {
+        "Timor/HostInterfaces/ComponentInterface/MapInterface": [
+
+        ],
+        "Timor/OpenAPIs/Component/Map": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/Map-MapKit/**/*.o"
+      ],
+      "exclude_files": [
+
+      ]
+    },
+    {
       "name": "Pigeon",
       "dependencies": {
         "Timor/HostInterfaces/PigeonInterface": [
 
         ]
       },
+      "private_header_files": "TimorHostPlugins/Classes/Pigeon/**/*.{h}",
       "source_files": [
         "TimorHostPlugins/Classes/Pigeon/**/*.{h,m}"
       ],
@@ -314,6 +398,7 @@
       "source_files": [
         "TimorHostPlugins/Classes/ContentPlayer/*.{h,m}"
       ],
+      "private_header_files": "TimorHostPlugins/Classes/ContentPlayer/*.{h}",
       "vendored_libraries": [
         "TimorHostPlugins/Classes/ContentPlayer/*.o"
       ],
@@ -470,6 +555,7 @@
       "source_files": [
         "TimorHostPlugins/Classes/ContentPlayer/VideoPlayer/**/*.{h,m}"
       ],
+      "private_header_files": "TimorHostPlugins/Classes/ContentPlayer/VideoPlayer/**/*.{h}",
       "dependencies": {
         "Timor/HostInterfaces/ComponentInterface/VideoPlayerInterface": [
 
@@ -502,6 +588,7 @@
       "source_files": [
         "TimorHostPlugins/Classes/PictureInPicture/**/*.{h,m}"
       ],
+      "private_header_files": "TimorHostPlugins/Classes/PictureInPicture/**/*.{h}",
       "dependencies": {
         "Timor/HostInterfaces/PictureInPictureInterface": [
 
@@ -544,6 +631,7 @@
       "source_files": [
         "TimorHostPlugins/Classes/Reachability-Open/**/*.{h,m}"
       ],
+      "private_header_files": "TimorHostPlugins/Classes/Reachability-Open/**/*.{h}",
       "vendored_libraries": [
         "TimorHostPlugins/Classes/Reachability-Open/**/*.o"
       ],
@@ -567,6 +655,7 @@
       "source_files": [
         "TimorHostPlugins/Classes/WebImage-SDWebImage/**/*.{h,m}"
       ],
+      "private_header_files": "TimorHostPlugins/Classes/WebImage-SDWebImage/**/*.{h}",
       "vendored_libraries": [
         "TimorHostPlugins/Classes/WebImage-SDWebImage/**/*.o"
       ],
@@ -585,6 +674,7 @@
       "source_files": [
         "TimorHostPlugins/Classes/DeviceOrientation/**/*.{h,m}"
       ],
+      "private_header_files": "TimorHostPlugins/Classes/DeviceOrientation/**/*.{h}",
       "dependencies": {
         "Timor/HostInterfaces/DeviceOrientationInterface": [
 
@@ -605,7 +695,6 @@
     },
     {
       "name": "ThirdParty",
-      "resources": "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/LICENSE",
       "subspecs": [
         {
           "name": "BDPSDWebImage",
@@ -637,6 +726,7 @@
           "source_files": [
             "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/Classes/**/*"
           ],
+          "private_header_files": "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/Classes/**/*.{h}",
           "resources": "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/LICENSE",
           "dependencies": {
             "TimorHostPlugins/ThirdParty/BDPSDWebImage": [
@@ -670,6 +760,7 @@
           "source_files": [
             "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/**/*.{h,m}"
           ],
+          "private_header_files": "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/**/*.{h}",
           "resources": [
             "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/resource/*.{png,xib,nib,bundle}",
             "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/LICENSE"
@@ -692,6 +783,8 @@
           "source_files": [
             "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.{h,m}"
           ],
+          "resources": "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/LICENSE",
+          "private_header_files": "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.{h}",
           "vendored_libraries": [
             "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.o"
           ],
