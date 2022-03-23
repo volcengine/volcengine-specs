@@ -1,0 +1,58 @@
+{
+    "name": "RangersAPMForExtension",
+    "version": "1.0.1",
+    "summary": "RangersAPMForExtension by ByteDance",
+    "description": "APMInsight iOS SDK, a tool to monitor APPExtension performance.",
+    "homepage": "https://github.com/volcengine/APMInsight_iOS",
+    "license": {
+        "type": "MIT",
+        "file": "RangersAPMForExtension/LICENSE"
+    },
+    "authors": "ByteDance",
+    "platforms": {
+        "ios": "9.0"
+    },
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES"
+    },
+    "user_target_xcconfig": {
+        "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
+    },
+    "static_framework": true,
+    "default_subspecs": [
+        "Crash"
+    ],
+    "subspecs": [
+        {
+            "name": "Core",
+            "vendored_libraries": "RangersAPMForExtension/Core/**/*.a",
+            "libraries": [
+                "c++",
+                "z"
+            ],
+            "frameworks": [
+                "SystemConfiguration",
+                "CoreTelephony",
+                "CoreFoundation"
+            ]
+        },
+        {
+            "name": "Crash",
+            "source_files": "RangersAPMForExtension/Crash/**/*.{h,m}",
+            "public_header_files": "RangersAPMForExtension/Crash/**/*.h",
+            "vendored_libraries": "RangersAPMForExtension/Crash/**/*.a",
+            "dependencies": {
+                "RangersAPMForExtension/Core": [],
+                "RangersAPMForExtension/Public": []
+            },
+            "libraries": "c++abi"
+        },
+        {
+            "name": "Public",
+            "source_files": "RangersAPMForExtension/Public/**/*.{h,m}"
+        }
+    ],
+    "source": {
+        "http": "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPMForExtension/1.0.1/RangersAPMForExtension.zip"
+    }
+}
