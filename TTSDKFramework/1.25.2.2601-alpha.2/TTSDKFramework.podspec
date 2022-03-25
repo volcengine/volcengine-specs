@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "TTSDKFramework"
-  spec.version      = "1.25.2.2601-alpha.1"
+  spec.version      = "1.25.2.2601-alpha.2"
   spec.summary      = "A comprehensive multimedia SDK, beta version."
   spec.description  = <<-DESC
     A comprehensive multimedia SDK which provides live streaming, VOD and the other related abilities.
@@ -16,7 +16,6 @@ Pod::Spec.new do |spec|
   spec.source       = { :http => "https://sf1-hscdn-tos.pstatp.com/obj/cloud-common/ttsdk/iOS/TTSDKFramework-1.25.2.2601-alpha.1-ta.zip", :type => :zip }
 
   spec.static_framework = false
-
   spec.vendored_frameworks = [
     "TTSDKFramework.framework",
     "byteaudio.framework"
