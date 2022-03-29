@@ -1,0 +1,92 @@
+{
+    "prepare_command": "", 
+    "default_subspecs": [
+        "Core", 
+        "OneKit"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDHotfix/1.0.13/BDHotfix.framework.tar.xz"
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_BDHotfix_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "authors": {
+        "\u5a04\u6653\u4e39": "549824945@qq.com"
+    }, 
+    "version": "1.0.13", 
+    "source_files": [
+        "BDHotfix-bitdummy.m"
+    ], 
+    "static_framework": true, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20311", 
+    "subspecs": [
+        {
+            "public_header_files": [
+                "BDHotfix/Classes/Core/*.h", 
+                "BDHotfix/Classes/Core/Model/*.h", 
+                "BDHotfix/Classes/Core/BDP/BDHF.h"
+            ], 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "name": "Core", 
+            "resource_bundles": {
+                "BDHotfix": [
+                    "BDHotfix/Classes/Core/Resources/*"
+                ]
+            }, 
+            "prefix_header_contents": "#import \"BDHF.h\"", 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/StartUp": [], 
+                "RARegisterKit": [], 
+                "OneKit/MARS/Auth": [], 
+                "OneKit/Service": [], 
+                "SSZipArchive": [], 
+                "RARegisterKit/OKKit": []
+            }, 
+            "source_files": [
+                "BDHotfix/Classes/Core/**/*.{h,m,c}", 
+                "BDHotfix-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "BDHotfix/Classes/OneKit/Tasks/*.h", 
+            "name": "OneKit", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OneKit_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "BDHotfix/Core": []
+            }, 
+            "source_files": [
+                "BDHotfix/Classes/OneKit/**/*.{h,m,c,mm}", 
+                "BDHotfix-bitdummy.m"
+            ]
+        }
+    ], 
+    "name": "BDHotfix"
+}
