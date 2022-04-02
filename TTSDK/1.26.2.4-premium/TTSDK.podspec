@@ -117,6 +117,7 @@
         'TTSDK/TTVideoLive/TTVideoLive/Classes/**/*.h',
       ]
       subspec.source_files = [
+        'TTSDK/VCloudPandora/**/{TTLiveURLComposer,TVLPlayerItem+TTSDK}.h',
         'TTSDK/TTVideoLive/TTVideoLive/Classes/**/*',
       ]
       subspec.vendored_libraries = [
