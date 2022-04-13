@@ -15,11 +15,11 @@
     spec.platform     = :ios, "8.0"
 
     spec.source       = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTSDK/#{spec.version}/TTSDK.zip" }
-    
+
     spec.default_subspecs = 'Core', 'TTFFmpeg', 'PlayerCore', 'LivePull', 'LivePush', 'Player', 'Image'
 
     spec.static_framework = true
-    
+
     spec.subspec 'Core' do |subspec|
       subspec.public_header_files = [
         'TTSDK/VCloudPandora/**/TTSDKManager.h',
@@ -35,7 +35,7 @@
       subspec.libraries = 'stdc++'
     end
 
-    spec.subspec 'Tools' do |subspec| 
+    spec.subspec 'Tools' do |subspec|
       subspec.vendored_libraries = [
         'TTSDK/boringssl/**/*.a',
         'TTSDK/lib_h_dec/**/*.a'
@@ -43,7 +43,7 @@
       subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
     end
 
-    spec.subspec 'Tools-VE' do |subspec| 
+    spec.subspec 'Tools-VE' do |subspec|
       subspec.vendored_libraries = [
         'TTSDK/lib_h_dec/**/*.a'
       ]
@@ -58,14 +58,14 @@
       ]
     end
 
-    spec.subspec 'TTNet' do |subspec| 
+    spec.subspec 'TTNet' do |subspec|
       subspec.vendored_libraries = [
         'TTSDK/protobuf_lite/**/*.a',
         'TTSDK/TTNetworkManager/**/*.a'
       ]
     end
 
-    spec.subspec 'TTNet-VE' do |subspec| 
+    spec.subspec 'TTNet-VE' do |subspec|
       subspec.vendored_libraries = [
         'TTSDK/protobuf_lite/**/*.a',
       ]
@@ -354,7 +354,7 @@
     end
 
     # Support Super Resolution
-    spec.subspec 'Player-SR' do |subspec| 
+    spec.subspec 'Player-SR' do |subspec|
       class_name = 'TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS,lens,videoprocessor'
       subspec.public_header_files = [
         "TTSDK/{#{class_name}}/**/*.h"
@@ -389,7 +389,7 @@
       subspec.vendored_libraries = [
         'TTSDK/BDWebImageToB/**/*.a',
         'TTSDK/libttheif_ios/**/*.a',
-        'TTSDK/BDSword/ios-arch-iphone/*.a',    
+        'TTSDK/BDSword/ios-arch-iphone/*.a',
       ]
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/TTNet'
@@ -413,7 +413,7 @@
       subspec.vendored_libraries = [
         'TTSDK/BDWebImageToB/**/*.a',
         'TTSDK/libttheif_ios/**/*.a',
-        'TTSDK/BDSword/ios-arch-iphone/*.a',    
+        'TTSDK/BDSword/ios-arch-iphone/*.a',
       ]
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/TTNet-VE'
@@ -540,7 +540,7 @@
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore-Strip'
     end
-    
+
     spec.subspec 'LivePull-Strip' do |subspec|
       subspec.public_header_files = [
         'TTSDK/TTVideoLive/**/*.h',
@@ -652,7 +652,7 @@
       subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
     end
 
-    spec.subspec 'TTNet-Strip' do |subspec| 
+    spec.subspec 'TTNet-Strip' do |subspec|
       subspec.vendored_libraries = [
         'TTSDK/protobuf_lite/**/*.a',
         'TTSDK/TTNetworkManager_strip/**/*.a'
@@ -683,5 +683,5 @@
       subspec.dependency 'libdav1d', '0.8.0'
       subspec.dependency 'libavif/libdav1d', '0.9.1'
     end
-    
+
   end
