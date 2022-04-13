@@ -47,7 +47,7 @@
       subspec.vendored_libraries = [
         'TTSDK/lib_h_dec/**/*.a'
       ]
-      subspec.dependency 'VEVideoKit/boringssl', '0.0.2-alpha.4.1.binary'
+      subspec.dependency 'VEVideoKit/boringssl', '0.0.2-alpha.10.1.binary'
       subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
     end
 
@@ -69,7 +69,7 @@
       subspec.vendored_libraries = [
         'TTSDK/protobuf_lite/**/*.a',
       ]
-      subspec.dependency 'VEVideoKit/TTNetworkManager', '0.0.2-alpha.4.1.binary'
+      subspec.dependency 'VEVideoKit/TTNetworkManager', '0.0.2-alpha.10.1.binary'
     end
 
     spec.subspec 'TTFFmpeg' do |subspec|
@@ -101,7 +101,7 @@
         'SystemConfiguration',
       ]
       subspec.dependency 'TTSDK/Tools-VE'
-      subspec.dependency 'VEVideoKit/TTFFmpeg', '0.0.2-alpha.4.1.binary'
+      subspec.dependency 'VEVideoKit/TTFFmpeg', '0.0.2-alpha.10.1.binary'
     end
 
     spec.subspec 'PlayerCore' do |subspec|
