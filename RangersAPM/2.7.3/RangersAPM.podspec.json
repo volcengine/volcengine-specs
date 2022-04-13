@@ -301,6 +301,7 @@
         }
     ],
     "source": {
-        "http": "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.7.3/RangersAPM.zip"
+        "http": "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.7.3/RangersAPM.zip",
+        "sha1": "784fdcf4b5483cb96f8443018938e2fbb628a2aa"
     }
 }
