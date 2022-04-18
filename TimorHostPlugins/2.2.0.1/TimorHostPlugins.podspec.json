@@ -614,11 +614,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/WebImage-SDWebImage/**/*.o",
-<<<<<<< HEAD
-          "libTimorHostPlugins-bfb8a23.a"
-=======
           "TimorHostPlugins/libTimorHostPlugins-bfb8a23.a"
->>>>>>> af0ce39fa9957a61338fce799f879c747d0123ec
         ]
       }
     },
