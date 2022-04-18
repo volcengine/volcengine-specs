@@ -804,8 +804,7 @@
           "ios": {
             "vendored_libraries": [
               "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/Classes/**/*.o",
-              "libTimorHostPlugins-fc98883.a"
-
+              "TimorHostPlugins/libTimorHostPlugins-fc98883.a"
             ]
           }
         },
