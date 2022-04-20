@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VEKit'
-  s.version          = '0.0.5.1'
+  s.version          = '0.0.5.2'
   s.summary          = 'A short description of VEH5Kit.'
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'shangguanchengyang' => 'shangguanchengyang.1@bytedance.com' }
-  s.source           = { :git => '', :branch => "" }
+  s.source           = { :git => 'https://github.com/volcengine/VEKit.git' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
