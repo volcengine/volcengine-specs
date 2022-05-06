@@ -1,0 +1,132 @@
+{
+    "prepare_command": "", 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "requires_arc": true, 
+    "preserve_paths": [
+        "NOTICE", 
+        "**/*.bwp"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VEVideoKit_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "platforms": {
+        "ios": "8.0"
+    }, 
+    "authors": {
+        "wangzhiyong": "wangzhiyong.7717@bytedance.com"
+    }, 
+    "version": "0.0.2", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/VEVideoKit/0.0.2/VEVideoKit.framework.tar.xz"
+    }, 
+    "pod_target_xcconfig": {
+        "BITCODE_GENERATION_MODE": "bitcode"
+    }, 
+    "source_files": [
+        "VEVideoKit-bitdummy.m"
+    ], 
+    "static_framework": true, 
+    "homepage": "https://github.com/volcengine/veMARS_SwiftOneKit", 
+    "repoId": "28296", 
+    "subspecs": [
+        {
+            "public_header_files": "VEVideoKit/boringssl/**/*.h", 
+            "vendored_libraries": [
+                "VEVideoKit/boringssl/libcrcrypto.a", 
+                "VEVideoKit/boringssl/libboringssl.a", 
+                "VEVideoKit/boringssl/libboringssl_asm.a"
+            ], 
+            "name": "boringssl", 
+            "xcconfig": {
+                "HEADER_SEARCH_PATHS": "$(inherited) \"${PODS_ROOT}/VEVideoKit/boringssl/include\""
+            }, 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_boringssl_*awesome_*.a"
+            }, 
+            "header_mappings_dir": "VEVideoKit/boringssl/include/", 
+            "source_files": [
+                "VEVideoKit/boringssl/**/*.{h,m}", 
+                "VEVideoKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "vendored_libraries": [
+                "VEVideoKit/TTFFmpeg/lib/*.a"
+            ], 
+            "name": "TTFFmpeg", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_TTFFmpeg_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "CoreMotion", 
+                "CoreMedia", 
+                "MetalKit", 
+                "OpenAL", 
+                "VideoToolBox", 
+                "AudioToolBox", 
+                "AVFoundation", 
+                "SystemConfiguration"
+            ], 
+            "source_files": [
+                "VEVideoKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "vendored_libraries": [
+                "VEVideoKit/TTNetworkManager/**/*.a"
+            ], 
+            "name": "TTNetworkManager", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_TTNetworkManager_*awesome_*.a"
+            }, 
+            "libraries": [
+                "c++", 
+                "resolv", 
+                "sscronet"
+            ], 
+            "dependencies": {
+                "VEVideoKit/boringssl": [], 
+                "OneKit/BaseKit": [], 
+                "Godzippa": [
+                    "2.1.1"
+                ]
+            }, 
+            "source_files": [
+                "VEVideoKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "vendored_frameworks": "VEVideoKit/byteaudio.xcframework", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_VolcEngineAudio_*awesome_*.a"
+            }, 
+            "name": "VolcEngineAudio", 
+            "source_files": [
+                "VEVideoKit-bitdummy.m"
+            ]
+        }
+    ], 
+    "name": "VEVideoKit"
+}
