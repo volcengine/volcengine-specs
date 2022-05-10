@@ -1,6 +1,6 @@
 {
     "name": "RangersAPM",
-    "version": "2.7.3",
+    "version": "2.8.1",
     "summary": "RangersAPM by ByteDance",
     "description": "APMInsight iOS SDK, a tool to monitor APP performance.",
     "homepage": "https://github.com/volcengine/APMInsight_iOS",
@@ -298,10 +298,22 @@
                 "RangersAPM/Core": [],
                 "RangersAPM/HMD": []
             }
+        },
+        {
+            "name": "Zombie",
+            "vendored_libraries": "RangersAPM/Zombie/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": [],
+                "RangersAPM/Crash": []
+            },
+            "pod_target_xcconfig": {
+                "GCC_PREPROCESSOR_DEFINITIONS[config=Release]": "$(inherited) NS_BLOCK_ASSERTIONS"
+            }
         }
     ],
     "source": {
-        "http": "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.7.3/RangersAPM.zip",
-        "sha1": "784fdcf4b5483cb96f8443018938e2fbb628a2aa"
+        "http": "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.8.1/RangersAPM.zip"
     }
 }

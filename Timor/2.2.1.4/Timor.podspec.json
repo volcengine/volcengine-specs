@@ -1,6 +1,6 @@
 {
   "name": "Timor",
-  "version": "2.2.0.1",
+  "version": "2.2.1.4",
   "summary": "Mars MiniApp SDK",
   "description": "Mars MiniApp SDK",
   "homepage": "https://github.com/volcengine/volcengine-specs",
@@ -12,7 +12,7 @@
     "gejunchen": "gejunchen@bytedance.com"
   },
   "source": {
-    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/Timor/2.2.0.1_bugfix_1/Timor.zip"
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/Timor/2.2.1.4/Timor.zip"
   },
   "platforms": {
     "ios": "9.0"

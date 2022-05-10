@@ -1,0 +1,40 @@
+{
+    "vendored_frameworks": "SpeechEngineAsrStreamingToB/SpeechEngineAsrStreamingToB.framework", 
+    "name": "SpeechEngineAsrStreamingToB", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "requires_arc": true, 
+    "summary": "framework_summary", 
+    "user_target_xcconfig": {
+        "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES", 
+        "VALID_ARCHS": "arm64 armv7 x86_64", 
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/SpeechEngineAsrStreamingToB/1.0.3-alpha.0/SpeechEngineAsrStreamingToB.zip"
+    }, 
+    "version": "1.0.3-alpha.0", 
+    "libraries": "c++", 
+    "frameworks": [
+        "AudioToolbox", 
+        "AVFoundation"
+    ], 
+    "authors": "Bytedance, Inc.", 
+    "pod_target_xcconfig": {
+        "VALID_ARCHS": "arm64 armv7 x86_64", 
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "dependencies": {
+        "TTNetworkManager": [
+            "5.0.29.22"
+        ]
+    }, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "29516", 
+    "description": "framework_description"
+}

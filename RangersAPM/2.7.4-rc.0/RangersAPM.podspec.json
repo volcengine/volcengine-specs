@@ -1,6 +1,6 @@
 {
     "name": "RangersAPM",
-    "version": "2.7.3",
+    "version": "2.7.4-rc0",
     "summary": "RangersAPM by ByteDance",
     "description": "APMInsight iOS SDK, a tool to monitor APP performance.",
     "homepage": "https://github.com/volcengine/APMInsight_iOS",
@@ -21,6 +21,10 @@
         "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
     },
     "static_framework": true,
+    "default_subspecs": [
+        "Core", 
+        "Public"
+    ], 
     "subspecs": [
         {
             "name": "Above",
@@ -301,7 +305,6 @@
         }
     ],
     "source": {
-        "http": "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.7.3/RangersAPM.zip",
-        "sha1": "784fdcf4b5483cb96f8443018938e2fbb628a2aa"
+        "http": "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.7.4/RangersAPM.zip"
     }
 }

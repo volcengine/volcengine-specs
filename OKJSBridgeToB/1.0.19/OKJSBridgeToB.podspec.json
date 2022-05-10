@@ -1,0 +1,71 @@
+{
+    "prepare_command": "", 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "default_subspecs": [
+        "JSBridge"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "source_files": [
+        "OKJSBridgeToB/Classes/JSBridge/**/*.{h,m}", 
+        "OKJSBridgeToB-bitdummy.m"
+    ], 
+    "user_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_OKJSBridgeToB_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/OKJSBridgeToB/1.0.19/OKJSBridgeToB.framework.tar.xz"
+    }, 
+    "version": "1.0.19", 
+    "authors": {
+        "lixiaopeng": "lixiaopeng.dev@bytedance.com"
+    }, 
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES", 
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "static_framework": true, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20316", 
+    "subspecs": [
+        {
+            "public_header_files": "OKJSBridgeToB/Classes/JSBridge/**/*.h", 
+            "name": "JSBridge", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_JSBridge_*awesome_*.a"
+            }, 
+            "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/BaseKit": [], 
+                "TTNetworkManager": [], 
+                "BDWebCoreToB": [], 
+                "OneKit/Service": [], 
+                "OneKit/MARS/Auth": []
+            }, 
+            "source_files": [
+                "OKJSBridgeToB-bitdummy.m"
+            ]
+        }
+    ], 
+    "name": "OKJSBridgeToB"
+}

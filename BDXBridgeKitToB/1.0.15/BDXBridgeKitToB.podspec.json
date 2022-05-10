@@ -1,0 +1,335 @@
+{
+    "prepare_command": "", 
+    "default_subspecs": [
+        "Core", 
+        "Containers/Web", 
+        "Engines/TTBridgeUnifyAdapter/WebEngine", 
+        "Methods"
+    ], 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDXBridgeKitToB/1.0.15/BDXBridgeKitToB.framework.tar.xz"
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_BDXBridgeKitToB_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "user_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "authors": {
+        "hulizhen": "hulizhen@bytedance.com"
+    }, 
+    "version": "1.0.15", 
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES", 
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    }, 
+    "source_files": [
+        "BDXBridgeKitToB-bitdummy.m"
+    ], 
+    "static_framework": true, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20315", 
+    "subspecs": [
+        {
+            "public_header_files": "BDXBridgeKitToB/Classes/Core/*.h", 
+            "name": "Core", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/BDMantle": []
+            }, 
+            "source_files": [
+                "BDXBridgeKitToB/Classes/Core/**/*.{h,m}", 
+                "BDXBridgeKitToB-bitdummy.m"
+            ]
+        }, 
+        {
+            "name": "Containers", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Containers_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "BDXBridgeKitToB/Core": []
+            }, 
+            "source_files": [
+                "BDXBridgeKitToB-bitdummy.m"
+            ], 
+            "subspecs": [
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Web_*awesome_*.a"
+                    }, 
+                    "name": "Web", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Containers/Web/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Engines", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Engines_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "BDXBridgeKitToB/Core": []
+            }, 
+            "source_files": [
+                "BDXBridgeKitToB-bitdummy.m"
+            ], 
+            "subspecs": [
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_TTBridgeUnifyAdapter_*awesome_*.a"
+                    }, 
+                    "name": "TTBridgeUnifyAdapter", 
+                    "subspecs": [
+                        {
+                            "public_header_files": "BDXBridgeKitToB/Classes/Engines/TTBridgeUnifyAdapter/CoreEngine/*.h", 
+                            "dependencies": {
+                                "OKJSBridgeToB": []
+                            }, 
+                            "ios": {
+                                "vendored_libraries": "ios-arch-iphone/*_CoreEngine_*awesome_*.a"
+                            }, 
+                            "name": "CoreEngine", 
+                            "source_files": [
+                                "BDXBridgeKitToB/Classes/Engines/TTBridgeUnifyAdapter/CoreEngine/*.{h,m}", 
+                                "BDXBridgeKitToB-bitdummy.m"
+                            ]
+                        }, 
+                        {
+                            "dependencies": {
+                                "OKJSBridgeToB": [], 
+                                "BDXBridgeKitToB/Engines/TTBridgeUnifyAdapter/CoreEngine": []
+                            }, 
+                            "ios": {
+                                "vendored_libraries": "ios-arch-iphone/*_WebEngine_*awesome_*.a"
+                            }, 
+                            "name": "WebEngine", 
+                            "source_files": [
+                                "BDXBridgeKitToB-bitdummy.m"
+                            ]
+                        }
+                    ], 
+                    "source_files": [
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Methods", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Methods_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "BDXBridgeKitToB/Core": []
+            }, 
+            "source_files": [
+                "BDXBridgeKitToB-bitdummy.m"
+            ], 
+            "subspecs": [
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Framework_*awesome_*.a"
+                    }, 
+                    "name": "Framework", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Framework/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "public_header_files": "BDXBridgeKitToB/Classes/Methods/Event/*.h", 
+                    "private_header_files": "BDXBridgeKitToB/Classes/Methods/Event/*+Internal.h", 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Event_*awesome_*.a"
+                    }, 
+                    "name": "Event", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Event/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "frameworks": [
+                        "MessageUI", 
+                        "EventKit", 
+                        "AudioToolbox", 
+                        "Photos", 
+                        "AVFoundation"
+                    ], 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_System_*awesome_*.a"
+                    }, 
+                    "name": "System", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/System/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "OneKit/Reachability": [], 
+                        "TTNetworkManager": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Network_*awesome_*.a"
+                    }, 
+                    "name": "Network", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Network/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Storage_*awesome_*.a"
+                    }, 
+                    "name": "Storage", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Storage/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Account_*awesome_*.a"
+                    }, 
+                    "name": "Account", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Account/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Log_*awesome_*.a"
+                    }, 
+                    "name": "Log", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Log/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "OneKit/Reachability": [], 
+                        "OneKit/ByteDanceKit": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Info_*awesome_*.a"
+                    }, 
+                    "name": "Info", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Info/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "OneKit/Reachability": [], 
+                        "TTNetworkManager": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Media_*awesome_*.a"
+                    }, 
+                    "name": "Media", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Media/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Route_*awesome_*.a"
+                    }, 
+                    "name": "Route", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Route/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_UI_*awesome_*.a"
+                    }, 
+                    "name": "UI", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/UI/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "QRCodeReaderViewController": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Open_*awesome_*.a"
+                    }, 
+                    "name": "Open", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Open/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Development_*awesome_*.a"
+                    }, 
+                    "name": "Development", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/Development/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "OneKit/Screenshot": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_ScreenShot_*awesome_*.a"
+                    }, 
+                    "name": "ScreenShot", 
+                    "source_files": [
+                        "BDXBridgeKitToB/Classes/Methods/ScreenShot/*.{h,m}", 
+                        "BDXBridgeKitToB-bitdummy.m"
+                    ]
+                }
+            ]
+        }
+    ], 
+    "name": "BDXBridgeKitToB"
+}
