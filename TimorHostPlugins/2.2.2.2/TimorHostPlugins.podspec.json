@@ -19,6 +19,7 @@
   },
   "default_subspecs": [
     "ActionSheet",
+    "ScanCode",
     "Media",
     "Picker",
     "Location",
