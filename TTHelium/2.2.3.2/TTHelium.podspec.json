@@ -1,0 +1,196 @@
+{
+  "name": "TTHelium",
+  "version": "2.2.3.2",
+  "summary": "Helium engine",
+  "license": {
+    "type": "Copyright",
+    "text": "Bytedance copyright"
+  },
+  "homepage": "https://github.com/volcengine/volcengine-specs",
+  "authors": {
+    "gejunchen": "gejunchen@bytedance.com"
+  },
+  "source": {
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTHelium/1.1.0/TTHelium_1_1_0.zip"
+  },
+  "requires_arc": true,
+  "platforms": {
+    "ios": "9.0",
+    "osx": "10.11.0"
+  },
+  "static_framework": true,
+  "subspecs": [
+    {
+      "name": "core",
+      "public_header_files": [
+        "TTHelium/samples/ios/helium/helium-version.h",
+        "TTHelium/samples/ios/helium/HeliumApp.h",
+        "TTHelium/samples/ios/helium/HeliumCameraDefine.h",
+        "TTHelium/samples/ios/helium/HeliumCameraImpl.h",
+        "TTHelium/neon/include/helium_neon.h",
+        "TTHelium/debug_util/include/debug_util.h",
+        "TTHelium/debug_util/include/sensitive_info_report_util.h",
+        "TTHelium/debug_util/include/sensitive_permission_status_util.h",
+        "TTHelium/strontium/strontium.h",
+        "TTHelium/loader/include/loader_darwin.h"
+      ],
+      "ios": {
+        "source_files": [
+          "TTHelium/deps/nanovg/src/coretext_drawer.mm",
+          "TTHelium/deps/nanovg/src/nanovg.cc",
+          "TTHelium/manganese/src/manganese.cc",
+          "TTHelium/platinum/src/platinum_image_darwin.mm",
+          "TTHelium/platinum/src/platinum_loader.cc",
+          "TTHelium/platinum/src/platinum.cc",
+          "TTHelium/titanium/src/titanium_canvas.cc",
+          "TTHelium/titanium/src/titanium.cc",
+          "TTHelium/titanium/src/titanium_nanovg.cc",
+          "TTHelium/gallium/src/ti_fbo.cc",
+          "TTHelium/gallium/src/gallium_opengl_es2.cc",
+          "TTHelium/gallium/src/gallium_debug.cc",
+          "TTHelium/scandium/src/scandium_js.cc",
+          "TTHelium/neon/src/module.cc",
+          "TTHelium/neon/src/zlib.cc",
+          "TTHelium/neon/src/buffer.cc",
+          "TTHelium/neon/src/worker.cc",
+          "TTHelium/neon/src/effect.cc",
+          "TTHelium/neon/src/liveStream.cc",
+          "TTHelium/debug_util/src/debug_util.cc",
+          "TTHelium/debug_util/src/sensitive_info_report_util.cc",
+          "TTHelium/mendelevium/src/*.h",
+          "TTHelium/mendelevium/src/mendelevium.cc",
+          "TTHelium/mendelevium/src/mendelevium_darwin.mm",
+          "TTHelium/mendelevium/src/hair_parser.cc",
+          "TTHelium/mendelevium/src/portrait_matting.cc",
+          "TTHelium/mendelevium/src/facePoints.cc",
+          "TTHelium/mendelevium/src/FaceDistoritionV3Filter.cc",
+          "TTHelium/mendelevium/src/mendelevium_live_stream.cc",
+          "TTHelium/fluorine/src/ftimer.cc",
+          "TTHelium/{fluorine,gallium,manganese,platinum,scandium,titanium,neon,debug_util}/include/*.h",
+          "TTHelium/strontium/*.{h,cc}",
+          "TTHelium/deps/nanovg/include/**/*.{h}",
+          "TTHelium/mendelevium/include/**/*.{h}",
+          "TTHelium/loader/include/*.{h,hpp}",
+          "TTHelium/loader/src/loader.cc",
+          "TTHelium/loader/src/package_loader.cc",
+          "TTHelium/loader/src/loader_darwin.mm",
+          "TTHelium/platinum/src/platinum_napi.cc",
+          "TTHelium/samples/ios/ne_use_nanovg.m",
+          "TTHelium/platinum/src/platinum_ios.mm",
+          "TTHelium/samples/ios/helium/helium-version.h",
+          "TTHelium/samples/ios/helium/HeliumCameraDefine.{h,m}",
+          "TTHelium/samples/ios/helium/HeliumCameraImpl.{h,mm}",
+          "TTHelium/samples/ios/helium/HeliumApp.{h,mm}",
+          "TTHelium/samples/ios/helium/utils/HeliumLog.{h,m}",
+          "TTHelium/samples/ios/helium/utils/HeliumTracker.{h,m}"
+        ],
+        "frameworks": [
+          "JavaScriptCore",
+          "OpenGLES",
+          "AVFoundation",
+          "Accelerate",
+          "CoreMedia",
+          "ImageIO"
+        ],
+        "libraries": "z",
+        "vendored_libraries": [
+          "TTHelium/deps/nanovg/src/coretext_drawer.o",
+          "TTHelium/deps/nanovg/src/nanovg.o",
+          "TTHelium/manganese/src/manganese.o",
+          "TTHelium/platinum/src/platinum_image_darwin.o",
+          "TTHelium/platinum/src/platinum_loader.o",
+          "TTHelium/platinum/src/platinum.o",
+          "TTHelium/titanium/src/titanium_canvas.o",
+          "TTHelium/titanium/src/titanium.o",
+          "TTHelium/titanium/src/titanium_nanovg.o",
+          "TTHelium/gallium/src/ti_fbo.o",
+          "TTHelium/gallium/src/gallium_opengl_es2.o",
+          "TTHelium/gallium/src/gallium_debug.o",
+          "TTHelium/scandium/src/scandium_js.o",
+          "TTHelium/neon/src/module.o",
+          "TTHelium/neon/src/zlib.o",
+          "TTHelium/neon/src/buffer.o",
+          "TTHelium/neon/src/worker.o",
+          "TTHelium/neon/src/effect.o",
+          "TTHelium/neon/src/liveStream.o",
+          "TTHelium/debug_util/src/debug_util.o",
+          "TTHelium/debug_util/src/sensitive_info_report_util.o",
+          "TTHelium/mendelevium/src/*.o",
+          "TTHelium/mendelevium/src/mendelevium.o",
+          "TTHelium/mendelevium/src/mendelevium_darwin.o",
+          "TTHelium/mendelevium/src/hair_parser.o",
+          "TTHelium/mendelevium/src/portrait_matting.o",
+          "TTHelium/mendelevium/src/facePoints.o",
+          "TTHelium/mendelevium/src/FaceDistoritionV3Filter.o",
+          "TTHelium/mendelevium/src/mendelevium_live_stream.o",
+          "TTHelium/fluorine/src/ftimer.o",
+          "TTHelium/{fluorine,gallium,manganese,platinum,scandium,titanium,neon,debug_util}/include/*.o",
+          "TTHelium/strontium/*.o",
+          "TTHelium/deps/nanovg/include/**/*.o",
+          "TTHelium/mendelevium/include/**/*.o",
+          "TTHelium/loader/include/*.o",
+          "TTHelium/loader/src/loader.o",
+          "TTHelium/loader/src/package_loader.o",
+          "TTHelium/loader/src/loader_darwin.o",
+          "TTHelium/platinum/src/platinum_napi.o",
+          "TTHelium/samples/ios/ne_use_nanovg.o",
+          "TTHelium/platinum/src/platinum_ios.o",
+          "TTHelium/samples/ios/helium/helium-version.o",
+          "TTHelium/samples/ios/helium/HeliumCameraDefine.o",
+          "TTHelium/samples/ios/helium/HeliumCameraImpl.o",
+          "TTHelium/samples/ios/helium/HeliumApp.o",
+          "TTHelium/samples/ios/helium/utils/HeliumLog.o",
+          "TTHelium/samples/ios/helium/utils/HeliumTracker.o",
+          "TTHelium/libTTHelium-1a19cd5.a",
+          "TTHelium/libTTHelium-c48a4b6.a",
+          "TTHelium/libTTHelium-6510370.a"
+        ],
+        "exclude_files": [
+
+        ]
+      },
+      "dependencies": {
+        "TTHelium/jsbinding": [
+
+        ],
+        "HeliumEffectAdapterHeader": [
+
+        ],
+        "Napi/JSC": [
+
+        ],
+        "Napi/Env": [
+
+        ]
+      }
+    },
+    {
+      "name": "jsbinding",
+      "frameworks": "JavaScriptCore",
+      "source_files": [
+        "TTHelium/deps/jsbinding/include/*",
+        "TTHelium/deps/jsbinding/src/jsbinding_internal.hpp",
+        "TTHelium/deps/jsbinding/src/*.hpp",
+        "TTHelium/deps/jsbinding/src/jsbinding.cpp",
+        "TTHelium/deps/jsbinding/src/jsbinding_jsc.cpp"
+      ],
+      "public_header_files": [
+        "TTHelium/deps/jsbinding/include/*",
+        "TTHelium/deps/jsbinding/src/js_embeder_jsc.hpp"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TTHelium/deps/jsbinding/include/*.o",
+          "TTHelium/deps/jsbinding/src/jsbinding_internal.o",
+          "TTHelium/deps/jsbinding/src/*.o",
+          "TTHelium/deps/jsbinding/src/jsbinding.o",
+          "TTHelium/deps/jsbinding/src/jsbinding_jsc.o",
+          "TTHelium/libTTHelium-1e1d877.a"
+        ]
+      }
+    }
+  ]
+}
