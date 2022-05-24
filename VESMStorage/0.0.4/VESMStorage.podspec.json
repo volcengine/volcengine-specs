@@ -1,0 +1,49 @@
+{
+    "prepare_command": "", 
+    "public_header_files": "Storage/*.h", 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "requires_arc": true, 
+    "xcconfig": {
+        "HEADER_SEARCH_PATHS": "$(inherited) \"${PODS_ROOT}/OneKit/OneKit/boringssl/include\""
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VESMStorage_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "platforms": {
+        "ios": "8.0"
+    }, 
+    "authors": {
+        "duanwenbin": "bob170731@gmail.com"
+    }, 
+    "version": "0.0.4", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/VESMStorage/0.0.4/VESMStorage.framework.tar.xz"
+    }, 
+    "dependencies": {
+        "OneKit/BaseKit": [], 
+        "OneKit/Cache": [], 
+        "WCDB": [], 
+        "OneKit/boringssl": []
+    }, 
+    "source_files": [
+        "Storage/*.{h,m,mm,c}", 
+        "VESMStorage-bitdummy.m"
+    ], 
+    "static_framework": true, 
+    "homepage": "https://github.com/volcengine/veMARS_SwiftOneKit", 
+    "repoId": "28437", 
+    "name": "VESMStorage"
+}
