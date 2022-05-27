@@ -1,0 +1,53 @@
+{
+    "prepare_command": "", 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VESafeKeyboard/1.0.1/VESafeKeyboard.framework.tar.xz"
+    }, 
+    "xcconfig": {
+        "HEADER_SEARCH_PATHS": "$(inherited) \"${PODS_ROOT}/OneKit/OneKit/boringssl/include\""
+    }, 
+    "resource_bundles": {
+        "VESafeKeyboard": [
+            "VESafeKeyboard/Assets/*.png"
+        ]
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VESafeKeyboard_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "authors": {
+        "Yifei Feng": "fengyifei.528@bytedance.com"
+    }, 
+    "version": "1.0.1", 
+    "dependencies": {
+        "OneKit/StartUp": [], 
+        "OneKit/MARS": [], 
+        "OneKit/GMObjC": [], 
+        "OneKit/Service": [], 
+        "OneKit/RSAObjC": [], 
+        "OneKit/Network": []
+    }, 
+    "source_files": [
+        "VESafeKeyboard/Classes/**/*", 
+        "VESafeKeyboard-bitdummy.m"
+    ], 
+    "homepage": "https://github.com/volcengine/VESafeKeyboard", 
+    "repoId": "27063", 
+    "name": "VESafeKeyboard"
+}
