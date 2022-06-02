@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
   s.static_framework = true
-  s.default_subspecs = ['Public']
+  # s.default_subspecs = ['Public']
 
   s.subspec 'Public' do |d|
     d.source_files = 'VEKitDemo/Public/**/*.{h,m,mm}'
