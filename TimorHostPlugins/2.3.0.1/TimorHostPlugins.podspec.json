@@ -63,7 +63,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/Campaign/**/*.o",
-          "libTimorHostPlugins-40eb188.a"
+          "TimorHostPlugins/libTimorHostPlugins-40eb188.a"
         ]
       }
     },
@@ -88,7 +88,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/ActionSheet/**/*.o",
-          "libTimorHostPlugins-d24bc0a.a"
+          "TimorHostPlugins/libTimorHostPlugins-d24bc0a.a"
         ]
       }
     },
@@ -113,7 +113,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/ScanCode/**/*.o",
-          "libTimorHostPlugins-96e7495.a"
+          "TimorHostPlugins/libTimorHostPlugins-96e7495.a"
         ]
       }
     },
@@ -141,7 +141,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/Media/**/*.o",
-          "libTimorHostPlugins-78372b6.a"
+          "TimorHostPlugins/libTimorHostPlugins-78372b6.a"
         ]
       }
     },
@@ -171,7 +171,7 @@
           "ios": {
             "vendored_libraries": [
               "TimorHostPlugins/Classes/Picker/CustomPicker/**/*.o",
-              "libTimorHostPlugins-f5e2ba0.a"
+              "TimorHostPlugins/libTimorHostPlugins-f5e2ba0.a"
             ]
           }
         },
@@ -193,7 +193,7 @@
           "ios": {
             "vendored_libraries": [
               "TimorHostPlugins/Classes/Picker/RegionPicker/**/*.o",
-              "libTimorHostPlugins-0e4dc5f.a"
+              "TimorHostPlugins/libTimorHostPlugins-0e4dc5f.a"
             ]
           }
         },
@@ -215,7 +215,7 @@
           "ios": {
             "vendored_libraries": [
               "TimorHostPlugins/Classes/Picker/DatePicker/**/*.o",
-              "libTimorHostPlugins-a09606b.a"
+              "TimorHostPlugins/libTimorHostPlugins-a09606b.a"
             ]
           }
         },
@@ -229,7 +229,7 @@
             ],
             "vendored_libraries": [
               "TimorHostPlugins/Classes/Picker/ImagePicker-PH/**/*.o",
-              "libTimorHostPlugins-3972a62.a"
+              "TimorHostPlugins/libTimorHostPlugins-3972a62.a"
             ]
           },
           "source_files": "TimorHostPlugins/Classes/Picker/ImagePicker-PH/**/*.{h,m}",
@@ -267,7 +267,7 @@
           "ios": {
             "vendored_libraries": [
               "TimorHostPlugins/Classes/Picker/VideoPicker/**/*.o",
-              "libTimorHostPlugins-10c623d.a"
+              "TimorHostPlugins/libTimorHostPlugins-10c623d.a"
             ]
           }
         }
@@ -280,7 +280,7 @@
         "frameworks": "CoreLocation",
         "vendored_libraries": [
           "TimorHostPlugins/Classes/Location/**/*.o",
-          "libTimorHostPlugins-44557b1.a"
+          "TimorHostPlugins/libTimorHostPlugins-44557b1.a"
         ]
       },
       "private_header_files": "TimorHostPlugins/Classes/Location/**/*.{h}",
@@ -329,7 +329,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/Map-AMap/**/*.o",
-          "libTimorHostPlugins-4bd2ee7.a"
+          "TimorHostPlugins/libTimorHostPlugins-4bd2ee7.a"
         ]
       }
     },
@@ -357,7 +357,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/Map-BaiduMap/**/*.o",
-          "libTimorHostPlugins-35634ca.a"
+          "TimorHostPlugins/libTimorHostPlugins-35634ca.a"
         ]
       }
     },
@@ -367,7 +367,7 @@
         "frameworks": "MapKit",
         "vendored_libraries": [
           "TimorHostPlugins/Classes/Map-MapKit/**/*.o",
-          "libTimorHostPlugins-660ec34.a"
+          "TimorHostPlugins/libTimorHostPlugins-660ec34.a"
         ]
       },
       "source_files": "TimorHostPlugins/Classes/Map-MapKit/**/*.{h,m}",
@@ -407,7 +407,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/Pigeon/**/*.o",
-          "libTimorHostPlugins-0416702.a"
+          "TimorHostPlugins/libTimorHostPlugins-0416702.a"
         ]
       }
     },
@@ -429,7 +429,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/ContentPlayer/*.o",
-          "libTimorHostPlugins-bbb9539.a"
+          "TimorHostPlugins/libTimorHostPlugins-bbb9539.a"
         ]
       }
     },
@@ -488,7 +488,7 @@
               "TimorHostPlugins/Classes/TTVideoEngine/Classes/*.{a}",
               "TimorHostPlugins/Classes/TTVideoEngine/Classes/Private/**/*.o",
               "TimorHostPlugins/Classes/TTVideoEngine/Classes/Private/**/*.o",
-              "libTimorHostPlugins-ac406ff.a"
+              "TimorHostPlugins/libTimorHostPlugins-ac406ff.a"
             ]
           }
         },
@@ -607,7 +607,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/ContentPlayer/VideoPlayer/**/*.o",
-          "libTimorHostPlugins-df5b829.a"
+          "TimorHostPlugins/libTimorHostPlugins-df5b829.a"
         ]
       }
     },
@@ -621,7 +621,7 @@
         ],
         "vendored_libraries": [
           "TimorHostPlugins/Classes/Reachability-Open/**/*.o",
-          "libTimorHostPlugins-8e5b100.a"
+          "TimorHostPlugins/libTimorHostPlugins-8e5b100.a"
         ]
       },
       "dependencies": {
@@ -668,7 +668,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/WebImage-SDWebImage/**/*.o",
-          "libTimorHostPlugins-bfb8a23.a"
+          "TimorHostPlugins/libTimorHostPlugins-bfb8a23.a"
         ]
       }
     },
@@ -693,7 +693,7 @@
       "ios": {
         "vendored_libraries": [
           "TimorHostPlugins/Classes/DeviceOrientation/**/*.o",
-          "libTimorHostPlugins-a6ad691.a"
+          "TimorHostPlugins/libTimorHostPlugins-a6ad691.a"
         ]
       }
     },
@@ -718,7 +718,7 @@
             "frameworks": "AVFoundation",
             "vendored_libraries": [
               "TimorHostPlugins/Classes/SensitiveSafeAPI/Microphone/**/*.o",
-              "libTimorHostPlugins-69a3bf1.a"
+              "TimorHostPlugins/libTimorHostPlugins-69a3bf1.a"
             ]
           },
           "vendored_libraries": [
@@ -735,7 +735,7 @@
             "frameworks": "AVFoundation",
             "vendored_libraries": [
               "TimorHostPlugins/Classes/SensitiveSafeAPI/Camera/**/*.o",
-              "libTimorHostPlugins-744cd85.a"
+              "TimorHostPlugins/libTimorHostPlugins-744cd85.a"
             ]
           },
           "vendored_libraries": [
@@ -757,7 +757,7 @@
           "ios": {
             "vendored_libraries": [
               "TimorHostPlugins/Classes/SensitiveSafeAPI/Pasteborad/**/*.o",
-              "libTimorHostPlugins-fd9a810.a"
+              "TimorHostPlugins/libTimorHostPlugins-fd9a810.a"
             ]
           }
         },
@@ -768,7 +768,7 @@
             "frameworks": "StoreKit",
             "vendored_libraries": [
               "TimorHostPlugins/Classes/SensitiveSafeAPI/OpenURL/**/*.o",
-              "libTimorHostPlugins-465c65a.a"
+              "TimorHostPlugins/libTimorHostPlugins-465c65a.a"
             ]
           },
           "vendored_libraries": [
@@ -788,7 +788,7 @@
             ],
             "vendored_libraries": [
               "TimorHostPlugins/Classes/SensitiveSafeAPI/WIFI/**/*.o",
-              "libTimorHostPlugins-9aaebe7.a"
+              "TimorHostPlugins/libTimorHostPlugins-9aaebe7.a"
             ]
           },
           "vendored_libraries": [
@@ -829,7 +829,7 @@
             "vendored_libraries": [
               "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Core/*.o",
               "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Private/*.o",
-              "libTimorHostPlugins-0e5fce5.a"
+              "TimorHostPlugins/libTimorHostPlugins-0e5fce5.a"
             ]
           }
         },
@@ -847,7 +847,7 @@
 
             ],
             "libwebp": [
-              "~> 1.0"
+                
             ]
           },
           "vendored_libraries": [
@@ -859,7 +859,7 @@
           "ios": {
             "vendored_libraries": [
               "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/Classes/**/*.o",
-              "libTimorHostPlugins-fc98883.a"
+              "TimorHostPlugins/libTimorHostPlugins-fc98883.a"
             ]
           }
         },
@@ -886,7 +886,7 @@
           "ios": {
             "vendored_libraries": [
               "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/**/*.o",
-              "libTimorHostPlugins-78ec199.a"
+              "TimorHostPlugins/libTimorHostPlugins-78ec199.a"
             ]
           }
         },
@@ -904,7 +904,7 @@
           "ios": {
             "vendored_libraries": [
               "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.o",
-              "libTimorHostPlugins-5f822d3.a"
+              "TimorHostPlugins/libTimorHostPlugins-5f822d3.a"
             ]
           }
         }
@@ -921,7 +921,7 @@
       ],
       "ios": {
         "vendored_libraries": [
-          "libTimorHostPlugins-0fef330.a"
+          "TimorHostPlugins/libTimorHostPlugins-0fef330.a"
         ]
       }
     }
