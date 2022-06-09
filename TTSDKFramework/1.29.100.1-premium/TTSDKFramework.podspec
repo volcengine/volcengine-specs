@@ -20,6 +20,10 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = [
     "TTSDKFramework.framework",
     "byteaudio.framework",
-    "VolcEngineRTC.framework"
+    "VolcEngineRTC.framework",
+    "TTFFmpeg.framework",
+    "boringssl.framework",
+    "crypto.framework",
+    "libvcn.framework",
   ]
 end
