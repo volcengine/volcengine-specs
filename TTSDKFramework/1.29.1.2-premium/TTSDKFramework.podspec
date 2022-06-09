@@ -22,5 +22,8 @@ Pod::Spec.new do |spec|
     "byteaudio.framework",
     "VolcEngineRTC.framework",
     "TTFFmpeg.framework",
+    "boringssl.framework",
+    "crypto.framework",
+    "libvcn.framework",
   ]
 end
