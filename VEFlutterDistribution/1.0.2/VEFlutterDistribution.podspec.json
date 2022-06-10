@@ -1,0 +1,165 @@
+{
+    "prepare_command": "", 
+    "default_subspecs": [
+        "OneKit"
+    ], 
+    "name": "VEFlutterDistribution", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VEFlutterDistribution/1.0.2/VEFlutterDistribution.framework.tar.xz"
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VEFlutterDistribution_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "authors": {
+        "yanghao.ada": "yanghao.ada@bytedance.com"
+    }, 
+    "version": "1.0.2", 
+    "source_files": [
+        "VEFlutterDistribution-bitdummy.m"
+    ], 
+    "static_framework": true, 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "25621", 
+    "subspecs": [
+        {
+            "public_header_files": "VEFlutterDistribution/Classes/Core/**/*.h", 
+            "name": "Core", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "VEFlutterDistribution/ConfigCacher": [], 
+                "VEFlutterDistribution/ConfigFetcher": []
+            }, 
+            "source_files": [
+                "VEFlutterDistribution/Classes/Core/**/*.{h,m}", 
+                "VEFlutterDistribution-bitdummy.m"
+            ]
+        }, 
+        {
+            "private_header_files": "VEFlutterDistribution/Classes/ConfigCacher/**/*.h", 
+            "name": "ConfigCacher", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_ConfigCacher_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "VEFlutterDistribution/FileManager": []
+            }, 
+            "source_files": [
+                "VEFlutterDistribution/Classes/ConfigCacher/**/*.{h,m}", 
+                "VEFlutterDistribution-bitdummy.m"
+            ]
+        }, 
+        {
+            "private_header_files": "VEFlutterDistribution/Classes/ConfigFetcher/**/*.h", 
+            "name": "ConfigFetcher", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_ConfigFetcher_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "VEFlutterDistribution/PackageDownloader": [], 
+                "VEFlutterDistribution/ConfigCacher": [], 
+                "VEFlutterDistribution/BaseNetwork": []
+            }, 
+            "source_files": [
+                "VEFlutterDistribution/Classes/ConfigFetcher/**/*.{h,m}", 
+                "VEFlutterDistribution-bitdummy.m"
+            ]
+        }, 
+        {
+            "private_header_files": "VEFlutterDistribution/Classes/PackageDownloader/**/*.h", 
+            "name": "PackageDownloader", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_PackageDownloader_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/Reachability": [], 
+                "VEFlutterDistribution/ConfigCacher": [], 
+                "VEFlutterDistribution/BaseNetwork": [], 
+                "VEFlutterDistribution/FileManager": []
+            }, 
+            "source_files": [
+                "VEFlutterDistribution/Classes/PackageDownloader/**/*.{h,m}", 
+                "VEFlutterDistribution-bitdummy.m"
+            ]
+        }, 
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_BaseNetwork_*awesome_*.a"
+            }, 
+            "name": "BaseNetwork", 
+            "dependencies": {
+                "OneKit/Network": [], 
+                "RARegisterKit/OKKit": []
+            }, 
+            "source_files": [
+                "VEFlutterDistribution-bitdummy.m"
+            ]
+        }, 
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_FileManager_*awesome_*.a"
+            }, 
+            "name": "FileManager", 
+            "private_header_files": "VEFlutterDistribution/Classes/FileManager/**/*.h", 
+            "source_files": [
+                "VEFlutterDistribution/Classes/FileManager/**/*.{h,m}", 
+                "VEFlutterDistribution-bitdummy.m"
+            ]
+        }, 
+        {
+            "private_header_files": "VEFlutterDistribution/Classes/OneKit/**/*.h", 
+            "name": "OneKit", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OneKit_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/StartUp": [], 
+                "OneKit/Service": [], 
+                "VEFlutterDistribution/Core": []
+            }, 
+            "source_files": [
+                "VEFlutterDistribution/Classes/OneKit/**/*.{h,m}", 
+                "VEFlutterDistribution-bitdummy.m"
+            ]
+        }
+    ], 
+    "description": "framework_description"
+}
