@@ -1,7 +1,9 @@
 {
     "default_subspecs": [
         "BaseKit", 
-        "MARS/Auth"
+        "MARS/Auth",
+        "Core",
+        "Service"
     ], 
     "static_framework": true, 
     "platforms": {
@@ -125,6 +127,9 @@
                 "vendored_libraries": "ios-arch-iphone/*_BDMantle_*awesome_*.a"
             }, 
             "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
             "source_files": [
                 "OneKit/BDMantle/**/*.{h,m,c}", 
                 "OneKit-bitdummy.m"
@@ -209,6 +214,9 @@
                 "vendored_libraries": "ios-arch-iphone/*_Cache_*awesome_*.a"
             }, 
             "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
             "source_files": [
                 "OneKit/Cache/**/*.{h,m,c}", 
                 "OneKit-bitdummy.m"
@@ -222,6 +230,9 @@
                 "vendored_libraries": "ios-arch-iphone/*_ByteDanceKit_*awesome_*.a"
             }, 
             "name": "ByteDanceKit", 
+            "dependencies": {
+                "OneKit/BaseKit": []
+            },
             "subspecs": [
                 {
                     "public_header_files": [
@@ -276,6 +287,9 @@
                 "Foundation", 
                 "WebKit"
             ], 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
             "source_files": [
                 "OneKit/Screenshot/**/*.{h,m}", 
                 "OneKit-bitdummy.m"
