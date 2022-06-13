@@ -34,7 +34,7 @@ TODO: Add long description of the pod here.
   s.public_header_files = '**/*.h'
   s.default_subspecs = ['OneKit']
   s.subspec 'OneKit' do |d|
-    d.dependency 'OneKit','1.3.7'
+    d.dependency 'OneKit','1.3.8'
   end
 
   s.subspec 'VEH5Kit' do |d|
