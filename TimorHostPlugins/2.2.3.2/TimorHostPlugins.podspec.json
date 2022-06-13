@@ -827,7 +827,11 @@
             "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Core/*.{h,m}",
             "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Private/*.{h,m}"
           ],
-          "resources": "TimorHostPlugins/Classes/ThirdParty/SDWebImage/LICENSE",
+          "resource_bundles": {
+            "BDPSDWEBLICENSE": [
+              "TimorHostPlugins/Classes/ThirdParty/SDWebImage/LICENSE"
+            ]
+          },
           "private_header_files": "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Private/*.h",
           "vendored_libraries": [
             "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Core/*.o",
@@ -851,7 +855,11 @@
             "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/Classes/**/*"
           ],
           "private_header_files": "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/Classes/**/*.{h}",
-          "resources": "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/LICENSE",
+          "resource_bundles": {
+            "BDPSDWEBPCLICENSE": [
+              "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/LICENSE"
+            ]
+          },
           "dependencies": {
             "TimorHostPlugins/ThirdParty/BDPSDWebImage": [
 
@@ -885,9 +893,13 @@
             "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/**/*.{h,m}"
           ],
           "private_header_files": "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/**/*.{h}",
+          "resource_bundles": {
+            "BDPZLPBLICENSE": [
+              "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/LICENSE"
+            ]
+          },
           "resources": [
-            "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/resource/*.{png,xib,nib,bundle}",
-            "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/LICENSE"
+            "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/resource/*.{png,xib,nib,bundle}"
           ],
           "vendored_libraries": [
             "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/**/*.o"
@@ -907,7 +919,11 @@
           "source_files": [
             "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.{h,m}"
           ],
-          "resources": "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/LICENSE",
+          "resource_bundles": {
+            "BDPINTULLICENSE": [
+              "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/LICENSE"
+            ]
+          },
           "private_header_files": "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.{h}",
           "vendored_libraries": [
             "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.o"
