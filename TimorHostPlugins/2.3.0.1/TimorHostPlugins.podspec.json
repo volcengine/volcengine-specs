@@ -52,6 +52,9 @@
         ],
         "VECampaign/Core": [
 
+        ],
+        "TimorHostPlugins/_Dummy": [
+
         ]
       },
       "vendored_libraries": [
