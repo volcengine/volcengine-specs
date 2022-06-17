@@ -38,7 +38,7 @@ TODO: Add long description of the pod here.
       'Public' => ['VEKitDemo/Assets/*.xcassets','VEKitDemo/Assets/*.js']
     }
     d.xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/Headers/Public/WCDB"' }
-    d.dependency 'VEKit/OneKit'
+    d.dependency 'OneKit'
   end
 
   s.subspec 'OneKit' do |d|
@@ -64,21 +64,21 @@ TODO: Add long description of the pod here.
   s.subspec 'VEH5Kit' do |d|
     d.source_files = 'VEKitDemo/VEH5Kit/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/VEH5Kit/**/*.h'
-    d.dependency 'VEKit/VEH5Kit'
+    d.dependency 'VEH5Kit'
     d.dependency 'VEKitDemo/Public'
   end
 
   s.subspec 'VEAppUpdateHelper' do |d|
     d.source_files = 'VEKitDemo/VEAppUpdateHelper/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/VEAppUpdateHelper/**/*.h'
-    d.dependency 'VEKit/VEAppUpdateHelper'
+    d.dependency 'VEAppUpdateHelper'
     d.dependency 'VEKitDemo/Public'
   end
 
   s.subspec 'VEInstall' do |d|
     d.source_files = 'VEKitDemo/VEInstall/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/VEInstall/**/*.h'
-    d.dependency 'VEKit/VEInstall'
+    d.dependency 'VEInstall'
     d.dependency 'VEKitDemo/Public'
     d.dependency 'VEInstall/Core'
     d.dependency 'VEInstall/URL/CN'
@@ -90,7 +90,7 @@ TODO: Add long description of the pod here.
   s.subspec 'VERemoteConfig' do |d|
     d.source_files = 'VEKitDemo/VERemoteConfig/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/VERemoteConfig/**/*.h'
-    d.dependency 'VEKit/VERemoteConfig'
+    d.dependency 'VERemoteConfig'
     d.dependency 'VERemoteConfig/TestPage'
     d.dependency 'VERemoteConfig/Core'
     d.dependency 'VERemoteConfig/OneKit'
@@ -100,7 +100,7 @@ TODO: Add long description of the pod here.
   s.subspec 'RangersAppLog' do |d|
     d.source_files = 'VEKitDemo/RangersAppLog/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/RangersAppLog/**/*.h'
-    d.dependency 'VEKit/RangersAppLog'
+    d.dependency 'RangersAppLog'
     d.dependency 'VEKitDemo/Public'
     d.dependency 'RangersAppLog/Core'
     d.dependency 'RangersAppLog/Host/CN'
@@ -114,8 +114,6 @@ TODO: Add long description of the pod here.
   s.subspec 'RangersAPM' do |d|
     d.source_files = 'VEKitDemo/RangersAPM/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/RangersAPM/**/*.h'
-    d.dependency 'VEKitDemo/Public'
-    d.dependency 'VEKit/RangersAPM'
     d.dependency 'VEKitDemo/Public'
     d.dependency 'RangersAPM/Crash'
     d.dependency 'RangersAPM/OOM'
@@ -131,21 +129,33 @@ TODO: Add long description of the pod here.
   s.subspec 'BDHotfix' do |d|
     d.source_files = 'VEKitDemo/BDHotfix/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/BDHotfix/**/*.h'
-    d.dependency 'VEKit/BDHotfix'
+    d.dependency 'BDHotfix'
     d.dependency 'VEKitDemo/Public'
   end
 
   s.subspec 'TTNetworkManager' do |d|
     d.source_files = 'VEKitDemo/TTNetworkManager/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/TTNetworkManager/**/*.h'
-    d.dependency 'VEKit/TTNetworkManager'
+    d.dependency 'TTNetworkManager'
     d.dependency 'VEKitDemo/Public'
   end
 
   s.subspec 'Timor' do |d|
     d.source_files = 'VEKitDemo/Timor/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/Timor/**/*.h'
-    d.dependency 'VEKit/Timor'
+    d.dependency 'Timor'
+    d.dependency 'VEKitDemo/Public'
+    d.dependency 'TimorHostPlugins/ActionSheet'
+    d.dependency 'TimorHostPlugins/Media'
+    d.dependency 'TimorHostPlugins/Picker'
+    d.dependency 'TimorHostPlugins/Location'
+    d.dependency 'TimorHostPlugins/Map-MapKit'
+    d.dependency 'TimorHostPlugins/Pigeon'
+    d.dependency 'TimorHostPlugins/ContentPlayer'
+    d.dependency 'TimorHostPlugins/VideoPlayer'
+    d.dependency 'TimorHostPlugins/Reachability-Open'
+    d.dependency 'TimorHostPlugins/WebImage-SDWebImage'
+    d.dependency 'TimorHostPlugins/DeviceOrientation'
     d.dependency 'TimorHostPlugins/Campaign'
     d.dependency 'VEKitDemo/Public'
   end
@@ -153,21 +163,21 @@ TODO: Add long description of the pod here.
   s.subspec 'VESMStorage' do |d|
     d.source_files = 'VEKitDemo/VESMStorage/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/VESMStorage/**/*.h'
-    d.dependency 'VEKit/VESMStorage'
+    d.dependency 'VESMStorage'
     d.dependency 'VEKitDemo/Public'
   end
 
   s.subspec 'VESafeKeyboard' do |d|
     d.source_files = 'VEKitDemo/VESafeKeyboard/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/VESafeKeyboard/**/*.h'
-    d.dependency 'VEKit/VESafeKeyboard'
+    d.dependency 'VESafeKeyboard'
     d.dependency 'VEKitDemo/Public'
   end
 
   s.subspec 'VECampaign' do |d|
     d.source_files = 'VEKitDemo/VECampaign/**/*.{h,m,mm}'
     d.public_header_files = 'VEKitDemo/VECampaign/**/*.h'
-    d.dependency 'VEKit/VECampaign'
+    d.dependency 'VECampaign'
     d.dependency 'VEKitDemo/Public'
   end
 
