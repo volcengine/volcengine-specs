@@ -11,7 +11,7 @@
     "yangqihang": "yangqihang@bytedance.com"
   },
   "source": {
-    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TimorHostPlugins/2.3.0.1/TimorHostPlugins.zip"
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TimorHostPlugins/2.3.0.1-bugfix/TimorHostPlugins.zip"
   },
   "description": "The default implication of Mars MiniApp SDK",
   "platforms": {
