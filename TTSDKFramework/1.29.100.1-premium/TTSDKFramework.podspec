@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.author       = { "shangjincheng-bd" => "shangjincheng@bytedance.com" }
   spec.platform     = :ios, "8.0"
 
-  spec.source       = { :http => "https://sf1-hscdn-tos.pstatp.com/obj/cloud-common/ttsdk/iOS/TTSDKFramework-#{spec.version}-ta.zip", :type => :zip }
+  spec.source       = { :https => "https://console.byteplus.com/vod/download?tosKey=ttsdk/iOS/TTSDKFramework-#{spec.version}-ta.zip", :type => :zip }
 
   spec.static_framework = false
   spec.resources = ['TTSDKFramework.framework/ttplayer.metallib']
