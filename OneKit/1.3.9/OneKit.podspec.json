@@ -291,7 +291,10 @@
             "source_files": [
                 "OneKit/Screenshot/**/*.{h,m}", 
                 "OneKit-bitdummy.m"
-            ]
+            ],
+            "dependencies": {
+                "OneKit/Service": []
+            }
         }, 
         {
             "vendored_libraries": [
