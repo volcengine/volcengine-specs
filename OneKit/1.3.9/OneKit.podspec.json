@@ -218,7 +218,10 @@
             "source_files": [
                 "OneKit/Cache/**/*.{h,m,c}", 
                 "OneKit-bitdummy.m"
-            ]
+            ],
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
         }, 
         {
             "name": "ByteDanceKit", 
