@@ -290,6 +290,23 @@ Pod::Spec.new do |spec|
     subspec.dependency 'CocoaAsyncSocket', '~> 7.6.4'
   end
 
+  spec.subspec 'Uploader-Strip' do |subspec|
+    subspec.public_header_files = [
+      'TTSDK/TTFileUploadClientb/**/*.h',
+    ]
+    subspec.source_files = [
+      'TTSDK/TTFileUploadClientb/**/*',
+    ]
+    subspec.vendored_libraries = [
+      'TTSDK/{TTVideoSetting,TTFileUploadClientb}/**/*.a',
+      'TTSDK/protobuf_lite/**/*.a',
+      'TTSDK/lib_h_dec/**/*.a',
+      'TTSDK/VCNVCloudNetwork_strip/**/*.a'
+    ]
+    subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
+    subspec.dependency 'TTSDK/Core'
+  end
+
   spec.subspec 'PlayerCore-Strip' do |subspec|
     subspec.public_header_files = [
       'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/TTPlayerDef.h',
