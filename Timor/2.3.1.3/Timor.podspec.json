@@ -1,0 +1,2229 @@
+{
+  "name": "Timor",
+  "version": "2.3.1.3",
+  "summary": "Mars MiniApp SDK",
+  "description": "Mars MiniApp SDK",
+  "homepage": "https://github.com/volcengine/volcengine-specs",
+  "license": {
+    "type": "Copyright",
+    "text": "Bytedance copyright"
+  },
+  "authors": {
+    "gejunchen": "gejunchen@bytedance.com"
+  },
+  "source": {
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/Timor/2.3.1.3/Timor.zip"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "pod_target_xcconfig": {
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
+  },
+  "dependencies": {
+    "OneKit/Core": [
+
+    ],
+    "OneKit/StartUp": [
+
+    ],
+    "SocketRocket": [
+
+    ],
+    "TTHelium": [
+
+    ],
+    "Napi": [
+
+    ],
+    "HeliumEffectAdapterHeader": [
+
+    ]
+  },
+  "default_subspecs": [
+    "TimorCore",
+    "HostInterfaces",
+    "Utils",
+    "Resources"
+  ],
+  "static_framework": true,
+  "subspecs": [
+    {
+      "name": "TimorCore",
+      "source_files": [
+        "**/*.{h,m,mm}",
+        "Timor-bitdummy.m"
+      ],
+      "vendored_libraries": [
+        "**/*.a"
+      ]
+    },
+    {
+      "name": "Config",
+      "dependencies": {
+        "Timor/Utils/BundleUtil": [
+
+        ],
+        "Timor/Utils/CommonUtil": [
+
+        ],
+        "Timor/Utils/SDKConfigUtil": [
+
+        ],
+        "Timor/Utils/BootstrapUtil": [
+
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "Chinese",
+          "source_files": [
+            "Timor/Config/Chinese/**/*.{h,m,mm,c}"
+          ],
+          "vendored_libraries": [
+            "Timor/Config/Chinese/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Config/Chinese/**/*.o",
+              "libTimor-9336377.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Resources",
+      "subspecs": [
+        {
+          "name": "I18n",
+          "subspecs": [
+            {
+              "name": "I18nChinese",
+              "resource_bundles": {
+                "BDPI18nChinese": [
+                  "Timor/Resources/BDPI18n/BDPI18nChinese/**/*.zip"
+                ]
+              }
+            },
+            {
+              "name": "I18nInternational",
+              "resource_bundles": {
+                "BDPI18nInternational": [
+                  "Timor/Resources/BDPI18n/BDPI18nInternational/**/*.zip"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Static",
+          "subspecs": [
+            {
+              "name": "StaticChinese",
+              "resource_bundles": {
+                "TimorStaticChineseBundle": [
+                  "Timor/Resources/Static/Chinese/**/*"
+                ]
+              }
+            },
+            {
+              "name": "StaticInternational",
+              "resource_bundles": {
+                "TimorStaticInternationalBundle": [
+                  "Timor/Resources/Static/International/**/*"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "JSSDK",
+          "subspecs": [
+            {
+              "name": "JSSDKMPDSL",
+              "resource_bundles": {
+                "TimorJSSDKMPDSLBundle": [
+                  "Timor/Resources/JSSDK/MPDSL/dat.bundle",
+                  "Timor/Resources/JSSDK/MPDSL/Others/**/*"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Offline",
+          "resource_bundles": {
+            "TimorOfflineBundle": [
+              "Timor/Resources/Offline/dat.bundle"
+            ]
+          }
+        },
+        {
+          "name": "Images",
+          "resource_bundles": {
+            "TimorImagesAssetBundle": [
+              "Timor/Resources/Images/*.{xcassets}"
+            ]
+          },
+          "pod_target_xcconfig": {
+            "ASSETCATALOG_COMPILER_OPTIMIZATION": "space"
+          }
+        }
+      ]
+    },
+    {
+      "name": "HostInterfaces",
+      "subspecs": [
+        {
+          "name": "LicenseCenterInterface",
+          "source_files": "Timor/HostInterfaces/LicenseCenter/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/LicenseCenter/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "CampaignInterface",
+          "source_files": "Timor/HostInterfaces/Campaign/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Campaign/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "GetRealPathInterface",
+          "source_files": "Timor/HostInterfaces/GetRealPath/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/GetRealPath/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "BasicInfoInterface",
+          "source_files": "Timor/HostInterfaces/BasicInfo/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/BasicInfo/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "BaseInterface",
+          "source_files": [
+            "Timor/HostInterfaces/Base/**/*.{h,m}"
+          ],
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Base/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/Base/**/*.o",
+              "libTimor-c3e8cb2.a"
+            ]
+          }
+        },
+        {
+          "name": "LifeCycleInterface",
+          "source_files": "Timor/HostInterfaces/LifeCycle/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/LifeCycle/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "RuntimeGlobalConfiguration",
+          "source_files": "Timor/HostInterfaces/RuntimeGlobalConfiguration/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/RuntimeGlobalConfiguration/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/RuntimeGlobalConfiguration/**/*.o",
+              "libTimor-1e7ed30.a"
+            ]
+          }
+        },
+        {
+          "name": "AnchorInterface",
+          "dependencies": {
+            "Timor/Utils/I18nUtil": [
+
+            ],
+            "Timor/Utils/BundleUtil": [
+
+            ]
+          },
+          "source_files": "Timor/HostInterfaces/Anchor/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Anchor/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/Anchor/**/*.o",
+              "libTimor-8936bfe.a"
+            ]
+          }
+        },
+        {
+          "name": "LocationInterface",
+          "ios": {
+            "frameworks": "CoreLocation",
+            "vendored_libraries": [
+              "Timor/HostInterfaces/Location/**/*.o",
+              "libTimor-86e1bf5.a"
+            ]
+          },
+          "source_files": "Timor/HostInterfaces/Location/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Location/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "ComponentInterface",
+          "subspecs": [
+            {
+              "name": "ContentPlayerInterface",
+              "source_files": "Timor/HostInterfaces/Component/ContentPlayer/*.{h,m}",
+              "vendored_libraries": [
+                "Timor/HostInterfaces/Component/ContentPlayer/*.o"
+              ],
+              "exclude_files": [
+
+              ]
+            },
+            {
+              "name": "VideoPlayerInterface",
+              "dependencies": {
+                "Timor/HostInterfaces/ComponentInterface/ContentPlayerInterface": [
+
+                ],
+                "Timor/Utils/ViewControllerUtil": [
+
+                ]
+              },
+              "source_files": "Timor/HostInterfaces/Component/ContentPlayer/VideoPlayer/**/*.{h,m}",
+              "vendored_libraries": [
+                "Timor/HostInterfaces/Component/ContentPlayer/VideoPlayer/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "Timor/HostInterfaces/Component/ContentPlayer/VideoPlayer/**/*.o",
+                  "libTimor-e58333e.a"
+                ]
+              }
+            },
+            {
+              "name": "LivePlayerInterface",
+              "dependencies": {
+                "Timor/HostInterfaces/ComponentInterface/ContentPlayerInterface": [
+
+                ]
+              },
+              "source_files": "Timor/HostInterfaces/Component/ContentPlayer/LivePlayer/**/*.{h,m}",
+              "vendored_libraries": [
+                "Timor/HostInterfaces/Component/ContentPlayer/LivePlayer/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "Timor/HostInterfaces/Component/ContentPlayer/LivePlayer/**/*.o",
+                  "libTimor-7d80d22.a"
+                ]
+              }
+            },
+            {
+              "name": "AudioPlayerInterface",
+              "source_files": "Timor/HostInterfaces/Component/AudioPlayer/**/*.{h,m}",
+              "vendored_libraries": [
+                "Timor/HostInterfaces/Component/AudioPlayer/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "Timor/HostInterfaces/Component/AudioPlayer/**/*.o",
+                  "libTimor-844e368.a"
+                ]
+              }
+            },
+            {
+              "name": "MapInterface",
+              "dependencies": {
+                "Timor/Utils/BundleUtil": [
+
+                ],
+                "Timor/Utils/ClassExtensionUtil": [
+
+                ]
+              },
+              "ios": {
+                "frameworks": "CoreLocation",
+                "vendored_libraries": [
+                  "Timor/HostInterfaces/Component/Map/**/*.o",
+                  "libTimor-994b4d5.a"
+                ]
+              },
+              "source_files": "Timor/HostInterfaces/Component/Map/**/*.{h,m}",
+              "vendored_libraries": [
+                "Timor/HostInterfaces/Component/Map/**/*.o"
+              ],
+              "exclude_files": [
+
+              ]
+            },
+            {
+              "name": "PickerInterface",
+              "subspecs": [
+                {
+                  "name": "CustomPickerInterface",
+                  "source_files": "Timor/HostInterfaces/Component/Picker/CustomPicker/**/*.{h,m}",
+                  "vendored_libraries": [
+                    "Timor/HostInterfaces/Component/Picker/CustomPicker/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/HostInterfaces/Component/Picker/CustomPicker/**/*.o",
+                      "libTimor-273cf14.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "DatePickerInterface",
+                  "source_files": "Timor/HostInterfaces/Component/Picker/DatePicker/**/*.{h,m}",
+                  "vendored_libraries": [
+                    "Timor/HostInterfaces/Component/Picker/DatePicker/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/HostInterfaces/Component/Picker/DatePicker/**/*.o",
+                      "libTimor-559c748.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "RegionPickerInterface",
+                  "dependencies": {
+                    "Timor/HostInterfaces/AddressInterface": [
+
+                    ]
+                  },
+                  "source_files": "Timor/HostInterfaces/Component/Picker/RegionPicker/**/*.{h,m}",
+                  "vendored_libraries": [
+                    "Timor/HostInterfaces/Component/Picker/RegionPicker/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/HostInterfaces/Component/Picker/RegionPicker/**/*.o",
+                      "libTimor-62f02f0.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "ImagePickerInterface",
+                  "source_files": "Timor/HostInterfaces/Component/Picker/ImagePicker/**/*.{h,m}",
+                  "vendored_libraries": [
+                    "Timor/HostInterfaces/Component/Picker/ImagePicker/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/HostInterfaces/Component/Picker/ImagePicker/**/*.o",
+                      "libTimor-68f2e7b.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "VideoPickerInterface",
+                  "source_files": "Timor/HostInterfaces/Component/Picker/VideoPicker/**/*.{h,m}",
+                  "vendored_libraries": [
+                    "Timor/HostInterfaces/Component/Picker/VideoPicker/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/HostInterfaces/Component/Picker/VideoPicker/**/*.o",
+                      "libTimor-c3abd42.a"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "name": "ButtonInterface",
+              "source_files": "Timor/HostInterfaces/Component/Button/**/*.{h,m}"
+            }
+          ]
+        },
+        {
+          "name": "AdvertisementInterface",
+          "source_files": "Timor/HostInterfaces/Advertisement/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Advertisement/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "AddressInterface",
+          "source_files": "Timor/HostInterfaces/Address/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Address/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/Address/**/*.o",
+              "libTimor-298d7e8.a"
+            ]
+          }
+        },
+        {
+          "name": "FollowInterface",
+          "subspecs": [
+            {
+              "name": "AwemeFollowInterface",
+              "source_files": "Timor/HostInterfaces/Follow/AwemeFollow/**/*.{h,m}",
+              "vendored_libraries": [
+                "Timor/HostInterfaces/Follow/AwemeFollow/**/*.o"
+              ],
+              "exclude_files": [
+
+              ]
+            },
+            {
+              "name": "NormalFollowInterface",
+              "source_files": "Timor/HostInterfaces/Follow/NormalFollow/**/*.{h,m}",
+              "vendored_libraries": [
+                "Timor/HostInterfaces/Follow/NormalFollow/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "Timor/HostInterfaces/Follow/NormalFollow/**/*.o",
+                  "libTimor-43de275.a"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "UserInterface",
+          "source_files": "Timor/HostInterfaces/User/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/User/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "InviteInterface",
+          "source_files": "Timor/HostInterfaces/Invite/**/*.{h,m}"
+        },
+        {
+          "name": "RouterInterface",
+          "source_files": "Timor/HostInterfaces/Router/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Router/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "PaymentInterface",
+          "source_files": "Timor/HostInterfaces/Payment/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Payment/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "FileSystemInterface",
+          "source_files": "Timor/HostInterfaces/FileSystem/**/*.{h,m}"
+        },
+        {
+          "name": "FavoriteInterface",
+          "dependencies": {
+            "Timor/Utils/DefineUtil": [
+
+            ]
+          },
+          "source_files": "Timor/HostInterfaces/Favorite/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Favorite/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "FacialRecognitionInterface",
+          "source_files": "Timor/HostInterfaces/FacialRecognition/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/FacialRecognition/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "PigeonInterface",
+          "source_files": "Timor/HostInterfaces/Pigeon/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Pigeon/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "ScanCodeInterface",
+          "source_files": "Timor/HostInterfaces/ScanCode/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/ScanCode/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/ScanCode/**/*.o",
+              "libTimor-c8b158b.a"
+            ]
+          }
+        },
+        {
+          "name": "ShareInterface",
+          "source_files": "Timor/HostInterfaces/Share/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Share/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/Share/**/*.o",
+              "libTimor-962fd67.a"
+            ]
+          }
+        },
+        {
+          "name": "MediaInterface",
+          "source_files": "Timor/HostInterfaces/Media/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Media/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/Media/**/*.o",
+              "libTimor-cc705d2.a"
+            ]
+          }
+        },
+        {
+          "name": "ApplicationInterface",
+          "source_files": "Timor/HostInterfaces/Application/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Application/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "NetworkInterface",
+          "source_files": "Timor/HostInterfaces/Network/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Network/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "UIWidgetInterface",
+          "source_files": "Timor/HostInterfaces/UIWidget/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/UIWidget/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/UIWidget/**/*.o",
+              "libTimor-eb082c8.a"
+            ]
+          }
+        },
+        {
+          "name": "WebImageInterface",
+          "source_files": "Timor/HostInterfaces/WebImage/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/WebImage/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "TrackerInterface",
+          "source_files": "Timor/HostInterfaces/Tracker/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Tracker/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "SensitiveSafeAPIInterface",
+          "source_files": "Timor/HostInterfaces/SensitiveSafeAPI/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/SensitiveSafeAPI/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "LogInterface",
+          "source_files": "Timor/HostInterfaces/Log/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Log/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/Log/**/*.o",
+              "libTimor-f6187a2.a"
+            ]
+          }
+        },
+        {
+          "name": "MonitorInterface",
+          "source_files": "Timor/HostInterfaces/Monitor/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Monitor/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "HostChatInterface",
+          "source_files": "Timor/HostInterfaces/HostChat/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/HostChat/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/HostChat/**/*.o",
+              "libTimor-cc91a97.a"
+            ]
+          }
+        },
+        {
+          "name": "HostSettingsInterface",
+          "source_files": "Timor/HostInterfaces/HostSettings/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/HostSettings/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "DeviceOrientationInterface",
+          "source_files": "Timor/HostInterfaces/DeviceOrientation/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/DeviceOrientation/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "VideoPreloadInterface",
+          "source_files": "Timor/HostInterfaces/VideoPreload/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/VideoPreload/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/VideoPreload/**/*.o",
+              "libTimor-170a6e6.a"
+            ]
+          }
+        },
+        {
+          "name": "PictureInPictureInterface",
+          "source_files": "Timor/HostInterfaces/PictureInPicture/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/PictureInPicture/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "OtherInterface",
+          "source_files": "Timor/HostInterfaces/OtherInterfaces/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/OtherInterfaces/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/OtherInterfaces/**/*.o",
+              "libTimor-17737d8.a"
+            ]
+          }
+        },
+        {
+          "name": "OAuthInterface",
+          "source_files": "Timor/HostInterfaces/OAuthInterface/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/OAuthInterface/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/HostInterfaces/OAuthInterface/**/*.o",
+              "libTimor-3423d22.a"
+            ]
+          }
+        },
+        {
+          "name": "OrderInterface",
+          "source_files": "Timor/HostInterfaces/Order/**/*.{h,m}",
+          "vendored_libraries": [
+            "Timor/HostInterfaces/Order/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Utils",
+      "subspecs": [
+        {
+          "name": "arkcrypto",
+          "header_dir": "arkcrypto-minigame-iOS",
+          "source_files": "Timor/Utils/arkcrypto/**/*.{h,m,mm}",
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/arkcrypto/Classes/libByteCryptoN.a"
+            ]
+          },
+          "vendored_libraries": [
+            "Timor/Utils/arkcrypto/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "BDSword",
+          "header_dir": "BDSword",
+          "source_files": "Timor/Utils/BDSword/**/*.{h,m,mm}",
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/BDSword/CommonCode/libBDSword_CoreCode_awesome_ios.a"
+            ]
+          },
+          "vendored_libraries": [
+            "Timor/Utils/BDSword/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "BDModel",
+          "header_dir": "BDModel",
+          "source_files": "Timor/Utils/BDModel/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/BDModel/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/BDModel/**/*.o",
+              "libTimor-3a20404.a"
+            ]
+          }
+        },
+        {
+          "name": "BDAssert",
+          "source_files": "Timor/Utils/BDAssert/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/BDAssert/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/BDAssert/**/*.o",
+              "libTimor-51d0af1.a"
+            ]
+          }
+        },
+        {
+          "name": "ProtectorUtil",
+          "dependencies": {
+            "Timor/Utils/LogUtil": [
+
+            ]
+          },
+          "source_files": [
+            "Timor/Utils/Protector/*.{h,m}"
+          ],
+          "vendored_libraries": [
+            "Timor/Utils/Protector/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Protector/*.o",
+              "libTimor-d4731a5.a"
+            ]
+          }
+        },
+        {
+          "name": "SchedulerUtil",
+          "source_files": [
+            "Timor/Utils/SchedulerUtil/*.{h,m}"
+          ],
+          "vendored_libraries": [
+            "Timor/Utils/SchedulerUtil/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/SchedulerUtil/*.o",
+              "libTimor-1f19121.a"
+            ]
+          }
+        },
+        {
+          "name": "BridgeUtil",
+          "dependencies": {
+            "Timor/Utils/DefineUtil": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ],
+            "Timor/Utils/WeakProxyUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Bridge/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Bridge/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Bridge/**/*.o",
+              "libTimor-2d274f6.a"
+            ]
+          }
+        },
+        {
+          "name": "BlankScreenDetectUtil",
+          "dependencies": {
+            "Timor/Utils/CommonUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/BlankScreenDetect/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/BlankScreenDetect/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/BlankScreenDetect/**/*.o",
+              "libTimor-0efc7a9.a"
+            ]
+          }
+        },
+        {
+          "name": "BootstrapUtil",
+          "dependencies": {
+            "Timor/Utils/CommonUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Bootstrap/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Bootstrap/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Bootstrap/**/*.o",
+              "libTimor-1ebf954.a"
+            ]
+          }
+        },
+        {
+          "name": "BundleUtil",
+          "dependencies": {
+            "Timor/Utils/CommonUtil": [
+
+            ],
+            "Timor/HostInterfaces/ApplicationInterface": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Bundle/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Bundle/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Bundle/**/*.o",
+              "libTimor-04a5a88.a"
+            ]
+          }
+        },
+        {
+          "name": "ClassExtensionUtil",
+          "dependencies": {
+            "Timor/Utils/LogUtil": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ],
+            "Timor/Utils/HelperUtil": [
+
+            ],
+            "Timor/Utils/BootstrapUtil": [
+
+            ],
+            "Masonry": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/ClassExtension/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/ClassExtension/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/ClassExtension/**/*.o",
+              "libTimor-0b21d23.a"
+            ]
+          }
+        },
+        {
+          "name": "ViewControllerUtil",
+          "dependencies": {
+            "Timor/Utils/BundleUtil": [
+
+            ],
+            "Timor/Utils/HelperUtil": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ],
+            "Timor/Utils/OrientationUtil": [
+
+            ],
+            "Timor/Utils/MultiDelegateUtil": [
+
+            ],
+            "Timor/Utils/ClassExtensionUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/ViewController/**/*.{c,h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/ViewController/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/ViewController/**/*.o",
+              "libTimor-0003393.a"
+            ]
+          }
+        },
+        {
+          "name": "CommonUtil",
+          "dependencies": {
+            "Timor/Utils/BDSword": [
+
+            ],
+            "Timor/HostInterfaces/BaseInterface": [
+
+            ],
+            "Timor/HostInterfaces/ApplicationInterface": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/CommonUtil/**/*.{c,h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/CommonUtil/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/CommonUtil/**/*.o",
+              "libTimor-2af54dd.a"
+            ]
+          }
+        },
+        {
+          "name": "DataStructureUtil",
+          "source_files": "Timor/Utils/DataStructure/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/DataStructure/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/DataStructure/**/*.o",
+              "libTimor-8365116.a"
+            ]
+          }
+        },
+        {
+          "name": "DefineUtil",
+          "dependencies": {
+            "Timor/Utils/CommonUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Define/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Define/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Define/**/*.o",
+              "libTimor-de99604.a"
+            ]
+          }
+        },
+        {
+          "name": "HardCodeUtil",
+          "dependencies": {
+            "Timor/Utils/CommonUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/HardCode/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/HardCode/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/HardCode/**/*.o",
+              "libTimor-a32aba1.a"
+            ]
+          }
+        },
+        {
+          "name": "HelperUtil",
+          "dependencies": {
+            "Timor/Utils/I18nUtil": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ],
+            "Timor/HostInterfaces/NetworkInterface": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Helper/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Helper/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Helper/**/*.o",
+              "libTimor-55a29bf.a"
+            ]
+          }
+        },
+        {
+          "name": "I18nUtil",
+          "dependencies": {
+            "SSZipArchive": [
+
+            ],
+            "Timor/Utils/LogUtil": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ],
+            "Timor/Utils/DefineUtil": [
+
+            ],
+            "Timor/Utils/SlardarUtil": [
+
+            ],
+            "Timor/Utils/UserDefaultsUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/I18n/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/I18n/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/I18n/**/*.o",
+              "libTimor-c4e386f.a"
+            ]
+          }
+        },
+        {
+          "name": "KeyboardUtil",
+          "dependencies": {
+            "Timor/Utils/MultiDelegateUtil": [
+
+            ],
+            "Timor/Utils/ServiceCenterUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Keyboard/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Keyboard/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Keyboard/**/*.o",
+              "libTimor-a28fd7a.a"
+            ]
+          }
+        },
+        {
+          "name": "LocationUtil",
+          "dependencies": {
+            "Timor/HostInterfaces/LocationInterface": [
+
+            ],
+            "Timor/Utils/MultiDelegateUtil": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ],
+            "Timor/Utils/LogUtil": [
+
+            ],
+            "Timor/Utils/SettingsUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/LocationUtil/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/LocationUtil/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/LocationUtil/**/*.o",
+              "libTimor-61213d5.a"
+            ]
+          }
+        },
+        {
+          "name": "LogUtil",
+          "dependencies": {
+            "Timor/HostInterfaces/LogInterface": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Log/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Log/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Log/**/*.o",
+              "libTimor-fbff659.a"
+            ]
+          }
+        },
+        {
+          "name": "MessageCenterUtil",
+          "dependencies": {
+            "Timor/Utils/CommonUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/MessageCenter/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/MessageCenter/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/MessageCenter/**/*.o",
+              "libTimor-22ce76a.a"
+            ]
+          }
+        },
+        {
+          "name": "MultiDelegateUtil",
+          "source_files": "Timor/Utils/MultiDelegate/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/MultiDelegate/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/MultiDelegate/**/*.o",
+              "libTimor-133a78f.a"
+            ]
+          }
+        },
+        {
+          "name": "NativeRenderUtil",
+          "dependencies": {
+            "Timor/Utils/HelperUtil": [
+
+            ],
+            "Timor/Utils/ClassExtensionUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/NativeRender/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/NativeRender/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/NativeRender/**/*.o",
+              "libTimor-45302b0.a"
+            ]
+          }
+        },
+        {
+          "name": "NetworkUtil",
+          "subspecs": [
+            {
+              "name": "NetworkUserAgentUtil",
+              "source_files": "Timor/Utils/Network/UserAgent/**/*.{h,m,mm}",
+              "vendored_libraries": [
+                "Timor/Utils/Network/UserAgent/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "Timor/Utils/Network/UserAgent/**/*.o",
+                  "libTimor-13a8593.a"
+                ]
+              }
+            },
+            {
+              "name": "NetworkRequesterUtil",
+              "dependencies": {
+                "Timor/Utils/CommonUtil": [
+
+                ],
+                "Timor/Utils/SDKConfigUtil": [
+
+                ],
+                "Timor/Utils/LogUtil": [
+
+                ],
+                "Timor/Utils/VersionUtil": [
+
+                ],
+                "Timor/Utils/TrackerUtil": [
+
+                ],
+                "Timor/HostInterfaces/NetworkInterface": [
+
+                ]
+              },
+              "source_files": "Timor/Utils/Network/Requester/**/*.{h,m,mm}",
+              "vendored_libraries": [
+                "Timor/Utils/Network/Requester/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "Timor/Utils/Network/Requester/**/*.o",
+                  "libTimor-b8cecdb.a"
+                ]
+              }
+            },
+            {
+              "name": "NetworkCookieUtil",
+              "dependencies": {
+                "Timor/Utils/CommonUtil": [
+
+                ],
+                "Timor/Utils/LogUtil": [
+
+                ],
+                "Timor/HostInterfaces/ApplicationInterface": [
+
+                ]
+              },
+              "source_files": "Timor/Utils/Network/Cookie/**/*.{h,m,mm}",
+              "vendored_libraries": [
+                "Timor/Utils/Network/Cookie/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "Timor/Utils/Network/Cookie/**/*.o",
+                  "libTimor-3fbbe8a.a"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "PromiseUtil",
+          "source_files": "Timor/Utils/Promise/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Promise/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Promise/**/*.o",
+              "libTimor-4bac142.a"
+            ]
+          }
+        },
+        {
+          "name": "SchemaCodecUtil",
+          "dependencies": {
+            "Timor/Utils/LogUtil": [
+
+            ],
+            "Timor/Utils/DefineUtil": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ],
+            "Timor/Utils/SettingsUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Schema/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Schema/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Schema/**/*.o",
+              "libTimor-c5f17c9.a"
+            ]
+          }
+        },
+        {
+          "name": "SDKConfigUtil",
+          "dependencies": {
+            "Timor/Utils/CommonUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/SDKConfig/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/SDKConfig/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/SDKConfig/**/*.o",
+              "libTimor-aef86d3.a"
+            ]
+          }
+        },
+        {
+          "name": "SettingsUtil",
+          "dependencies": {
+            "Timor/Utils/NetworkUtil": [
+
+            ],
+            "Timor/Utils/LogUtil": [
+
+            ],
+            "Timor/Utils/I18nUtil": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ],
+            "Timor/Utils/TrackerUtil": [
+
+            ],
+            "Timor/Utils/BootstrapUtil": [
+
+            ],
+            "Timor/Utils/SDKConfigUtil": [
+
+            ],
+            "Timor/Utils/UserDefaultsUtil": [
+
+            ],
+            "Timor/HostInterfaces/UserInterface": [
+
+            ],
+            "Timor/HostInterfaces/HostSettingsInterface": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Settings/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Settings/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Settings/**/*.o",
+              "libTimor-e8be19d.a"
+            ]
+          }
+        },
+        {
+          "name": "SecurityUtil",
+          "source_files": "Timor/Utils/Security/**/*.{c,h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Security/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Security/**/*.o",
+              "libTimor-9099d98.a"
+            ]
+          }
+        },
+        {
+          "name": "ServiceCenterUtil",
+          "source_files": "Timor/Utils/ServiceCenter/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/ServiceCenter/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/ServiceCenter/**/*.o",
+              "libTimor-15e3d7c.a"
+            ]
+          }
+        },
+        {
+          "name": "CommonParamsUtil",
+          "source_files": "Timor/Utils/CommonParams/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/CommonParams/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/CommonParams/**/*.o",
+              "libTimor-cebd761.a"
+            ]
+          }
+        },
+        {
+          "name": "EventTracerUtil",
+          "source_files": "Timor/Utils/EventTracer/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/EventTracer/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/EventTracer/**/*.o",
+              "libTimor-bcad208.a"
+            ]
+          }
+        },
+        {
+          "name": "SlardarUtil",
+          "dependencies": {
+            "Timor/HostInterfaces/MonitorInterface": [
+
+            ],
+            "Timor/Utils/LogUtil": [
+
+            ],
+            "Timor/Utils/DefineUtil": [
+
+            ],
+            "Timor/Utils/BootstrapUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Slardar/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Slardar/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Slardar/**/*.o",
+              "libTimor-3991344.a"
+            ]
+          }
+        },
+        {
+          "name": "TrackerUtil",
+          "dependencies": {
+            "Timor/HostInterfaces/TrackerInterface": [
+
+            ],
+            "Timor/Utils/CommonParamsUtil": [
+
+            ],
+            "Timor/Utils/EventTracerUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Tracker/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Tracker/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Tracker/**/*.o",
+              "libTimor-03021b8.a"
+            ]
+          }
+        },
+        {
+          "name": "StorageUtil",
+          "dependencies": {
+            "FMDB": [
+
+            ],
+            "Timor/Utils/LogUtil": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Storage/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Storage/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Storage/**/*.o",
+              "libTimor-9655b7e.a"
+            ]
+          }
+        },
+        {
+          "name": "TimerUtil",
+          "dependencies": {
+            "Timor/Utils/CommonUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Timer/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Timer/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Timer/**/*.o",
+              "libTimor-3dd23c6.a"
+            ]
+          }
+        },
+        {
+          "name": "UIWidgetUtil",
+          "dependencies": {
+            "Timor/Utils/BundleUtil": [
+
+            ],
+            "Timor/Utils/CommonUtil": [
+
+            ],
+            "Timor/Utils/BootstrapUtil": [
+
+            ],
+            "Timor/Utils/MessageCenterUtil": [
+
+            ],
+            "Timor/Utils/ClassExtensionUtil": [
+
+            ]
+          },
+          "subspecs": [
+            {
+              "name": "UIAppearance",
+              "dependencies": {
+                "Timor/Utils/WeakProxyUtil": [
+
+                ]
+              },
+              "source_files": "Timor/Utils/UIWidget/Appearance/**/*.{h,m,mm}",
+              "vendored_libraries": [
+                "Timor/Utils/UIWidget/Appearance/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "Timor/Utils/UIWidget/Appearance/**/*.o",
+                  "libTimor-8ebb0d3.a"
+                ]
+              }
+            },
+            {
+              "name": "UIComponent",
+              "dependencies": {
+                "Timor/Utils/UIWidgetUtil/UIAppearance": [
+
+                ]
+              },
+              "subspecs": [
+                {
+                  "name": "LoadingAnimationViewUIComponent",
+                  "dependencies": {
+                    "Timor/Utils/CommonUtil": [
+
+                    ],
+                    "Timor/Utils/ClassExtensionUtil": [
+
+                    ]
+                  },
+                  "source_files": "Timor/Utils/UIWidget/Component/LoadingAnimationView/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/LoadingAnimationView/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/LoadingAnimationView/**/*.o",
+                      "libTimor-4dd65f4.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "ButtonUIComponent",
+                  "source_files": "Timor/Utils/UIWidget/Component/Button/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/Button/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/Button/**/*.o",
+                      "libTimor-914af20.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "AlertControllerUIComponent",
+                  "dependencies": {
+                    "Timor/Utils/HelperUtil": [
+
+                    ],
+                    "Timor/Utils/OrientationUtil": [
+
+                    ]
+                  },
+                  "source_files": "Timor/Utils/UIWidget/Component/AlertController/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/AlertController/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/AlertController/**/*.o",
+                      "libTimor-0233ad9.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "CheckBoxUIComponent",
+                  "source_files": "Timor/Utils/UIWidget/Component/CheckBox/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/CheckBox/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/CheckBox/**/*.o",
+                      "libTimor-0d9a62f.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "ImageViewUIComponent",
+                  "source_files": "Timor/Utils/UIWidget/Component/ImageView/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/ImageView/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/ImageView/**/*.o",
+                      "libTimor-49e83c5.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "IndicatorUIComponent",
+                  "source_files": "Timor/Utils/UIWidget/Component/Indicator/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/Indicator/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/Indicator/**/*.o",
+                      "libTimor-55311c7.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "PermissionAlertControllerUIComponent",
+                  "dependencies": {
+                    "Timor/Utils/CommonUtil": [
+
+                    ],
+                    "Timor/Utils/HelperUtil": [
+
+                    ],
+                    "Timor/Utils/WebImageUtil": [
+
+                    ],
+                    "Timor/HostInterfaces/OAuthInterface": [
+
+                    ]
+                  },
+                  "source_files": "Timor/Utils/UIWidget/Component/PermissionAlertController/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/PermissionAlertController/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/PermissionAlertController/**/*.o",
+                      "libTimor-ebd8b68.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "PrivacyPolicyControllerUIComponent",
+                  "source_files": "Timor/Utils/UIWidget/Component/PrivacyPolicyController/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/PrivacyPolicyController/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/PrivacyPolicyController/**/*.o",
+                      "libTimor-4cdd0ab.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "SwitchUIComponent",
+                  "source_files": "Timor/Utils/UIWidget/Component/Switch/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/Switch/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/Switch/**/*.o",
+                      "libTimor-d041d69.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "TextFieldUIComponent",
+                  "source_files": "Timor/Utils/UIWidget/Component/TextField/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/TextField/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/TextField/**/*.o",
+                      "libTimor-ec8ee9e.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "TextViewUIComponent",
+                  "source_files": "Timor/Utils/UIWidget/Component/TextView/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/TextView/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/TextView/**/*.o",
+                      "libTimor-9526768.a"
+                    ]
+                  }
+                },
+                {
+                  "name": "ViewUIComponent",
+                  "source_files": "Timor/Utils/UIWidget/Component/View/**/*.{h,m,mm}",
+                  "vendored_libraries": [
+                    "Timor/Utils/UIWidget/Component/View/**/*.o"
+                  ],
+                  "exclude_files": [
+
+                  ],
+                  "ios": {
+                    "vendored_libraries": [
+                      "Timor/Utils/UIWidget/Component/View/**/*.o",
+                      "libTimor-0c73146.a"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "SensitiveSafeAPIUtil",
+          "dependencies": {
+            "Timor/HostInterfaces/SensitiveSafeAPIInterface": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/SensitiveSafeAPI/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/SensitiveSafeAPI/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/SensitiveSafeAPI/**/*.o",
+              "libTimor-ea11c09.a"
+            ]
+          }
+        },
+        {
+          "name": "WebImageUtil",
+          "dependencies": {
+            "Timor/HostInterfaces/WebImageInterface": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/WebImage/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/WebImage/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/WebImage/**/*.o",
+              "libTimor-6771c91.a"
+            ]
+          }
+        },
+        {
+          "name": "UserDefaultsUtil",
+          "source_files": "Timor/Utils/UserDefaults/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/UserDefaults/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/UserDefaults/**/*.o",
+              "libTimor-dcc2b44.a"
+            ]
+          }
+        },
+        {
+          "name": "WeakProxyUtil",
+          "dependencies": {
+            "Timor/Utils/LogUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/WeakProxy/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/WeakProxy/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/WeakProxy/**/*.o",
+              "libTimor-dfd091f.a"
+            ]
+          }
+        },
+        {
+          "name": "WebPImageUtil",
+          "dependencies": {
+            "libwebp": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/WebPImage/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/WebPImage/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/WebPImage/**/*.o",
+              "libTimor-d05d565.a"
+            ]
+          }
+        },
+        {
+          "name": "OrientationUtil",
+          "dependencies": {
+            "Timor/HostInterfaces/DeviceOrientationInterface": [
+
+            ],
+            "Timor/HostInterfaces/TrackerInterface": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/Orientation/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/Orientation/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/Orientation/**/*.o",
+              "libTimor-40bea93.a"
+            ]
+          }
+        },
+        {
+          "name": "VersionUtil",
+          "dependencies": {
+            "Timor/Utils/LogUtil": [
+
+            ]
+          },
+          "source_files": "Timor/Utils/VersionUtil/**/*.{h,m,mm}",
+          "vendored_libraries": [
+            "Timor/Utils/VersionUtil/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Timor/Utils/VersionUtil/**/*.o",
+              "libTimor-499f888.a"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
