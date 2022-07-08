@@ -16,15 +16,18 @@ Pod::Spec.new do |spec|
   spec.source       = { :http => "https://sf1-hscdn-tos.pstatp.com/obj/cloud-common/ttsdk/iOS/TTSDKFramework-#{spec.version}-ta.zip", :type => :zip }
 
   spec.static_framework = false
-  spec.resources = ['TTSDKFramework.framework/ttplayer.metallib']
+  spec.resources = ['TTSDKFramework.framework/ttplayer.metallib', 'TTSDKFramework.framework/processor.metallib', 'TTSDKFramework.framework/videovrsr.bundle']
   spec.vendored_frameworks = [
     "TTSDKFramework.framework",
     "byteaudio.framework",
+    "byteaudio.xcframework",
     "VolcEngineRTC.framework",
+    "VolcEngineRTC.xcframework",
     "TTFFmpeg.framework",
     "boringssl.framework",
     "crypto.framework",
     "libvcn.framework",
-    "ffmepg_dashdec.framework",
+    "ffmpeg_dashdec.framework",
+    "ByteRtsEngineKit.framework"
   ]
 end
