@@ -106,12 +106,12 @@
     # Support Super Resolution
     spec.subspec 'PlayerCore-SR' do |subspec|
       subspec.public_header_files = [
-        'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/TTPlayerSDK/TTPlayer/TTPlayerDef.h',
-        'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/TTPlayerSDK/TTPlayer/TTAVPlayerLoadControlInterface.h',
+        'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/TTPlayer/TTPlayerDef.h',
+        'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/TTPlayer/TTAVPlayerLoadControlInterface.h',
       ]
       subspec.source_files = [
-        'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/TTPlayerSDK/TTPlayer/TTPlayerDef.h',
-        'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/TTPlayerSDK/TTPlayer/TTAVPlayerLoadControlInterface.h',
+        'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/TTPlayer/TTPlayerDef.h',
+        'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/TTPlayer/TTAVPlayerLoadControlInterface.h',
       ]
       subspec.vendored_libraries = [
         'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/**/*.a',
@@ -120,7 +120,7 @@
         'TTSDK/ffmpeg_dashdec_iOS/*.framework',
       ]
       subspec.resources = [
-        'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib',
+        'TTSDK/TTSDK_dup/Pods/TTPlayerSDK/Assets/ttplayer.metallib',
       ]
       subspec.dependency 'TTSDK/TTFFmpeg'
     end
