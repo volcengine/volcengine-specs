@@ -1,0 +1,40 @@
+{
+    "prepare_command": "", 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "platforms": {
+        "ios": "8.0"
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_DiffMatchPc_tob_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "requires_arc": [
+        "DiffMatchPc/Classes/NSMutableDictionary+DMPExtensions.m"
+    ], 
+    "authors": {
+        "keyibin": "keyibin.fly@bytedance.com"
+    }, 
+    "version": "0.1.5", 
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/DiffMatchPc_tob/0.1.5/DiffMatchPc_tob.framework.tar.xz"
+    }, 
+    "source_files": [
+        "DiffMatchPc/Classes/**/*", 
+        "DiffMatchPc_tob-bitdummy.m"
+    ], 
+    "homepage": "https://github.com/keyibin/DiffMatchPc", 
+    "repoId": "32127", 
+    "name": "DiffMatchPc_tob"
+}
