@@ -180,6 +180,8 @@
       ]
       subspec.vendored_frameworks = [
         'TTSDK/ByteRtsSDK/*.framework',
+        'TTSDK/ByteAudio/*.framework',
+        'TTSDK/ByteAudio/*.xcframework',
       ]
       subspec.dependency 'TTSDK/LivePull'
       subspec.dependency 'TTSDK/RTC-Framework'
