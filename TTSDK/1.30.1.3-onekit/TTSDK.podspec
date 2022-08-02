@@ -350,6 +350,11 @@
       subspec.dependency 'VEVideoKit/VolcEngineAudio', '0.2.1'
     end
 
+    spec.subspec 'LivePush-Effect-VE' do |subspec|
+      subspec.dependency 'TTSDK/Effect'
+      subspec.dependency 'TTSDK/LivePush-VE'
+    end
+
     spec.subspec 'Player' do |subspec|
       class_name = 'TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS'
       subspec.public_header_files = [
