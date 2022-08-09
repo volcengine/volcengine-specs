@@ -310,7 +310,6 @@
             ]
         }, 
         {
-            "public_header_files": "OneKit/boringssl/include/**/*.h", 
             "vendored_libraries": [
                 "OneKit/boringssl/libcrcrypto.a", 
                 "OneKit/boringssl/libboringssl.a", 
