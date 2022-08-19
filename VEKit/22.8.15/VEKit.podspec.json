@@ -170,7 +170,9 @@
         },
         {
             "name": "VEPush",
-            "version": "1.0.2"
+            "dependencies": {
+                "VEPush": ["1.0.2"]
+            }
         }
     ]
 }
