@@ -1,0 +1,497 @@
+{
+    "default_subspecs": [
+        "BaseKit", 
+        "MARS/Auth", 
+        "Service", 
+        "Core"
+    ], 
+    "static_framework": true, 
+    "platforms": {
+        "ios": "8.0"
+    }, 
+    "pod_target_xcconfig": {
+        "BITCODE_GENERATION_MODE": "bitcode", 
+        "enable_modules": "YES", 
+        "GCC_PREPROCESSOR_DEFINITIONS": "TTNET_IMPLEMENT_BORINGSSL"
+    }, 
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/OneKit/1.3.15-rc.0/OneKit.framework.tar.xz"
+    }, 
+    "version": "1.3.15-rc.0", 
+    "source_files": [
+        "OneKit-bitdummy.m"
+    ], 
+    "homepage": "https://github.com/volcengine/veMARS_SwiftOneKit", 
+    "repoId": "19377", 
+    "subspecs": [
+        {
+            "public_header_files": "OneKit/BaseKit/**/*.h", 
+            "vendored_libraries": "OneKit/BaseKit/Decorator/Vendor/*.a", 
+            "name": "BaseKit", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_BaseKit_*awesome_*.a"
+            }, 
+            "libraries": "z", 
+            "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/BaseKit/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/Defaults/**/*.h", 
+            "name": "Defaults", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Defaults_*awesome_*.a"
+            }, 
+            "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/BaseKit": [], 
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/Defaults/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/Reachability/**/*.h", 
+            "name": "Reachability", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Reachability_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "Foundation", 
+                "CoreTelephony", 
+                "SystemConfiguration", 
+                "CoreFoundation", 
+                "UIKit"
+            ], 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/Reachability/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/Service/**/*.h", 
+            "name": "Service", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Service_*awesome_*.a"
+            }, 
+            "frameworks": "Foundation", 
+            "source_files": [
+                "OneKit/Service/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/Database/**/*.h", 
+            "name": "Database", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Database_*awesome_*.a"
+            }, 
+            "libraries": "sqlite3", 
+            "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/Database/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/BDMantle/**/*.h", 
+            "name": "BDMantle", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_BDMantle_*awesome_*.a"
+            }, 
+            "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/BDMantle/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/StartUp/Headers/*.h", 
+            "name": "StartUp", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_StartUp_*awesome_*.a"
+            }, 
+            "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/Reachability": [], 
+                "OneKit/Section": [], 
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/StartUp/**/*.{h,m,c,swift}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Section_*awesome_*.a"
+            }, 
+            "name": "Section", 
+            "source_files": [
+                "OneKit/Section/**/*.{h,m,c,swift}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/IDFA/**/*.h", 
+            "name": "IDFA", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IDFA_*awesome_*.a"
+            }, 
+            "frameworks": "AdSupport", 
+            "dependencies": {
+                "OneKit/StartUp": [], 
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/IDFA/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "name": "MARS", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_MARS_*awesome_*.a"
+            }, 
+            "frameworks": "Foundation", 
+            "source_files": [
+                "OneKit-bitdummy.m"
+            ], 
+            "subspecs": [
+                {
+                    "public_header_files": "OneKit/MARS/Auth/**/*.h", 
+                    "dependencies": {
+                        "OneKit/StartUp": [], 
+                        "OneKit/BaseKit": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Auth_*awesome_*.a"
+                    }, 
+                    "name": "Auth", 
+                    "source_files": [
+                        "OneKit/MARS/Auth/**/*.{h,m}", 
+                        "OneKit-bitdummy.m"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/Cache/**/*.h", 
+            "name": "Cache", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Cache_*awesome_*.a"
+            }, 
+            "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/Cache/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "name": "ByteDanceKit", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_ByteDanceKit_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit-bitdummy.m"
+            ], 
+            "subspecs": [
+                {
+                    "public_header_files": [
+                        "OneKit/ByteDanceKit/Foundation/*.h", 
+                        "OneKit/ByteDanceKit/*.h"
+                    ], 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Foundation_*awesome_*.a"
+                    }, 
+                    "name": "Foundation", 
+                    "source_files": [
+                        "OneKit/ByteDanceKit/Foundation/*.{h,m}", 
+                        "OneKit/ByteDanceKit/*.{h,m}", 
+                        "OneKit-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "public_header_files": [
+                        "OneKit/ByteDanceKit/UIKit/*.h"
+                    ], 
+                    "name": "UIKit", 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_UIKit_*awesome_*.a"
+                    }, 
+                    "frameworks": [
+                        "UIKit", 
+                        "Accelerate"
+                    ], 
+                    "dependencies": {
+                        "OneKit/ByteDanceKit/Foundation": []
+                    }, 
+                    "source_files": [
+                        "OneKit/ByteDanceKit/UIKit/*.{h,m}", 
+                        "OneKit-bitdummy.m"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/Screenshot/**/*.h", 
+            "name": "Screenshot", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Screenshot_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "Foundation", 
+                "WebKit"
+            ], 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/Screenshot/**/*.{h,m}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "vendored_libraries": [
+                "OneKit/boringssl/libcrcrypto.a", 
+                "OneKit/boringssl/libboringssl.a", 
+                "OneKit/boringssl/libboringssl_asm.a"
+            ], 
+            "name": "boringssl", 
+            "preserve_paths": [
+                "OneKit/boringssl/**/*.h", 
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_boringssl_*awesome_*.a"
+            }, 
+            "header_mappings_dir": "OneKit/boringssl/include/", 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "vendored_libraries": "OneKit/Registar/*.a", 
+            "name": "Registar", 
+            "xcconfig": {
+                "HEADER_SEARCH_PATHS": "$(inherited) \"${PODS_ROOT}/OneKit/Registar\""
+            }, 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Registar_*awesome_*.a"
+            }, 
+            "libraries": "stdc++", 
+            "private_header_files": "OneKit/Registar/**/*.h", 
+            "dependencies": {
+                "OneKit/boringssl": []
+            }, 
+            "source_files": [
+                "OneKit/Registar/*.h", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/Core/**/LicenseCenter.h", 
+            "name": "Core", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/Network": [], 
+                "OneKit/BaseKit": [], 
+                "OneKit/Registar": [], 
+                "OneKit/MARS": []
+            }, 
+            "source_files": [
+                "OneKit/Core/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/OKModel/**/*.h", 
+            "name": "OKModel", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OKModel_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/OKModel/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/Network/**/*.h", 
+            "name": "Network", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Network_*awesome_*.a"
+            }, 
+            "frameworks": "Foundation", 
+            "dependencies": {
+                "OneKit/OKModel": [], 
+                "OneKit/MARS/Auth": [], 
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/Network/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/GMObjC/**/*.h", 
+            "name": "GMObjC", 
+            "xcconfig": {
+                "HEADER_SEARCH_PATHS": "$(inherited) \"${PODS_ROOT}/OneKit/OneKit/boringssl/include\""
+            }, 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_GMObjC_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "Foundation", 
+                "Security"
+            ], 
+            "dependencies": {
+                "OneKit/boringssl": []
+            }, 
+            "source_files": [
+                "OneKit/GMObjC/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "OneKit/RSAObjC/**/*.h", 
+            "name": "RSAObjC", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_RSAObjC_*awesome_*.a"
+            }, 
+            "frameworks": [
+                "Foundation", 
+                "Security"
+            ], 
+            "dependencies": {
+                "OneKit/Service": []
+            }, 
+            "source_files": [
+                "OneKit/RSAObjC/**/*.{h,m,c}", 
+                "OneKit-bitdummy.m"
+            ]
+        }
+    ], 
+    "prepare_command": "", 
+    "description": "framework_description", 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_OneKit_*awesome_*.a"
+    }, 
+    "testspecs": [
+        {
+            "test_type": "unit", 
+            "dependencies": {
+                "OCMock": []
+            }, 
+            "requires_app_host": true, 
+            "name": "Tests", 
+            "source_files": "OneKit/Tests/**/*.{h,m}"
+        }
+    ], 
+    "authors": {
+        "duanwenbin": "bob170731@gmail.com"
+    }, 
+    "name": "OneKit", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "preserve_paths": [
+        "NOTICE", 
+        "**/*.bwp"
+    ], 
+    "summary": "framework_summary", 
+    "requires_arc": true
+}
