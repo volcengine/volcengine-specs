@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   
   s.vendored_framework = 'TTNetworkManager/TTNetworkManager.framework'
 
-  s.dependency 'OneKit/boringssl','1.3.7-rc.0-prefixed'
+  s.dependency 'OneKit/boringssl','1.3.12-rc.0-prefixed'
   s.dependency 'OneKit/BaseKit'
   s.dependency 'OneKit/StartUp'
   s.dependency 'Godzippa'
