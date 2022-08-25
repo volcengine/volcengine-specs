@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   }
   s.author           = { "zhangchenlong" => "zhangchenlong@bytedance.com" }
 
-  s.source           = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/#{s.name}/#{s.version}/#{s.name}.zip" }
+  s.source           = { :http => "https://hstob-cdn-tos.volccdn.com/volcengine/#{s.name}/#{s.version}/#{s.version}.zip" }
 
   s.platform     = :ios, '9.0'
   s.requires_arc = true
