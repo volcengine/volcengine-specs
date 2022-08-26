@@ -3,11 +3,7 @@ Pod::Spec.new do |s|
   s.name             = "TTNetworkManager"
   s.version          = version
   s.summary          = "iOS client network sdk"
-  s.description      = <<-DESC
-                       net work
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
+  s.description      = "network SDK for iOS"
   s.homepage         = 'https://github.com/volcengine/volcengine-specs'
 
   s.license          = {
@@ -16,7 +12,7 @@ Pod::Spec.new do |s|
               Bytedance copyright
     LICENSE
   }
-  s.author           = { "zhangchenlong" => "zhangchenlong@bytedance.com" }
+  s.author           = { "dongyangfan" => "dongyangfan@bytedance.com" }
 
   s.source           = { :http => "https://hstob-cdn-tos.volccdn.com/volcengine/#{s.name}/#{s.version}/#{s.name}.zip" }
 
