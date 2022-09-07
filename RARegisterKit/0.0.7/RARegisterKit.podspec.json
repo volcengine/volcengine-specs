@@ -1,0 +1,93 @@
+{
+    "default_subspecs": [
+        "Core"
+    ],
+    "static_framework": true,
+    "platforms": {
+        "ios": "8.0"
+    },
+    "pod_target_xcconfig": {
+        "BITCODE_GENERATION_MODE": "bitcode",
+        "DEFINES_MODULE": "YES"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/RARegisterKit/0.0.7/RARegisterKit.framework.tar.xz"
+    },
+    "version": "0.0.7",
+    "source_files": [
+        "RARegisterKit-bitdummy.m"
+    ],
+    "homepage": "https://github.com/volcengine/volcengine-specs/RARegisterKit",
+    "repoId": "26600",
+    "subspecs": [
+        {
+            "public_header_files": [
+                "RARegisterKit/Core/**/{RARegisterInfo,RARKitRegisterService}.h"
+            ],
+            "name": "Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "dependencies": {
+                "OneKit/Reachability": [],
+                "OneKit/BaseKit": []
+            },
+            "source_files": [
+                "RARegisterKit/Core/**/*.{h,m}",
+                "RARegisterKit-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": [
+                "RARegisterKit/OKKit/**/*.h"
+            ],
+            "name": "OKKit",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OKKit_*awesome_*.a"
+            },
+            "dependencies": {
+                "OneKit/StartUp": [
+                    ">1.1.42"
+                ],
+                "OneKit/Service": [
+                    ">1.1.42"
+                ],
+                "RARegisterKit/Core": []
+            },
+            "source_files": [
+                "RARegisterKit/OKKit/**/*.{h,m}",
+                "RARegisterKit-bitdummy.m"
+            ]
+        }
+    ],
+    "prepare_command": "",
+    "description": "framework_description",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_RARegisterKit_*awesome_*.a"
+    },
+    "authors": {
+        "xuminghao.eric": "xuminghao.eric@bytedance.com"
+    },
+    "name": "RARegisterKit",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "summary": "framework_summary",
+    "requires_arc": true,
+    "module_name": "RARegisterKit"
+}
