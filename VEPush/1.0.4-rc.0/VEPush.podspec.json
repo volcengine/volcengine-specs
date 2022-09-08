@@ -54,9 +54,7 @@
                 "RangersAPM/EventMonitor": [],
                 "OneKit/MARS/Auth": [],
                 "OneKit/Service": [],
-                "VEDeviceGroup": [
-                    ">=0.0.0-rc.1"
-                ],
+                "VEDeviceGroup": [],
                 "RARegisterKit/OKKit": [],
                 "OneKit/Network": [],
                 "RangersAPM/HMD": [],
