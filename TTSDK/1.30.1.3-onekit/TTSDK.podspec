@@ -202,11 +202,11 @@
         "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.source_files = [
-        'TTSDK/TTVideoLive/TTVideoLive/Classes/**/*',
+        'TTSDK/TTVideoLive/TTVideoLive/Classes/**/*.h',
         'TTSDK/VCloudPandora/**/{TTLiveURLComposer,TVLPlayerItem+TTSDK,TVLManager+External}.h',
         'TTSDK/TTVideoLive/TTVideoLive/VideoProcessing/**/*.h',
         'TTSDK/TTVideoLive/TTVideoLive/VR/**/*.h',
-        "TTSDK/{#{class_name}}/**/*"
+        "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.vendored_libraries = [
         'TTSDK/TTVideoLive/**/libTTVideoLive_Wrapper_ios.a',
@@ -227,12 +227,12 @@
     spec.subspec 'LivePull-VE' do |subspec|
       subspec.public_header_files = [
         'TTSDK/VCloudPandora/**/{TTLiveURLComposer,TVLPlayerItem+TTSDK,TVLManager+External}.h',
-        'TTSDK/TTVideoLive/TTVideoLiv VEe/Classes/**/*.h',
+        'TTSDK/TTVideoLive/TTVideoLive/Classes/**/*.h',
         'TTSDK/TTVideoLive/TTVideoLive/VideoProcessing/**/*.h',
         'TTSDK/TTVideoLive/TTVideoLive/VR/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/TTVideoLive/TTVideoLive/Classes/**/*',
+        'TTSDK/TTVideoLive/TTVideoLive/Classes/**/*.h',
         'TTSDK/VCloudPandora/**/{TTLiveURLComposer,TVLPlayerItem+TTSDK,TVLManager+External}.h',
         'TTSDK/TTVideoLive/TTVideoLive/VideoProcessing/**/*.h',
         'TTSDK/TTVideoLive/TTVideoLive/VR/**/*.h',
@@ -280,8 +280,8 @@
         'TTSDK/LiveCore/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/LiveCore/**/*',
-        'TTSDK/LiveStreamFramework/**/*'
+        'TTSDK/LiveCore/**/*.h',
+        'TTSDK/LiveStreamFramework/**/*.h'
       ]
       subspec.vendored_libraries = [
         'TTSDK/LiveCore/**/*.a',
@@ -312,8 +312,8 @@
         'TTSDK/LiveCore/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/LiveCore/**/*',
-        'TTSDK/LiveStreamFramework/**/*'
+        'TTSDK/LiveCore/**/*.h',
+        'TTSDK/LiveStreamFramework/**/*.h'
       ]
       subspec.vendored_libraries = [
         'TTSDK/LiveCore/**/*.a',
@@ -361,7 +361,7 @@
         "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.source_files = [
-        "TTSDK/{#{class_name}}/**/*"
+        "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/DualCore/**/*',
@@ -387,7 +387,7 @@
         "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.source_files = [
-        "TTSDK/{#{class_name}}/**/*"
+        "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/DualCore/**/*',
@@ -414,7 +414,7 @@
         "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.source_files = [
-        "TTSDK/{#{class_name}}/**/*"
+        "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/DualCore/**/*',
@@ -446,7 +446,7 @@
         'TTSDK/BDWebImageToB/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/BDWebImageToB/**/*',
+        'TTSDK/BDWebImageToB/**/*.h',
       ]
       subspec.vendored_libraries = [
         'TTSDK/BDWebImageToB/**/*.a',
@@ -470,7 +470,7 @@
         'TTSDK/TTFileUploadClientb/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/TTFileUploadClientb/**/*',
+        'TTSDK/TTFileUploadClientb/**/*.h',
       ]
       subspec.vendored_libraries = [
         "TTSDK/{TTFileUploadClientb}/**/*.a"
@@ -508,7 +508,7 @@
         "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.source_files = [
-        "TTSDK/{#{class_name}}/**/*"
+        "TTSDK/{#{class_name}}/**/*.h"
       ]
       subspec.exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h',
@@ -526,7 +526,7 @@
         'TTSDK/TTVideoLive/**/*.h',
       ]
       subspec.source_files = [
-        'TTSDK/TTVideoLive/**/*',
+        'TTSDK/TTVideoLive/**/*.h',
       ]
       subspec.vendored_libraries = [
         'TTSDK/TTVideoLive/**/*.a',
