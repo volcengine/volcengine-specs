@@ -1,0 +1,658 @@
+{
+  "name": "Sonic",
+  "version": "3.0.0",
+  "summary": "Sonic render engine.",
+  "homepage": "https://github.com/volcengine/volcengine-specs",
+  "license": "MIT",
+  "authors": {
+    "G研发": "G"
+  },
+  "platforms": {
+    "ios": "9.0",
+    "osx": "10.13.0"
+  },
+  "pod_target_xcconfig": {
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) nsel_CONFIG_NO_EXCEPTIONS=1",
+    "GCC_PREPROCESSOR_DEFINITIONS[config=Release]": "$(inherited) NDEBUG=1"
+  },
+  "ios": {
+    "pod_target_xcconfig": {
+      "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GLES_SILENCE_DEPRECATION=1"
+    },
+    "frameworks": "OpenGLES"
+  },
+  "source": {
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/Sonic/3.0.0.2/Sonic.zip"
+  },
+  "frameworks": [
+    "JavaScriptCore",
+    "CoreGraphics",
+    "QuartzCore",
+    "Accelerate"
+  ],
+  "osx": {
+    "frameworks": "OpenGL"
+  },
+  "requires_arc": true,
+  "libraries": "c++",
+  "compiler_flags": [
+    "-Wall",
+    "-Werror",
+    "-fno-exceptions",
+    "-frtti",
+    "-fno-aligned-allocation"
+  ],
+  "xcconfig": {
+    "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+    "CLANG_CXX_LIBRARY": "libc++"
+  },
+  "subspecs": [
+    {
+      "name": "Base",
+      "public_header_files": [
+        "iOS/SonicBase/SonicApp.h",
+        "iOS/SonicBase/SonicService.h",
+        "iOS/SonicBase/io/SonicLoaderService.h",
+        "iOS/SonicBase/ui/SonicFrameService.h",
+        "iOS/SonicBase/ui/SonicNSRunLoopFrameService.h"
+      ],
+      "source_files": [
+        "iOS/SonicBase/SonicApp.{h,mm}",
+        "iOS/SonicBase/SonicService.h",
+        "iOS/SonicBase/io/SonicLoaderService.h",
+        "iOS/SonicBase/ui/SonicFrameService.h",
+        "iOS/SonicBase/ui/SonicNSRunLoopFrameService.{h,m}",
+        "iOS/SonicBase/SonicAppHolder.{h}"
+      ],
+      "vendored_libraries": [
+
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "libSonic-fc34271.a"
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "Utils",
+          "header_mappings_dir": "Sonic",
+          "private_header_files": [
+            "Sonic/SonicBase/common/*.{h}",
+            "Sonic/SonicBase/loader/*.{h}",
+            "Sonic/SonicBase/loader/ios/*.{h}",
+            "Sonic/SonicBase/pauseable/*.{h}"
+          ],
+          "source_files": [
+            "Sonic/SonicBase/common/*.{h,cc}",
+            "Sonic/SonicBase/loader/*.{h,mm,cc}",
+            "Sonic/SonicBase/loader/ios/*.{h,mm}",
+            "Sonic/SonicBase/pauseable/*.{h,cc}"
+          ],
+          "dependencies": {
+            "Sonic/ThirdParty/STLLite": [
+
+            ],
+            "vmsdk/napi/core": [
+
+            ]
+          },
+          "libraries": "z",
+          "vendored_libraries": [
+            "Sonic/SonicBase/common/*.o",
+            "Sonic/SonicBase/loader/*.o",
+            "Sonic/SonicBase/loader/ios/*.o",
+            "Sonic/SonicBase/pauseable/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Sonic/SonicBase/common/*.o",
+              "Sonic/SonicBase/loader/*.o",
+              "Sonic/SonicBase/loader/ios/*.o",
+              "Sonic/SonicBase/pauseable/*.o",
+              "libSonic-4ab5dfd.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Canvas",
+      "public_header_files": [
+        "iOS/SonicCanvas/SonicCanvasService.h",
+        "iOS/SonicCanvas/SonicView.h",
+        "iOS/SonicCanvas/SonicAVPlayerService.h",
+        "iOS/SonicCanvas/SonicPlayerService.h"
+      ],
+      "source_files": [
+        "iOS/SonicCanvas/SonicCanvasService.{h,mm}",
+        "iOS/SonicCanvas/SonicView+Private.h",
+        "iOS/SonicCanvas/SonicView.{h,mm}",
+        "iOS/SonicCanvas/SonicAVPlayerService.{h,m}",
+        "iOS/SonicCanvas/SonicPlayerService.h",
+        "iOS/SonicCanvas/SonicPlayerContext.{h,m}",
+        "iOS/SonicCanvas/SonicPlayerImpl.{h,mm}"
+      ],
+      "dependencies": {
+        "Sonic/Base": [
+
+        ]
+      },
+      "vendored_libraries": [
+
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "libSonic-6df0adb.a"
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "SonicRenderer",
+          "header_mappings_dir": "Sonic",
+          "private_header_files": [
+            "Sonic/SonicCanvas/graphics/cc/*.{h}",
+            "Sonic/SonicCanvas/graphics/gen/*.{h}",
+            "Sonic/SonicCanvas/graphics/hal/ios/*.{h}",
+            "Sonic/SonicCanvas/graphics/hal/*.{h}",
+            "Sonic/SonicCanvas/graphics/impl/*.{h}",
+            "Sonic/SonicCanvas/graphics/impl/2d/*.{h}",
+            "Sonic/SonicCanvas/graphics/impl/2d/nanovg/*.{h}",
+            "Sonic/SonicCanvas/graphics/impl/2d/nanovg/lib/*.{h}",
+            "Sonic/SonicCanvas/graphics/impl/3d/*.{h}",
+            "Sonic/SonicCanvas/graphics/impl/3d/assistance/*.{h}",
+            "Sonic/SonicCanvas/graphics/impl/gl/*.{h}",
+            "Sonic/SonicCanvas/js/*.{h}",
+            "Sonic/SonicCanvas/js/2d/*.{h}",
+            "Sonic/SonicCanvas/js/2d/class/*.{h}",
+            "Sonic/SonicCanvas/js/3d/*.{h}",
+            "Sonic/SonicCanvas/js/3d/resource/*.{h}",
+            "Sonic/SonicCanvas/js/media/*.{h}",
+            "Sonic/SonicCanvas/graphics/utils/*.{h}",
+            "Sonic/SonicCanvas/media/image/*.{h}",
+            "Sonic/SonicCanvas/media/video/*.{h}",
+            "Sonic/SonicCanvas/media/video/ios/*.{h}",
+            "Sonic/SonicCanvas/media/utils/*.{h}",
+            "Sonic/SonicCanvas/public/*.{h}"
+          ],
+          "source_files": [
+            "Sonic/SonicCanvas/graphics/cc/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/cc/darwin/*.{mm}",
+            "Sonic/SonicCanvas/graphics/gen/*.{h}",
+            "Sonic/SonicCanvas/graphics/hal/ios/*.{h,mm,cc}",
+            "Sonic/SonicCanvas/graphics/hal/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/impl/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/impl/2d/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/impl/2d/commands/*.{cc}",
+            "Sonic/SonicCanvas/graphics/impl/2d/nanovg/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/impl/2d/nanovg/lib/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/impl/2d/nanovg/lib/darwin/*.{mm}",
+            "Sonic/SonicCanvas/graphics/impl/3d/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/impl/3d/assistance/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/impl/3d/commands/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/impl/gl/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/utils/*.{h,cc}",
+            "Sonic/SonicCanvas/graphics/utils/ios/*.{mm}",
+            "Sonic/SonicCanvas/js/*.{h,cc}",
+            "Sonic/SonicCanvas/js/2d/*.{h,cc}",
+            "Sonic/SonicCanvas/js/2d/class/*.{h,cc}",
+            "Sonic/SonicCanvas/js/2d/function/*.{cc}",
+            "Sonic/SonicCanvas/js/3d/*.{h,cc}",
+            "Sonic/SonicCanvas/js/3d/resource/*.{h,cc}",
+            "Sonic/SonicCanvas/js/3d/func/*.{h,cc}",
+            "Sonic/SonicCanvas/js/media/*.{h,cc}",
+            "Sonic/SonicCanvas/media/image/*.{h,cc}",
+            "Sonic/SonicCanvas/media/image/ios/*.{mm}",
+            "Sonic/SonicCanvas/media/video/*.{h,cc}",
+            "Sonic/SonicCanvas/media/video/ios/*.{h,mm}",
+            "Sonic/SonicCanvas/media/utils/*.{h,cc}",
+            "Sonic/SonicCanvas/public/*.{h,cc}"
+          ],
+          "dependencies": {
+            "vmsdk/napi/core": [
+
+            ],
+            "Sonic/Base": [
+
+            ],
+            "Sonic/ThirdParty/STLLite": [
+
+            ],
+            "Sonic/ThirdParty/cpp-base64": [
+
+            ]
+          },
+          "pod_target_xcconfig": {
+            "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) NANOVG_GLES2_IMPLEMENTATION=1"
+          },
+          "vendored_libraries": [
+            "Sonic/SonicCanvas/graphics/cc/*.o",
+            "Sonic/SonicCanvas/graphics/cc/darwin/*.o",
+            "Sonic/SonicCanvas/graphics/gen/*.o",
+            "Sonic/SonicCanvas/graphics/hal/ios/*.o",
+            "Sonic/SonicCanvas/graphics/hal/*.o",
+            "Sonic/SonicCanvas/graphics/impl/*.o",
+            "Sonic/SonicCanvas/graphics/impl/2d/*.o",
+            "Sonic/SonicCanvas/graphics/impl/2d/commands/*.o",
+            "Sonic/SonicCanvas/graphics/impl/2d/nanovg/*.o",
+            "Sonic/SonicCanvas/graphics/impl/2d/nanovg/lib/*.o",
+            "Sonic/SonicCanvas/graphics/impl/2d/nanovg/lib/darwin/*.o",
+            "Sonic/SonicCanvas/graphics/impl/3d/*.o",
+            "Sonic/SonicCanvas/graphics/impl/3d/assistance/*.o",
+            "Sonic/SonicCanvas/graphics/impl/3d/commands/*.o",
+            "Sonic/SonicCanvas/graphics/impl/gl/*.o",
+            "Sonic/SonicCanvas/graphics/utils/*.o",
+            "Sonic/SonicCanvas/graphics/utils/ios/*.o",
+            "Sonic/SonicCanvas/js/*.o",
+            "Sonic/SonicCanvas/js/2d/*.o",
+            "Sonic/SonicCanvas/js/2d/class/*.o",
+            "Sonic/SonicCanvas/js/2d/function/*.o",
+            "Sonic/SonicCanvas/js/3d/*.o",
+            "Sonic/SonicCanvas/js/3d/resource/*.o",
+            "Sonic/SonicCanvas/js/3d/func/*.o",
+            "Sonic/SonicCanvas/js/media/*.o",
+            "Sonic/SonicCanvas/media/image/*.o",
+            "Sonic/SonicCanvas/media/image/ios/*.o",
+            "Sonic/SonicCanvas/media/video/*.o",
+            "Sonic/SonicCanvas/media/video/ios/*.o",
+            "Sonic/SonicCanvas/media/utils/*.o",
+            "Sonic/SonicCanvas/public/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Sonic/SonicCanvas/graphics/cc/*.o",
+              "Sonic/SonicCanvas/graphics/cc/darwin/*.o",
+              "Sonic/SonicCanvas/graphics/gen/*.o",
+              "Sonic/SonicCanvas/graphics/hal/ios/*.o",
+              "Sonic/SonicCanvas/graphics/hal/*.o",
+              "Sonic/SonicCanvas/graphics/impl/*.o",
+              "Sonic/SonicCanvas/graphics/impl/2d/*.o",
+              "Sonic/SonicCanvas/graphics/impl/2d/commands/*.o",
+              "Sonic/SonicCanvas/graphics/impl/2d/nanovg/*.o",
+              "Sonic/SonicCanvas/graphics/impl/2d/nanovg/lib/*.o",
+              "Sonic/SonicCanvas/graphics/impl/2d/nanovg/lib/darwin/*.o",
+              "Sonic/SonicCanvas/graphics/impl/3d/*.o",
+              "Sonic/SonicCanvas/graphics/impl/3d/assistance/*.o",
+              "Sonic/SonicCanvas/graphics/impl/3d/commands/*.o",
+              "Sonic/SonicCanvas/graphics/impl/gl/*.o",
+              "Sonic/SonicCanvas/graphics/utils/*.o",
+              "Sonic/SonicCanvas/graphics/utils/ios/*.o",
+              "Sonic/SonicCanvas/js/*.o",
+              "Sonic/SonicCanvas/js/2d/*.o",
+              "Sonic/SonicCanvas/js/2d/class/*.o",
+              "Sonic/SonicCanvas/js/2d/function/*.o",
+              "Sonic/SonicCanvas/js/3d/*.o",
+              "Sonic/SonicCanvas/js/3d/resource/*.o",
+              "Sonic/SonicCanvas/js/3d/func/*.o",
+              "Sonic/SonicCanvas/js/media/*.o",
+              "Sonic/SonicCanvas/media/image/*.o",
+              "Sonic/SonicCanvas/media/image/ios/*.o",
+              "Sonic/SonicCanvas/media/video/*.o",
+              "Sonic/SonicCanvas/media/video/ios/*.o",
+              "Sonic/SonicCanvas/media/utils/*.o",
+              "Sonic/SonicCanvas/public/*.o",
+              "libSonic-15d7649.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Camera",
+      "source_files": [
+        "iOS/SonicCamera/SonicDarwinCameraService.{h,mm}",
+        "iOS/SonicCamera/SonicCameraService.h"
+      ],
+      "public_header_files": [
+        "iOS/SonicCamera/SonicCameraService.h",
+        "iOS/SonicCamera/SonicDarwinCameraService.h"
+      ],
+      "dependencies": {
+        "vmsdk/napi/core": [
+
+        ],
+        "Sonic/Canvas": [
+
+        ],
+        "Sonic/ThirdParty/STLLite": [
+
+        ]
+      },
+      "ios": {
+        "frameworks": [
+          "AVFoundation",
+          "CoreMedia"
+        ],
+        "vendored_libraries": [
+          "libSonic-0fccda5.a"
+        ]
+      },
+      "vendored_libraries": [
+
+      ],
+      "exclude_files": [
+
+      ],
+      "subspecs": [
+        {
+          "name": "CameraImpl",
+          "header_mappings_dir": "Sonic",
+          "private_header_files": [
+            "Sonic/SonicCamera/impl/*.{h}",
+            "Sonic/SonicCamera/impl/ios/*.{h}"
+          ],
+          "source_files": [
+            "Sonic/SonicCamera/impl/*.{h}",
+            "Sonic/SonicCamera/impl/ios/*.{h,mm}",
+            "Sonic/SonicCamera/napi/*.{cc}"
+          ],
+          "vendored_libraries": [
+            "Sonic/SonicCamera/impl/*.o",
+            "Sonic/SonicCamera/impl/ios/*.o",
+            "Sonic/SonicCamera/napi/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Sonic/SonicCamera/impl/*.o",
+              "Sonic/SonicCamera/impl/ios/*.o",
+              "Sonic/SonicCamera/napi/*.o",
+              "libSonic-0a3a444.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "MediaRecorder",
+      "public_header_files": [
+        "iOS/SonicMediaRecorder/*.h"
+      ],
+      "source_files": [
+        "iOS/SonicMediaRecorder/*.{h,mm}"
+      ],
+      "vendored_libraries": [
+        "iOS/SonicMediaRecorder/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "iOS/SonicMediaRecorder/*.o",
+          "libSonic-e26662b.a"
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "MediaRecorderImpl",
+          "header_mappings_dir": "Sonic",
+          "private_header_files": [
+            "Sonic/SonicMediaRecorder/impl/*.{h}",
+            "Sonic/SonicMediaRecorder/impl/ios/*.{h}",
+            "Sonic/SonicMediaRecorder/napi/*.{h}",
+            "Sonic/SonicMediaRecorder/gen/*.{h}"
+          ],
+          "source_files": [
+            "Sonic/SonicMediaRecorder/impl/*.{h,cc}",
+            "Sonic/SonicMediaRecorder/impl/ios/*.{h,mm}",
+            "Sonic/SonicMediaRecorder/napi/*.{h,cc}",
+            "Sonic/SonicMediaRecorder/gen/*.{h}"
+          ],
+          "dependencies": {
+            "vmsdk/napi/env": [
+
+            ],
+            "Sonic/Base": [
+
+            ],
+            "Sonic/Canvas": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "Sonic/SonicMediaRecorder/impl/*.o",
+            "Sonic/SonicMediaRecorder/impl/ios/*.o",
+            "Sonic/SonicMediaRecorder/napi/*.o",
+            "Sonic/SonicMediaRecorder/gen/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Sonic/SonicMediaRecorder/impl/*.o",
+              "Sonic/SonicMediaRecorder/impl/ios/*.o",
+              "Sonic/SonicMediaRecorder/napi/*.o",
+              "Sonic/SonicMediaRecorder/gen/*.o",
+              "libSonic-d96aeaf.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "WASM",
+      "dependencies": {
+        "Sonic/Base": [
+
+        ]
+      },
+      "public_header_files": [
+        "iOS/SonicWASM/*.{h}"
+      ],
+      "source_files": [
+        "iOS/SonicWASM/*.{h,m}"
+      ],
+      "vendored_libraries": [
+        "iOS/SonicWASM/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "iOS/SonicWASM/*.o",
+          "libSonic-0c80a8e.a"
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "Internal",
+          "header_mappings_dir": "Sonic",
+          "private_header_files": [
+            "Sonic/SonicWASM/*.h"
+          ],
+          "source_files": [
+            "Sonic/SonicWASM/*.{h,cc}"
+          ],
+          "dependencies": {
+            "vmsdk/napi/core": [
+
+            ],
+            "fizzy": [
+
+            ],
+            "Sonic/ThirdParty/STLLite": [
+
+            ]
+          },
+          "compiler_flags": "-fexceptions",
+          "vendored_libraries": [
+            "Sonic/SonicWASM/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Sonic/SonicWASM/*.o",
+              "libSonic-738a824.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "VM",
+      "subspecs": [
+        {
+          "name": "Internal",
+          "header_mappings_dir": "Sonic",
+          "source_files": [
+            "Sonic/SonicVM/impl/*.{h,cc}"
+          ],
+          "dependencies": {
+            "Sonic/Base": [
+
+            ],
+            "Sonic/VM/API": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "Sonic/SonicVM/impl/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Sonic/SonicVM/impl/*.o",
+              "libSonic-8c8bb6a.a"
+            ]
+          }
+        },
+        {
+          "name": "API",
+          "dependencies": {
+            "vmsdk/napi/jsc": [
+
+            ]
+          },
+          "public_header_files": [
+            "iOS/SonicVM/*.{h}",
+            "Sonic/SonicVM/sonic_vm_api_inject.h",
+            "Sonic/SonicVM/jsc/sonic_vm_api_inject_jsc.h"
+          ],
+          "source_files": [
+            "iOS/SonicVM/*.{h,m}",
+            "Sonic/SonicVM/sonic_vm_api_inject.h",
+            "Sonic/SonicVM/jsc/sonic_vm_api_inject_jsc.{h,cc}"
+          ],
+          "vendored_libraries": [
+            "iOS/SonicVM/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "iOS/SonicVM/*.o",
+              "libSonic-dad5eaf.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Worker",
+      "dependencies": {
+        "Sonic/Base": [
+
+        ]
+      },
+      "public_header_files": [
+        "iOS/SonicWorker/*.{h}"
+      ],
+      "source_files": [
+        "iOS/SonicWorker/*.{h,m}"
+      ],
+      "vendored_libraries": [
+        "iOS/SonicWorker/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "iOS/SonicWorker/*.o",
+          "libSonic-e0d0ee6.a"
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "Internal",
+          "header_mappings_dir": "Sonic",
+          "source_files": [
+            "Sonic/SonicWorker/*.{h,cc}"
+          ],
+          "dependencies": {
+            "Sonic/VM": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "Sonic/SonicWorker/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "Sonic/SonicWorker/*.o",
+              "libSonic-4afbf7e.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "ThirdParty",
+      "subspecs": [
+        {
+          "name": "cpp-base64",
+          "source_files": "third_party/cpp-base64/*.{h,cpp}",
+          "private_header_files": "third_party/cpp-base64/*.h",
+          "vendored_libraries": [
+            "third_party/cpp-base64/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "third_party/cpp-base64/*.o",
+              "libSonic-05cede8.a"
+            ]
+          }
+        },
+        {
+          "name": "STLLite",
+          "header_mappings_dir": "third_party/stllite/include",
+          "source_files": "third_party/stllite/**/*",
+          "private_header_files": "third_party/stllite/**/*.h",
+          "vendored_libraries": [
+            "third_party/stllite/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        }
+      ]
+    }
+  ]
+}
