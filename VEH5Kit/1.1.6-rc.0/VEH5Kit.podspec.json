@@ -1,0 +1,80 @@
+{
+    "public_header_files": "**/*.h", 
+    "static_framework": true, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "resource_bundles": {
+        "ByteWebView": [
+            "ByteWebView/Assets/*.xcassets", 
+            "ByteWebView/Assets/wk_hookajax.js"
+        ]
+    }, 
+    "libraries": "bz2", 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/VEH5Kit/1.1.6-rc.0/VEH5Kit.framework.tar.xz"
+    }, 
+    "version": "1.1.6-rc.0", 
+    "source_files": [
+        "**/*.{h,m,mm}", 
+        "VEH5Kit-bitdummy.m"
+    ], 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20318", 
+    "prepare_command": "", 
+    "description": "framework_description", 
+    "ios": {
+        "frameworks": [
+            "CoreServices", 
+            "AVFoundation", 
+            "AVKit", 
+            "UIKit", 
+            "MessageUI", 
+            "EventKit", 
+            "AudioToolbox", 
+            "Photos", 
+            "MobileCoreServices", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VEH5Kit_*awesome_*.a"
+    }, 
+    "dependencies": {
+        "OneKit/StartUp": [], 
+        "OneKit/MARS": [], 
+        "OneKit/ByteDanceKit": [], 
+        "QRCodeReaderViewController": [], 
+        "OneKit/Cache": [], 
+        "SSZipArchive": [], 
+        "OneKit": [], 
+        "libwebp": [], 
+        "OneKit/Reachability": [], 
+        "OneKit/BaseKit": [], 
+        "RSSwizzle": [], 
+        "SDWebImage": [], 
+        "OneKit/BDMantle": []
+    }, 
+    "authors": {
+        "lixiaopeng": "lixiaopeng.dev@bytedance.com"
+    }, 
+    "name": "VEH5Kit", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "summary": "framework_summary", 
+    "frameworks": [
+        "CoreServices", 
+        "AVFoundation", 
+        "AVKit", 
+        "UIKit", 
+        "MessageUI", 
+        "EventKit", 
+        "AudioToolbox", 
+        "Photos", 
+        "MobileCoreServices"
+    ]
+}

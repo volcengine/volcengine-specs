@@ -1,0 +1,86 @@
+{
+    "public_header_files": "**/*.h", 
+    "static_framework": true, 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "pod_target_xcconfig": {
+        "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES", 
+        "GCC_PREPROCESSOR_DEFINITIONS": "VEH5Kit_POD_VERSION=@\\\"2020092724_1.1.11\\\""
+    }, 
+    "resource_bundles": {
+        "ByteWebView": [
+            "ByteWebView/Assets/*.xcassets", 
+            "ByteWebView/Assets/wk_hookajax.js"
+        ]
+    }, 
+    "libraries": "bz2", 
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VEH5Kit/1.1.11/VEH5Kit.framework.tar.xz"
+    }, 
+    "version": "1.1.11", 
+    "source_files": [
+        "**/*.{h,m,mm,c}", 
+        "VEH5Kit-bitdummy.m"
+    ], 
+    "homepage": "https://github.com/volcengine/volcengine-specs", 
+    "repoId": "20318", 
+    "prepare_command": "", 
+    "description": "framework_description", 
+    "ios": {
+        "frameworks": [
+            "CoreServices", 
+            "AVFoundation", 
+            "AVKit", 
+            "UIKit", 
+            "MessageUI", 
+            "EventKit", 
+            "AudioToolbox", 
+            "Photos", 
+            "MobileCoreServices", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VEH5Kit_*awesome_*.a"
+    }, 
+    "dependencies": {
+        "OneKit/StartUp": [], 
+        "OneKit/MARS": [], 
+        "OneKit/ByteDanceKit": [], 
+        "QRCodeReaderViewController": [], 
+        "OneKit/Cache": [], 
+        "SSZipArchive": [], 
+        "OneKit": [], 
+        "OneKit/Reachability": [], 
+        "libwebp": [], 
+        "OneKit/Network": [], 
+        "OneKit/BaseKit": [], 
+        "RSSwizzle": [], 
+        "OneKit/Screenshot": [], 
+        "SDWebImage": [], 
+        "OneKit/BDMantle": []
+    }, 
+    "authors": {
+        "lixiaopeng": "lixiaopeng.dev@bytedance.com"
+    }, 
+    "name": "VEH5Kit", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "summary": "framework_summary", 
+    "frameworks": [
+        "CoreServices", 
+        "AVFoundation", 
+        "AVKit", 
+        "UIKit", 
+        "MessageUI", 
+        "EventKit", 
+        "AudioToolbox", 
+        "Photos", 
+        "MobileCoreServices"
+    ]
+}

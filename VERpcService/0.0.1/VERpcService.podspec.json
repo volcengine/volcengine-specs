@@ -1,0 +1,62 @@
+{
+    "prepare_command": "",
+    "public_header_files": [
+        "VERpcService/Classes/Public/**/*.h"
+    ],
+    "private_header_files": [
+        "VERpcService/Classes/Core/**/*.h",
+        "VERpcService/Classes/Protobuf/**/*.h",
+        "VERpcService/Classes/TobBridge/**/*.h"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "10.0"
+    },
+    "source_files": [
+        "VERpcService/Classes/**/*",
+        "VERpcService-bitdummy.m"
+    ],
+    "requires_arc": [
+        "VERpcService/Classes/Core/**/*.{h,m}",
+        "VERpcService/Classes/Protobuf/**/*.{h,m}",
+        "VERpcService/Classes/TobBridge/**/*.{h,m}",
+        "VERpcService/Classes/Public/**/*.{h,m}"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_VERpcService_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VERpcService/0.0.1/VERpcService.framework.tar.xz"
+    },
+    "version": "0.0.1",
+    "dependencies": {
+        "OneKit/StartUp": [],
+        "Protobuf": [
+            ">=3.6.1"
+        ],
+        "OneKit/OKModel": [],
+        "OneKit/Service": [],
+        "OneKit/Reachability": [],
+        "OneKit/BaseKit": [],
+        "TTNetworkManager": []
+    },
+    "authors": {
+        "xiaojiawen.k7200": "xiaojiawen.k7200@bytedance.com"
+    },
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "homepage": "https://github.com/xiaojiawen.k7200/VERpcService",
+    "repoId": "32323",
+    "name": "VERpcService"
+}

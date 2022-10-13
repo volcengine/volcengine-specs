@@ -1,18 +1,15 @@
 {
     "prepare_command": "", 
-    "preserve_paths": [
-        "**/*.bwp"
-    ], 
     "name": "BDUGPushSDK-tob", 
     "license": {
         "text": "Bytedance copyright", 
         "type": "Copyright"
     }, 
-    "platforms": {
-        "ios": "8.0"
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDUGPushSDK-tob/0.0.1-rc.4/BDUGPushSDK-tob.framework.tar.xz"
     }, 
-    "source_files": [
-        "BDUGPushSDK-tob-bitdummy.m"
+    "preserve_paths": [
+        "**/*.bwp"
     ], 
     "ios": {
         "frameworks": [
@@ -23,16 +20,19 @@
         "vendored_libraries": "ios-arch-iphone/*_BDUGPushSDK-tob_*awesome_*.a"
     }, 
     "summary": "framework_summary", 
-    "source": {
-        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/BDUGPushSDK-tob/0.0.1-rc.4/BDUGPushSDK-tob.framework.tar.xz"
+    "platforms": {
+        "ios": "8.0"
     }, 
-    "version": "0.0.1-rc.4", 
     "authors": {
         "chenchen.121": "chenchen.121@bytedance.com"
     }, 
+    "version": "0.0.1-rc.4", 
     "pod_target_xcconfig": {
         "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
     }, 
+    "source_files": [
+        "BDUGPushSDK-tob-bitdummy.m"
+    ], 
     "homepage": "https://github.com/bytedance/BDUGPushSDK-tob/", 
     "repoId": "21061", 
     "subspecs": [

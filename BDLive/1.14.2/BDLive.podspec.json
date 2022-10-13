@@ -1,0 +1,320 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "default_subspecs": [
+        "Viewer"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "source_files": [
+        "BDLive-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "WebKit",
+            "AVKit",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_BDLive_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/BDLive/1.14.2/BDLive.framework.tar.xz"
+    },
+    "version": "1.14.2",
+    "authors": {
+        "volcengine": "service@volcengine.com"
+    },
+    "static_framework": true,
+    "homepage": "https://www.volcengine.com/product/live-saas",
+    "repoId": "28443",
+    "subspecs": [
+        {
+            "public_header_files": [
+                "BDLive/BDLive.h",
+                "BDLive/Common/ActivityService/BDLBaseResponse.h",
+                "BDLive/Common/ActivityService/BDLResponseMetaData.h",
+                "BDLive/Common/ActivityService/BDLSendActivityMessageResponse.h",
+                "BDLive/Common/BDLBaseView.h",
+                "BDLive/Common/BDLDefines.h",
+                "BDLive/Common/BDLError.h",
+                "BDLive/Common/Model/BDLActivityModel.h",
+                "BDLive/Common/Model/BDLAdvertisementModel.h",
+                "BDLive/Common/Model/BDLBaseModel.h",
+                "BDLive/Common/Model/BDLBasicModel.h",
+                "BDLive/Common/Model/BDLBusinessAccountModel.h",
+                "BDLive/Common/Model/BDLCardModel.h",
+                "BDLive/Common/Model/BDLCommentConfigModel.h",
+                "BDLive/Common/Model/BDLCommentModel.h",
+                "BDLive/Common/Model/BDLGuidePageModel.h",
+                "BDLive/Common/Model/BDLMarketingPromotionModel.h",
+                "BDLive/Common/Model/BDLMenuBarModel.h",
+                "BDLive/Common/Model/BDLMenuModel.h",
+                "BDLive/Common/Model/BDLProductModel.h",
+                "BDLive/Common/Model/BDLPullStreamUrlMainModel.h",
+                "BDLive/Common/Model/BDLPullStreamUrlModel.h",
+                "BDLive/Common/Model/BDLReplayModel.h",
+                "BDLive/Common/Model/BDLThumbUpConfigModel.h",
+                "BDLive/Common/Service/BDLLanguageService.h"
+            ],
+            "name": "Common",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Common_*awesome_*.a"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": [],
+                "TTSDKFramework": [
+                    "1.31.1.4-standard"
+                ],
+                "RangersAppLog/Log": [],
+                "SDWebImageWebPCoder": [],
+                "MBProgressHUD": [],
+                "RangersAppLog/Host": [
+                    "6.8.1"
+                ],
+                "YYModel": [],
+                "Masonry": [],
+                "SDWebImage": []
+            },
+            "source_files": [
+                "BDLive/BDLive.h",
+                "BDLive/Common/**/*.{h,m,mm,c}",
+                "BDLive-bitdummy.m"
+            ],
+            "pod_target_xcconfig": {
+                "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) "
+            },
+            "exclude_files": [
+                "BDLive/Common/Env/SG/*.{h,m,mm,c}",
+                "BDLive/Common/Env/VA/*.{h,m,mm,c}"
+            ]
+        },
+        {
+            "public_header_files": [
+                "BDLive/Viewer/ActivityService/BDLAwardUserResponse.h",
+                "BDLive/Viewer/ActivityService/BDLAwardWinnersResponse.h",
+                "BDLive/Viewer/ActivityService/BDLChangeTokenResponse.h",
+                "BDLive/Viewer/ActivityService/BDLChangeTokenWithAuthResponse.h",
+                "BDLive/Viewer/ActivityService/BDLGetActivityResponse.h",
+                "BDLive/Viewer/ActivityService/BDLGetShareUrlResponse.h",
+                "BDLive/Viewer/ActivityService/BDLLikeActivityMessageResponse.h",
+                "BDLive/Viewer/ActivityService/BDLPollingActivityMessageResponse.h",
+                "BDLive/Viewer/ActivityService/BDLRegisterResponse.h",
+                "BDLive/Viewer/ActivityService/BDLReportActivityDataRequest.h",
+                "BDLive/Viewer/ActivityService/BDLReportActivityDataResponse.h",
+                "BDLive/Viewer/ActivityService/BDLSearchActivityMessageResponse.h",
+                "BDLive/Viewer/ActivityService/BDLTestSdkTokenResponse.h",
+                "BDLive/Viewer/ActivityService/BDLUpdateAwardContactResponse.h",
+                "BDLive/Viewer/ActivityService/BDLVodUrlResponse.h",
+                "BDLive/Viewer/Advertise/BDLPageAdView.h",
+                "BDLive/Viewer/Advertise/BDLPageAdViewConfiguration.h",
+                "BDLive/Viewer/Advertise/BDLUpperAdView.h",
+                "BDLive/Viewer/AlertController/BDLAlertController.h",
+                "BDLive/Viewer/AlertController/BDLAlertControllerConfiguration.h",
+                "BDLive/Viewer/Award/BDLAwardConfiguration.h",
+                "BDLive/Viewer/Award/BDLAwardContactView.h",
+                "BDLive/Viewer/Award/BDLAwardResultView.h",
+                "BDLive/Viewer/Award/BDLAwardWinnersView.h",
+                "BDLive/Viewer/Award/BDLFloatingAwardView.h",
+                "BDLive/Viewer/Award/DetailsView/BDLAwardConditionView.h",
+                "BDLive/Viewer/Award/DetailsView/BDLAwardCountdownView.h",
+                "BDLive/Viewer/Award/DetailsView/BDLAwardDetailsView.h",
+                "BDLive/Viewer/Award/DetailsView/BDLAwardNumberView.h",
+                "BDLive/Viewer/Base/BDLNetworkService.h",
+                "BDLive/Viewer/Base/UIView+BDLDraggable.h",
+                "BDLive/Viewer/BDLActivity.h",
+                "BDLive/Viewer/BDLActivityListener.h",
+                "BDLive/Viewer/BDLPopupBaseView.h",
+                "BDLive/Viewer/BDLLiveEngine.h",
+                "BDLive/Viewer/BDLLivePullViewController.h",
+                "BDLive/Viewer/BDLLivePullViewControllerConfig.h",
+                "BDLive/Viewer/BDLLivePullViewController+BDLConfig.h",
+                "BDLive/Viewer/BDLLiveRoomConfiguration.h",
+                "BDLive/Viewer/BDLLoginProvider.h",
+                "BDLive/Viewer/BusinessAccount/BDLBusinessAccountView.h",
+                "BDLive/Viewer/Card/BDLCardConfiguration.h",
+                "BDLive/Viewer/Card/BDLCardView.h",
+                "BDLive/Viewer/Comment/BDLCommentBaseView.h",
+                "BDLive/Viewer/Comment/BDLCommentView.h",
+                "BDLive/Viewer/Comment/BDLCommentViewConfiguration.h",
+                "BDLive/Viewer/Comment/BDLNoCommentView.h",
+                "BDLive/Viewer/Comment/BDLPopupInputView.h",
+                "BDLive/Viewer/Comment/BDLPopupInputViewConfiguration.h",
+                "BDLive/Viewer/FloatingCard/BDLFloatingCardConfiguration.h",
+                "BDLive/Viewer/FloatingCard/BDLFloatingCardView.h",
+                "BDLive/Viewer/HotComment/BDLHotCommentView.h",
+                "BDLive/Viewer/ImageText/BDLImageTextView.h",
+                "BDLive/Viewer/ImageText/BDLImageTextViewConfiguration.h",
+                "BDLive/Viewer/InteractiveTool/BDLInteractiveToolConfiguration.h",
+                "BDLive/Viewer/InteractiveTool/BDLInteractiveToolContentView.h",
+                "BDLive/Viewer/InteractiveTool/BDLInteractiveToolModel.h",
+                "BDLive/Viewer/InteractiveTool/BDLInteractiveToolView.h",
+                "BDLive/Viewer/MenuBar/BDLMenuBarConfiguration.h",
+                "BDLive/Viewer/MenuBar/BDLMenuBarView.h",
+                "BDLive/Viewer/MenuView/BDLMenuView.h",
+                "BDLive/Viewer/MenuView/BDLMenuViewConfiguration.h",
+                "BDLive/Viewer/Model/BDLActivityMessageModel.h",
+                "BDLive/Viewer/Model/BDLChangeTokenModel.h",
+                "BDLive/Viewer/Model/BDLChangeTokenWithAuthModel.h",
+                "BDLive/Viewer/Model/BDLCustomUserModel.h",
+                "BDLive/Viewer/Model/BDLGetShareUrlModel.h",
+                "BDLive/Viewer/Model/BDLLikeActivityMessageModel.h",
+                "BDLive/Viewer/Model/BDLRegisterModel.h",
+                "BDLive/Viewer/Model/BDLTestSdkTokenModel.h",
+                "BDLive/Viewer/Model/BDLVideoInfoModel.h",
+                "BDLive/Viewer/Model/BDLVideoMetaModel.h",
+                "BDLive/Viewer/Model/BDLVodUrlModel.h",
+                "BDLive/Viewer/MoreOptions/BDLMoreOptionsView.h",
+                "BDLive/Viewer/MoreOptions/BDLMoreOptionsViewConfiguration.h",
+                "BDLive/Viewer/MultiLanguage/BDLMultiLanguageView.h",
+                "BDLive/Viewer/Player/BDLBasePlayerConfiguration.h",
+                "BDLive/Viewer/Player/BDLBasePlayerView.h",
+                "BDLive/Viewer/Player/BDLCountDownView.h",
+                "BDLive/Viewer/Player/BDLFloatingPlayer.h",
+                "BDLive/Viewer/Player/BDLLoadingView.h",
+                "BDLive/Viewer/Player/BDLNetworkNotReachableView.h",
+                "BDLive/Viewer/Player/BDLNetworkViaWWANView.h",
+                "BDLive/Viewer/Player/BDLPlayerCompactControlView.h",
+                "BDLive/Viewer/Player/BDLPlayerConfiguration.h",
+                "BDLive/Viewer/Player/BDLPlayerControlView.h",
+                "BDLive/Viewer/Player/BDLPlayerFullScreenViewController.h",
+                "BDLive/Viewer/Player/BDLPlayerMaskView.h",
+                "BDLive/Viewer/Player/BDLPlayerReplayView.h",
+                "BDLive/Viewer/Player/BDLPlayerResolutionView.h",
+                "BDLive/Viewer/Player/BDLPlayerSliderView.h",
+                "BDLive/Viewer/Player/BDLPlayerSpeedView.h",
+                "BDLive/Viewer/Player/BDLPlayerView.h",
+                "BDLive/Viewer/Popularity/BDLPopularityView.h",
+                "BDLive/Viewer/PropertyRuntime/BDLRTBaseConfiguration.h",
+                "BDLive/Viewer/ScrollText/BDLScrollTextView.h",
+                "BDLive/Viewer/Service/BDLActivityService.h",
+                "BDLive/Viewer/Service/BDLBasicService.h",
+                "BDLive/Viewer/Service/BDLBusinessAccountService.h",
+                "BDLive/Viewer/Service/BDLCommentConfigService.h",
+                "BDLive/Viewer/Service/BDLCommentService.h",
+                "BDLive/Viewer/Service/BDLGuidePageService.h",
+                "BDLive/Viewer/Service/BDLHotCommentService.h",
+                "BDLive/Viewer/Service/BDLInteractiveToolService.h",
+                "BDLive/Viewer/Service/BDLMenuService.h",
+                "BDLive/Viewer/Service/BDLPageAdService.h",
+                "BDLive/Viewer/Service/BDLPageHeaderAdService.h",
+                "BDLive/Viewer/Service/BDLPageUpperAdService.h",
+                "BDLive/Viewer/Service/BDLPopularityService.h",
+                "BDLive/Viewer/Service/BDLProductService.h",
+                "BDLive/Viewer/Service/BDLPullStreamUrlService.h",
+                "BDLive/Viewer/Service/BDLRichTextService.h",
+                "BDLive/Viewer/Service/BDLThumbUpConfigService.h",
+                "BDLive/Viewer/Service/BDLTopCommentService.h",
+                "BDLive/Viewer/Share/BDLShareView.h",
+                "BDLive/Viewer/TopComment/BDLTopCommentView.h"
+            ],
+            "name": "Viewer",
+            "resource_bundles": {
+                "BDLAssets": [
+                    "BDLive/Viewer/Resources/BDLAssets.xcassets"
+                ],
+                "BDLEmoji": [
+                    "BDLive/Viewer/Resources/BDLEmoji.bundle/**/*"
+                ],
+                "BDLLanguage": [
+                    "BDLive/Viewer/Resources/Language/**/*.{strings,stringsdict}"
+                ]
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Viewer_*awesome_*.a"
+            },
+            "frameworks": [
+                "EventKit"
+            ],
+            "dependencies": {
+                "TTNetworkManager": [
+                    "5.0.29.23"
+                ],
+                "BDLive/Common": [],
+                "MJRefresh": []
+            },
+            "source_files": [
+                "BDLive/Viewer/**/*.{h,m,mm,c}",
+                "BDLive-bitdummy.m"
+            ]
+        },
+        {
+            "public_header_files": [
+                "BDLive/LiveStreaming/API/BDLLiveStreaming.h",
+                "BDLive/LiveStreaming/Common/Controller/BDLLiveStreamingController.h",
+                "BDLive/LiveStreaming/ToB/ToBWithCV/Model/BDLEffectConfig.h"
+            ],
+            "vendored_libraries": "BDLive/LiveStreaming/ToB/ToBWithCV/SDK/BytedEffectSDK/libeffect-sdk.a",
+            "name": "LiveStreaming",
+            "resource_bundles": {
+                "BDLEmoji": [
+                    "BDLive/LiveStreaming/Resource/BDLEmoji.bundle/**/*"
+                ],
+                "BDLLanguageStreaming": [
+                    "BDLive/LiveStreaming/Resource/Language/**/*.{strings,stringsdict}"
+                ],
+                "BDLLiveStreamingImageResource": [
+                    "BDLive/LiveStreaming/Resource/Assets/LiveStream.xcassets"
+                ]
+            },
+            "source_files": [
+                "BDLive/LiveStreaming/**/*.{h,m,mm,c,cpp}",
+                "BDLive-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_LiveStreaming_*awesome_*.a"
+            },
+            "libraries": [
+                "stdc++",
+                "z"
+            ],
+            "frameworks": [
+                "Accelerate",
+                "AssetsLibrary",
+                "AVFoundation",
+                "CoreGraphics",
+                "CoreImage",
+                "CoreMedia",
+                "CoreVideo",
+                "Foundation",
+                "QuartzCore",
+                "UIKit",
+                "CoreMotion"
+            ],
+            "dependencies": {
+                "LEEAlert": [
+                    "1.4.3"
+                ],
+                "MJExtension": [],
+                "BDLive/Common": [],
+                "YYCategories": []
+            },
+            "weak_frameworks": [
+                "Metal",
+                "MetalPerformanceShaders",
+                "Photos",
+                "CoreML"
+            ],
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        }
+    ],
+    "name": "BDLive"
+}

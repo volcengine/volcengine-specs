@@ -1,0 +1,43 @@
+{
+    "prepare_command": "", 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VESDKMonitorWrapper/0.0.1-rc.0/VESDKMonitorWrapper.framework.tar.xz"
+    }, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VESDKMonitorWrapper_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "authors": {
+        "author": "fengyifei.528@bytedance.com"
+    }, 
+    "version": "0.0.1-rc.0", 
+    "dependencies": {
+        "OneKit/StartUp": [], 
+        "OneKit/Service": [], 
+        "RangersAPM/Crash": [], 
+        "RangersAPM/CN": []
+    }, 
+    "source_files": [
+        "VESDKMonitorWrapper/Classes/**/*", 
+        "VESDKMonitorWrapper-bitdummy.m"
+    ], 
+    "homepage": "https://github.com/author/VESDKMonitorWrapper", 
+    "repoId": "30809", 
+    "name": "VESDKMonitorWrapper"
+}

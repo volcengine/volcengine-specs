@@ -1,0 +1,43 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "source_files": [
+        "VEDeviceGroup/Classes/**/*",
+        "VEDeviceGroup-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_VEDeviceGroup_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VEDeviceGroup/0.0.5/VEDeviceGroup.framework.tar.xz"
+    },
+    "version": "0.0.5",
+    "dependencies": {
+        "OneKit/StartUp": [],
+        "OneKit/Network": [],
+        "OneKit/MARS": []
+    },
+    "authors": {
+        "fengyifei.528": "fengyifei.528@bytedance.com"
+    },
+    "static_framework": true,
+    "homepage": "https://github.com/fengyifei.528/VEDeviceGroup",
+    "repoId": "32507",
+    "name": "VEDeviceGroup"
+}

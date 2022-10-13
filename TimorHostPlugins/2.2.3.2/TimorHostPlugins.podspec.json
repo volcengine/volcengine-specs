@@ -1,0 +1,962 @@
+{
+  "name": "TimorHostPlugins",
+  "version": "2.2.3.2",
+  "license": {
+    "type": "Copyright",
+    "text": "Bytedance copyright"
+  },
+  "summary": "The default implication of Mars MiniApp SDK",
+  "homepage": "https://github.com/volcengine/volcengine-specs",
+  "authors": {
+    "yangqihang": "yangqihang@bytedance.com"
+  },
+  "source": {
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TimorHostPlugins/2.2.3.2/TimorHostPlugins.zip"
+  },
+  "description": "The default implication of Mars MiniApp SDK",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "default_subspecs": [
+    "ActionSheet",
+    "ScanCode",
+    "Media",
+    "Picker",
+    "Location",
+    "Map-MapKit",
+    "Pigeon",
+    "ContentPlayer",
+    "VideoPlayer",
+    "Reachability-Open",
+    "WebImage-SDWebImage",
+    "DeviceOrientation",
+    "SensitiveSafeAPI"
+  ],
+  "static_framework": true,
+  "dependencies": {
+    "OneKit/ByteDanceKit/UIKit": [
+
+    ],
+    "OneKit/ByteDanceKit/Foundation": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "ActionSheet",
+      "source_files": [
+        "TimorHostPlugins/Classes/ActionSheet/**/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/ActionSheet/**/*.{h}",
+      "dependencies": {
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/ActionSheet/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/ActionSheet/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-d24bc0a.a"
+        ]
+      }
+    },
+    {
+      "name": "ScanCode",
+      "source_files": [
+        "TimorHostPlugins/Classes/ScanCode/**/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/ScanCode/**/*.{h}",
+      "dependencies": {
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/ScanCode/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/ScanCode/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-96e7495.a"
+        ]
+      }
+    },
+    {
+      "name": "Media",
+      "source_files": [
+        "TimorHostPlugins/Classes/Media/**/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/Media/**/*.{h}",
+      "dependencies": {
+        "Timor/Utils/WebImageUtil": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/Media/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/Media/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-78372b6.a"
+        ]
+      }
+    },
+    {
+      "name": "Picker",
+      "dependencies": {
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "CustomPicker",
+          "source_files": [
+            "TimorHostPlugins/Classes/Picker/CustomPicker/**/*.{h,m}"
+          ],
+          "private_header_files": "TimorHostPlugins/Classes/Picker/CustomPicker/**/*.{h}",
+          "dependencies": {
+            "Timor/HostInterfaces/ComponentInterface/PickerInterface/CustomPickerInterface": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/Picker/CustomPicker/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/Picker/CustomPicker/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-f5e2ba0.a"
+            ]
+          }
+        },
+        {
+          "name": "RegionPicker",
+          "source_files": [
+            "TimorHostPlugins/Classes/Picker/RegionPicker/**/*.{h,m}"
+          ],
+          "private_header_files": "TimorHostPlugins/Classes/Picker/RegionPicker/**/*.{h}",
+          "dependencies": {
+            "Timor/HostInterfaces/ComponentInterface/PickerInterface/RegionPickerInterface": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/Picker/RegionPicker/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/Picker/RegionPicker/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-0e4dc5f.a"
+            ]
+          }
+        },
+        {
+          "name": "DatePicker",
+          "source_files": [
+            "TimorHostPlugins/Classes/Picker/DatePicker/**/*.{h,m}"
+          ],
+          "private_header_files": "TimorHostPlugins/Classes/Picker/DatePicker/**/*.{h}",
+          "dependencies": {
+            "Timor/HostInterfaces/ComponentInterface/PickerInterface/DatePickerInterface": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/Picker/DatePicker/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/Picker/DatePicker/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-a09606b.a"
+            ]
+          }
+        },
+        {
+          "name": "ImagePicker-PH",
+          "ios": {
+            "frameworks": [
+              "UIKit",
+              "Photos",
+              "PhotosUI"
+            ],
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/Picker/ImagePicker-PH/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-3972a62.a"
+            ]
+          },
+          "source_files": [
+            "TimorHostPlugins/Classes/Picker/ImagePicker-PH/**/*.{h,m}"
+          ],
+          "private_header_files": "TimorHostPlugins/Classes/Picker/ImagePicker-PH/**/*.{h}",
+          "dependencies": {
+            "Timor/HostInterfaces/ComponentInterface/PickerInterface/ImagePickerInterface": [
+
+            ],
+            "TimorHostPlugins/ThirdParty/BDPZLPhotoBrowser-objc": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/Picker/ImagePicker-PH/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "VideoPicker",
+          "source_files": [
+            "TimorHostPlugins/Classes/Picker/VideoPicker/**/*.{h,m}"
+          ],
+          "private_header_files": "TimorHostPlugins/Classes/Picker/VideoPicker/**/*.{h}",
+          "dependencies": {
+            "Timor/HostInterfaces/ComponentInterface/PickerInterface/VideoPickerInterface": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/Picker/VideoPicker/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/Picker/VideoPicker/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-10c623d.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Location",
+      "source_files": [
+        "TimorHostPlugins/Classes/Location/**/*.{h,m}"
+      ],
+      "ios": {
+        "frameworks": "CoreLocation",
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/Location/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-44557b1.a"
+        ]
+      },
+      "private_header_files": "TimorHostPlugins/Classes/Location/**/*.{h}",
+      "dependencies": {
+        "Timor/HostInterfaces/LocationInterface": [
+
+        ],
+        "TimorHostPlugins/ThirdParty/INTULocationManager": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/Location/**/*.o"
+      ],
+      "exclude_files": [
+
+      ]
+    },
+    {
+      "name": "Map-Amap",
+      "source_files": [
+        "TimorHostPlugins/Classes/Map-AMap/**/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/Map-BaiduMap/**/*.{h}",
+      "dependencies": {
+        "AMap2DMap-NO-IDFA": [
+
+        ],
+        "AMapFoundation-NO-IDFA": [
+
+        ],
+        "Timor/HostInterfaces/ComponentInterface/MapInterface": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/Map-AMap/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/Map-AMap/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-4bd2ee7.a"
+        ]
+      }
+    },
+    {
+      "name": "Map-BaiduMap",
+      "source_files": [
+        "TimorHostPlugins/Classes/Map-BaiduMap/**/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/Map-BaiduMap/**/*.{h}",
+      "dependencies": {
+        "Timor/HostInterfaces/ComponentInterface/MapInterface": [
+
+        ],
+        "BaiduMapKit": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/Map-BaiduMap/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/Map-BaiduMap/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-35634ca.a"
+        ]
+      }
+    },
+    {
+      "name": "Map-MapKit",
+      "ios": {
+        "frameworks": "MapKit",
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/Map-MapKit/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-660ec34.a"
+        ]
+      },
+      "source_files": [
+        "TimorHostPlugins/Classes/Map-MapKit/**/*.{h,m}"
+      ],
+      "dependencies": {
+        "Timor/HostInterfaces/ComponentInterface/MapInterface": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/Map-MapKit/**/*.o"
+      ],
+      "exclude_files": [
+
+      ]
+    },
+    {
+      "name": "Pigeon",
+      "dependencies": {
+        "Timor/HostInterfaces/PigeonInterface": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "private_header_files": "TimorHostPlugins/Classes/Pigeon/**/*.{h}",
+      "source_files": [
+        "TimorHostPlugins/Classes/Pigeon/**/*.{h,m}"
+      ],
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/Pigeon/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/Pigeon/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-0416702.a"
+        ]
+      }
+    },
+    {
+      "name": "ContentPlayer",
+      "source_files": [
+        "TimorHostPlugins/Classes/ContentPlayer/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/ContentPlayer/*.{h}",
+      "dependencies": {
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/ContentPlayer/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/ContentPlayer/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-bbb9539.a"
+        ]
+      }
+    },
+    {
+      "name": "TTVideoEngine",
+      "header_dir": "TTVideoEngine",
+      "dependencies": {
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/TTVideoEngine/Classes/*.{a}"
+      ],
+      "subspecs": [
+        {
+          "name": "NewLogger",
+          "source_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/NewLogger/*.h",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/NewLogger/*.{m,mm,c}"
+          ],
+          "private_header_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/NewLogger/*.h"
+          ]
+        },
+        {
+          "name": "TraceReport",
+          "source_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/TraceReport/*.h",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/TraceReport/*.{m,mm,c}"
+          ],
+          "private_header_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/TraceReport/*.h"
+          ]
+        },
+        {
+          "name": "Private",
+          "source_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/Private/**/*.h",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/Private/**/*.{m,mm,c}"
+          ],
+          "private_header_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/Private/**/*.h"
+          ],
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/*.{a}",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/Private/**/*.o",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/Private/**/*.o"
+          ],
+          "libraries": "sqlite3",
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/TTVideoEngine/Classes/*.{a}",
+              "TimorHostPlugins/Classes/TTVideoEngine/Classes/Private/**/*.o",
+              "TimorHostPlugins/Classes/TTVideoEngine/Classes/Private/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-ac406ff.a"
+            ]
+          }
+        },
+        {
+          "name": "Public",
+          "source_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/Public/**/*.h",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/Public/**/*.{m,mm,c}"
+          ],
+          "public_header_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/Public/**/*.h"
+          ],
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/Public/**/*.o",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/Public/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "OldModel",
+          "source_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/ModelFormatJson/**/*.h",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/ModelFormatJson/**/*.{m,mm,c}"
+          ],
+          "public_header_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/ModelFormatJson/**/*.h"
+          ],
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/ModelFormatJson/**/*.o",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/ModelFormatJson/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "Base",
+          "source_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/EnvConfig/Base/*.{h,m,mm,c}",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/DualCore/Base/*.{h,m,mm,c}"
+          ],
+          "public_header_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/EnvConfig/Base/*.h",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/DualCore/Base/*.h"
+          ],
+          "dependencies": {
+            "TimorHostPlugins/TTVideoEngine/Public": [
+
+            ],
+            "TimorHostPlugins/TTVideoEngine/Private": [
+
+            ],
+            "TimorHostPlugins/TTVideoEngine/NewLogger": [
+
+            ],
+            "TimorHostPlugins/TTVideoEngine/OldModel": [
+
+            ],
+            "TimorHostPlugins/TTVideoEngine/TraceReport": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/EnvConfig/Base/*.o",
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/DualCore/Base/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "CN",
+          "source_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/EnvConfig/CN/*.{h,m,mm,c}"
+          ],
+          "private_header_files": [
+            "TimorHostPlugins/Classes/TTVideoEngine/Classes/EnvConfig/CN/*.h"
+          ],
+          "dependencies": {
+            "TimorHostPlugins/TTVideoEngine/Base": [
+
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "VideoPlayer",
+      "source_files": [
+        "TimorHostPlugins/Classes/ContentPlayer/VideoPlayer/**/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/ContentPlayer/VideoPlayer/**/*.{h}",
+      "dependencies": {
+        "Timor/HostInterfaces/ComponentInterface/VideoPlayerInterface": [
+
+        ],
+        "Timor/HostInterfaces/PictureInPictureInterface": [
+
+        ],
+        "TimorHostPlugins/TTVideoEngine/CN": [
+
+        ],
+        "TimorHostPlugins/ContentPlayer": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/ContentPlayer/VideoPlayer/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/ContentPlayer/VideoPlayer/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-df5b829.a"
+        ]
+      }
+    },
+    {
+      "name": "Reachability-Open",
+      "ios": {
+        "frameworks": [
+          "SystemConfiguration",
+          "CoreTelephony",
+          "CoreFoundation"
+        ],
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/Reachability-Open/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-8e5b100.a"
+        ]
+      },
+      "dependencies": {
+        "Timor/HostInterfaces/NetworkInterface": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "source_files": [
+        "TimorHostPlugins/Classes/Reachability-Open/**/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/Reachability-Open/**/*.{h}",
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/Reachability-Open/**/*.o"
+      ],
+      "exclude_files": [
+
+      ]
+    },
+    {
+      "name": "WebImage-SDWebImage",
+      "dependencies": {
+        "TimorHostPlugins/ThirdParty/BDPSDWebImage": [
+
+        ],
+        "TimorHostPlugins/ThirdParty/BDPSDWebImageWebPCoder": [
+
+        ],
+        "Timor/HostInterfaces/WebImageInterface": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "source_files": [
+        "TimorHostPlugins/Classes/WebImage-SDWebImage/**/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/WebImage-SDWebImage/**/*.{h}",
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/WebImage-SDWebImage/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/WebImage-SDWebImage/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-bfb8a23.a"
+        ]
+      }
+    },
+    {
+      "name": "DeviceOrientation",
+      "source_files": [
+        "TimorHostPlugins/Classes/DeviceOrientation/**/*.{h,m}"
+      ],
+      "private_header_files": "TimorHostPlugins/Classes/DeviceOrientation/**/*.{h}",
+      "dependencies": {
+        "Timor/HostInterfaces/DeviceOrientationInterface": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "TimorHostPlugins/Classes/DeviceOrientation/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/Classes/DeviceOrientation/**/*.o",
+          "TimorHostPlugins/libTimorHostPlugins-a6ad691.a"
+        ]
+      }
+    },
+    {
+      "name": "SensitiveSafeAPI",
+      "dependencies": {
+        "Timor/HostInterfaces/SensitiveSafeAPIInterface": [
+
+        ],
+        "TimorHostPlugins/_Dummy": [
+
+        ],
+        "OneKit/ByteDanceKit/Foundation": [
+
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "Microphone",
+          "source_files": [
+            "TimorHostPlugins/Classes/SensitiveSafeAPI/Microphone/**/*.{h,m}"
+          ],
+          "ios": {
+            "frameworks": "AVFoundation",
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/SensitiveSafeAPI/Microphone/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-69a3bf1.a"
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/SensitiveSafeAPI/Microphone/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "Camera",
+          "source_files": [
+            "TimorHostPlugins/Classes/SensitiveSafeAPI/Camera/**/*.{h,m}"
+          ],
+          "ios": {
+            "frameworks": "AVFoundation",
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/SensitiveSafeAPI/Camera/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-744cd85.a"
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/SensitiveSafeAPI/Camera/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "Pasteborad",
+          "source_files": [
+            "TimorHostPlugins/Classes/SensitiveSafeAPI/Pasteborad/**/*.{h,m}"
+          ],
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/SensitiveSafeAPI/Pasteborad/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/SensitiveSafeAPI/Pasteborad/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-fd9a810.a"
+            ]
+          }
+        },
+        {
+          "name": "OpenURL",
+          "source_files": [
+            "TimorHostPlugins/Classes/SensitiveSafeAPI/OpenURL/**/*.{h,m}"
+          ],
+          "ios": {
+            "frameworks": "StoreKit",
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/SensitiveSafeAPI/OpenURL/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-465c65a.a"
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/SensitiveSafeAPI/OpenURL/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "WIFI",
+          "source_files": [
+            "TimorHostPlugins/Classes/SensitiveSafeAPI/WIFI/**/*.{h,m}"
+          ],
+          "ios": {
+            "frameworks": [
+              "CoreLocation",
+              "SystemConfiguration"
+            ],
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/SensitiveSafeAPI/WIFI/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-9aaebe7.a"
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/SensitiveSafeAPI/WIFI/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ThirdParty",
+      "dependencies": {
+        "TimorHostPlugins/_Dummy": [
+
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "BDPSDWebImage",
+          "header_dir": "BDPSDWebImage",
+          "source_files": [
+            "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Core/*.{h,m}",
+            "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Private/*.{h,m}"
+          ],
+          "resource_bundles": {
+            "BDPSDWEBLICENSE": [
+              "TimorHostPlugins/Classes/ThirdParty/SDWebImage/LICENSE"
+            ]
+          },
+          "private_header_files": "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Private/*.h",
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Core/*.o",
+            "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Private/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Core/*.o",
+              "TimorHostPlugins/Classes/ThirdParty/SDWebImage/BDPSDWebImage/Private/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-0e5fce5.a"
+            ]
+          }
+        },
+        {
+          "name": "BDPSDWebImageWebPCoder",
+          "header_dir": "BDPSDWebImageWebPCoder",
+          "source_files": [
+            "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/Classes/**/*"
+          ],
+          "private_header_files": "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/Classes/**/*.{h}",
+          "resource_bundles": {
+            "BDPSDWEBPCLICENSE": [
+              "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/LICENSE"
+            ]
+          },
+          "dependencies": {
+            "TimorHostPlugins/ThirdParty/BDPSDWebImage": [
+
+            ],
+            "libwebp": [
+              "~> 1.0"
+            ]
+          },
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/Classes/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/ThirdParty/BDPSDWebImageWebPCoder/Classes/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-fc98883.a"
+            ]
+          }
+        },
+        {
+          "name": "BDPZLPhotoBrowser-objc",
+          "header_dir": "BDPZLPhotoBrowser-objc",
+          "dependencies": {
+            "TimorHostPlugins/ThirdParty/BDPSDWebImage": [
+
+            ]
+          },
+          "source_files": [
+            "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/**/*.{h,m}"
+          ],
+          "private_header_files": "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/**/*.{h}",
+          "resource_bundles": {
+            "BDPZLPBLICENSE": [
+              "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/LICENSE"
+            ]
+          },
+          "resources": [
+            "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/resource/*.{png,xib,nib,bundle}"
+          ],
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/ThirdParty/ZLPhotoBrowser/PhotoBrowser/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-78ec199.a"
+            ]
+          }
+        },
+        {
+          "name": "INTULocationManager",
+          "source_files": [
+            "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.{h,m}"
+          ],
+          "resource_bundles": {
+            "BDPINTULLICENSE": [
+              "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/LICENSE"
+            ]
+          },
+          "private_header_files": "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.{h}",
+          "vendored_libraries": [
+            "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "TimorHostPlugins/Classes/ThirdParty/INTULocationManager/Classes/**/*.o",
+              "TimorHostPlugins/libTimorHostPlugins-5f822d3.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "_Dummy",
+      "source_files": [
+        "TimorHostPlugins/Classes/TimorHostPlugins-bitdummy.m"
+      ],
+      "vendored_libraries": [
+
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "TimorHostPlugins/libTimorHostPlugins-0fef330.a"
+        ]
+      }
+    }
+  ]
+
+}

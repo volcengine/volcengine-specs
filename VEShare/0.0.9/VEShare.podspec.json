@@ -1,0 +1,584 @@
+{
+    "prepare_command": "", 
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "requires_arc": true, 
+    "preserve_paths": [
+        "**/*.bwp"
+    ], 
+    "ios": {
+        "frameworks": [
+            "UIKit", 
+            "Foundation", 
+            "JavaScriptCore"
+        ], 
+        "vendored_libraries": "ios-arch-iphone/*_VEShare_*awesome_*.a"
+    }, 
+    "summary": "framework_summary", 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "authors": {
+        "huangbomao@bytedance.com": "huangbomao@bytedance.com"
+    }, 
+    "version": "0.0.9", 
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VEShare/0.0.9/VEShare.framework.tar.xz"
+    }, 
+    "pod_target_xcconfig": {
+        "BITCODE_GENERATION_MODE": "bitcode", 
+        "DEFINES_MODULE": "YES"
+    }, 
+    "source_files": [
+        "VEShare-bitdummy.m"
+    ], 
+    "static_framework": true, 
+    "homepage": "https://github.com/huangbomao@bytedance.com/VEShare", 
+    "repoId": "30591", 
+    "subspecs": [
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Basic_*awesome_*.a"
+            }, 
+            "name": "Basic", 
+            "subspecs": [
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_SystemShare_*awesome_*.a"
+                    }, 
+                    "name": "SystemShare", 
+                    "source_files": [
+                        "VEShare/Classes/Basic/SystemShare/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "frameworks": [
+                        "Photos", 
+                        "ImageIO", 
+                        "UIKit", 
+                        "Foundation"
+                    ], 
+                    "dependencies": {
+                        "VEShare/Basic/Util": [], 
+                        "SDWebImage": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_VideoShare_*awesome_*.a"
+                    }, 
+                    "name": "VideoShare", 
+                    "source_files": [
+                        "VEShare/Classes/Basic/VideoShare/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "VEShare/TencentQQSDK": [], 
+                        "VEShare/Basic/Util": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_QQShare_*awesome_*.a"
+                    }, 
+                    "name": "QQShare", 
+                    "source_files": [
+                        "VEShare/Classes/Basic/QQShare/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "VEShare/Basic/Util": [], 
+                        "WechatOpenSDK": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_WeChatShare_*awesome_*.a"
+                    }, 
+                    "name": "WeChatShare", 
+                    "source_files": [
+                        "VEShare/Classes/Basic/WeChatShare/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "VEShare/Basic/Util": [], 
+                        "VEShare/WeiboSDK": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_WeiboShare_*awesome_*.a"
+                    }, 
+                    "name": "WeiboShare", 
+                    "source_files": [
+                        "VEShare/Classes/Basic/WeiboShare/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "VEShare/Basic/Util": [], 
+                        "VEShare/AliPaySDK": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_AliShare_*awesome_*.a"
+                    }, 
+                    "name": "AliShare", 
+                    "source_files": [
+                        "VEShare/Classes/Basic/AliShare/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "VEShare/DingTalkSDK": [], 
+                        "VEShare/Basic/Util": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_DingTalkShare_*awesome_*.a"
+                    }, 
+                    "name": "DingTalkShare", 
+                    "source_files": [
+                        "VEShare/Classes/Basic/DingTalkShare/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "VEShare/Basic/Util": [], 
+                        "DouyinOpenSDK": [
+                            "~> 4.0.0"
+                        ]
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_AwemeShare_*awesome_*.a"
+                    }, 
+                    "name": "AwemeShare", 
+                    "source_files": [
+                        "VEShare/Classes/Basic/AwemeShare/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Util_*awesome_*.a"
+                    }, 
+                    "name": "Util", 
+                    "source_files": [
+                        "VEShare/Classes/Basic/Util/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }
+            ], 
+            "source_files": [
+                "VEShare-bitdummy.m"
+            ]
+        }, 
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Biz_*awesome_*.a"
+            }, 
+            "name": "Biz", 
+            "subspecs": [
+                {
+                    "public_header_files": [
+                        "VEShare/Classes/Biz/Activity/AdapterService/VEShareAdapterSetting.h", 
+                        "VEShare/Classes/Biz/Activity/Protocol/*.{h}", 
+                        "VEShare/Classes/Biz/Activity/ShareManager/*.{h}", 
+                        "VEShare/Classes/Biz/Activity/Util/**/*.{h,m}"
+                    ], 
+                    "dependencies": {
+                        "VEShare/Basic/VideoShare": [], 
+                        "OneKit/Network": [], 
+                        "VEShare/Basic/SystemShare": [], 
+                        "VEShare/Basic/Util": [], 
+                        "VEShare/Biz/APM": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Activity_*awesome_*.a"
+                    }, 
+                    "name": "Activity", 
+                    "source_files": [
+                        "VEShare/Classes/Biz/Activity/Protocol/**/*.{h,m}", 
+                        "VEShare/Classes/Biz/Activity/ShareManager/**/*.{h,m}", 
+                        "VEShare/Classes/Biz/Activity/Util/**/*.{h,m}", 
+                        "VEShare/Classes/Biz/Activity/AdapterService/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "OneKit/StartUp": [], 
+                        "VEShare/Biz/Activity": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_StartUp_*awesome_*.a"
+                    }, 
+                    "name": "StartUp", 
+                    "source_files": [
+                        "VEShare/Classes/Biz/StartUp/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "public_header_files": "VEShare/Classes/Biz/APM/**/*.h", 
+                    "dependencies": {
+                        "RangersAPM/EventMonitor": [], 
+                        "RangersAPM/SessionTracker": [], 
+                        "RangersAPM/CN": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_APM_*awesome_*.a"
+                    }, 
+                    "name": "APM", 
+                    "source_files": [
+                        "VEShare/Classes/Biz/APM/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "name": "SystemBiz", 
+                    "resource_bundles": {
+                        "VEShareSystemResource": [
+                            "VEShare/Classes/Biz/SystemBiz/Resources/*.png"
+                        ]
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_SystemBiz_*awesome_*.a"
+                    }, 
+                    "dependencies": {
+                        "VEShare/Basic/SystemShare": [], 
+                        "VEShare/Biz/Activity": []
+                    }, 
+                    "source_files": [
+                        "VEShare/Classes/Biz/SystemBiz/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ], 
+                    "resources": "Biz/SystemBiz/VEShareSystem.xcassets"
+                }, 
+                {
+                    "name": "QQBiz", 
+                    "resource_bundles": {
+                        "VEShareQQResource": [
+                            "VEShare/Classes/Biz/QQBiz/Resources/*.png"
+                        ]
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_QQBiz_*awesome_*.a"
+                    }, 
+                    "dependencies": {
+                        "VEShare/Basic/QQShare": [], 
+                        "VEShare/Biz/Activity": []
+                    }, 
+                    "source_files": [
+                        "VEShare/Classes/Biz/QQBiz/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ], 
+                    "resources": "Biz/QQBiz/VEShareQQ.xcassets"
+                }, 
+                {
+                    "name": "WeChatBiz", 
+                    "resource_bundles": {
+                        "VEShareWechatResource": [
+                            "VEShare/Classes/Biz/WeChatBiz/Resources/*.png"
+                        ]
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_WeChatBiz_*awesome_*.a"
+                    }, 
+                    "dependencies": {
+                        "VEShare/Basic/WeChatShare": [], 
+                        "VEShare/Biz/Activity": []
+                    }, 
+                    "source_files": [
+                        "VEShare/Classes/Biz/WeChatBiz/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ], 
+                    "resources": "Biz/WeChatBiz/VEShareWeChat.xcassets"
+                }, 
+                {
+                    "name": "WeiboBiz", 
+                    "resource_bundles": {
+                        "VEShareWeiboResource": [
+                            "VEShare/Classes/Biz/WeiboBiz/Resources/*.png"
+                        ]
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_WeiboBiz_*awesome_*.a"
+                    }, 
+                    "dependencies": {
+                        "VEShare/Basic/WeiboShare": [], 
+                        "VEShare/Biz/Activity": []
+                    }, 
+                    "source_files": [
+                        "VEShare/Classes/Biz/WeiboBiz/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ], 
+                    "resources": "Biz/WeiboBiz/VEShareWeibo.xcassets"
+                }, 
+                {
+                    "name": "AliPayBiz", 
+                    "resource_bundles": {
+                        "VEShareAliResource": [
+                            "VEShare/Classes/Biz/AliPayBiz/Resources/*.png"
+                        ]
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_AliPayBiz_*awesome_*.a"
+                    }, 
+                    "dependencies": {
+                        "VEShare/Basic/AliShare": [], 
+                        "VEShare/Biz/Activity": []
+                    }, 
+                    "source_files": [
+                        "VEShare/Classes/Biz/AliPayBiz/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ], 
+                    "resources": "Biz/AliPayBiz/VEShareAli.xcassets"
+                }, 
+                {
+                    "name": "DingTalkBiz", 
+                    "resource_bundles": {
+                        "VEShareDingtalkResource": [
+                            "VEShare/Classes/Biz/DingTalkBiz/Resources/*.png"
+                        ]
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_DingTalkBiz_*awesome_*.a"
+                    }, 
+                    "dependencies": {
+                        "VEShare/Biz/Activity": [], 
+                        "VEShare/Basic/DingTalkShare": []
+                    }, 
+                    "source_files": [
+                        "VEShare/Classes/Biz/DingTalkBiz/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ], 
+                    "resources": "Biz/DingTalkBiz/VEShareDingTalk.xcassets"
+                }, 
+                {
+                    "resource_bundles": {
+                        "VEShareAwemeResource": [
+                            "VEShare/Classes/Biz/AwemeBiz/Resources/*.png"
+                        ]
+                    }, 
+                    "dependencies": {
+                        "VEShare/Basic/AwemeShare": [], 
+                        "VEShare/Biz/Activity": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_AwemeBiz_*awesome_*.a"
+                    }, 
+                    "name": "AwemeBiz", 
+                    "source_files": [
+                        "VEShare/Classes/Biz/AwemeBiz/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }
+            ], 
+            "source_files": [
+                "VEShare-bitdummy.m"
+            ]
+        }, 
+        {
+            "name": "UI", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_UI_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "OneKit/ByteDanceKit": []
+            }, 
+            "source_files": [
+                "VEShare-bitdummy.m"
+            ], 
+            "subspecs": [
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+                    }, 
+                    "name": "Core", 
+                    "source_files": [
+                        "VEShare/Classes/UI/Core/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }, 
+                {
+                    "dependencies": {
+                        "Aspects": [], 
+                        "VEShare/UI/Core": []
+                    }, 
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Panel_*awesome_*.a"
+                    }, 
+                    "name": "Panel", 
+                    "source_files": [
+                        "VEShare/Classes/UI/Panel/**/*.{h,m}", 
+                        "VEShare-bitdummy.m"
+                    ]
+                }
+            ]
+        }, 
+        {
+            "public_header_files": "VEShare/Classes/AliPaySDK/**/*.h", 
+            "vendored_libraries": "VEShare/Classes/AliPaySDK/libAPOpenSdk.a", 
+            "name": "AliPaySDK", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_AliPaySDK_*awesome_*.a"
+            }, 
+            "libraries": [
+                "c++", 
+                "z"
+            ], 
+            "frameworks": [
+                "SystemConfiguration", 
+                "CoreTelephony", 
+                "QuartzCore", 
+                "CoreText", 
+                "CoreGraphics", 
+                "UIKit", 
+                "Foundation", 
+                "CFNetwork", 
+                "CoreMotion"
+            ], 
+            "source_files": [
+                "VEShare/Classes/AliPaySDK/**/*.{h,m}", 
+                "VEShare-bitdummy.m"
+            ]
+        }, 
+        {
+            "vendored_frameworks": "VEShare/Classes/DingTalkSDK/DTShareKit.framework", 
+            "name": "DingTalkSDK", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_DingTalkSDK_*awesome_*.a"
+            }, 
+            "libraries": [
+                "c++", 
+                "z"
+            ], 
+            "frameworks": [
+                "SystemConfiguration", 
+                "CoreTelephony", 
+                "QuartzCore", 
+                "CoreText", 
+                "CoreGraphics", 
+                "UIKit", 
+                "Foundation", 
+                "CFNetwork", 
+                "CoreMotion"
+            ], 
+            "source_files": [
+                "VEShare-bitdummy.m"
+            ]
+        }, 
+        {
+            "vendored_libraries": "VEShare/Classes/WeiboSDK/libWeiboSDK.a", 
+            "name": "WeiboSDK", 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_WeiboSDK_*awesome_*.a"
+            }, 
+            "libraries": [
+                "sqlite3", 
+                "z"
+            ], 
+            "frameworks": [
+                "Photos", 
+                "ImageIO", 
+                "SystemConfiguration", 
+                "CoreText", 
+                "QuartzCore", 
+                "Security", 
+                "UIKit", 
+                "Foundation", 
+                "CoreGraphics", 
+                "CoreTelephony", 
+                "WebKit"
+            ], 
+            "source_files": [
+                "VEShare/Classes/WeiboSDK/*.{h,m}", 
+                "VEShare-bitdummy.m"
+            ], 
+            "resources": "VEShare/Classes/WeiboSDK/WeiboSDK.bundle"
+        }, 
+        {
+            "name": "TencentQQSDK", 
+            "resource_bundles": {
+                "TencentQQSDK": [
+                    "TencentQQSDK/*.bundle"
+                ]
+            }, 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "libraries": [
+                    "z", 
+                    "sqlite3.0", 
+                    "c++", 
+                    "iconv"
+                ], 
+                "frameworks": [
+                    "CoreTelephony", 
+                    "SystemConfiguration", 
+                    "UIKit", 
+                    "Foundation", 
+                    "CFNetwork"
+                ], 
+                "vendored_libraries": "ios-arch-iphone/*_TencentQQSDK_*awesome_*.a"
+            }, 
+            "vendored_frameworks": "VEShare/Classes/TencentQQSDK/TencentOpenAPI.framework", 
+            "source_files": [
+                "VEShare-bitdummy.m"
+            ]
+        }, 
+        {
+            "public_header_files": "VEShare/Debug/**/*.h", 
+            "name": "Debug", 
+            "resource_bundles": {
+                "VEShareDebugResources": "VEShare/Debug/resources/*"
+            }, 
+            "preserve_paths": [
+                "**/*.bwp"
+            ], 
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Debug_*awesome_*.a"
+            }, 
+            "dependencies": {
+                "VEShare/Biz/DingTalkBiz": [], 
+                "VEShare/Biz/AliPayBiz": [], 
+                "VEShare/Biz/AwemeBiz": [], 
+                "VEShare/Biz/WeiboBiz": [], 
+                "VEShare/UI/Panel": [], 
+                "VEShare/Biz/StartUp": [], 
+                "VEShare/Biz/WeChatBiz": [], 
+                "VEShare/Biz/SystemBiz": [], 
+                "VEShare/Biz/QQBiz": [], 
+                "VEShare/Biz/APM": []
+            }, 
+            "source_files": [
+                "VEShare/Debug/**/*.{h,m,c}", 
+                "VEShare-bitdummy.m"
+            ]
+        }
+    ], 
+    "name": "VEShare"
+}

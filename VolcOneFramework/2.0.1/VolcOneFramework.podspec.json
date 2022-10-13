@@ -1,0 +1,30 @@
+{
+    "description": "framework_description", 
+    "license": {
+        "text": "Bytedance copyright", 
+        "type": "Copyright"
+    }, 
+    "source": {
+        "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/VolcOneFramework/2.0.1/VolcOneFramework-2.0.1-ta.zip"
+    }, 
+    "summary": "framework_summary", 
+    "vendored_frameworks": [
+        "VolcOneFramework.framework", 
+        "byteaudio.xcframework", 
+        "VolcEngineRTC.xcframework"
+    ], 
+    "platforms": {
+        "ios": "9.0"
+    }, 
+    "version": "2.0.1", 
+    "authors": {
+        "wangzhiyong.7717": "wangzhiyong.7717@bytedance.com"
+    }, 
+    "static_framework": false, 
+    "homepage": "https://github.com/volcengine", 
+    "repoId": "30304", 
+    "resources": [
+        "VolcOneFramework.framework/ttplayer.metallib"
+    ], 
+    "name": "VolcOneFramework"
+}
