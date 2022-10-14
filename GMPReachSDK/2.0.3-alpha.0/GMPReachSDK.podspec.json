@@ -1,0 +1,104 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "default_subspecs": [
+        "Resource",
+        "Core"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "resource_bundles": {
+        "GMPReachSDK": [
+            "GMPReachSDK/GMPReachSDK/Assets/*.xcassets"
+        ]
+    },
+    "prefix_header_contents": [
+        "#import \"NSDictionary+GMP.h\"",
+        "#import \"GMPLog.h\""
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_GMPReachSDK_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/GMPReachSDK/2.0.3-alpha.0/GMPReachSDK.framework.tar.xz"
+    },
+    "version": "2.0.3-alpha.0",
+    "authors": {
+        "liaozhangcheng": "liaozhangcheng@bytedance.com"
+    },
+    "source_files": [
+        "GMPReachSDK-bitdummy.m"
+    ],
+    "static_framework": true,
+    "homepage": "https://github.com/liaozhangcheng/GMPReachSDK",
+    "repoId": "23540",
+    "subspecs": [
+        {
+            "public_header_files": "",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "name": "Core",
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Core/**/*",
+                "GMPReachSDK-bitdummy.m"
+            ]
+        },
+        {
+            "public_header_files": "GMPReachSDK/GMPReachSDK/Classes/Resource/Public/*.h",
+            "name": "Resource",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Resource_*awesome_*.a"
+            },
+            "dependencies": {
+                "RangersAppLog": [],
+                "GMPReachSDK/Core": [],
+                "SDWebImage": []
+            },
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Resource/**/*",
+                "GMPReachSDK-bitdummy.m"
+            ]
+        },
+        {
+            "public_header_files": "GMPReachSDK/GMPReachSDK/Classes/Popup/Manager/GMPPopupManager.h",
+            "name": "Popup_not_use",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Popup_not_use_*awesome_*.a"
+            },
+            "dependencies": {
+                "RangersAppLog": [],
+                "GMPReachSDK/Core": [],
+                "SDWebImage": []
+            },
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Popup/**/*",
+                "GMPReachSDK-bitdummy.m"
+            ]
+        }
+    ],
+    "name": "GMPReachSDK"
+}
