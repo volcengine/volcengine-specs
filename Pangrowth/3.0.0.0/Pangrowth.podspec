@@ -32,7 +32,7 @@ Pangrowth is an SDK that integrates novels, media, and live broadcasts.
   
   # 小说
   s.subspec 'novel' do |ss|
-    ss.dependency 'BDNovelOpenSDK', '3.6.2'
+    ss.dependency 'BDNovelOpenSDK', '3.6.3'
   end
   
   # 流媒体，包含了TTVideoEngine
