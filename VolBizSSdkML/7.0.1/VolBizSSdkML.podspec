@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VolBizSSdkML'
-  s.version          = '6.21.1-alpha.2'
+  s.version          = '7.0.1'
   s.summary          = "#{s.name} sdk for iOS"
   s.description      = <<-DESC
   iOS platform security SDK for all apps by pod
@@ -44,6 +44,8 @@ Pod::Spec.new do |s|
 
   s.library = 'resolv.9', 'c++', 'z'
   s.frameworks = 'MessageUI', 'CoreTelephony', 'SystemConfiguration', 'CoreMotion','UIKit','JavaScriptCore'
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   s.frameworks = 'CoreLocation'
   s.public_header_files = "#{s.name}/*.h"
