@@ -15,7 +15,7 @@ s.author       = { "VolcanoEngine Service" => "service@volcengine.com" }
 s.license      = { :type => "Copyright", :text => "Bytedance copyright" }
 s.homepage     = "https://www.volcengine.com/solutions/vevos"
 s.source = { :http => "https://common.voleai.com/api/v1/veVos/repository?business=CV&key=#{$VEVOS_SPEC_KEY}&secret=#{$VEVOS_SPEC_SECRET}&repository=thrall_cv&version=#{s.version}", :type => "zip" }
-s.ios.deployment_target = '8.0'
+s.ios.deployment_target = '9.0'
 s.osx.deployment_target = '10.12'
 
 s.default_subspecs = 'Core'
