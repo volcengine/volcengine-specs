@@ -1,0 +1,44 @@
+{
+    "module_map": "audiosdk.modulemap",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "osx": {
+        "header_mappings_dir": "inc",
+        "vendored_libraries": [
+            "lib/*.dylib",
+            "ios-arch-osx/*_audiosdk-mac-tob_*awesome_*.a"
+        ],
+        "source_files": "inc/**/*.{h,hh,hpp,tpp}"
+    },
+    "name": "audiosdk-mac-tob",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "osx": "10.11"
+    },
+    "prepare_command": "",
+    "source_files": [
+        "audiosdk-mac-tob-bitdummy.m"
+    ],
+    "summary": "framework_summary",
+    "libraries": "c++",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/audiosdk-mac-tob/3.2.4-alpha.1-tobsdk/audiosdk-mac-tob.framework.tar.xz"
+    },
+    "version": "3.2.4-alpha.1-tobsdk",
+    "frameworks": [
+        "Accelerate",
+        "AudioToolbox",
+        "CoreFoundation"
+    ],
+    "authors": {
+        "zhuxiangning.zxn": "zhuxiangning.zxn@bytedance.com"
+    },
+    "static_framework": true,
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "repoId": "32575",
+    "description": "framework_description"
+}
