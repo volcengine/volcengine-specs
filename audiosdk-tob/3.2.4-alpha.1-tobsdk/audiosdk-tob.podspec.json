@@ -1,0 +1,63 @@
+{
+    "osx": {
+        "vendored_libraries": "ios-arch-osx/*_audiosdk-tob_*awesome_*.a"
+    },
+    "public_header_files": "bdaudioeffect.framework/Headers/*.{h,hh,hpp,tpp}",
+    "platforms": {
+        "osx": "10.11",
+        "ios": "8.0"
+    },
+    "module_map": "audiosdk.modulemap",
+    "libraries": "c++",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/audiosdk-tob/3.2.4-alpha.1-tobsdk/audiosdk-tob.framework.tar.xz"
+    },
+    "version": "3.2.4-alpha.1-tobsdk",
+    "source_files": [
+        "bdaudioeffect.framework/Headers/*.{h,hh,hpp,tpp}",
+        "audiosdk-tob-bitdummy.m"
+    ],
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "repoId": "32392",
+    "prepare_command": "",
+    "description": "framework_description",
+    "xcconfig": {
+        "HEADER_SEARCH_PATHS": "$(inherited) \"${PODS_ROOT}/audiosdk/bdaudioeffect.framework/Headers\""
+    },
+    "ios": {
+        "header_mappings_dir": "include/",
+        "vendored_frameworks": "bdaudioeffect.framework",
+        "vendored_libraries": "ios-arch-iphone/*_audiosdk-tob_*awesome_*.a",
+        "frameworks": [
+            "Accelerate",
+            "AudioToolbox",
+            "CoreFoundation",
+            "Metal",
+            "UIKit",
+            "MetalPerformanceShaders",
+            "Foundation",
+            "JavaScriptCore"
+        ]
+    },
+    "authors": {
+        "zhuxiangning.zxn": "zhuxiangning.zxn@bytedance.com"
+    },
+    "name": "audiosdk-tob",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "summary": "framework_summary",
+    "frameworks": [
+        "Accelerate",
+        "AudioToolbox",
+        "CoreFoundation",
+        "Metal",
+        "UIKit",
+        "MetalPerformanceShaders",
+        "Foundation"
+    ]
+}
