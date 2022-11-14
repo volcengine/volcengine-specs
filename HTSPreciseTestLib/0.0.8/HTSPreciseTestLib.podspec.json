@@ -1,0 +1,71 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "default_subspecs": [
+        "Core"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "10.0"
+    },
+    "source_files": [
+        "HTSPreciseTestLib/Classes/**/*",
+        "HTSPreciseTestLib-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_HTSPreciseTestLib_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/HTSPreciseTestLib/0.0.8/HTSPreciseTestLib.framework.tar.xz"
+    },
+    "version": "0.0.8",
+    "frameworks": [
+        "UIKit",
+        "Foundation"
+    ],
+    "authors": {
+        "yangxu.swanoofl": "yangxu.swanoofl@bytedance.com"
+    },
+    "dependencies": {
+        "Masonry": [],
+        "SSZipArchive": []
+    },
+    "static_framework": true,
+    "homepage": "https://se-research.bytedance.com/",
+    "repoId": "34426",
+    "subspecs": [
+        {
+            "public_header_files": "HTSPreciseTestLib/Classes/Core/**/*.h",
+            "name": "Core",
+            "resource_bundles": {
+                "HTSPreciseTest": [
+                    "HTSPreciseTestLib/Assets/**/*"
+                ]
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "requires_arc": true,
+            "source_files": [
+                "HTSPreciseTestLib/Classes/Core/**/*",
+                "HTSPreciseTestLib-bitdummy.m"
+            ]
+        }
+    ],
+    "name": "HTSPreciseTestLib"
+}
