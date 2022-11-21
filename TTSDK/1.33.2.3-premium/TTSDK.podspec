@@ -69,7 +69,7 @@
         'TTSDK/lib_h_dec/**/*.a',
         'TTSDK/BVCParser/**/*.a'
       ]
-      subspec.dependency 'VEVideoKit/boringssl', '0.2.1'
+      subspec.dependency 'VEVideoKit/boringssl'
       subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
     end
 
@@ -94,7 +94,7 @@
       subspec.vendored_libraries = [
         'TTSDK/protobuf_lite/**/*.a',
       ]
-      subspec.dependency 'VEVideoKit/TTNetworkManager', '0.2.1'
+      subspec.dependency 'VEVideoKit/TTNetworkManager'
     end
 
     spec.subspec 'TTFFmpeg' do |subspec|
@@ -273,8 +273,8 @@
         'TTSDK/ByteRtsSDK/*.framework',
       ]
       subspec.dependency 'TTSDK/LivePull-VE'
-      subspec.dependency 'VolcEngineRTC-VE', '~> 3.37.153'
-      subspec.dependency 'VEVideoKit/VolcEngineAudio', '0.2.1'
+      subspec.dependency 'VolcEngineRTC-VE'
+      subspec.dependency 'VEVideoKit/VolcEngineAudio'
     end
 
     spec.subspec 'LivePush-Base' do |subspec|
@@ -374,7 +374,7 @@
 
     spec.subspec 'LivePush-VE' do |subspec|
       subspec.dependency 'TTSDK/LivePush-RTC-VE'
-      subspec.dependency 'VEVideoKit/VolcEngineAudio', '0.2.1'
+      subspec.dependency 'VEVideoKit/VolcEngineAudio'
     end
 
     spec.subspec 'LivePush-RTS-VE' do |subspec|
@@ -382,7 +382,7 @@
         "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_rts_ios.a",
       ]
       subspec.dependency 'TTSDK/LivePush-Base-VE'
-      subspec.dependency 'VEVideoKit/VolcEngineAudio', '0.2.1'
+      subspec.dependency 'VEVideoKit/VolcEngineAudio'
     end
 
     spec.subspec 'LivePush-Effect-VE' do |subspec|
