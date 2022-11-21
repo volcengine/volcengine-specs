@@ -213,12 +213,12 @@
         'TTSDK/TTVideoLive/**/libTTVideoLive_VideoProcessing_ios.a',
         'TTSDK/TTVideoLive/**/libTTVideoLive_VR_ios.a',
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePull_ios.a',
-        'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_TTLiveSetting_ios.a',
         "TTSDK/{#{class_name}}/**/*.a"
       ]
       subspec.resources = [
         'TTSDK/videoprocessor/videoprocessor/metal/processor.metallib',
       ]
+      subspec.dependency 'TTSDK/LiveSettings'
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore-SR'
       subspec.frameworks = [
@@ -242,12 +242,12 @@
         'TTSDK/TTVideoLive/**/libTTVideoLive_Wrapper_ios.a',
         'TTSDK/TTVideoLive/**/libTTVideoLive_VideoProcessing_ios.a',
         'TTSDK/TTVideoLive/**/libTTVideoLive_VR_ios.a',
-        'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePull_ios.a',
-        'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_TTLiveSetting_ios.a',
+        'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePull_ios.a'
       ]
       subspec.resources = [
         'TTSDK/videoprocessor/videoprocessor/metal/processor.metallib',
       ]
+      subspec.dependency 'TTSDK/LiveSettings'
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore-VE'
       subspec.frameworks = [
@@ -304,6 +304,7 @@
         'imageIO',
         'MetalPerformanceShaders'
       ]
+      subspec.dependency 'TTSDK/LiveSettings'
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/TTFFmpeg'
       subspec.libraries = 'stdc++'
@@ -336,6 +337,7 @@
         'imageIO',
         'MetalPerformanceShaders'
       ]
+      subspec.dependency 'TTSDK/LiveSettings'
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/TTFFmpeg-VE'
       subspec.libraries = 'stdc++'
@@ -386,6 +388,12 @@
     spec.subspec 'LivePush-Effect-VE' do |subspec|
       subspec.dependency 'TTSDK/Effect'
       subspec.dependency 'TTSDK/LivePush-VE'
+    end
+
+    spec.subspec 'LiveSettings' do |subspec|
+        subspec.vendored_libraries = [
+            'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_TTLiveSetting_ios.a',
+        ]
     end
     
     spec.subspec 'Player' do |subspec|
@@ -599,9 +607,9 @@
       ]
       subspec.vendored_libraries = [
         'TTSDK/TTVideoLive/**/*.a',
-        'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePull_ios.a',
-        'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_TTLiveSetting_ios.a',
+        'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePull_ios.a'
       ]
+      subspec.dependency 'TTSDK/LiveSettings'
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore-Lite'
     end
