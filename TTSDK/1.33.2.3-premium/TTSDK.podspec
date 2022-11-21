@@ -125,7 +125,7 @@
         'AVFoundation',
         'SystemConfiguration',
       ]
-      subspec.dependency 'TTFFmpeg', '1.25.86.131-tob-dynamic-biz'
+      subspec.dependency 'TTFFmpeg'
       subspec.dependency 'TTSDK/Tools-VE'
     end
     spec.subspec 'PlayerCore' do |subspec|
