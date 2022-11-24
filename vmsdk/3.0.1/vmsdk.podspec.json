@@ -1,0 +1,102 @@
+{
+  "name": "vmsdk",
+  "version": "3.0.1",
+  "license": "MIT",
+  "summary": "A short description of vmsdk.",
+  "homepage": "https://github.com/volcengine/volcengine-specs",
+  "authors": {
+    "yangqihang": "yangqihang@bytedance.com"
+  },
+  "source": {
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/vmsdk/3.0.0.1/vmsdk.zip"
+  },
+  "description": "description",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "compiler_flags": [
+    "-Wall",
+    "-Wno-shorten-64-to-32",
+    "-Os"
+  ],
+  "pod_target_xcconfig": {
+    "HEADER_SEARCH_PATHS": "${PODS_ROOT}/vmsdk"
+  },
+  "static_framework": true,
+  "subspecs": [
+    {
+      "name": "napi",
+      "subspecs": [
+        {
+          "name": "core",
+          "source_files": [
+            "vmsdk/napi/napi/*.{h,cc}",
+            "vmsdk/napi/napi/common/*.{h,cc}"
+          ],
+          "vendored_libraries": [
+            "vmsdk/napi/napi/*.o",
+            "vmsdk/napi/napi/common/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "vmsdk/napi/napi/*.o",
+              "vmsdk/napi/napi/common/*.o",
+              "libvmsdk-cf3735d.a"
+            ]
+          }
+        },
+        {
+          "name": "env",
+          "source_files": [
+            "vmsdk/napi/napi/env/*.{h,cc}"
+          ],
+          "dependencies": {
+            "vmsdk/napi/core": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "vmsdk/napi/napi/env/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "vmsdk/napi/napi/env/*.o",
+              "libvmsdk-503def3.a"
+            ]
+          }
+        },
+        {
+          "name": "jsc",
+          "source_files": "vmsdk/napi/napi/jsc/*.{h,cc}",
+          "frameworks": "JavaScriptCore",
+          "pod_target_xcconfig": {
+            "GCC_PREPROCESSOR_DEFINITIONS": "JSC_OBJC_API_ENABLED=0"
+          },
+          "dependencies": {
+            "vmsdk/napi/core": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "vmsdk/napi/napi/jsc/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "vmsdk/napi/napi/jsc/*.o",
+              "libvmsdk-873a2a2.a"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

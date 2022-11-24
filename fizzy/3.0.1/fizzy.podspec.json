@@ -1,0 +1,48 @@
+{
+  "osx": {
+    "vendored_libraries": "ios-arch-osx/*_fizzy_*awesome_*.a"
+  },
+  "public_header_files": "lib/**/*.hpp",
+  "platforms": {
+    "osx": "10.13.0",
+    "ios": "9.0"
+  },
+  "pod_target_xcconfig": {
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES",
+    "GCC_PREPROCESSOR_DEFINITIONS[config=Release]": "$(inherited) NDEBUG=1",
+    "GCC_PREPROCESSOR_DEFINITIONS": "fizzy_POD_VERSION=@\\\"1904_1.0.1\\\""
+  },
+  "header_mappings_dir": "lib",
+  "libraries": "c++",
+  "source": {
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/fizzy/3.0.0.2/fizzy.zip"
+  },
+  "version": "3.0.1",
+  "source_files": "lib/**/*.{hpp,cpp}",
+  "homepage": "https://github.com/volcengine/volcengine-specs",
+  "description": "framework_description",
+  "xcconfig": {
+    "CLANG_CXX_LIBRARY": "libc++",
+    "CLANG_CXX_LANGUAGE_STANDARD": "c++17"
+  },
+  "static_framework": true,
+  "ios": {
+    "frameworks": [
+      "UIKit",
+      "Foundation",
+      "JavaScriptCore"
+    ],
+    "vendored_libraries": "ios-arch-iphone/*_fizzy_*awesome_*.a"
+  },
+  "authors": {
+    "yangqihang": "yangqihang@bytedance.com"
+  },
+  "name": "fizzy",
+  "compiler_flags": [
+    "-Wall",
+    "-Werror",
+    "-fexceptions",
+    "-fno-rtti"
+  ],
+  "summary": "framework_summary"
+}
