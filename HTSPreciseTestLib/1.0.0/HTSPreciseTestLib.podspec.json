@@ -1,0 +1,74 @@
+{
+    "public_header_files": "HTSPreciseTestLib/Classes/Core/Header/*.h",
+    "default_subspecs": [
+        "Core"
+    ],
+    "static_framework": true,
+    "platforms": {
+        "ios": "10.0"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/HTSPreciseTestLib/1.0.0/HTSPreciseTestLib.framework.tar.xz"
+    },
+    "version": "1.0.0",
+    "source_files": [
+        "HTSPreciseTestLib/Classes/**/*",
+        "HTSPreciseTestLib-bitdummy.m"
+    ],
+    "homepage": "https://se-research.bytedance.com/",
+    "repoId": "34426",
+    "subspecs": [
+        {
+            "public_header_files": "HTSPreciseTestLib/Classes/Core/Header/*.h",
+            "private_header_files": "HTSPreciseTestLib/Classes/Core/**/*.h",
+            "name": "Core",
+            "resource_bundles": {
+                "HTSPreciseTest": [
+                    "HTSPreciseTestLib/Assets/**/*"
+                ]
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "requires_arc": true,
+            "source_files": [
+                "HTSPreciseTestLib/Classes/Core/**/*",
+                "HTSPreciseTestLib-bitdummy.m"
+            ]
+        }
+    ],
+    "prepare_command": "",
+    "private_header_files": "HTSPreciseTestLib/Classes/Core/**/*.h",
+    "description": "framework_description",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_HTSPreciseTestLib_*awesome_*.a"
+    },
+    "dependencies": {
+        "Masonry": [],
+        "SSZipArchive": []
+    },
+    "authors": {
+        "yangxu.swanoofl": "yangxu.swanoofl@bytedance.com"
+    },
+    "name": "HTSPreciseTestLib",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "summary": "framework_summary",
+    "frameworks": [
+        "UIKit",
+        "Foundation"
+    ]
+}
