@@ -1,0 +1,134 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "default_subspecs": [
+        "OneKit"
+    ],
+    "name": "VEPush",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "source_files": [
+        "VEPush-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_VEPush_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VEPush/1.0.6-rc.0/VEPush.framework.tar.xz"
+    },
+    "version": "1.0.6-rc.0",
+    "authors": "https://github.com/volcengine/VEPush/",
+    "pod_target_xcconfig": {
+        "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES",
+        "GCC_PREPROCESSOR_DEFINITIONS": "VEPush_POD_VERSION=@\\\"2020092724_1.0.6-rc.0\\\"",
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    },
+    "static_framework": true,
+    "homepage": "https://github.com/volcengine/VEPush/",
+    "repoId": "21918",
+    "subspecs": [
+        {
+            "public_header_files": "VEPush/Classes/Core/Public/**/*.h",
+            "name": "Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "dependencies": {
+                "RARegisterKit": [],
+                "RangersAPM/EventMonitor": [],
+                "OneKit/MARS/Auth": [],
+                "OneKit/Service": [],
+                "VEDeviceGroup": [],
+                "RARegisterKit/OKKit": [],
+                "OneKit/Network": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/CN": []
+            },
+            "source_files": [
+                "VEPush/Classes/Core/**/*.{h,m,c}",
+                "VEPush-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "dependencies": {
+                "OneKit/StartUp": [],
+                "VEPush/Core": [],
+                "OneKit/MARS": [],
+                "VEPush/ZZZMonitorEnd": [],
+                "VEPush/AAAMonitorBegin": []
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OneKit_*awesome_*.a"
+            },
+            "name": "OneKit",
+            "source_files": [
+                "VEPush/Classes/OneKit/**/*.{h,m,c}",
+                "VEPush-bitdummy.m"
+            ]
+        },
+        {
+            "public_header_files": "VEPush/Classes/Extension/**/*.h",
+            "name": "Extension",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Extension_*awesome_*.a"
+            },
+            "dependencies": {
+                "OneKit/Network": [],
+                "OneKit/Service": []
+            },
+            "source_files": [
+                "VEPush/Classes/Extension/**/*.{h,m,c}",
+                "VEPush-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_AAAMonitorBegin_*awesome_*.a"
+            },
+            "name": "AAAMonitorBegin",
+            "source_files": [
+                "VEPush/Classes/MonitorBegin/**/*.{h,c}",
+                "VEPush-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_ZZZMonitorEnd_*awesome_*.a"
+            },
+            "name": "ZZZMonitorEnd",
+            "source_files": [
+                "VEPush/Classes/MonitorEnd/**/*.{h,c}",
+                "VEPush-bitdummy.m"
+            ]
+        }
+    ],
+    "description": "framework_description"
+}
