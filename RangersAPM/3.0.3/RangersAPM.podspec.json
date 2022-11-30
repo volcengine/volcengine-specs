@@ -1,0 +1,352 @@
+{
+    "name": "RangersAPM",
+    "version": "3.0.3",
+    "summary": "RangersAPM by Volcengine",
+    "description": "APMInsight iOS SDK, a tool to monitor APP performance.",
+    "homepage": "https://github.com/volcengine/APMInsight_iOS",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "Volcengine",
+    "platforms": {
+        "ios": "9.0"
+    },
+    "frameworks": "UIKit",
+    "pod_target_xcconfig": {
+        "OTHER_CPLUSPLUSFLAGS": "-fno-c++-static-destructors",
+        "DEFINES_MODULE": "YES"
+    },
+    "static_framework": true,
+    "subspecs": [
+        {
+            "name": "Above",
+            "vendored_libraries": "RangersAPM/Above/**/*.a"
+        },
+        {
+            "name": "Zyone",
+            "vendored_libraries": "RangersAPM/Zyone/**/*.a"
+        },
+        {
+            "name": "Public",
+            "vendored_libraries": "RangersAPM/Public/**/*.a",
+            "source_files": "RangersAPM/Public/**/*.{h,m}",
+            "public_header_files": "RangersAPM/Public/**/*.h",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/Above": [],
+                "RangersAPM/Zyone": [],
+                "RARegisterKit/Core": [
+                    ">=0.0.8"
+                ]
+            }
+        },
+        {
+            "name": "Core",
+            "vendored_libraries": "RangersAPM/Core/**/*.a",
+            "libraries": [
+                "c++",
+                "z",
+                "sqlite3"
+            ],
+            "frameworks": [
+                "SystemConfiguration",
+                "CoreTelephony",
+                "CoreFoundation"
+            ],
+            "preserve_paths": "RangersAPM/*.sh",
+            "resources": [
+                "RangersAPM/Assets/Core/**/APMInsightCore.bundle"
+            ],
+            "dependencies": {
+                "OneKit/BaseKit": [
+                    ">=1.1.19"
+                ]
+            }
+        },
+        {
+            "name": "Crash",
+            "source_files": "RangersAPM/Crash/**/*.{h,m}",
+            "public_header_files": "RangersAPM/Crash/**/*.h",
+            "vendored_libraries": "RangersAPM/Crash/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/Public": [],
+                "RangersAPM/HMD": []
+            },
+            "resources": [
+                "RangersAPM/Assets/Crash/**/APMInsightCrash.bundle"
+            ],
+            "libraries": "c++abi"
+        },
+        {
+            "name": "WatchDog",
+            "vendored_libraries": "RangersAPM/WatchDog/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": []
+            }
+        },
+        {
+            "name": "OOM",
+            "vendored_libraries": "RangersAPM/OOM/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/Crash": [],
+                "RangersAPM/WatchDog": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": []
+            }
+        },
+        {
+            "name": "HMD",
+            "vendored_libraries": "RangersAPM/HMD/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "OneKit/Database": [
+                    ">=1.1.19"
+                ]
+            }
+        },
+        {
+            "name": "LAG",
+            "vendored_libraries": "RangersAPM/LAG/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": []
+            }
+        },
+        {
+            "name": "UserException",
+            "source_files": "RangersAPM/UserException/**/*.{h,m}",
+            "public_header_files": "RangersAPM/UserException/**/*.h",
+            "vendored_libraries": "RangersAPM/UserException/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": []
+            }
+        },
+        {
+            "name": "UITrackers",
+            "source_files": "RangersAPM/UITrackers/**/*.{h,m}",
+            "vendored_libraries": "RangersAPM/UITrackers/**/*.a",
+            "public_header_files": "RangersAPM/UITrackers/**/*.h",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": []
+            }
+        },
+        {
+            "name": "Monitors",
+            "source_files": "RangersAPM/Monitors/**/*.{h,m}",
+            "vendored_libraries": "RangersAPM/Monitors/**/*.a",
+            "public_header_files": "RangersAPM/Monitors/**/*.h",
+            "dependencies": {
+                "RangersAPM/UITrackers": []
+            }
+        },
+        {
+            "name": "Hybrid",
+            "vendored_libraries": "RangersAPM/Hybrid/**/*.a",
+            "resources": [
+                "RangersAPM/Assets/Hybrid/**/APMInsightHybrid.bundle"
+            ],
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": []
+            },
+            "frameworks": "WebKit"
+        },
+        {
+            "name": "MemoryGraph",
+            "vendored_libraries": "RangersAPM/MemoryGraph/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": [],
+                "RangersAPM/Zip": []
+            }
+        },
+        {
+            "name": "Zip",
+            "vendored_libraries": "RangersAPM/Zip/**/*.a",
+            "libraries": "z"
+        },
+        {
+            "name": "EventMonitor",
+            "source_files": "RangersAPM/EventMonitor/**/*.{h,m}",
+            "vendored_libraries": "RangersAPM/EventMonitor/**/*.a",
+            "public_header_files": "RangersAPM/EventMonitor/**/*.h",
+            "libraries": "c++",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": []
+            }
+        },
+        {
+            "name": "CN",
+            "vendored_libraries": "RangersAPM/CN/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/Public": []
+            }
+        },
+        {
+            "name": "Global",
+            "vendored_libraries": "RangersAPM/Global/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/Public": []
+            }
+        },
+        {
+            "name": "Flutter",
+            "source_files": "RangersAPM/Flutter/**/*.{h,m}",
+            "vendored_libraries": "RangersAPM/Flutter/**/*.a",
+            "public_header_files": "RangersAPM/Flutter/**/*.h",
+            "dependencies": {
+                "RangersAPM/EventMonitor": []
+            }
+        },
+        {
+            "name": "SessionTracker",
+            "vendored_libraries": "RangersAPM/SessionTracker/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": []
+            }
+        },
+        {
+            "name": "APMLog",
+            "source_files": "RangersAPM/APMLog/**/*.{h,m}",
+            "vendored_libraries": "RangersAPM/APMLog/**/*.a",
+            "public_header_files": "RangersAPM/APMLog/**/*.h",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Zip": [],
+                "RangersAPM/Public": []
+            },
+            "libraries": [
+                "c++",
+                "z",
+                "resolv"
+            ]
+        },
+        {
+            "name": "NetworkBasic",
+            "source_files": "RangersAPM/NetworkBasic/**/*.{h,m}",
+            "vendored_libraries": "RangersAPM/NetworkBasic/**/*.a",
+            "public_header_files": "RangersAPM/NetworkBasic/**/*.h",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": []
+            },
+            "libraries": "c++"
+        },
+        {
+            "name": "Network",
+            "source_files": "RangersAPM/Network/**/*.{h,m}",
+            "vendored_libraries": "RangersAPM/Network/**/*.a",
+            "public_header_files": "RangersAPM/Network/**/*.h",
+            "dependencies": {
+                "RangersAPM/NetworkBasic": []
+            }
+        },
+        {
+            "name": "NetworkPro",
+            "vendored_libraries": "RangersAPM/NetworkPro/**/*.a",
+            "dependencies": {
+                "RangersAPM/NetworkBasic": []
+            }
+        },
+        {
+            "name": "CrashProtector",
+            "vendored_libraries": "RangersAPM/CrashProtector/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": [],
+                "RangersAPM/Crash": []
+            },
+            "libraries": "c++"
+        },
+        {
+            "name": "OKKit",
+            "vendored_libraries": "RangersAPM/OKKit/**/*.a",
+            "dependencies": {
+                "OneKit/StartUp": [],
+                "OneKit/Service": [
+                    ">=1.1.39-rc.0"
+                ],
+                "RangersAPM/Public": []
+            }
+        },
+        {
+            "name": "CPUException",
+            "vendored_libraries": "RangersAPM/CPUException/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": []
+            }
+        },
+        {
+            "name": "MetricKit",
+            "vendored_libraries": "RangersAPM/MetricKit/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": []
+            },
+            "weak_frameworks": "MetricKit"
+        },
+        {
+            "name": "Zombie",
+            "vendored_libraries": "RangersAPM/Zombie/**/*.a",
+            "dependencies": {
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Public": [],
+                "RangersAPM/Crash": []
+            },
+            "pod_target_xcconfig": {
+                "GCC_PREPROCESSOR_DEFINITIONS[config=Release]": "$(inherited) NS_BLOCK_ASSERTIONS"
+            }
+        },
+        {
+            "name": "BootingProtectLite",
+            "vendored_libraries": "RangersAPM/BootingProtectLite/**/*.a",
+            "source_files": "RangersAPM/BootingProtectLite/**/*.{h,m}",
+            "public_header_files": "RangersAPM/BootingProtectLite/**/*.h",
+            "dependencies": {
+                "RangersAPM/Crash": [],
+                "RangersAPM/WatchDog": []
+            }
+        },
+        {
+            "name": "BootingProtect",
+            "vendored_libraries": "RangersAPM/BootingProtect/**/*.a",
+            "dependencies": {
+                "RangersAPM/BootingProtectLite": [],
+                "RangersAPM/OOM": []
+            }
+        },
+        {
+            "name": "Disk",
+            "vendored_libraries": "RangersAPM/Disk/**/*.a",
+            "dependencies": {
+                "RangersAPM/Monitors": []
+            }
+        }
+    ],
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/RangersAPM/3.0.3/RangersAPM.zip"
+    }
+}
