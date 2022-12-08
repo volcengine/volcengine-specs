@@ -1,0 +1,61 @@
+{
+    "module_map": "audiosdk.modulemap",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "osx": {
+        "header_mappings_dir": "inc",
+        "vendored_libraries": [
+            "lib/libbdaudioeffect.a",
+            "ios-arch-osx/*_audiosdk-tob_*awesome_*.a"
+        ],
+        "source_files": "inc/**/*.{h,hh,hpp,tpp}"
+    },
+    "name": "audiosdk-tob",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "osx": "10.11",
+        "ios": "8.0"
+    },
+    "prepare_command": "",
+    "source_files": [
+        "audiosdk-tob-bitdummy.m"
+    ],
+    "ios": {
+        "header_mappings_dir": "inc",
+        "frameworks": [
+            "Accelerate",
+            "AudioToolbox",
+            "CoreFoundation",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": [
+            "lib/libbdaudioeffect.a",
+            "ios-arch-iphone/*_audiosdk-tob_*awesome_*.a"
+        ],
+        "source_files": "inc/**/*.{h,hh,hpp,tpp}"
+    },
+    "summary": "framework_summary",
+    "libraries": "c++",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/audiosdk-tob/3.2.5-alpha.3-tobonekit/audiosdk-tob.framework.tar.xz"
+    },
+    "version": "3.2.5-alpha.3-tobonekit",
+    "frameworks": [
+        "Accelerate",
+        "AudioToolbox",
+        "CoreFoundation"
+    ],
+    "authors": {
+        "zhuxiangning.zxn": "zhuxiangning.zxn@bytedance.com"
+    },
+    "static_framework": true,
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "repoId": "32392",
+    "description": "framework_description"
+}
