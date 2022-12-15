@@ -32,8 +32,8 @@
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_CN_ios.a',
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_SG_ios.a',
       ]
-      subspec.dependency 'RangersAppLog/Core', '~> 6.9.1'
-      subspec.dependency 'RangersAppLog/Host/CN', '~> 6.9.1'
+      subspec.dependency 'RangersAppLog/Core', '~> 6.13.0'
+      subspec.dependency 'RangersAppLog/Host/CN', '~> 6.13.0'
       subspec.libraries = 'stdc++'
     end
 
