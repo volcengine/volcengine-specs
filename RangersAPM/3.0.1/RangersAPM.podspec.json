@@ -36,7 +36,9 @@
                 "RangersAPM/Core": [],
                 "RangersAPM/Above": [],
                 "RangersAPM/Zyone": [],
-                "RARegisterKit/Core": []
+                "RARegisterKit/Core": [
+                    ">=0.0.8"
+                ]
             }
         },
         {
