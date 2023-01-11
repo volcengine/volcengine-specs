@@ -1,0 +1,92 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "default_subspecs": [
+        "Core"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "8.0"
+    },
+    "source_files": [
+        "mars_gecko_ios-bitdummy.m"
+    ],
+    "requires_arc": true,
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_mars_gecko_ios_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/mars_gecko_ios/2.0.14-volci18n/mars_gecko_ios.framework.tar.xz"
+    },
+    "version": "2.0.14-volci18n",
+    "authors": {
+        "Mars": "mars@bytedance.com"
+    },
+    "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "GECKO_SPEC_VERSION=@\\\"2.0.1\\\""
+    },
+    "static_framework": true,
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "repoId": "20319",
+    "subspecs": [
+        {
+            "public_header_files": [
+                "IESGeckoKit/Core/IESGeckoKit.h",
+                "IESGeckoKit/Core/IESGeckoDefines.h",
+                "IESGeckoKit/Core/IESGurdProtocolDefines.h",
+                "IESGeckoKit/Core/IESGurdKit+Experiment.h",
+                "IESGeckoKit/Core/IESGurdKit+ExtraParams.h",
+                "IESGeckoKit/Core/InternalPackages/IESGurdKit+InternalPackages.h",
+                "IESGeckoKit/Core/Register/IESGurdRegisterModel.h",
+                "IESGeckoKit/Core/Model/IESGurdFetchResourcesParams.h",
+                "IESGeckoKit/Core/Model/IESGurdLoadResourcesParams.h",
+                "IESGeckoKit/Core/Apply/IESGurdUnzipPackageInfo.h",
+                "IESGeckoKit/Core/Cleaner/IESGurdCacheConfiguration.h",
+                "IESGeckoKit/Core/Download/IESGurdDownloadPackageInfo.h",
+                "IESGeckoKit/Core/Network/Model/IESGeckoResourceModel.h",
+                "IESGeckoKit/Core/Network/Model/IESGurdNetworkResponse.h"
+            ],
+            "name": "Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "libraries": "bz2",
+            "dependencies": {
+                "SSZipArchive": []
+            },
+            "source_files": [
+                "IESGeckoKit/Core/**/*.{h,m}",
+                "mars_gecko_ios-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Example_*awesome_*.a"
+            },
+            "name": "Example",
+            "source_files": [
+                "IESGeckoKit/Example/**/*.{h,m,mm}",
+                "mars_gecko_ios-bitdummy.m"
+            ]
+        }
+    ],
+    "name": "mars_gecko_ios"
+}
