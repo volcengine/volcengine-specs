@@ -532,6 +532,23 @@
       subspec.dependency 'TTSDK/VCN'
     end
 
+    spec.subspec 'Uploader-VE' do |subspec|
+      subspec.public_header_files = [
+        'TTSDK/BDVCFileUploadClient/**/*.h',
+      ]
+      subspec.source_files = [
+        'TTSDK/BDVCFileUploadClient/**/*.h',
+      ]
+      lib_name = "BDVCFileUploadClient,TTTopSignature"
+      subspec.vendored_libraries = [
+        "TTSDK/{#{lib_name}}/**/*.a"
+      ]
+      subspec.dependency 'TTSDK/Core'
+      subspec.dependency 'TTSDK/VCN'
+      subspec.dependency 'VEVideoKit/boringssl'
+      subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
+    end
+
     spec.subspec 'ByteAudio' do |subspec|
       subspec.vendored_frameworks = [
         'TTSDK/ByteAudio/*.framework',
