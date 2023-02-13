@@ -349,7 +349,9 @@
             "name": "GWPASan",
             "vendored_libraries": "RangersAPM/GWPASan/**/*.a",
             "dependencies": {
-                "RangersAPM/Core": []
+                "RangersAPM/Core": [],
+                "RangersAPM/HMD": [],
+                "RangersAPM/Crash": []
             }
         }
     ],
