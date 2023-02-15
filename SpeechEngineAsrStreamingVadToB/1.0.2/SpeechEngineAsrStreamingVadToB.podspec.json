@@ -1,0 +1,46 @@
+{
+    "name": "SpeechEngineAsrStreamingVadToB",
+    "version": "1.0.2",
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "Bytedance, Inc.",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/SpeechEngineAsrStreamingVadToB/1.0.2/SpeechEngineAsrStreamingVadToB.zip"
+    },
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "platforms": {
+        "ios": "9.0"
+    },
+    "requires_arc": true,
+    "xcconfig": {
+        "OTHER_LDFLAGS": "-force_load ${PODS_ROOT}/SpeechEngineAsrStreamingVadToB/SpeechEngineAsrStreamingVadToB/SpeechEngineAsrStreamingVadToB.framework/SpeechEngineAsrStreamingVadToB"
+    },
+    "pod_target_xcconfig": {
+        "VALID_ARCHS": "arm64 armv7 x86_64",
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    },
+    "user_target_xcconfig": {
+        "VALID_ARCHS": "arm64 armv7 x86_64",
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64",
+        "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
+    },
+    "vendored_frameworks": "SpeechEngineAsrStreamingVadToB/SpeechEngineAsrStreamingVadToB.framework",
+    "frameworks": [
+        "AudioToolbox",
+        "AVFoundation"
+    ],
+    "libraries": [
+        "c++",
+        "speechsdk"
+    ],
+    "dependencies": {
+        "TTNetworkManager": [
+            "5.0.29.22"
+        ]
+    },
+    "repoId": "35996"
+}
