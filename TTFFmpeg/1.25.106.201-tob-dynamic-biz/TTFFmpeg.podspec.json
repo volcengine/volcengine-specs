@@ -1,0 +1,30 @@
+{
+    "default_subspecs": [
+        "Core"
+    ],
+    "description": "Open source ffmpeg lib lib for toutiao video mediea player and editor",
+    "platforms": {
+        "ios": "9.0"
+    },
+    "summary": "The open source ffmpeg lib for video media player and editor",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/TTFFmpeg/1.25.106.201-tob-dynamic-biz/TTFFmpeg.zip"
+    },
+    "version": "1.25.106.201-tob-dynamic-biz",
+    "homepage": "https://code.byted.org/ttmp/ffmpeg.git",
+    "subspecs": [
+        {
+            "vendored_frameworks": "TTFFmpeg.framework",
+            "xcconfig": {
+                "HEADER_SEARCH_PATHS": "$(inherited) \"${PODS_ROOT}/TTFFmpeg/TTFFmpeg.framework/Headers/\""
+            },
+            "preserve_paths": "TTFFmpeg.framework.dSYM",
+            "name": "Core"
+        }
+    ],
+    "name": "TTFFmpeg",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    }
+}
