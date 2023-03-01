@@ -72,7 +72,8 @@
             "dependencies": {
                 "RangersAPM/Core": [],
                 "RangersAPM/Public": [],
-                "RangersAPM/HMD": []
+                "RangersAPM/HMD": [],
+                "RangersAPM/Zip": []
             },
             "resources": [
                 "RangersAPM/Assets/Crash/**/APMInsightCrash.bundle"
