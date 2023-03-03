@@ -1,0 +1,75 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "name": "BDUGPushSDK-tob",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "8.0"
+    },
+    "source_files": [
+        "BDUGPushSDK-tob-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_BDUGPushSDK-tob_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/BDUGPushSDK-tob/0.0.1-alpha.7/BDUGPushSDK-tob.framework.tar.xz"
+    },
+    "version": "0.0.1-alpha.7",
+    "authors": {
+        "chenchen.121": "chenchen.121@bytedance.com"
+    },
+    "pod_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    },
+    "static_framework": true,
+    "homepage": "https://github.com/bytedance/BDUGPushSDK-tob/",
+    "repoId": "21061",
+    "subspecs": [
+        {
+            "public_header_files": "BDUGPushSDK/Classes/Core/Public/**/*.h",
+            "name": "Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "vendored_frameworks": "BDUGPushSDK-tob-Core/*.framework",
+            "frameworks": [
+                "UIKit"
+            ],
+            "source_files": [
+                "BDUGPushSDK/Classes/Core/**/*.{h,m,c}",
+                "BDUGPushSDK-tob-bitdummy.m"
+            ]
+        },
+        {
+            "public_header_files": "BDUGPushSDK/Classes/Extension/**/*.h",
+            "name": "Extension",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Extension_*awesome_*.a"
+            },
+            "vendored_frameworks": "BDUGPushSDK-tob-Extension/*.framework",
+            "source_files": [
+                "BDUGPushSDK/Classes/Extension/**/*.{h,m,c}",
+                "BDUGPushSDK-tob-bitdummy.m"
+            ]
+        }
+    ],
+    "description": "framework_description"
+}
