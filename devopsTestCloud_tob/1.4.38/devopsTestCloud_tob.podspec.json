@@ -1,0 +1,121 @@
+{
+    "prepare_command": "pwd && ls -la > trace.log",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "default_subspecs": [
+        "Core"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/devopsTestCloud_tob/1.4.38/devopsTestCloud_tob.framework.tar.xz"
+    },
+    "source_files": [
+        "DevopsTestModule/DevopsTestModule/**/*.{h,m}",
+        "devopsTestCloud_tob-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_devopsTestCloud_tob_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "platforms": {
+        "ios": "8.0"
+    },
+    "version": "1.4.38",
+    "authors": {
+        "shenquan": "shenquan@bytedance.com"
+    },
+    "homepage": "https://devopsTestCloud",
+    "repoId": "18464",
+    "subspecs": [
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "name": "Core",
+            "source_files": [
+                "DevopsTestModule/DevopsTestModule/*.{h,m}",
+                "devopsTestCloud_tob-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "dependencies": {
+                "devopsTestCloud_tob/Core": []
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_AAS_*awesome_*.a"
+            },
+            "name": "AAS",
+            "source_files": [
+                "DevopsTestModule/DevopsTestModule/AA/*.{h,m}",
+                "devopsTestCloud_tob-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "dependencies": {
+                "devopsTestCloud_tob/Core": []
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_BBS_*awesome_*.a"
+            },
+            "name": "BBS",
+            "source_files": [
+                "DevopsTestModule/DevopsTestModule/BB/*.{h,m}",
+                "devopsTestCloud_tob-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_ModuleInterface_*awesome_*.a"
+            },
+            "name": "ModuleInterface",
+            "subspecs": [
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_MIA_*awesome_*.a"
+                    },
+                    "name": "MIA",
+                    "source_files": [
+                        "devopsTestCloud/DevopsTestModule/AA/*.{h,m}",
+                        "devopsTestCloud_tob-bitdummy.m"
+                    ]
+                },
+                {
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_MIB_*awesome_*.a"
+                    },
+                    "name": "MIB",
+                    "source_files": [
+                        "devopsTestCloud/DevopsTestModule/BB/*.{h,m}",
+                        "devopsTestCloud_tob-bitdummy.m"
+                    ]
+                }
+            ],
+            "source_files": [
+                "devopsTestCloud_tob-bitdummy.m"
+            ]
+        }
+    ],
+    "name": "devopsTestCloud_tob"
+}
