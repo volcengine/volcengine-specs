@@ -1,0 +1,46 @@
+{
+    "name": "SpeechEngineAsrStreamingToB",
+    "version": "1.0.7",
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "Bytedance, Inc.",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/SpeechEngineAsrStreamingToB/1.0.7/SpeechEngineAsrStreamingToB.zip"
+    },
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "platforms": {
+        "ios": "9.0"
+    },
+    "requires_arc": true,
+    "xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) SPEECH_SDK_TOB"
+    },
+    "pod_target_xcconfig": {
+        "VALID_ARCHS": "arm64 armv7 x86_64",
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    },
+    "user_target_xcconfig": {
+        "VALID_ARCHS": "arm64 armv7 x86_64",
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64",
+        "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
+    },
+    "vendored_frameworks": "SpeechEngineAsrStreamingToB/SpeechEngineAsrStreamingToB.framework",
+    "frameworks": [
+        "AudioToolbox",
+        "AVFoundation"
+    ],
+    "libraries": "c++",
+    "dependencies": {
+        "TTNetworkManager": [
+            "5.0.29.22"
+        ],
+        "FileMD5Hash": [],
+        "FMDB": [],
+        "Mantle": []
+    },
+    "repoId": "29516"
+}
