@@ -1,0 +1,81 @@
+{
+    "public_header_files": [
+        "pod/classes/SpeechEngine/SpeechEngineDialogToB.h",
+        "pod/classes/SpeechEngine/SpeechEngineDefines.h",
+        "pod/classes/SpeechEngine/SpeechEngine.h",
+        "pod/classes/ResourceManager/SpeechResourceManager.h"
+    ],
+    "static_framework": true,
+    "platforms": {
+        "ios": "9.0"
+    },
+    "user_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64 i386"
+    },
+    "pod_target_xcconfig": {
+        "ENABLE_BITCODE": "NO",
+        "DEFINES_MODULE": "YES",
+        "VALID_ARCHS": "arm64 armv7 x86_64",
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64 i386"
+    },
+    "frameworks": [
+        "AudioToolbox",
+        "AVFoundation"
+    ],
+    "libraries": [
+        "c++",
+        "speechsdk"
+    ],
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/SpeechEngineDialogToB/0.0.1-alpha.5/SpeechEngineDialogToB.framework.tar.xz"
+    },
+    "version": "0.0.1-alpha.5",
+    "source_files": [
+        "pod/classes/SpeechEngine/**/*.{h,m,mm}",
+        "pod/classes/RtcManager/**/*.{h,m,mm}",
+        "pod/classes/ResourceManager/**/*.{h,m,mm}",
+        "SpeechEngineDialogToB-bitdummy.m"
+    ],
+    "homepage": "http://toutiao.com",
+    "repoId": "37253",
+    "prepare_command": "",
+    "description": "framework_description",
+    "xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) SPEECH_SDK_TOB USE_RECORDER WITH_RTC"
+    },
+    "ios": {
+        "frameworks": [
+            "AudioToolbox",
+            "AVFoundation",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": [
+            "pod/libs/*.a",
+            "ios-arch-iphone/*_SpeechEngineDialogToB_*awesome_*.a"
+        ]
+    },
+    "dependencies": {
+        "Mantle": [],
+        "SSZipArchive": [],
+        "VolcEngineRTC": [
+            "3.45.503"
+        ],
+        "FMDB": [],
+        "TTNetworkManager": [
+            "5.0.29.22"
+        ]
+    },
+    "authors": "Bytedance, Inc.",
+    "name": "SpeechEngineDialogToB",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "summary": "framework_summary",
+    "requires_arc": true
+}
