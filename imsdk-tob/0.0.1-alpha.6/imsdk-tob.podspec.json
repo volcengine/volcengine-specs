@@ -1,0 +1,682 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "default_subspecs": [
+        "BIMSDK"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS[config=Release]": "$(inherited) NDEBUG=1"
+    },
+    "source_files": [
+        "imsdk-tob-bitdummy.m"
+    ],
+    "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1"
+    },
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_imsdk-tob_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/imsdk-tob/0.0.1-alpha.6/imsdk-tob.framework.tar.xz"
+    },
+    "version": "0.0.1-alpha.6",
+    "authors": {
+        "bob.song": "bytedance.com"
+    },
+    "pod_target_xcconfig": {
+        "OTHER_CPLUSPLUSFLAGS": "-fno-c++-static-destructors"
+    },
+    "homepage": "https://github.com/",
+    "repoId": "36572",
+    "subspecs": [
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Foundation/**/*.h",
+            "name": "Foundation",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Foundation_*awesome_*.a"
+            },
+            "dependencies": {
+                "Protobuf": [],
+                "Mantle": [],
+                "YYCache": [],
+                "MMKV": [],
+                "OneKit/ByteDanceKit/Foundation": [],
+                "libextobjc": [],
+                "Bolts/Tasks": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Foundation/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/FoundationPlugins/HttpTTNetworkImp/**/*.h",
+            "name": "Plugin_TTNetwork",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Plugin_TTNetwork_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Foundation": [],
+                "TTNetworkManager": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/FoundationPlugins/HttpTTNetworkImp/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Bridges/**/*.h",
+            "name": "Bridges",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Bridges_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Foundation": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Bridges/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Protocols/**/*.h",
+            "name": "Protocols",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Protocols_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Foundation": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Protocols/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Essential/**/*.h",
+            "name": "Feature_EssentialPB",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_EssentialPB_*awesome_*.a"
+            },
+            "requires_arc": false,
+            "dependencies": {
+                "Protobuf": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Essential/**/Timn.pbobjc.{h,m}",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Essential/**/*.h",
+            "name": "Feature_Essential",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Essential_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Protocols": [],
+                "imsdk-tob/Bridges": [],
+                "Mantle": [],
+                "OneKit/OKModel": [],
+                "imsdk-tob/Feature_EssentialPB": [],
+                "libextobjc": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Essential/**/*",
+                "imsdk-tob-bitdummy.m"
+            ],
+            "exclude_files": "DevelopProject/TTIMSDK/Features/Essential/**/Timn.pbobjc.{h,m}"
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/Config/**/*.h",
+            "name": "Feature_Core_Config",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_Config_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/Config/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/Setting/**/*.h",
+            "name": "Feature_Core_Setting",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_Setting_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/Setting/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/ConversationInfo/**/*.h",
+            "name": "Feature_Core_ConversationInfo",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_ConversationInfo_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/ConversationInfo/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/CurrentUser/**/*.h",
+            "name": "Feature_Core_CurrentUser",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_CurrentUser_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/CurrentUser/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/ErrorHandler/**/*.h",
+            "name": "Feature_Core_ErrorHandler",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_ErrorHandler_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/ErrorHandler/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/Logger/**/*.h",
+            "name": "Feature_Core_Logger",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_Logger_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/Logger/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/MessagePuller/**/*.h",
+            "name": "Feature_Core_Puller",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_Puller_*awesome_*.a"
+            },
+            "dependencies": {
+                "OneKit/Reachability": [],
+                "imsdk-tob/Feature_Essential": [],
+                "OneKit/ByteDanceKit/Foundation": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/MessagePuller/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/MessageSender/**/*.h",
+            "name": "Feature_Core_Sender",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_Sender_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/MessageSender/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/MessageStore/**/*.{h,hpp}",
+            "name": "Feature_Core_Store",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_Store_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": [],
+                "WCDB": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/MessageStore/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/Notifier/**/*.h",
+            "name": "Feature_Core_Notifier",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_Notifier_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/Notifier/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/MessageRead/**/*.h",
+            "name": "Feature_Core_MessageRead",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_MessageRead_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/MessageRead/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/BroadCast/**/*.h",
+            "name": "Feature_Core_BroadCast",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_BroadCast_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/BroadCast/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/User/**/*.h",
+            "name": "Feature_Core_User",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_User_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/User/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Core/Friend/**/*.h",
+            "name": "Feature_Core_Friend",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_Friend_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Core/Friend/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "dependencies": {
+                "imsdk-tob/Feature_Core_CurrentUser": [],
+                "imsdk-tob/Feature_Core_Friend": [],
+                "imsdk-tob/Feature_Core_ConversationInfo": [],
+                "imsdk-tob/Feature_Core_Config": [],
+                "imsdk-tob/Feature_Core_ErrorHandler": [],
+                "imsdk-tob/Feature_Core_Setting": [],
+                "imsdk-tob/Feature_Core_MessageRead": [],
+                "imsdk-tob/Feature_Core_Notifier": [],
+                "imsdk-tob/Feature_Core_User": [],
+                "imsdk-tob/Feature_Core_BroadCast": [],
+                "imsdk-tob/Feature_Core_Store": [],
+                "imsdk-tob/Feature_Core_Sender": [],
+                "imsdk-tob/Feature_Core_Puller": [],
+                "imsdk-tob/Feature_Core_Logger": []
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Core_Default_*awesome_*.a"
+            },
+            "name": "Feature_Core_Default",
+            "source_files": [
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/WebSocket_TTPushManager/**/*.h",
+            "name": "Feature_WebSocket_TTPushManager",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_WebSocket_TTPushManager_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Protocols": [],
+                "imsdk-tob/Bridges": [],
+                "TTNetworkManager": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/WebSocket_TTPushManager/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Stranger/**/*.h",
+            "name": "Feature_Stranger",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_Stranger_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Stranger/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/ApplicationStatus/**/*.h",
+            "name": "Feature_ApplicationStatus",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_ApplicationStatus_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/ApplicationStatus/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Kit/Common/**/*.h",
+            "name": "IMKit_Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IMKit_Core_*awesome_*.a"
+            },
+            "dependencies": {
+                "OneKit/ByteDanceKit": [],
+                "IGListKit/Diffing": [],
+                "RSSwizzle": [],
+                "imsdk-tob/Feature_Core_Default": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Kit/Common/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "private_header_files": "DevelopProject/TTIMSDK/Kit/WebSocket/**/*.h",
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IMKit_WebSocket_Core_*awesome_*.a"
+            },
+            "name": "IMKit_WebSocket_Core",
+            "source_files": [
+                "DevelopProject/TTIMSDK/Kit/WebSocket/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "dependencies": {
+                "imsdk-tob/IMKit_WebSocket_Core": [],
+                "imsdk-tob/Feature_WebSocket_TTPushManager": []
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IMKit_WebSocket_TTPushManager_*awesome_*.a"
+            },
+            "name": "IMKit_WebSocket_TTPushManager",
+            "source_files": [
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Kit/Stranger/**/*.h",
+            "name": "IMKit_Stranger",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IMKit_Stranger_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Stranger": [],
+                "IGListKit/Diffing": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Kit/Stranger/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Kit/SyncSettings/**/*.h",
+            "name": "IMKit_SyncSettings",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IMKit_SyncSettings_*awesome_*.a"
+            },
+            "dependencies": {
+                "TTNetworkManager": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Kit/SyncSettings/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "dependencies": {
+                "imsdk-tob/IMKit_Core": [],
+                "imsdk-tob/IMKit_SyncSettings": [],
+                "imsdk-tob/Plugin_TTNetwork": []
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IMKit_Default_*awesome_*.a"
+            },
+            "name": "IMKit_Default",
+            "source_files": [
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Sugar/AttachmentDownloader/**/*.h",
+            "name": "IMSugar_AttachmentDownloader",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IMSugar_AttachmentDownloader_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Essential": [],
+                "imsdk-tob/Protocols": [],
+                "imsdk-tob/Bridges": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Sugar/AttachmentDownloader/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "dependencies": {
+                "imsdk-tob/IMSugar_MediaFileUploaderImpl_TTSDK": [],
+                "imsdk-tob/IMSugar_MediaFileUploader_Core": []
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IMSugar_MediaFileUploader_*awesome_*.a"
+            },
+            "name": "IMSugar_MediaFileUploader",
+            "source_files": [
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Sugar/MediaFileUploaderImpl_TTSDKFileUploadClient/**/*.h",
+            "name": "IMSugar_MediaFileUploaderImpl_TTSDK",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IMSugar_MediaFileUploaderImpl_TTSDK_*awesome_*.a"
+            },
+            "dependencies": {
+                "TTSDK/Uploader": [],
+                "imsdk-tob/IMSugar_MediaFileUploader_Core": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Sugar/MediaFileUploaderImpl_TTSDKFileUploadClient/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Sugar/MediaFileUploader/**/*.h",
+            "name": "IMSugar_MediaFileUploader_Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_IMSugar_MediaFileUploader_Core_*awesome_*.a"
+            },
+            "dependencies": {
+                "imsdk-tob/Feature_Core_Default": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Sugar/MediaFileUploader/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/BIMSDK/private/**/*.h",
+            "name": "BIMSDK",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_BIMSDK_*awesome_*.a"
+            },
+            "frameworks": "AVFoundation",
+            "dependencies": {
+                "imsdk-tob/IMKit_Core": [],
+                "imsdk-tob/IMSugar_MediaFileUploader": [],
+                "imsdk-tob/IMKit_WebSocket_TTPushManager": [],
+                "imsdk-tob/IMKit_SyncSettings": [],
+                "imsdk-tob/Plugin_TTNetwork": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/BIMSDK/**/*",
+                "imsdk-tob-bitdummy.m"
+            ]
+        }
+    ],
+    "name": "imsdk-tob"
+}
