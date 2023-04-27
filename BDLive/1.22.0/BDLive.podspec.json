@@ -284,7 +284,8 @@
                 "vendored_libraries": "ios-arch-iphone/*_Viewer_*awesome_*.a"
             },
             "frameworks": [
-                "EventKit"
+                "EventKit",
+                "MobileCoreServices"
             ],
             "dependencies": {
                 "TTNetworkManager": [
