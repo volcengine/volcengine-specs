@@ -1,0 +1,56 @@
+{
+    "name": "SpeechEngineAsrTobTest",
+    "version": "0.0.2-alpha.1",
+    "homepage": "http://toutiao.com",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "Bytedance, Inc.",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/SpeechEngineAsrTobTest/0.0.2-alpha.1/SpeechEngineAsrTobTest_swift5_1_3_framework.tar.xz"
+    },
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "platforms": {
+        "ios": "9.0"
+    },
+    "static_framework": false,
+    "requires_arc": true,
+    "xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) SPEECH_SDK_TOB USE_RECORDER"
+    },
+    "pod_target_xcconfig": {
+        "ENABLE_BITCODE": "NO"
+    },
+    "ios": {
+        "frameworks": [
+            "AudioToolbox",
+            "AVFoundation",
+            "QuartzCore",
+            "OpenGLES",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/SpeechEngineAsrTobTest.framework"
+    },
+    "dependencies": {
+        "TTNetworkManager": [
+            "5.0.29.22"
+        ],
+        "FileMD5Hash": [
+            "2.0.0"
+        ],
+        "FMDB": [
+            "2.7.5"
+        ],
+        "SSZipArchive": [
+            "2.2.3"
+        ],
+        "Mantle": [
+            "2.1.2"
+        ]
+    },
+    "repoId": "30328"
+}
