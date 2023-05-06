@@ -1,6 +1,6 @@
 {
   "name": "LarkSSO",
-  "version": "1.1.21",
+  "version": "1.999.0",
   "summary": "A lib for Feishu/Lark authorization.",
   "description": "You can get authorization from Feishu/Lark with this lib conveniently.",
   "homepage": "https://open.feishu.cn",
