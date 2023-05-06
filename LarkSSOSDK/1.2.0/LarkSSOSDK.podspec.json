@@ -1,0 +1,27 @@
+{
+  "name": "LarkSSOSDK",
+  "version": "1.2.0",
+  "summary": "A lib for Feishu/Lark authorization.",
+  "description": "You can get authorization from Feishu/Lark with this lib conveniently.",
+  "homepage": "https://open.feishu.cn",
+  "license": {
+    "type": "Copyright",
+    "text": " Copyright 2023 feishu.cn. All rights reserved.\n"
+  },
+  "authors": {
+    "auth": "@feishu.cn"
+  },
+  "source": {
+    "http": "https://sf3-cn.feishucdn.com/obj/lark-eco-passport/LarkSSOSDK-1.2.0.zip",
+    "type": "zip"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "pod_target_xcconfig": {
+    "BUILD_LIBRARY_FOR_DISTRIBUTION": "YES"
+  },
+  "swift_version": "5.7",
+  "resources": "LarkSSOSDK/LarkSSO.bundle",
+  "vendored_frameworks": "LarkSSOSDK/LarkSSOSDK.xcframework"
+}
