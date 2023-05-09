@@ -528,6 +528,7 @@
       subspec.dependency 'TTSDK/Tools'
       subspec.dependency 'TTSDK/VCN'
       subspec.dependency 'SSZipArchive', '~> 2.2'
+      subspec.weak_frameworks = 'Photos', 'UniformTypeIdentifiers'
     end
 
     spec.subspec 'Uploader-VE' do |subspec|
@@ -545,6 +546,7 @@
       subspec.dependency 'TTSDK/VCN'
       subspec.dependency 'VEVideoKit/boringssl'
       subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
+      subspec.weak_frameworks = 'Photos', 'UniformTypeIdentifiers'
     end
 
     spec.subspec 'ByteAudio' do |subspec|
