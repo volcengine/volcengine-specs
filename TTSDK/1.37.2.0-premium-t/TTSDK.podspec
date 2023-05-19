@@ -406,14 +406,19 @@
       subspec.source_files = [
         "TTSDK/{#{class_name}}/**/*.h"
       ]
-      subspec.exclude_files = [
+      exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/DualCore/**/*',
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h',
-        'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h',
         'TTSDK/VCPreloadStrategy/ios/bridge/VCUtilBridge.h',
         'TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h',
         'TTSDK/VCPreloadStrategy/sources/**/*',
       ]
+      if !subspec.swift_version.empty?
+        exclude_files << 'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h'
+        exclude_files << 'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_audio_wrapper.h'
+        exclude_files << 'TTSDK/TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_nativetrait.h'
+      end
+      subspec.exclude_files = exclude_files
       lib_name = "#{class_name},MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule"
       subspec.vendored_libraries = [
         "TTSDK/{#{lib_name}}/**/*.a"
