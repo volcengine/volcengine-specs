@@ -1,7 +1,7 @@
   Pod::Spec.new do |spec|
 
     spec.name         = "TTSDK"
-    spec.version      = "1.37.2.0-premium-t"
+    spec.version      = "1.37.2.6-premium-sft"
     spec.summary      = "A comprehensive multimedia SDK."
     spec.description  = <<-DESC
       A comprehensive multimedia SDK which provides live streaming, VOD and the other related abilities.
@@ -14,7 +14,7 @@
     spec.author       = { "chenzhaojie" => "chenzhaojie@bytedance.com" }
     spec.platform     = :ios, "8.0"
 
-    spec.source       = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTSDK/1.37.2.6-premium/TTSDK.zip" }
+    spec.source       = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTSDK/#{spec.version}/TTSDK.zip" }
     
     spec.default_subspecs = 'Core', 'Effect', 'TTFFmpeg', 'PlayerCore', 'LivePull', 'LivePush', 'Player', 'Image'
 
@@ -406,19 +406,13 @@
       subspec.source_files = [
         "TTSDK/{#{class_name}}/**/*.h"
       ]
-      exclude_files = [
+      subspec.exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/DualCore/**/*',
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h',
         'TTSDK/VCPreloadStrategy/ios/bridge/VCUtilBridge.h',
         'TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h',
         'TTSDK/VCPreloadStrategy/sources/**/*',
       ]
-      if !subspec.swift_version.empty?
-        exclude_files << 'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h'
-        exclude_files << 'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_audio_wrapper.h'
-        exclude_files << 'TTSDK/TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_nativetrait.h'
-      end
-      subspec.exclude_files = exclude_files
       lib_name = "#{class_name},MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule"
       subspec.vendored_libraries = [
         "TTSDK/{#{lib_name}}/**/*.a"
