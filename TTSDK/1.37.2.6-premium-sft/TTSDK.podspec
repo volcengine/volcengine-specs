@@ -165,6 +165,9 @@
       subspec.resources = [
         'TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib',
       ]
+      subspec.exclude_files = [
+        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_nativetrait.h',
+      ]
       subspec.dependency 'TTSDK/TTFFmpeg'
       subspec.dependency 'TTSDK/VideoProcessor'
     end
@@ -184,6 +187,9 @@
       ]
       subspec.resources = [
         'TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib',
+      ]
+      subspec.exclude_files = [
+        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_nativetrait.h',
       ]
       subspec.dependency 'TTSDK/TTFFmpeg-VE'
       subspec.dependency 'TTSDK/VideoProcessor'
@@ -413,7 +419,6 @@
         'TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h',
         'TTSDK/VCPreloadStrategy/sources/**/*',
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h',
-        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_nativetrait.h',
       ]
       lib_name = "#{class_name},MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule"
       subspec.vendored_libraries = [
@@ -440,7 +445,6 @@
         'TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h',
         'TTSDK/VCPreloadStrategy/sources/**/*',
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h',
-        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_nativetrait.h',
       ]
       lib_name = "#{class_name},MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule"
       subspec.vendored_libraries = [
@@ -468,7 +472,6 @@
         'TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h',
         'TTSDK/VCPreloadStrategy/sources/**/*',
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h',
-        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_nativetrait.h',
       ]
       lib_name = "#{class_name},MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule"
       subspec.vendored_libraries = [
