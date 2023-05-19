@@ -409,7 +409,7 @@
       subspec.exclude_files = [
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/DualCore/**/*',
         'TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h',
-        'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/**/*',
+        'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h',
         'TTSDK/VCPreloadStrategy/ios/bridge/VCUtilBridge.h',
         'TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h',
         'TTSDK/VCPreloadStrategy/sources/**/*',
