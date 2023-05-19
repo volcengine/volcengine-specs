@@ -412,6 +412,8 @@
         'TTSDK/VCPreloadStrategy/ios/bridge/VCUtilBridge.h',
         'TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h',
         'TTSDK/VCPreloadStrategy/sources/**/*',
+        'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h',
+        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_nativetrait.h',
       ]
       lib_name = "#{class_name},MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule"
       subspec.vendored_libraries = [
@@ -437,6 +439,8 @@
         'TTSDK/VCPreloadStrategy/ios/bridge/VCUtilBridge.h',
         'TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h',
         'TTSDK/VCPreloadStrategy/sources/**/*',
+        'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h',
+        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_nativetrait.h',
       ]
       lib_name = "#{class_name},MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule"
       subspec.vendored_libraries = [
@@ -463,6 +467,8 @@
         'TTSDK/VCPreloadStrategy/ios/bridge/VCUtilBridge.h',
         'TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h',
         'TTSDK/VCPreloadStrategy/sources/**/*',
+        'TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h',
+        'TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/av_nativetrait.h',
       ]
       lib_name = "#{class_name},MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule"
       subspec.vendored_libraries = [
