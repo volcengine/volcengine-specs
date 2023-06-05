@@ -1,0 +1,137 @@
+{
+    "module_map": "libEffectSDK/inc/EffectSdk.modulemap",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "osx": {
+        "vendored_libraries": "ios-arch-osx/*_EffectSDK_iOS_TOB_*awesome_*.a"
+    },
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "osx": "10.12",
+        "ios": "8.0"
+    },
+    "prepare_command": "",
+    "source_files": [
+        "EffectSDK_iOS_TOB-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_EffectSDK_iOS_TOB_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/EffectSDK_iOS_TOB/11.6.0-VEt/EffectSDK_iOS_TOB.framework.tar.xz"
+    },
+    "version": "11.6.0-VEt",
+    "authors": {
+        "zhouyi.ysj": "zhouyi.ysj@bytedance.com"
+    },
+    "default_subspecs": [
+        "Core"
+    ],
+    "homepage": "https://EffectSDK_iOS",
+    "repoId": "38953",
+    "subspecs": [
+        {
+            "libraries": [
+                "z",
+                "c++",
+                "stdc++"
+            ],
+            "public_header_files": "libEffectSDK/inc/**/*.h",
+            "vendored_libraries": "libEffectSDK/lib/Release/libeffect-sdk.a",
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Core_*awesome_*.a"
+            },
+            "name": "Core",
+            "frameworks": [
+                "AVFoundation",
+                "CoreMedia",
+                "VideoToolbox",
+                "Accelerate",
+                "AudioToolbox",
+                "Foundation",
+                "GLKit",
+                "imageIO",
+                "IOKit",
+                "JavaScriptCore",
+                "AssetsLibrary",
+                "CoreGraphics",
+                "CoreImage",
+                "CoreVideo",
+                "QuartzCore",
+                "UIKit",
+                "CoreMotion"
+            ],
+            "weak_frameworks": [
+                "CoreHaptics",
+                "Metal",
+                "MetalPerformanceShaders",
+                "Photos",
+                "CoreML"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "header_mappings_dir": "libEffectSDK/inc",
+            "requires_arc": true,
+            "source_files": [
+                "libEffectSDK/inc/**/*.{h,m}",
+                "libEffectSDK/inc/EffectSdk-umbrella.h",
+                "libEffectSDK/inc/EffectSdk.modulemap",
+                "EffectSDK_iOS_TOB-bitdummy.m"
+            ],
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_FullModel_*awesome_*.a"
+            },
+            "name": "FullModel",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_FullModel_*awesome_*.a"
+            },
+            "dependencies": {
+                "EffectSDK_iOS/Core": []
+            },
+            "source_files": [
+                "EffectSDK_iOS_TOB-bitdummy.m"
+            ],
+            "resources": "libEffectSDK/Resources/EffectSDKResources.bundle"
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_PartModel_*awesome_*.a"
+            },
+            "name": "PartModel",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_PartModel_*awesome_*.a"
+            },
+            "dependencies": {
+                "EffectSDK_iOS/Core": []
+            },
+            "source_files": [
+                "EffectSDK_iOS_TOB-bitdummy.m"
+            ],
+            "resources": "libEffectSDK/Resources/part/EffectSDKResources.bundle"
+        }
+    ],
+    "name": "EffectSDK_iOS_TOB"
+}
