@@ -32,12 +32,12 @@ Pangrowth is an SDK that integrates novels, media, and live broadcasts.
   
   # 流媒体，包含了TTVideoEngine
   s.subspec 'media' do |ss|
-    ss.dependency 'PangrowthMedia', '4.5.0.1'
+    ss.dependency 'PangrowthMedia', '4.6.0.0'
   end
   
   # 流媒体，TTVideoEngine动态库全架构大包
   s.subspec 'media-dynamic' do |ss|
-    ss.dependency 'PangrowthMedia-dynamic', '4.5.2.1'
+    ss.dependency 'PangrowthMedia-dynamic', '4.6.2.0'
   end
   
   s.default_subspecs = []
