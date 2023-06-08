@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.ios.dependency 'RangersAPM/Core', '>= 3.3.1'
   s.ios.dependency 'RangersAPM/Public', '>= 3.3.1'
   s.ios.dependency 'RangersAPM/Crash', '>= 3.3.1'
-  s.ios.dependency 'RangersAPM/HMD', '>= 3.33.1'
+  s.ios.dependency 'RangersAPM/HMD', '>= 3.3.1'
   s.ios.dependency 'RangersAPM/EventMonitor', '>= 3.3.1'
   s.ios.dependency 'RangersAPM/CN', '>= 3.3.1'
   s.ios.dependency 'RangersAppLog/Core', '~> 6.15.1'
