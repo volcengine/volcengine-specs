@@ -18,15 +18,15 @@ Pod::Spec.new do |s|
   s.frameworks = 'MetalKit', 'CoreMotion', 'SystemConfiguration', 'OpenAL', 'VideoToolbox'
   s.libraries = 'c++', 'z', 'iconv', 'xml2', 'bz2', 'c++abi'
   
-  s.ios.dependency 'RangersAPM/Core', '>= 2.13.1'
-  s.ios.dependency 'RangersAPM/Public', '>= 2.13.1'
-  s.ios.dependency 'RangersAPM/Crash', '>= 2.13.1'
-  s.ios.dependency 'RangersAPM/HMD', '>= 2.13.1'
-  s.ios.dependency 'RangersAPM/EventMonitor', '>= 2.13.1'
-  s.ios.dependency 'RangersAPM/CN', '>= 2.13.1'
-  s.ios.dependency 'RangersAppLog/Core', '~> 6.13.2'
-  s.ios.dependency 'RangersAppLog/Log', '~> 6.13.2'
-  s.ios.dependency 'RangersAppLog/Host/CN', '~> 6.13.2'
+  s.ios.dependency 'RangersAPM/Core', '>= 3.3.1'
+  s.ios.dependency 'RangersAPM/Public', '>= 3.3.1'
+  s.ios.dependency 'RangersAPM/Crash', '>= 3.3.1'
+  s.ios.dependency 'RangersAPM/HMD', '>= 3.33.1'
+  s.ios.dependency 'RangersAPM/EventMonitor', '>= 3.3.1'
+  s.ios.dependency 'RangersAPM/CN', '>= 3.3.1'
+  s.ios.dependency 'RangersAppLog/Core', '~> 6.15.1'
+  s.ios.dependency 'RangersAppLog/Log', '~> 6.15.1'
+  s.ios.dependency 'RangersAppLog/Host/CN', '~> 6.15.1'
 
   s.vendored_frameworks = ['PangrowthMedia/LCDSDK.framework']
   s.resources = ['PangrowthMedia/LCDSDK.bundle', 'PangrowthMedia/ttplayer.metallib']
