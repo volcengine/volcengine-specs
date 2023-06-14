@@ -60,6 +60,5 @@ Pod::Spec.new do |spec|
   spec.subspec "Sami" do |sami|
     sami.dependency "audiosdk-tob", "3.2.5-alpha.3-tobonekit"
     sami.dependency "VEVideoKit/boringssl", "#{vevideokitversion}"
-    sami.dependency "VEVideoKit/TTNetworkManager", "#{vevideokitversion}"
   end
 end
