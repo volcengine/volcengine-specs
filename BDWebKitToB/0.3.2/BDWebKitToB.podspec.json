@@ -1,0 +1,118 @@
+{
+    "default_subspecs": [
+        "Core"
+    ],
+    "static_framework": true,
+    "platforms": {
+        "ios": "9.0"
+    },
+    "user_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    },
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/BDWebKitToB/0.3.2/BDWebKitToB.framework.tar.xz"
+    },
+    "version": "0.3.2",
+    "source_files": [
+        "BDWebKitToB-bitdummy.m"
+    ],
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "repoId": "20314",
+    "subspecs": [
+        {
+            "public_header_files": "BDWebKit/Classes/Core/*.h",
+            "name": "Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "requires_arc": true,
+            "dependencies": {
+                "OneKit/BaseKit": [],
+                "OneKit/ByteDanceKit/Foundation": []
+            },
+            "source_files": [
+                "BDWebKit/Classes/Core/**/*.{h,m}",
+                "BDWebKitToB-bitdummy.m"
+            ]
+        },
+        {
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Native_*awesome_*.a"
+            },
+            "name": "Native",
+            "subspecs": [
+                {
+                    "public_header_files": "BDWebKit/Classes/Native/*.h",
+                    "name": "Base",
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Base_*awesome_*.a"
+                    },
+                    "requires_arc": true,
+                    "dependencies": {
+                        "BDWebKitToB/Core": []
+                    },
+                    "source_files": [
+                        "BDWebKit/Classes/Native/Base/**/*.{h,m}",
+                        "BDWebKitToB-bitdummy.m"
+                    ]
+                },
+                {
+                    "dependencies": {
+                        "TTSDK/Image": [],
+                        "BDWebKitToB/Native/Base": []
+                    },
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_NativeImageView_*awesome_*.a"
+                    },
+                    "name": "NativeImageView",
+                    "source_files": [
+                        "BDWebKit/Classes/Native/Image/**/*.{h,m}",
+                        "BDWebKitToB-bitdummy.m"
+                    ]
+                }
+            ],
+            "source_files": [
+                "BDWebKitToB-bitdummy.m"
+            ]
+        }
+    ],
+    "prepare_command": "",
+    "description": "framework_description",
+    "ios": {
+        "frameworks": [
+            "Foundation",
+            "UIKit",
+            "WebKit",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_BDWebKitToB_*awesome_*.a"
+    },
+    "dependencies": {
+        "BDWebCoreToB": []
+    },
+    "authors": "Bytedance, Inc.",
+    "name": "BDWebKitToB",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "summary": "framework_summary",
+    "frameworks": [
+        "Foundation",
+        "UIKit",
+        "WebKit"
+    ]
+}
