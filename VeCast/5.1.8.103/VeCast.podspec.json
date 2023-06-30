@@ -1,0 +1,21 @@
+{
+    "name": "VeCast",
+    "license": {
+        "text": "https://bytedance.feishu.cn/docx/AtXJdsnfhorZ55xrNP6cVOWSnjf",
+        "type": "Proprietary"
+    },
+    "requires_arc": true,
+    "summary": "VeCast SDK",
+    "vendored_frameworks": "VeCast.framework",
+    "platforms": {
+        "ios": "9.0"
+    },
+    "version": "5.1.8.103",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VeCast/5.1.8.103/VeCast.framework.zip"
+    },
+    "authors": {
+        "fangqingmei": "fangqingmei@bytedance.com"
+    },
+    "homepage": "https://github.com/volcengine/volcengine-specs"
+}
