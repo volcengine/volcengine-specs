@@ -1,0 +1,72 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "8.0"
+    },
+    "source_files": [
+        "DataSailExtension-bitdummy.m"
+    ],
+    "requires_arc": true,
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_DataSailExtension_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "libraries": "z",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/DataSailExtension/1.0.0-rc.0/DataSailExtension.framework.tar.xz"
+    },
+    "version": "1.0.0-rc.0",
+    "authors": {
+        "Vincent.Feng": "fengchengqi@bytedance.com"
+    },
+    "pod_target_xcconfig": {
+        "HEADER_SEARCH_PATHS": "\"${PODS_TARGET_SRCROOT}\""
+    },
+    "static_framework": true,
+    "homepage": "https://www.volcengine.com/",
+    "repoId": "39311",
+    "subspecs": [
+        {
+            "public_header_files": [
+                "Extension/sls/sources/**/public/*.h",
+                "Extension/sls/sources/AliyunLogProducer/AliyunLogProducer/*.h",
+                "Extension/sls/sources/AliyunLogProducer/AliyunLogProducer/utils/*.h",
+                "Extension/sls/sources/AliyunLogProducer/aliyun-log-c-sdk/src/log_define.h",
+                "Extension/sls/sources/AliyunLogProducer/aliyun-log-c-sdk/src/log_http_interface.h",
+                "Extension/sls/sources/AliyunLogProducer/aliyun-log-c-sdk/src/log_inner_include.h",
+                "Extension/sls/sources/AliyunLogProducer/aliyun-log-c-sdk/src/log_multi_thread.h",
+                "Extension/sls/sources/AliyunLogProducer/aliyun-log-c-sdk/src/log_producer_client.h",
+                "Extension/sls/sources/AliyunLogProducer/aliyun-log-c-sdk/src/log_producer_common.h",
+                "Extension/sls/sources/AliyunLogProducer/aliyun-log-c-sdk/src/log_producer_config.h"
+            ],
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_SLS_*awesome_*.a"
+            },
+            "name": "SLS",
+            "source_files": [
+                "Extension/sls/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "Extension/sls/sources/AliyunLogProducer/AliyunLogProducer/*.{h,m}",
+                "Extension/sls/sources/aliyun-log-c-sdk/src/*.{c,h}",
+                "Extension/sls/sources/AliyunLogProducer/utils/*.{m,h}",
+                "DataSailExtension-bitdummy.m"
+            ]
+        }
+    ],
+    "name": "DataSailExtension"
+}
