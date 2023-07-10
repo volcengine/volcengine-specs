@@ -60,8 +60,6 @@ Pod::Spec.new do |spec|
     subspec.dependency 'TTVideoEditor', '11.8.1.83-D'
     subspec.dependency "TTSDKFramework/Base"
     subspec.dependency "TTSDKFramework/AppLog"
-    subspec.dependency "TTSDKFramework/Encode/vc0"
-    subspec.dependency "TTSDKFramework/Encode/vc1"
     subspec.dependency "SSZipArchive", "~> 2.2"
     subspec.weak_frameworks = 'CoreGraphics', 'CoreTelephony', 'VideoToolbox', 'AudioToolbox', 'CoreMedia', 'Metal', 'MetalKit', 'MetalPerformanceShaders', 'CoreFoundation', 'CoreVideo', 'IOSurface', 'QuartzCore', 'CoreImage', 'OpenGLES', 'MetricKit', 'Photos', 'UniformTypeIdentifiers'
   end
@@ -77,7 +75,6 @@ Pod::Spec.new do |spec|
     ]
     subspec.dependency 'TTVideoEditor', '11.8.1.83-D'
     subspec.dependency "TTSDKFramework/AppLog"
-    subspec.dependency "TTSDKFramework/Encode/vc0"
     subspec.dependency "TTSDKFramework/Encode/vc1"
   end
 
@@ -97,7 +94,6 @@ Pod::Spec.new do |spec|
     ]
     subspec.dependency 'TTVideoEditor', '11.8.1.83-D'
     subspec.dependency "TTSDKFramework/AppLog"
-    subspec.dependency "TTSDKFramework/Encode/vc0"
     subspec.dependency "TTSDKFramework/Encode/vc1"
   end
 
