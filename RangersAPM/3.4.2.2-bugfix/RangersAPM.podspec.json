@@ -1,6 +1,6 @@
 {
     "name": "RangersAPM",
-    "version": "3.4.2.1-bugfix",
+    "version": "3.4.2.2-bugfix",
     "summary": "RangersAPM by Volcengine",
     "description": "APMInsight iOS SDK, a tool to monitor APP performance.",
     "homepage": "https://github.com/volcengine/APMInsight_iOS",
