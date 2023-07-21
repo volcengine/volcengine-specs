@@ -1,0 +1,156 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "default_subspecs": [
+        "BIMSDK"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS[config=Release]": "$(inherited) NDEBUG=1"
+    },
+    "source_files": [
+        "imsdk-tob-bitdummy.m"
+    ],
+    "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1"
+    },
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_imsdk-tob_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/imsdk-tob/1.1.8/imsdk-tob.framework.tar.xz"
+    },
+    "version": "1.1.8",
+    "authors": {
+        "bob.song": "bytedance.com"
+    },
+    "pod_target_xcconfig": {
+        "OTHER_CPLUSPLUSFLAGS": "-fno-c++-static-destructors"
+    },
+    "homepage": "https://github.com/",
+    "repoId": "36572",
+    "subspecs": [
+        {
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Essential/**/*.h",
+            "name": "Feature_EssentialPB",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_EssentialPB_*awesome_*.a"
+            },
+            "requires_arc": false,
+            "dependencies": {
+                "Protobuf": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Essential/**/Timn.pbobjc.{h,m}",
+                "imsdk-tob-bitdummy.m"
+            ]
+        },
+        {
+            "private_header_files": [
+                "DevelopProject/TTIMSDK/BIMSDK/private/**/*.h",
+                "DevelopProject/TTIMSDK/Bridges/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Config/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/ConversationInfo/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/CurrentUser/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/ErrorHandler/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Logger/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageRead/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/BroadCast/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Notifier/**/*.h",
+                "DevelopProject/TTIMSDK/Features/Core/MessagePuller/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageSender/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Setting/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageStore/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/User/**/*",
+                "DevelopProject/TTIMSDK/Features/Essential/**/*",
+                "DevelopProject/TTIMSDK/Features/WebSocket_TTPushManager/**/*",
+                "DevelopProject/TTIMSDK/Foundation/**/*",
+                "DevelopProject/TTIMSDK/Kit/Common/**/*",
+                "DevelopProject/TTIMSDK/Kit/SyncSettings/**/*",
+                "DevelopProject/TTIMSDK/Kit/WebSocket/**/*",
+                "DevelopProject/TTIMSDK/Sugar/MediaFileUploader/**/*",
+                "DevelopProject/TTIMSDK/Sugar/MediaFileUploaderImpl_TTSDKFileUploadClient/**/*",
+                "DevelopProject/TTIMSDK/FoundationPlugins/HttpTTNetworkImp/**/*",
+                "DevelopProject/TTIMSDK/Protocols/**/*",
+                "DevelopProject/TTIMSDK/Sugar/LiveGroup/**/*"
+            ],
+            "name": "BIMSDK",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_BIMSDK_*awesome_*.a"
+            },
+            "frameworks": "AVFoundation",
+            "dependencies": {
+                "IGListDiffKit": [],
+                "WCDB": [
+                    "~>1.0.6"
+                ],
+                "Protobuf": [],
+                "Mantle": [],
+                "OneKit/ByteDanceKit": [],
+                "OneKit/OKModel": [],
+                "YYCache": [],
+                "MMKV": [],
+                "RSSwizzle": [],
+                "imsdk-tob/Feature_EssentialPB": [],
+                "TTSDK/Uploader": [],
+                "OneKit/ByteDanceKit/Foundation": [],
+                "libextobjc": [],
+                "OneKit/Reachability": [],
+                "Bolts/Tasks": [],
+                "TTNetworkManager": []
+            },
+            "source_files": [
+                "DevelopProject/TTIMSDK/BIMSDK/**/*",
+                "DevelopProject/TTIMSDK/Bridges/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Config/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/ConversationInfo/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/CurrentUser/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/ErrorHandler/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Logger/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageRead/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/BroadCast/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Notifier/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessagePuller/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageSender/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Setting/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageStore/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/User/**/*",
+                "DevelopProject/TTIMSDK/Features/Essential/**/*",
+                "DevelopProject/TTIMSDK/Features/WebSocket_TTPushManager/**/*",
+                "DevelopProject/TTIMSDK/Foundation/**/*",
+                "DevelopProject/TTIMSDK/Kit/Common/**/*",
+                "DevelopProject/TTIMSDK/Kit/SyncSettings/**/*",
+                "DevelopProject/TTIMSDK/Kit/WebSocket/**/*",
+                "DevelopProject/TTIMSDK/Sugar/MediaFileUploader/**/*",
+                "DevelopProject/TTIMSDK/Sugar/MediaFileUploaderImpl_TTSDKFileUploadClient/**/*",
+                "DevelopProject/TTIMSDK/FoundationPlugins/HttpTTNetworkImp/**/*",
+                "DevelopProject/TTIMSDK/Protocols/**/*",
+                "DevelopProject/TTIMSDK/Sugar/LiveGroup/**/*",
+                "imsdk-tob-bitdummy.m"
+            ],
+            "exclude_files": "DevelopProject/TTIMSDK/Features/Essential/**/Timn.pbobjc.{h,m}"
+        }
+    ],
+    "name": "imsdk-tob"
+}
