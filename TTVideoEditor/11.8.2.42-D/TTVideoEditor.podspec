@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.weak_frameworks = ["Metal", "MetalPerformanceShaders", "Photos", "CoreML", "MetalKit"]
   s.libraries = ["xml2", "iconv"]
   s.requires_arc = true
-  s.source = {"http"=>"https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTVideoEditor/11.8.2.39-D/TTVideoEditor.zip"}
+  s.source = {"http"=>"https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTVideoEditor/11.8.2.42-D/TTVideoEditor.zip"}
 
   s.ios.deployment_target    = '8.0'
   s.ios.vendored_framework   = 'ios/TTVideoEditor.framework'
