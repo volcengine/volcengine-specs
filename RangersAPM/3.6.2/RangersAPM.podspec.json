@@ -9,6 +9,7 @@
         "text": "Bytedance copyright"
     },
     "authors": "Volcengine",
+    "deprecated": true,
     "platforms": {
         "ios": "9.0"
     },
