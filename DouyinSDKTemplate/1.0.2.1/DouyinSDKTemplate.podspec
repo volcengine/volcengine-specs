@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
     A long description of DouyinSDKTemplate.
                      DESC
   
-    spec.homepage     = "http://EXAMPLE/DouyinSDKTemplate"
+    spec.homepage     = "https://developer.open-douyin.com/"
   
     spec.license      = { :type => "Copyright", :text => "Bytedance copyright" }
   
