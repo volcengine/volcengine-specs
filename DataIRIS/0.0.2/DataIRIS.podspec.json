@@ -1,0 +1,286 @@
+{
+    "osx": {
+        "vendored_libraries": "ios-arch-osx/*_DataIRIS_*awesome_*.a"
+    },
+    "default_subspecs": [
+        "Core",
+        "Event",
+        "EventSchemaJSON",
+        "EventStoreFMDB"
+    ],
+    "static_framework": true,
+    "platforms": {
+        "osx": "10.10",
+        "ios": "8.0"
+    },
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "HEADER_SEARCH_PATHS": "\"${PODS_TARGET_SRCROOT}\""
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/DataIRIS/0.0.2/DataIRIS.framework.tar.xz"
+    },
+    "version": "0.0.2",
+    "source_files": [
+        "DataIRIS-bitdummy.m"
+    ],
+    "homepage": "https://apploghome.bytedance.net/",
+    "repoId": "41067",
+    "subspecs": [
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Defines_*awesome_*.a"
+            },
+            "public_header_files": "DataIRIS/defines/**/public/*.h",
+            "name": "Defines",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Defines_*awesome_*.a"
+            },
+            "source_files": [
+                "DataIRIS/defines/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRIS-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Core_*awesome_*.a"
+            },
+            "public_header_files": "DataIRIS/core/**/public/**/*.h",
+            "name": "Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "libraries": [
+                "c++",
+                "z"
+            ],
+            "dependencies": {
+                "DataIRIS/Defines": []
+            },
+            "source_files": [
+                "DataIRIS/core/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRIS-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Event_*awesome_*.a"
+            },
+            "public_header_files": "DataIRIS/event/**/public/*.h",
+            "name": "Event",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Event_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/Core": []
+            },
+            "source_files": [
+                "DataIRIS/event/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRIS-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_EventSchemaJSON_*awesome_*.a"
+            },
+            "public_header_files": "DataIRIS/event_schema_json/**/public/*{.h}",
+            "name": "EventSchemaJSON",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_EventSchemaJSON_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "DataIRIS/event_schema_json/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRIS-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_EventStoreFMDB_*awesome_*.a"
+            },
+            "public_header_files": "DataIRIS/event_store_fmdb/**/public/*{.h}",
+            "name": "EventStoreFMDB",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_EventStoreFMDB_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "DataIRIS/event_store_fmdb/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRIS-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_RemoteSettings_*awesome_*.a"
+            },
+            "public_header_files": "DataIRIS/settings/**/public/**/*{.h}",
+            "name": "RemoteSettings",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_RemoteSettings_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/Defines": []
+            },
+            "source_files": [
+                "DataIRIS/settings/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRIS-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Throttlter_*awesome_*.a"
+            },
+            "public_header_files": "DataIRIS/throttlter/**/public/*{.h}",
+            "name": "Throttlter",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Throttlter_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/Defines": []
+            },
+            "source_files": [
+                "DataIRIS/throttlter/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRIS-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Session_*awesome_*.a"
+            },
+            "public_header_files": "DataIRIS/session/**/public/*{.h}",
+            "name": "Session",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Session_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "DataIRIS/session/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRIS-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_DevTools_*awesome_*.a"
+            },
+            "public_header_files": "DataIRIS/devtools/**/public/*{.h}",
+            "name": "DevTools",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_DevTools_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/Core": [],
+                "DataIRIS/DevToolsBundle": [],
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "DataIRIS/devtools/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRIS-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_DevToolsBundle_*awesome_*.a"
+            },
+            "name": "DevToolsBundle",
+            "resource_bundles": {
+                "IRISDevToolsBundle": [
+                    "DataIRIS/devtools/assets/**/*.{png}"
+                ]
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_DevToolsBundle_*awesome_*.a"
+            },
+            "source_files": [
+                "DataIRIS-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Legacy_*awesome_*.a"
+            },
+            "public_header_files": "DataIRIS/legacy/sources/**/public/*{.h}",
+            "name": "Legacy",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Legacy_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "DataIRIS/legacy/sources/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRIS-bitdummy.m"
+            ]
+        }
+    ],
+    "prepare_command": "",
+    "description": "framework_description",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_DataIRIS_*awesome_*.a"
+    },
+    "testspecs": [
+        {
+            "test_type": "unit",
+            "name": "Tests",
+            "source_files": [
+                "DataIRIS/**/tests/**/*.*"
+            ]
+        }
+    ],
+    "authors": {
+        "Vincent.Feng": "fengchengqi@bytedance.com"
+    },
+    "name": "DataIRIS",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "summary": "framework_summary",
+    "requires_arc": true
+}
