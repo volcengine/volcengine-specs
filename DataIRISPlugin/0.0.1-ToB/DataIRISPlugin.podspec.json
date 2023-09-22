@@ -1,0 +1,288 @@
+{
+    "osx": {
+        "vendored_libraries": "ios-arch-osx/*_DataIRISPlugin_*awesome_*.a"
+    },
+    "default_subspecs": [
+        "Core"
+    ],
+    "static_framework": true,
+    "platforms": {
+        "osx": "10.10",
+        "ios": "8.0"
+    },
+    "pod_target_xcconfig": {
+        "HEADER_SEARCH_PATHS": "\"${PODS_TARGET_SRCROOT}\""
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/DataIRISPlugin/0.0.1-ToB/DataIRISPlugin.framework.tar.xz"
+    },
+    "version": "0.0.1-ToB",
+    "source_files": [
+        "DataIRISPlugin-bitdummy.m"
+    ],
+    "homepage": "https://apploghome.bytedance.net/",
+    "repoId": "41068",
+    "subspecs": [
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Defines_*awesome_*.a"
+            },
+            "private_header_files": [
+                "DataIRIS/**/sources/**/*{.h}"
+            ],
+            "name": "Defines",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Defines_*awesome_*.a"
+            },
+            "source_files": [
+                "DataIRIS/**/sources/**/*{.h}",
+                "Plugins/defines/sources/**/*{.h}",
+                "DataIRISPlugin-bitdummy.m"
+            ],
+            "exclude_files": "DataIRIS/**/public/*.h"
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Core_*awesome_*.a"
+            },
+            "public_header_files": [
+                "Plugins/core/sources/**/public/*{.h}"
+            ],
+            "name": "Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/Core": []
+            },
+            "source_files": [
+                "Plugins/core/**/*{.h,.m,.c,.cpp,.mm}",
+                "DataIRISPlugin-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Util_*awesome_*.a"
+            },
+            "private_header_files": "Plugins/util/**/*.h",
+            "name": "Util",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Util_*awesome_*.a"
+            },
+            "source_files": [
+                "Plugins/util/**/sources/**/*{.h,.m,.c,.cc,.cpp,.mm}",
+                "DataIRISPlugin-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_EventVerification_*awesome_*.a"
+            },
+            "public_header_files": "Plugins/verification/**/public/*.h",
+            "name": "EventVerification",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_EventVerification_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRISPlugin/Core": [],
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "Plugins/verification/**/sources/**/*{.h,.m,.c,.cc,.cpp,.mm}",
+                "DataIRISPlugin-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_EventSampling_*awesome_*.a"
+            },
+            "public_header_files": "Plugins/sampling/**/public/*.h",
+            "name": "EventSampling",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_EventSampling_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRISPlugin/Util": [],
+                "DataIRISPlugin/Core": [],
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "Plugins/sampling/**/sources/**/*{.h,.m,.c,.cc,.cpp,.mm}",
+                "DataIRISPlugin-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_EventPrioritization_*awesome_*.a"
+            },
+            "public_header_files": "Plugins/prioritization/**/public/*.h",
+            "name": "EventPrioritization",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_EventPrioritization_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRISPlugin/Util": [],
+                "DataIRISPlugin/Core": [],
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "Plugins/prioritization/**/sources/**/*{.h,.m,.c,.cc,.cpp,.mm}",
+                "DataIRISPlugin-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_EventReplication_*awesome_*.a"
+            },
+            "public_header_files": "Plugins/replication/**/public/*.h",
+            "name": "EventReplication",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_EventReplication_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRISPlugin/EventPrioritization": [],
+                "DataIRISPlugin/Util": [],
+                "DataIRISPlugin/Core": []
+            },
+            "source_files": [
+                "Plugins/replication/**/sources/**/*{.h,.m,.c,.cc,.cpp,.mm}",
+                "DataIRISPlugin-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_EventFilter_*awesome_*.a"
+            },
+            "public_header_files": "Plugins/filter/**/public/*.h",
+            "name": "EventFilter",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_EventFilter_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/RemoteSettings": [],
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "Plugins/filter/**/sources/**/*{.h,.m,.c,.cc,.cpp,.mm}",
+                "DataIRISPlugin-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_EventObservable_*awesome_*.a"
+            },
+            "public_header_files": "Plugins/observable/**/public/*.h",
+            "name": "EventObservable",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_EventObservable_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "Plugins/observable/**/sources/**/*{.h,.m,.c,.cc,.cpp,.mm}",
+                "DataIRISPlugin-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_CompressionZSTD_*awesome_*.a"
+            },
+            "public_header_files": "Plugins/zstd/**/public/*.h",
+            "name": "CompressionZSTD",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_CompressionZSTD_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRISPlugin/Core": [],
+                "DataIRIS/Event": []
+            },
+            "source_files": [
+                "Plugins/zstd/**/sources/**/*{.h,.m,.c,.cc,.cpp,.mm}",
+                "DataIRISPlugin-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_CommonParameters_*awesome_*.a"
+            },
+            "public_header_files": "Plugins/common_params/**/public/*.h",
+            "name": "CommonParameters",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_CommonParameters_*awesome_*.a"
+            },
+            "dependencies": {
+                "DataIRISPlugin/Core": []
+            },
+            "source_files": [
+                "Plugins/common_params/**/sources/**/*{.h,.m,.c,.cc,.cpp,.mm}",
+                "DataIRISPlugin-bitdummy.m"
+            ]
+        }
+    ],
+    "prepare_command": "",
+    "description": "framework_description",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_DataIRISPlugin_*awesome_*.a"
+    },
+    "testspecs": [
+        {
+            "test_type": "unit",
+            "name": "Tests",
+            "source_files": [
+                "DataIRIS/**/tests/**/*.*"
+            ]
+        }
+    ],
+    "authors": {
+        "Vincent.Feng": "fengchengqi@bytedance.com"
+    },
+    "name": "DataIRISPlugin",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "summary": "framework_summary",
+    "requires_arc": true
+}
