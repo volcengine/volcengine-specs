@@ -40,13 +40,6 @@
     "repoId": "28296",
     "subspecs": [
         {
-            "vendored_frameworks": "VEVideoKit/boringssl/*.framework",
-            "preserve_paths": [
-                "**/*.bwp"
-            ],
-            "ios": {
-                "vendored_libraries": "ios-arch-iphone/*_boringssl_*awesome_*.a"
-            },
             "name": "boringssl",
             "source_files": [
                 "VEVideoKit-bitdummy.m"
