@@ -366,8 +366,14 @@
     spec.subspec 'LivePush-Base-VE' do |subspec|
       subspec.public_header_files = [
         'TTSDK/LiveStreamFramework/prj/ios/LiveStreamFramework/**/*.h',
+        'TTSDK/LiveStreamFramework/avframework/src/cpp/auto_generated/*.h',
         'TTSDK/LiveStreamFramework/prj/ios/LiveStreamAudioEffect/**/*.h',
         'TTSDK/LiveCore/**/*.h',
+      ]
+      subspec.private_header_files = [
+        # 'TTSDK/LiveStreamFramework/LiveIO/**/*.h',
+        'TTSDK/LiveStreamFramework/avframework/src/cpp/third_party/byterts/**/*.h',
+        'TTSDK/LiveStreamFramework/avframework/src/cpp/third_party/webrtc/**/*.h',
       ]
       subspec.source_files = [
         'TTSDK/LiveCore/**/*.h',
@@ -394,6 +400,7 @@
       subspec.dependency "TTSDK/Encode/vc1"
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/TTFFmpeg-VE'
+      subspec.dependency 'TTSDK/Quic/Push'
       subspec.libraries = 'stdc++'
       subspec.dependency 'TTSDK/BMF'
     end
