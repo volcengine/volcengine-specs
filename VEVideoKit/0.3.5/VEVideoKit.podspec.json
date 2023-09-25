@@ -53,33 +53,6 @@
             ]
         },
         {
-            "vendored_libraries": [
-                "VEVideoKit/TTNetworkManager/**/*.a"
-            ],
-            "name": "TTNetworkManager",
-            "preserve_paths": [
-                "**/*.bwp"
-            ],
-            "ios": {
-                "vendored_libraries": "ios-arch-iphone/*_TTNetworkManager_*awesome_*.a"
-            },
-            "libraries": [
-                "c++",
-                "resolv",
-                "sscronet"
-            ],
-            "dependencies": {
-                "VEVideoKit/boringssl": [],
-                "OneKit/BaseKit": [],
-                "Godzippa": [
-                    "2.1.1"
-                ]
-            },
-            "source_files": [
-                "VEVideoKit-bitdummy.m"
-            ]
-        },
-        {
             "vendored_frameworks": [
                 "VEVideoKit/byteaudio.xcframework",
                 "VEVideoKit/RealXBase.xcframework"
