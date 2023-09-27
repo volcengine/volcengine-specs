@@ -488,7 +488,7 @@
         ss.vendored_frameworks = 'TTSDK/libbytevc0enc/lib/h264.framework'
       end
       subspec.subspec 'vc1' do |ss|
-        ss.vendored_frameworks = 'TTSDK/ByteRtcSDK/h265enc.xcframework'
+        ss.vendored_frameworks = 'TTSDK/ByteRtcSDK/lib/h265enc.xcframework'
       end
     end
 
