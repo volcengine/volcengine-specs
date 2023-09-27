@@ -53,6 +53,18 @@
       subspec.dependency 'TTSDK/SSL'
     end
 
+    spec.subspec 'VolcLog-VE' do |subspec|
+      subspec.vendored_frameworks = [
+        'TTSDK/VolcBaseLog/*.framework',
+        'TTSDK/VolcBaseLog/*.xcframework',
+      ]
+      subspec.vendored_libraries = [
+        'TTSDK/VolcBaseLogiOS/ios-arch-iphone/libVolcBaseLogiOS_VolcBaseLogiOS_ios.a',
+      ]
+      subspec.dependency 'VEVideoKit/boringssl'
+      subspec.libraries = 'stdc++', 'z', 'xml2', 'iconv'
+    end
+
     spec.subspec "Effect" do |subspec|
       subspec.public_header_files = [
         "TTSDK/VCloudPandora/**/TTSDKEffectManager.h",
@@ -274,11 +286,15 @@
         'TTSDK/TTVideoLive/**/libTTVideoLive_Wrapper_ios.a',
         'TTSDK/TTVideoLive/**/libTTVideoLive_VideoProcessing_ios.a',
         'TTSDK/TTVideoLive/**/libTTVideoLive_VR_ios.a',
+        'TTSDK/TTVideoLive/**/libTTVideoLive_VolcLog_ios.a',
+        'TTSDK/TTVideoLive/**/libTTVideoLive_Settings_ios.a',
+        'TTSDK/TTReachability/**/libTTReachability_TTReachability_ios.a',
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePull_ios.a',
       ]
       subspec.dependency 'TTSDK/LiveSettings'
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore-VE'
+      subspec.dependency 'TTSDK/VolcLog-VE'
       subspec.dependency 'TTSDK/LiveBase'
       subspec.frameworks = [
         'MetalPerformanceShaders'
@@ -364,8 +380,13 @@
     spec.subspec 'LivePush-Base-VE' do |subspec|
       subspec.public_header_files = [
         'TTSDK/LiveStreamFramework/prj/ios/LiveStreamFramework/**/*.h',
+        'TTSDK/LiveStreamFramework/avframework/src/cpp/auto_generated/*.h',
         'TTSDK/LiveStreamFramework/prj/ios/LiveStreamAudioEffect/**/*.h',
         'TTSDK/LiveCore/**/*.h',
+      ]
+      subspec.private_header_files = [
+        'TTSDK/LiveStreamFramework/avframework/src/cpp/third_party/byterts/**/*.h',
+        'TTSDK/LiveStreamFramework/avframework/src/cpp/third_party/webrtc/**/*.h',
       ]
       subspec.source_files = [
         'TTSDK/LiveCore/**/*.h',
@@ -373,7 +394,7 @@
       ]
       subspec.vendored_libraries = [
         'TTSDK/LiveCore/**/*.a',
-        "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_{base,glbase,session,webrtc,_base_webrtc,ntp,audio-effect}_ios.a",
+        "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_{base,glbase,session,webrtc,_base_webrtc,ntp,audio-effect,disklog,effect,effect-wrapper,camera,volc_base_log,di}_ios.a",
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePush_ios.a',
         'TTSDK/libyuv-iOS/**/*.a'
       ]
@@ -388,14 +409,21 @@
         'imageIO',
         'MetalPerformanceShaders'
       ]
-      subspec.dependency "TTSDK/Encode/vc0"
-      subspec.dependency "TTSDK/Encode/vc1"
+
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/TTFFmpeg-VE'
+      subspec.dependency 'TTSDK/LiveSettings'
+      subspec.dependency 'VEVideoKit/VolcEngineAudio'
+      subspec.dependency 'TTSDK/VolcLog-VE'
+      subspec.dependency 'TTSDK/Quic/Push'
       subspec.libraries = 'stdc++'
+      subspec.dependency 'TTVideoEditor', '11.8.1.83-D'
+      subspec.dependency "TTSDK/Encode-VE/vc0"
+      subspec.dependency "TTSDK/Encode-VE/vc1"
       subspec.dependency 'TTSDK/BMF'
+      subspec.dependency 'TTSDK/LiveBase'
+      subspec.dependency 'TTSDK/TTNet-VE'
     end
-    
 
     spec.subspec 'LivePush-RTC' do |subspec|
       subspec.vendored_libraries = [
@@ -411,6 +439,12 @@
       subspec.dependency 'TTSDK/TTNet'
     end
 
+    spec.subspec 'LivePush-RTMPS-VE' do |subspec|
+      subspec.vendored_libraries = [
+        "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_rtmps_ios.a"
+      ]
+      subspec.dependency 'TTSDK/TTNet-VE'
+    end
     
     spec.subspec 'LivePush-RTC-VE' do |subspec|
       subspec.vendored_libraries = [
@@ -455,6 +489,15 @@
       end
       subspec.subspec 'vc1' do |ss|
         ss.vendored_frameworks = 'TTSDK/ByteRtcSDK/lib/h265enc.xcframework'
+      end
+    end
+
+    spec.subspec 'Encode-VE' do |subspec|
+      subspec.subspec 'vc0' do |ss|
+        ss.vendored_frameworks = 'TTSDK/libbytevc0enc/lib/h264.framework'
+      end
+      subspec.subspec 'vc1' do |ss|
+        ss.vendored_frameworks = 'VolcEngineRTC-VE'
       end
     end
 
@@ -514,7 +557,7 @@
       subspec.dependency 'TTSDK/Core'
       subspec.dependency 'TTSDK/PlayerCore-VE'
       subspec.dependency 'TTSDK/VCN'
-      subspec.dependency 'TTSDK/VolcLog'
+      subspec.dependency 'TTSDK/VolcLog-VE'
       subspec.weak_frameworks = ['MetricKit']
     end
 
