@@ -35,6 +35,7 @@
       subspec.libraries = 'stdc++'
     end
 
+
     spec.subspec 'TTFFmpeg' do |subspec|
       subspec.vendored_libraries = [
         'TTSDK/boringssl/**/*.a',
