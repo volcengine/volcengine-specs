@@ -28,10 +28,10 @@ Pod::Spec.new do |spec|
 
   spec.subspec "AppLog" do |subspec|
     unless $DoNotInstallApplogVersion == "6.13.0"
-      subspec.dependency 'RangersAppLog/Core', '~> 6.13.0'
-      subspec.dependency 'RangersAppLog/Host/CN', '~> 6.13.0'
+      subspec.dependency "RangersAppLog/Core", "~> 6.13.0"
+      subspec.dependency "RangersAppLog/Host/CN", "~> 6.13.0"
     end
-    subspec.source_files = ''
+    subspec.source_files = ""
   end
 
   spec.subspec "Video" do |subspec|
@@ -45,13 +45,14 @@ Pod::Spec.new do |spec|
     ]
     subspec.vendored_frameworks = [
       "TTSDKFramework.framework",
+      "TTSDKFramework.xcframework",
       "TTFFmpeg.framework",
       "libvcn.framework",
       "ffmpeg_dashdec.framework",
     ]
     subspec.dependency "TTSDKFramework/Base"
     subspec.dependency "TTSDKFramework/AppLog"
-    subspec.weak_frameworks = 'CoreGraphics', 'CoreTelephony', 'VideoToolbox', 'AudioToolbox', 'CoreMedia', 'Metal', 'MetalKit', 'MetalPerformanceShaders', 'CoreFoundation', 'CoreVideo', 'IOSurface', 'QuartzCore', 'CoreImage', 'OpenGLES'
+    subspec.weak_frameworks = "CoreGraphics", "CoreTelephony", "VideoToolbox", "AudioToolbox", "CoreMedia", "Metal", "MetalKit", "MetalPerformanceShaders", "CoreFoundation", "CoreVideo", "IOSurface", "QuartzCore", "CoreImage", "OpenGLES"
   end
 
   spec.subspec "Push" do |subspec|
@@ -99,7 +100,7 @@ Pod::Spec.new do |spec|
     ]
     subspec.dependency "TTSDKFramework/Base"
     subspec.dependency "TTSDKFramework/AppLog"
-    subspec.weak_frameworks = 'CoreGraphics', 'CoreTelephony', 'VideoToolbox', 'AudioToolbox', 'CoreMedia', 'Metal', 'MetalKit', 'MetalPerformanceShaders', 'CoreFoundation', 'CoreVideo', 'IOSurface', 'QuartzCore', 'CoreImage', 'OpenGLES'
+    subspec.weak_frameworks = "CoreGraphics", "CoreTelephony", "VideoToolbox", "AudioToolbox", "CoreMedia", "Metal", "MetalKit", "MetalPerformanceShaders", "CoreFoundation", "CoreVideo", "IOSurface", "QuartzCore", "CoreImage", "OpenGLES"
   end
 
   spec.subspec "Pull" do |subspec|
@@ -122,7 +123,7 @@ Pod::Spec.new do |spec|
     ]
     subspec.dependency "TTSDKFramework/Base"
     subspec.dependency "TTSDKFramework/AppLog"
-    subspec.weak_frameworks = 'CoreGraphics', 'CoreTelephony', 'VideoToolbox', 'AudioToolbox', 'CoreMedia', 'Metal', 'MetalKit', 'MetalPerformanceShaders', 'CoreFoundation', 'CoreVideo', 'IOSurface', 'QuartzCore', 'CoreImage', 'OpenGLES'
+    subspec.weak_frameworks = "CoreGraphics", "CoreTelephony", "VideoToolbox", "AudioToolbox", "CoreMedia", "Metal", "MetalKit", "MetalPerformanceShaders", "CoreFoundation", "CoreVideo", "IOSurface", "QuartzCore", "CoreImage", "OpenGLES"
   end
 
   spec.subspec "RtmPull" do |subspec|
@@ -144,11 +145,11 @@ Pod::Spec.new do |spec|
       "VolcEngineRTC.framework",
       "VolcEngineRTC.xcframework",
       "libvcn.framework",
-      "ByteRtsEngineKit.framework"
+      "ByteRtsEngineKit.framework",
     ]
     subspec.dependency "TTSDKFramework/Base"
     subspec.dependency "TTSDKFramework/AppLog"
-    subspec.weak_frameworks = 'CoreGraphics', 'CoreTelephony', 'VideoToolbox', 'AudioToolbox', 'CoreMedia', 'Metal', 'MetalKit', 'MetalPerformanceShaders', 'CoreFoundation', 'CoreVideo', 'IOSurface', 'QuartzCore', 'CoreImage', 'OpenGLES'
+    subspec.weak_frameworks = "CoreGraphics", "CoreTelephony", "VideoToolbox", "AudioToolbox", "CoreMedia", "Metal", "MetalKit", "MetalPerformanceShaders", "CoreFoundation", "CoreVideo", "IOSurface", "QuartzCore", "CoreImage", "OpenGLES"
   end
 
   spec.subspec "Image" do |subspec|
