@@ -39,7 +39,7 @@ spec.static_framework = true
 spec.subspec "ToB" do |tob|
     # ToB 公用依赖
     # 此处的依赖实际是需要增加版本号的
-    tob.dependency "DouyinSDK/Init", '>= 2.3.4.2'
+    tob.dependency "DouyinSDK/Init", '2.3.4.2'
     tob.dependency "DouyinSDK/Services/Security"
     tob.dependency "DouyinSDK/Services/APM"
     tob.dependency "DouyinSDK/Services/AppLog"
@@ -60,7 +60,7 @@ spec.subspec "ToB" do |tob|
     # ToB 小视频
     tob.subspec "Media" do |media|
         media.dependency 'MetaAD', '1.0.0.3'
-        media.dependency "AwemeOpenSDK/TemplateToB", '>= 2.3.4.2'
+        media.dependency "AwemeOpenSDK/TemplateToB", '2.3.4.2'
         # TTSDKFramework 接入方式适配
         unless $DouyinSDKUseTTSDKFramework == true
           media.dependency "TTSDK/Player"
