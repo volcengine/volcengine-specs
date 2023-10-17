@@ -242,7 +242,7 @@
     spec.subspec 'LivePull-VE' do |subspec|
       subspec.public_header_files = [
         'TTSDK/VCloudPandora/**/{TTLiveURLComposer,TVLPlayerItem+TTSDK,TVLManager+External}.h',
-        'TTSDK/TTVideoLive/TTVideoLiv VEe/Classes/**/*.h',
+        'TTSDK/TTVideoLive/TTVideoLive/Classes/**/*.h',
         'TTSDK/TTVideoLive/TTVideoLive/VideoProcessing/**/*.h',
         'TTSDK/TTVideoLive/TTVideoLive/VR/**/*.h',
       ]
