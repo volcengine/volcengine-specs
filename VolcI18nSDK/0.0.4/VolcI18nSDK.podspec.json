@@ -1,0 +1,68 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "default_subspecs": [
+        "Core"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "source_files": [
+        "VolcI18nSDK-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_VolcI18nSDK_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VolcI18nSDK/0.0.4/VolcI18nSDK.framework.tar.xz"
+    },
+    "version": "0.0.4",
+    "authors": {
+        "hexin.00": "hexin.00@bytedance.com"
+    },
+    "pod_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "VOLCI18N_SPEC_VERSION=@\\\"0.0.1\\\""
+    },
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "repoId": "35768",
+    "subspecs": [
+        {
+            "public_header_files": [
+                "VolcI18nManager.h"
+            ],
+            "private_header_files": "VolcI18nSDK/Classes/Categories/**/*.{h}",
+            "name": "Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "dependencies": {
+                "Smartling.i18n": [],
+                "mars_gecko_ios": [
+                    "2.0.14-volci18n"
+                ]
+            },
+            "source_files": [
+                "VolcI18nSDK/Classes/Common/**/*.{h,m,mm,txt}",
+                "VolcI18nSDK/Classes/Categories/**/*.{h,m}",
+                "VolcI18nSDK-bitdummy.m"
+            ]
+        }
+    ],
+    "name": "VolcI18nSDK"
+}
