@@ -5,8 +5,8 @@
     "description": "APMInsight iOS SDK, a tool to monitor APP performance.",
     "homepage": "https://github.com/volcengine/APMInsight_iOS",
     "license": {
-        "type": "MIT",
-        "file": "RangersAPM/LICENSE"
+        "type": "Copyright",
+        "text": "Bytedance copyright"
     },
     "authors": "ByteDance",
     "platforms": {
@@ -183,6 +183,6 @@
         }
     ],
     "source": {
-        "http": "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.0.0/RangersAPM.zip"
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/RangersAPM/2.0.0/RangersAPM.zip"
     }
 }
