@@ -1,0 +1,732 @@
+{
+    "osx": {
+        "vendored_libraries": "ios-arch-osx/*_RangersAppLog_*awesome_*.a"
+    },
+    "default_subspecs": [
+        "Host",
+        "Core",
+        "Log"
+    ],
+    "static_framework": true,
+    "platforms": {
+        "osx": "10.10",
+        "ios": "9.0"
+    },
+    "pod_target_xcconfig": {
+        "BITCODE_GENERATION_MODE": "bitcode",
+        "DEFINES_MODULE": "YES"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/RangersAppLog/6.16.1.1-bugfix/RangersAppLog.framework.tar.xz"
+    },
+    "version": "6.16.1.1-bugfix",
+    "source_files": [
+        "RangersAppLog-bitdummy.m"
+    ],
+    "homepage": "https://github.com/bytedance/RangersAppLog",
+    "repoId": "20317",
+    "subspecs": [
+        {
+            "osx": {
+                "frameworks": "AppKit",
+                "vendored_libraries": "ios-arch-osx/*_Core_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/Core/Core/Header/*.h",
+            "name": "Core",
+            "resource_bundles": {
+                "RangersAppLog": [
+                    "BDAutoTracker/Asserts/Core/*.js"
+                ]
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "frameworks": "UIKit",
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "libraries": [
+                "z",
+                "sqlite3"
+            ],
+            "frameworks": [
+                "CoreGraphics",
+                "Foundation",
+                "Security",
+                "CoreTelephony",
+                "CoreFoundation",
+                "SystemConfiguration",
+                "WebKit"
+            ],
+            "dependencies": {
+                "RangersAppLog/Encryptor/VOLC": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/Core/**/**/*.{h,m,c}",
+                "RangersAppLog-bitdummy.m"
+            ],
+            "exclude_files": [
+                "BDAutoTracker/Classes/Core/Network/BDAutoTrackNetworkResponse.{h,m}"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Host_*awesome_*.a"
+            },
+            "name": "Host",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Host_*awesome_*.a"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "RangersAppLog-bitdummy.m"
+            ],
+            "subspecs": [
+                {
+                    "osx": {
+                        "vendored_libraries": "ios-arch-osx/*_CN_*awesome_*.a"
+                    },
+                    "public_header_files": [
+                        "BDAutoTracker/Classes/Host/CN/*.h"
+                    ],
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_CN_*awesome_*.a"
+                    },
+                    "name": "CN",
+                    "source_files": [
+                        "BDAutoTracker/Classes/Host/CN/**/*.{h,m}",
+                        "RangersAppLog-bitdummy.m"
+                    ]
+                },
+                {
+                    "osx": {
+                        "vendored_libraries": "ios-arch-osx/*_SG_*awesome_*.a"
+                    },
+                    "public_header_files": [
+                        "BDAutoTracker/Classes/Host/SG/*.h"
+                    ],
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_SG_*awesome_*.a"
+                    },
+                    "name": "SG",
+                    "source_files": [
+                        "BDAutoTracker/Classes/Host/SG/**/*.{h,m}",
+                        "RangersAppLog-bitdummy.m"
+                    ]
+                },
+                {
+                    "osx": {
+                        "vendored_libraries": "ios-arch-osx/*_VA_*awesome_*.a"
+                    },
+                    "public_header_files": [
+                        "BDAutoTracker/Classes/Host/VA/*.h"
+                    ],
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_VA_*awesome_*.a"
+                    },
+                    "name": "VA",
+                    "source_files": [
+                        "BDAutoTracker/Classes/Host/VA/**/*.{h,m}",
+                        "RangersAppLog-bitdummy.m"
+                    ]
+                }
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Unique_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/Unique/Public/*.h",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "name": "Unique",
+            "frameworks": "AdSupport",
+            "weak_frameworks": "AppTrackingTransparency",
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Unique_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/Unique/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_CAID_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/CAID/Header/*.h",
+            "name": "CAID",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_CAID_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/GlobalRemoteID": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/CAID/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_ASA_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/ASA/*.h",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "name": "ASA",
+            "frameworks": "iAd",
+            "weak_frameworks": "AdServices",
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_ASA_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/ASA/*.{h,m}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Flags_*awesome_*.a"
+            },
+            "name": "Flags",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Flags_*awesome_*.a"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "RangersAppLog-bitdummy.m"
+            ],
+            "subspecs": [
+                {
+                    "osx": {
+                        "vendored_libraries": "ios-arch-osx/*_DisableiAd_*awesome_*.a"
+                    },
+                    "public_header_files": "BDAutoTracker/Classes/Flags/DisableiAd/*.h",
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_DisableiAd_*awesome_*.a"
+                    },
+                    "name": "DisableiAd",
+                    "source_files": [
+                        "BDAutoTracker/Classes/Flags/DisableiAd/*.{h,m}",
+                        "RangersAppLog-bitdummy.m"
+                    ]
+                }
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Log_*awesome_*.a"
+            },
+            "private_header_files": "BDAutoTracker/Classes/Log/**/*.h",
+            "name": "Log",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Log_*awesome_*.a"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/Log/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_ET_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/ET/*.h",
+            "name": "ET",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_ET_*awesome_*.a"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/ET/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Filter_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/Filter/*.h",
+            "name": "Filter",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Filter_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/Filter/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_UITracker_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/UITracker/Header/*.h",
+            "name": "UITracker",
+            "frameworks": "WebKit",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_UITracker_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/UITracker/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Location_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/Location/Header/*.h",
+            "name": "Location",
+            "frameworks": "CoreLocation",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Location_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/Location/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Picker_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/Picker/Header/*.h",
+            "name": "Picker",
+            "frameworks": "CoreText",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Picker_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/UITracker": [],
+                "RangersAppLog/Log": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/Picker/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_DeviceOrientation_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/DeviceOrientation/**/*.h",
+            "name": "DeviceOrientation",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_DeviceOrientation_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/DeviceOrientation/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Exception_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/Exception/**/*.h",
+            "name": "Exception",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Exception_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/Exception/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_OSX_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/OSX/Headers/*.h",
+            "vendored_libraries": "BDAutoTracker/Classes/OSX/Classes/OneKit/Vendor/*.a",
+            "name": "OSX",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OSX_*awesome_*.a"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/OSX/**/*.{h,m,c,mm}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_CBridge_*awesome_*.a"
+            },
+            "public_header_files": "BDAutoTracker/Classes/CBridge/*.h",
+            "name": "CBridge",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_CBridge_*awesome_*.a"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/CBridge/*.{h,m}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_VolMetaSecML_*awesome_*.a"
+            },
+            "public_header_files": [
+                "BDAutoTracker/Classes/VolMetaSecML/RALSecML.h"
+            ],
+            "name": "VolMetaSecML",
+            "frameworks": "CoreMotion",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_VolMetaSecML_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/VolMetaSecML/RALSecML.{h,m}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Exposure_*awesome_*.a"
+            },
+            "public_header_files": [
+                "BDAutoTracker/Classes/Exposure/Sources/BDAutoTrackExposure.h"
+            ],
+            "name": "Exposure",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Exposure_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": [],
+                "RangersAppLog/UITracker": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/Exposure/Sources/*.{h,m}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Scroll_*awesome_*.a"
+            },
+            "public_header_files": [
+                "BDAutoTracker/Classes/Scroll/Sources/Public/*.h"
+            ],
+            "name": "Scroll",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Scroll_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": [],
+                "RangersAppLog/UITracker": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/Scroll/Sources/**/*.{h,m}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_DevTools_*awesome_*.a"
+            },
+            "public_header_files": [
+                "BDAutoTracker/Classes/DevTools/Sources/Public/*.h"
+            ],
+            "name": "DevTools",
+            "resource_bundles": {
+                "RangersAppLogDevTools": [
+                    "BDAutoTracker/Classes/DevTools/Assets/*.*"
+                ]
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_DevTools_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/DevTools/Sources/**/*.{h,m}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_Encryptor_*awesome_*.a"
+            },
+            "name": "Encryptor",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Encryptor_*awesome_*.a"
+            },
+            "platforms": {
+                "ios": "9.0"
+            },
+            "source_files": [
+                "RangersAppLog-bitdummy.m"
+            ],
+            "subspecs": [
+                {
+                    "osx": {
+                        "vendored_libraries": "ios-arch-osx/*_VOLC_*awesome_*.a"
+                    },
+                    "public_header_files": [
+                        "BDAutoTracker/Classes/Encryptor/Volc/Sources/BDAutoTrackEncryptor.h"
+                    ],
+                    "name": "VOLC",
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_VOLC_*awesome_*.a"
+                    },
+                    "vendored_frameworks": "BDAutoTracker/Classes/Encryptor/Volc/Vendor/VolcEngineEncryptor.xcframework",
+                    "source_files": [
+                        "BDAutoTracker/Classes/Encryptor/Volc/Sources/*.{h,m}",
+                        "RangersAppLog-bitdummy.m"
+                    ]
+                },
+                {
+                    "osx": {
+                        "vendored_libraries": "ios-arch-osx/*_SM2_*awesome_*.a"
+                    },
+                    "public_header_files": [
+                        "BDAutoTracker/Classes/Encryptor/SM2/Sources/BDAutoTrackEncryptorSM2.h"
+                    ],
+                    "name": "SM2",
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_SM2_*awesome_*.a"
+                    },
+                    "vendored_frameworks": "BDAutoTracker/Classes/Encryptor/SM2/Vendor/openssl.framework",
+                    "source_files": [
+                        "BDAutoTracker/Classes/Encryptor/SM2/Sources/*.{h,m}",
+                        "BDAutoTracker/Classes/Encryptor/SM2/Sources/GMObjC/*.{h,m}",
+                        "RangersAppLog-bitdummy.m"
+                    ]
+                }
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_OneID_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_OneID_*awesome_*.a"
+            },
+            "name": "OneID",
+            "source_files": [
+                "BDAutoTracker/Classes/OneID/Sources/*.{h,m}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_TrackID_*awesome_*.a"
+            },
+            "public_header_files": [
+                "BDAutoTracker/Classes/TrackID/Sources/Public/*.h"
+            ],
+            "name": "TrackID",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_TrackID_*awesome_*.a"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "source_files": [
+                "BDAutoTracker/Classes/TrackID/Sources/**/*.{h,m}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        },
+        {
+            "osx": {
+                "vendored_libraries": "ios-arch-osx/*_GlobalRemoteID_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_GlobalRemoteID_*awesome_*.a"
+            },
+            "name": "GlobalRemoteID",
+            "source_files": [
+                "BDAutoTracker/Classes/GlobalRemoteID/Sources/*.{h,m}",
+                "RangersAppLog-bitdummy.m"
+            ]
+        }
+    ],
+    "prepare_command": "",
+    "description": "framework_description",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_RangersAppLog_*awesome_*.a"
+    },
+    "testspecs": [
+        {
+            "name": "Tests",
+            "test_type": "unit",
+            "dependencies": {
+                "RangersAppLog/Picker": [],
+                "XcodeCoverage": [
+                    ">= 1.3.2"
+                ],
+                "OCMock": [
+                    "~> 3.8.1"
+                ],
+                "RangersAppLog/Filter": [],
+                "RangersAppLog/ET": []
+            },
+            "requires_app_host": false,
+            "source_files": "BDAutoTracker/Tests/**/*.{h,m}",
+            "resource_bundles": {
+                "RangersAppLog-Tests": [
+                    "BDAutoTracker/Tests/*.plist"
+                ]
+            }
+        }
+    ],
+    "authors": {
+        "zhangtianfu": "zhangtianfu@bytedance.com"
+    },
+    "name": "RangersAppLog",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "summary": "framework_summary",
+    "requires_arc": true
+}
