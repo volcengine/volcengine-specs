@@ -1,0 +1,40 @@
+{
+    "name": "SpeechEngineToB",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "requires_arc": true,
+    "ios": {
+        "frameworks": [
+            "AudioToolbox",
+            "AVFoundation",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/SpeechEngineToB.framework"
+    },
+    "summary": "framework_summary",
+    "libraries": [
+        "c++",
+        "z"
+    ],
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/SpeechEngineToB/0.0.1-alpha.5/SpeechEngineToB_swift5_1_3_framework.tar.xz"
+    },
+    "version": "0.0.1-alpha.5",
+    "dependencies": {
+        "TTNetworkManager": [
+            "5.0.29.22"
+        ]
+    },
+    "authors": "Bytedance, Inc.",
+    "static_framework": false,
+    "homepage": "http://toutiao.com",
+    "repoId": "41718",
+    "description": "framework_description"
+}
