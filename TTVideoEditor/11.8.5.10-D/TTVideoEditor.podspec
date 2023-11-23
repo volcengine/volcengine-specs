@@ -14,7 +14,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target    = '8.0'
   s.ios.vendored_framework   = 'ios/TTVideoEditor.framework'
   s.ios.frameworks = ["AVFoundation", "Foundation", "UIKit", "CoreTelephony", "AudioToolbox", "CoreMotion", "MediaToolbox", "GLKit", "OpenGLES", "Accelerate", "VideoToolbox", "CoreMedia", "MobileCoreServices", "CoreGraphics", "CoreVideo", "CoreImage", "ImageIO", "QuartzCore"]
-s.pod_target_xcconfig = { "VALID_ARCHS" => "armv7 arm64" }
+s.pod_target_xcconfig = { "VALID_ARCHS" => "armv7 arm64 x86_64" }
 end
- # shell_commit=2e48e8a3054d7e3fcb7943d9730dcef11b4bec5d
  
