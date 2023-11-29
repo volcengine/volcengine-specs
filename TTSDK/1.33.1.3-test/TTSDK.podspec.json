@@ -1,0 +1,863 @@
+{
+    "name": "TTSDK",
+    "version": "1.33.1.3-test",
+    "summary": "A comprehensive multimedia SDK.",
+    "description": "A comprehensive multimedia SDK which provides live streaming, VOD and the other related abilities.",
+    "homepage": "https://github.com/volcengine/TTSDK-iOS",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "chenzhaojie": "chenzhaojie@bytedance.com"
+    },
+    "platforms": {
+        "ios": "11.0"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/TTSDK/1.33.1.3-test/TTSDK.zip"
+    },
+    "default_subspecs": [
+        "Core",
+        "Effect",
+        "TTFFmpeg",
+        "PlayerCore",
+        "LivePull",
+        "LivePush",
+        "Player",
+        "Image"
+    ],
+    "static_framework": true,
+    "subspecs": [
+        {
+            "name": "Core",
+            "public_header_files": [
+                "TTSDK/VCloudPandora/**/TTSDKManager.h"
+            ],
+            "source_files": [
+                "TTSDK/VCloudPandora/**/TTSDKManager.h",
+                "TTSDK/TTSDK_Dummy/TTSDK_Module_Dummy.m"
+            ],
+            "vendored_libraries": [
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_Core_ios.a",
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_CN_ios.a",
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_SG_ios.a"
+            ],
+            "dependencies": {
+                "RangersAppLog/Core": [
+                    "~> 6.15.1"
+                ],
+                "RangersAppLog/Host/CN": [
+                    "~> 6.15.1"
+                ]
+            },
+            "libraries": "stdc++"
+        },
+        {
+            "name": "VolcLog",
+            "vendored_frameworks": [
+                "TTSDK/VolcBaseLog/*.framework",
+                "TTSDK/VolcBaseLog/*.xcframework"
+            ],
+            "vendored_libraries": [
+                "TTSDK/VolcBaseLogiOS/ios-arch-iphone/libVolcBaseLogiOS_VolcBaseLogiOS_ios.a"
+            ],
+            "dependencies": {
+                "TTSDK/SSL": []
+            }
+        },
+        {
+            "name": "VolcLog-VE",
+            "vendored_frameworks": [
+                "TTSDK/VolcBaseLog/*.framework",
+                "TTSDK/VolcBaseLog/*.xcframework"
+            ],
+            "vendored_libraries": [
+                "TTSDK/VolcBaseLogiOS/ios-arch-iphone/libVolcBaseLogiOS_VolcBaseLogiOS_ios.a"
+            ],
+            "dependencies": {
+                "VEVideoKit/boringssl": []
+            },
+            "libraries": [
+                "stdc++",
+                "z",
+                "xml2",
+                "iconv"
+            ]
+        },
+        {
+            "name": "Effect",
+            "public_header_files": [
+                "TTSDK/VCloudPandora/**/TTSDKEffectManager.h"
+            ],
+            "source_files": [
+                "TTSDK/VCloudPandora/**/TTSDKEffectManager.h"
+            ],
+            "vendored_libraries": [
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_Effect_ios.a"
+            ],
+            "pod_target_xcconfig": {
+                "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) TTSDK_ENABLE_EFFECT=1"
+            },
+            "libraries": "stdc++",
+            "frameworks": "Accelerate"
+        },
+        {
+            "name": "Tools",
+            "vendored_libraries": [
+                "TTSDK/lib_h_dec/**/*.a",
+                "TTSDK/BVCParser/**/*.a"
+            ],
+            "dependencies": {
+                "TTSDK/SSL": []
+            }
+        },
+        {
+            "name": "SSL",
+            "vendored_frameworks": [
+                "TTSDK/boringssl/*.framework"
+            ],
+            "libraries": [
+                "stdc++",
+                "z",
+                "xml2",
+                "iconv"
+            ]
+        },
+        {
+            "name": "Tools-VE",
+            "vendored_libraries": [
+                "TTSDK/lib_h_dec/**/*.a",
+                "TTSDK/BVCParser/**/*.a"
+            ],
+            "dependencies": {
+                "VEVideoKit/boringssl": []
+            },
+            "libraries": [
+                "stdc++",
+                "z",
+                "xml2",
+                "iconv"
+            ]
+        },
+        {
+            "name": "VCN",
+            "vendored_libraries": [
+                "TTSDK/VCNVCloudNetwork/**/*.a",
+                "TTSDK/protobuf_lite/**/*.a"
+            ],
+            "vendored_frameworks": [
+                "TTSDK/VCNVCloudNetwork/products/framework/*.framework"
+            ]
+        },
+        {
+            "name": "TTNet",
+            "vendored_libraries": [
+                "TTSDK/protobuf_lite/**/*.a",
+                "TTSDK/TTNetworkManager/**/*.a"
+            ],
+            "ios": {
+                "frameworks": [
+                    "JavaScriptCore"
+                ]
+            }
+        },
+        {
+            "name": "TTNet-VE",
+            "vendored_libraries": [
+                "TTSDK/protobuf_lite/**/*.a"
+            ],
+            "dependencies": {
+                "VEVideoKit/TTNetworkManager": []
+            }
+        },
+        {
+            "name": "VideoProcessor",
+            "public_header_files": [
+                "TTSDK/{videoprocessor}/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/{videoprocessor}/**/*.h"
+            ],
+            "vendored_libraries": [
+                "TTSDK/videoprocessor/**/*.a"
+            ],
+            "resources": [
+                "TTSDK/videoprocessor/videoprocessor/metal/processor.metallib"
+            ]
+        },
+        {
+            "name": "TTFFmpeg",
+            "vendored_frameworks": [
+                "TTSDK/TTFFmpeg/*.framework"
+            ],
+            "frameworks": [
+                "CoreMotion",
+                "CoreMedia",
+                "MetalKit",
+                "OpenAL",
+                "VideoToolBox",
+                "AudioToolBox",
+                "AVFoundation",
+                "SystemConfiguration"
+            ],
+            "dependencies": {
+                "TTSDK/Tools": []
+            }
+        },
+        {
+            "name": "TTFFmpeg-VE",
+            "frameworks": [
+                "CoreMotion",
+                "CoreMedia",
+                "MetalKit",
+                "OpenAL",
+                "VideoToolBox",
+                "AudioToolBox",
+                "AVFoundation",
+                "SystemConfiguration"
+            ],
+            "dependencies": {
+                "TTFFmpeg": [],
+                "TTSDK/Tools-VE": []
+            }
+        },
+        {
+            "name": "PlayerCore",
+            "public_header_files": [
+                "TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/{*}.h"
+            ],
+            "source_files": [
+                "TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/{*}.h"
+            ],
+            "vendored_libraries": [
+                "TTSDK/TTPlayerSDK/**/*.a"
+            ],
+            "vendored_frameworks": [
+                "TTSDK/ffmpeg_dashdec_iOS/*.framework"
+            ],
+            "resources": [
+                "TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib"
+            ],
+            "dependencies": {
+                "TTSDK/TTFFmpeg": [],
+                "TTSDK/VideoProcessor": []
+            }
+        },
+        {
+            "name": "PlayerCore-VE",
+            "public_header_files": [
+                "TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/{*}.h"
+            ],
+            "source_files": [
+                "TTSDK/TTPlayerSDK/TTPlayerSDK/TTPlayer/{*}.h"
+            ],
+            "vendored_libraries": [
+                "TTSDK/TTPlayerSDK/**/*.a"
+            ],
+            "vendored_frameworks": [
+                "TTSDK/ffmpeg_dashdec_iOS/*.framework"
+            ],
+            "resources": [
+                "TTSDK/TTPlayerSDK/TTPlayerSDK/Assets/ttplayer.metallib"
+            ],
+            "dependencies": {
+                "TTSDK/TTFFmpeg-VE": [],
+                "TTSDK/VideoProcessor": []
+            }
+        },
+        {
+            "name": "PlayerCore-SR",
+            "frameworks": [
+                "CoreML"
+            ],
+            "dependencies": {
+                "TTSDK/PlayerCore": [],
+                "TTSDK/BMF": []
+            }
+        },
+        {
+            "name": "BMF",
+            "vendored_libraries": [
+                "TTSDK/BMFMods/BMFMods/**/*.a",
+                "TTSDK/BMFSDK/BMF/**/*.a"
+            ],
+            "resources": [
+                "TTSDK/BMFMods/BMFMods/resource/**/*"
+            ],
+            "frameworks": [
+                "MetalPerformanceShaders"
+            ]
+        },
+        {
+            "name": "LivePull",
+            "public_header_files": [
+                "TTSDK/VCloudPandora/**/{TTLiveURLComposer,TVLPlayerItem+TTSDK,TVLManager+External}.h",
+                "TTSDK/TTVideoLive/TTVideoLive/Classes/**/*.h",
+                "TTSDK/TTVideoLive/TTVideoLive/VideoProcessing/**/*.h",
+                "TTSDK/TTVideoLive/TTVideoLive/VR/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/TTVideoLive/TTVideoLive/Classes/**/*.h",
+                "TTSDK/VCloudPandora/**/{TTLiveURLComposer,TVLPlayerItem+TTSDK,TVLManager+External}.h",
+                "TTSDK/TTVideoLive/TTVideoLive/VideoProcessing/**/*.h",
+                "TTSDK/TTVideoLive/TTVideoLive/VR/**/*.h"
+            ],
+            "vendored_libraries": [
+                "TTSDK/TTVideoLive/**/libTTVideoLive_Wrapper_ios.a",
+                "TTSDK/TTVideoLive/**/libTTVideoLive_VideoProcessing_ios.a",
+                "TTSDK/TTVideoLive/**/libTTVideoLive_VR_ios.a",
+                "TTSDK/TTVideoLive/**/libTTVideoLive_VolcLog_ios.a",
+                "TTSDK/TTVideoLive/**/libTTVideoLive_Settings_ios.a",
+                "TTSDK/TTReachability/**/libTTReachability_TTReachability_ios.a",
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePull_ios.a"
+            ],
+            "dependencies": {
+                "TTSDK/LiveSettings": [],
+                "TTSDK/Core": [],
+                "TTSDK/PlayerCore-SR": [],
+                "TTSDK/VolcLog": [],
+                "TTSDK/LiveBase": []
+            },
+            "frameworks": [
+                "MetalPerformanceShaders"
+            ]
+        },
+        {
+            "name": "LivePull-VE",
+            "public_header_files": [
+                "TTSDK/VCloudPandora/**/{TTLiveURLComposer,TVLPlayerItem+TTSDK,TVLManager+External}.h",
+                "TTSDK/TTVideoLive/TTVideoLive/Classes/**/*.h",
+                "TTSDK/TTVideoLive/TTVideoLive/VideoProcessing/**/*.h",
+                "TTSDK/TTVideoLive/TTVideoLive/VR/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/TTVideoLive/TTVideoLive/Classes/**/*.h",
+                "TTSDK/VCloudPandora/**/{TTLiveURLComposer,TVLPlayerItem+TTSDK,TVLManager+External}.h",
+                "TTSDK/TTVideoLive/TTVideoLive/VideoProcessing/**/*.h",
+                "TTSDK/TTVideoLive/TTVideoLive/VR/**/*.h"
+            ],
+            "vendored_libraries": [
+                "TTSDK/TTVideoLive/**/libTTVideoLive_Wrapper_ios.a",
+                "TTSDK/TTVideoLive/**/libTTVideoLive_VideoProcessing_ios.a",
+                "TTSDK/TTVideoLive/**/libTTVideoLive_VR_ios.a",
+                "TTSDK/TTVideoLive/**/libTTVideoLive_VolcLog_ios.a",
+                "TTSDK/TTVideoLive/**/libTTVideoLive_Settings_ios.a",
+                "TTSDK/TTReachability/**/libTTReachability_TTReachability_ios.a",
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePull_ios.a"
+            ],
+            "dependencies": {
+                "TTSDK/LiveSettings": [],
+                "TTSDK/Core": [],
+                "TTSDK/PlayerCore-VE": [],
+                "TTSDK/VolcLog-VE": [],
+                "TTSDK/LiveBase": []
+            },
+            "frameworks": [
+                "MetalPerformanceShaders"
+            ]
+        },
+        {
+            "name": "LiveBase",
+            "vendored_libraries": [
+                "TTSDK/LiveStreamStrategySDK/ios-arch-iphone/*.a",
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_VeLiveCore_ios.a",
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_Live-CN_ios.a",
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_Live-SG_ios.a"
+            ]
+        },
+        {
+            "name": "LivePull-RTS",
+            "vendored_libraries": [
+                "TTSDK/TTVideoLive/ios-arch-iphone/libTTVideoLive_RTC_ios.a"
+            ],
+            "dependencies": {
+                "TTSDK/ByteAudio": [],
+                "TTSDK/LivePull": [],
+                "TTSDK/RTS-Framework": []
+            }
+        },
+        {
+            "name": "LivePull-RTS-VE",
+            "vendored_libraries": [
+                "TTSDK/TTVideoLive/ios-arch-iphone/libTTVideoLive_RTC_ios.a"
+            ],
+            "vendored_frameworks": [
+                "TTSDK/ByteRtsSDK/*.framework"
+            ],
+            "dependencies": {
+                "TTSDK/LivePull-VE": [],
+                "VolcEngineRTC-VE": [],
+                "VEVideoKit/VolcEngineAudio": []
+            }
+        },
+        {
+            "name": "LivePush-Base",
+            "public_header_files": [
+                "TTSDK/LiveStreamFramework/prj/ios/LiveStreamFramework/**/*.h",
+                "TTSDK/LiveStreamFramework/avframework/src/cpp/auto_generated/*.h",
+                "TTSDK/LiveStreamFramework/prj/ios/LiveStreamAudioEffect/**/*.h",
+                "TTSDK/LiveCore/**/*.h"
+            ],
+            "private_header_files": [
+                "TTSDK/LiveStreamFramework/avframework/src/cpp/third_party/byterts/**/*.h",
+                "TTSDK/LiveStreamFramework/avframework/src/cpp/third_party/webrtc/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/LiveCore/**/*.h",
+                "TTSDK/LiveStreamFramework/**/*.h"
+            ],
+            "vendored_libraries": [
+                "TTSDK/LiveCore/**/*.a",
+                "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_{base,glbase,session,webrtc,_base_webrtc,ntp,audio-effect,disklog,effect,effect-wrapper,camera,volc_base_log,di}_ios.a",
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePush_ios.a",
+                "TTSDK/libyuv-iOS/**/*.a"
+            ],
+            "frameworks": [
+                "VideoToolBox",
+                "AudioToolBox",
+                "CoreMotion",
+                "CoreMedia",
+                "AVFoundation",
+                "SystemConfiguration",
+                "GLKit",
+                "imageIO",
+                "MetalPerformanceShaders",
+                "Accelerate"
+            ],
+            "dependencies": {
+                "TTSDK/Core": [],
+                "TTSDK/TTFFmpeg": [],
+                "TTSDK/LiveSettings": [],
+                "TTSDK/ByteAudio": [],
+                "TTSDK/VolcLog": [],
+                "TTSDK/Quic/Push": [],
+                "TTVideoEditor": [
+                    "11.8.1.83-D"
+                ],
+                "TTSDK/Encode/vc0": [],
+                "TTSDK/Encode/vc1": [],
+                "TTSDK/BMF": [],
+                "TTSDK/LiveBase": []
+            },
+            "libraries": "stdc++"
+        },
+        {
+            "name": "LivePush-Base-VE",
+            "public_header_files": [
+                "TTSDK/LiveStreamFramework/prj/ios/LiveStreamFramework/**/*.h",
+                "TTSDK/LiveStreamFramework/avframework/src/cpp/auto_generated/*.h",
+                "TTSDK/LiveStreamFramework/prj/ios/LiveStreamAudioEffect/**/*.h",
+                "TTSDK/LiveCore/**/*.h"
+            ],
+            "private_header_files": [
+                "TTSDK/LiveStreamFramework/avframework/src/cpp/third_party/byterts/**/*.h",
+                "TTSDK/LiveStreamFramework/avframework/src/cpp/third_party/webrtc/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/LiveCore/**/*.h",
+                "TTSDK/LiveStreamFramework/**/*.h"
+            ],
+            "vendored_libraries": [
+                "TTSDK/LiveCore/**/*.a",
+                "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_{base,glbase,session,webrtc,_base_webrtc,ntp,audio-effect,disklog,effect,effect-wrapper,camera,volc_base_log,di}_ios.a",
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePush_ios.a",
+                "TTSDK/libyuv-iOS/**/*.a"
+            ],
+            "frameworks": [
+                "VideoToolBox",
+                "AudioToolBox",
+                "CoreMotion",
+                "CoreMedia",
+                "AVFoundation",
+                "SystemConfiguration",
+                "GLKit",
+                "imageIO",
+                "MetalPerformanceShaders",
+                "Accelerate"
+            ],
+            "dependencies": {
+                "TTSDK/Core": [],
+                "TTSDK/TTFFmpeg-VE": [],
+                "TTSDK/LiveSettings": [],
+                "VEVideoKit/VolcEngineAudio": [],
+                "TTSDK/VolcLog-VE": [],
+                "TTSDK/Quic/Push": [],
+                "TTVideoEditor": [],
+                "TTSDK/Encode-VE/vc0": [],
+                "TTSDK/Encode-VE/vc1": [],
+                "TTSDK/BMF": [],
+                "TTSDK/LiveBase": [],
+                "TTSDK/TTNet-VE": []
+            },
+            "libraries": "stdc++"
+        },
+        {
+            "name": "LivePush-RTC",
+            "vendored_libraries": [
+                "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_base-ext_ios.a"
+            ],
+            "dependencies": {
+                "TTSDK/LivePush-Base": []
+            }
+        },
+        {
+            "name": "LivePush-RTMPS",
+            "vendored_libraries": [
+                "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_rtmps_ios.a"
+            ],
+            "dependencies": {
+                "TTSDK/TTNet": []
+            }
+        },
+        {
+            "name": "LivePush-RTMPS-VE",
+            "vendored_libraries": [
+                "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_rtmps_ios.a"
+            ],
+            "dependencies": {
+                "TTSDK/TTNet-VE": []
+            }
+        },
+        {
+            "name": "LivePush-RTC-VE",
+            "vendored_libraries": [
+                "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_base-ext_ios.a"
+            ],
+            "dependencies": {
+                "TTSDK/LivePush-Base-VE": []
+            }
+        },
+        {
+            "name": "LivePush",
+            "dependencies": {
+                "TTSDK/LivePush-RTC": []
+            }
+        },
+        {
+            "name": "LivePush-RTS",
+            "vendored_libraries": [
+                "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_rts_ios.a"
+            ],
+            "dependencies": {
+                "TTSDK/RTS-Framework": [],
+                "TTSDK/LivePush-Base": []
+            }
+        },
+        {
+            "name": "LivePush-VE",
+            "dependencies": {
+                "TTSDK/LivePush-RTC-VE": [],
+                "VEVideoKit/VolcEngineAudio": []
+            }
+        },
+        {
+            "name": "LivePush-RTS-VE",
+            "vendored_libraries": [
+                "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_rts_ios.a"
+            ],
+            "dependencies": {
+                "TTSDK/LivePush-Base-VE": [],
+                "VEVideoKit/VolcEngineAudio": []
+            }
+        },
+        {
+            "name": "LivePush-Effect-VE",
+            "dependencies": {
+                "TTSDK/Effect": [],
+                "TTSDK/LivePush-VE": []
+            }
+        },
+        {
+            "name": "Encode",
+            "subspecs": [
+                {
+                    "name": "vc0",
+                    "vendored_frameworks": "TTSDK/libbytevc0enc/lib/h264.framework"
+                },
+                {
+                    "name": "vc1",
+                    "vendored_frameworks": "TTSDK/ByteRtcSDK/lib/h265enc.xcframework"
+                }
+            ]
+        },
+        {
+            "name": "Encode-VE",
+            "subspecs": [
+                {
+                    "name": "vc0",
+                    "vendored_frameworks": "TTSDK/libbytevc0enc/lib/h264.framework"
+                },
+                {
+                    "name": "vc1",
+                    "vendored_frameworks": "VolcEngineRTC-VE"
+                }
+            ]
+        },
+        {
+            "name": "LiveSettings",
+            "vendored_libraries": [
+                "TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_TTLiveSetting_ios.a"
+            ]
+        },
+        {
+            "name": "Player",
+            "public_header_files": [
+                "TTSDK/{TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS}/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/{TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS}/**/*.h"
+            ],
+            "exclude_files": [
+                "TTSDK/TTVideoEngine/TTVideoEngine/Classes/DualCore/**/*",
+                "TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h",
+                "TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h",
+                "TTSDK/VCPreloadStrategy/ios/bridge/VCUtilBridge.h",
+                "TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h",
+                "TTSDK/VCPreloadStrategy/sources/**/*"
+            ],
+            "vendored_libraries": [
+                "TTSDK/{TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS,MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule,TTReachability,pcdn}/**/*.a"
+            ],
+            "dependencies": {
+                "TTSDK/Core": [],
+                "TTSDK/PlayerCore": [],
+                "TTSDK/VCN": [],
+                "TTSDK/VolcLog": []
+            },
+            "weak_frameworks": [
+                "MetricKit"
+            ]
+        },
+        {
+            "name": "Player-VE",
+            "public_header_files": [
+                "TTSDK/{TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS}/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/{TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS}/**/*.h"
+            ],
+            "exclude_files": [
+                "TTSDK/TTVideoEngine/TTVideoEngine/Classes/DualCore/**/*",
+                "TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h",
+                "TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h",
+                "TTSDK/VCPreloadStrategy/ios/bridge/VCUtilBridge.h",
+                "TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h",
+                "TTSDK/VCPreloadStrategy/sources/**/*"
+            ],
+            "vendored_libraries": [
+                "TTSDK/{TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS,MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule,TTReachability,pcdn}/**/*.a"
+            ],
+            "dependencies": {
+                "TTSDK/Core": [],
+                "TTSDK/PlayerCore-VE": [],
+                "TTSDK/VCN": [],
+                "TTSDK/VolcLog-VE": []
+            },
+            "weak_frameworks": [
+                "MetricKit"
+            ]
+        },
+        {
+            "name": "Player-SR",
+            "public_header_files": [
+                "TTSDK/{TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS}/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/{TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS}/**/*.h"
+            ],
+            "exclude_files": [
+                "TTSDK/TTVideoEngine/TTVideoEngine/Classes/DualCore/**/*",
+                "TTSDK/TTVideoEngine/TTVideoEngine/Classes/License/TTLicenseManager.h",
+                "TTSDK/TTVideoEngine/TTVideoEngine/Classes/Public/NetClient/TTVideoEngineNetwork.h",
+                "TTSDK/VCPreloadStrategy/ios/bridge/VCUtilBridge.h",
+                "TTSDK/VCPreloadStrategy/ios/bridge/VCVodStrategyBridge.h",
+                "TTSDK/VCPreloadStrategy/sources/**/*"
+            ],
+            "vendored_libraries": [
+                "TTSDK/{TTVideoEngine,ABRInterface,VCPreloadStrategy,TTNetworkPredict,VCVodSettings,BDHTTPDNS,MDLMediaDataLoader,TTTopSignature,PlaylistCacheModule,TTReachability,pcdn}/**/*.a"
+            ],
+            "dependencies": {
+                "TTSDK/Core": [],
+                "TTSDK/PlayerCore-SR": [],
+                "TTSDK/VCN": [],
+                "TTSDK/VolcLog": []
+            },
+            "weak_frameworks": [
+                "MetricKit"
+            ]
+        },
+        {
+            "name": "RTC-Framework",
+            "vendored_frameworks": [
+                "TTSDK/ByteRtcSDK/*.framework",
+                "TTSDK/ByteRtcSDK/*.xcframework"
+            ]
+        },
+        {
+            "name": "RTS-Framework",
+            "dependencies": {
+                "TTSDK/RTC-Framework": []
+            },
+            "vendored_frameworks": [
+                "TTSDK/ByteRtsSDK/*.framework"
+            ]
+        },
+        {
+            "name": "Image",
+            "public_header_files": [
+                "TTSDK/BDWebImageToB/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/BDWebImageToB/**/*"
+            ],
+            "vendored_libraries": [
+                "TTSDK/BDWebImageToB/**/*.a",
+                "TTSDK/libttheif_ios/**/*.a",
+                "TTSDK/BDSword/ios-arch-iphone/*.a",
+                "TTSDK/BDModel/ios-arch-iphone/*.a"
+            ],
+            "dependencies": {
+                "TTSDK/Core": [],
+                "TTSDK/TTNet": [],
+                "TTSDK/Tools": [],
+                "libwebp": [
+                    ">= 1.3.2"
+                ],
+                "MMKV": [
+                    "1.2.14"
+                ],
+                "libdav1d": [
+                    "0.8.0"
+                ],
+                "libavif/libdav1d": [
+                    "0.9.1"
+                ]
+            },
+            "ios": {
+                "frameworks": [
+                    "CFNetwork",
+                    "MobileCoreServices",
+                    "SystemConfiguration",
+                    "JavaScriptCore",
+                    "Accelerate"
+                ]
+            },
+            "libraries": [
+                "c++",
+                "resolv"
+            ]
+        },
+        {
+            "name": "Uploader",
+            "public_header_files": [
+                "TTSDK/BDVCFileUploadClient/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/BDVCFileUploadClient/**/*.h"
+            ],
+            "vendored_libraries": [
+                "TTSDK/{BDVCFileUploadClient,TTTopSignature}/**/*.a"
+            ],
+            "dependencies": {
+                "TTSDK/Core": [],
+                "TTSDK/Tools": [],
+                "TTSDK/VCN": [],
+                "SSZipArchive": [
+                    "~> 2.2"
+                ]
+            },
+            "weak_frameworks": [
+                "Photos",
+                "UniformTypeIdentifiers"
+            ]
+        },
+        {
+            "name": "Uploader-VE",
+            "public_header_files": [
+                "TTSDK/BDVCFileUploadClient/**/*.h"
+            ],
+            "source_files": [
+                "TTSDK/BDVCFileUploadClient/**/*.h"
+            ],
+            "vendored_libraries": [
+                "TTSDK/{BDVCFileUploadClient,TTTopSignature}/**/*.a"
+            ],
+            "dependencies": {
+                "TTSDK/Core": [],
+                "TTSDK/VCN": [],
+                "VEVideoKit/boringssl": []
+            },
+            "libraries": [
+                "stdc++",
+                "z",
+                "xml2",
+                "iconv"
+            ],
+            "weak_frameworks": [
+                "Photos",
+                "UniformTypeIdentifiers"
+            ]
+        },
+        {
+            "name": "ByteAudio",
+            "vendored_frameworks": [
+                "TTSDK/ByteAudio/*.framework",
+                "TTSDK/ByteAudio/*.xcframework"
+            ]
+        },
+        {
+            "name": "Quic",
+            "subspecs": [
+                {
+                    "name": "Core",
+                    "vendored_libraries": "TTSDK/ttquic/ttquic.framework/libttquic.a"
+                },
+                {
+                    "name": "Pull",
+                    "vendored_libraries": "TTSDK/TTVideoLive/ios-arch-iphone/libTTVideoLive_TTQuicWrapper_ios.a",
+                    "dependencies": {
+                        "TTSDK/Quic/Core": []
+                    }
+                },
+                {
+                    "name": "Push",
+                    "public_header_files": [
+                        "TTSDK/VCloudPandora/**/LiveCore+TTSDK.h"
+                    ],
+                    "source_files": [
+                        "TTSDK/VCloudPandora/**/LiveCore+TTSDK.h"
+                    ],
+                    "vendored_libraries": "TTSDK/LiveStreamFramework/ios-arch-iphone/libLiveStreamFramework_rtmpq_ios.a",
+                    "dependencies": {
+                        "TTSDK/Quic/Core": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Player-Strip",
+            "dependencies": {
+                "TTSDK/Player": []
+            }
+        },
+        {
+            "name": "LivePull-Strip",
+            "dependencies": {
+                "TTSDK/LivePull": []
+            }
+        },
+        {
+            "name": "LivePush-Strip",
+            "dependencies": {
+                "TTSDK/LivePush": []
+            }
+        },
+        {
+            "name": "Image-Strip",
+            "dependencies": {
+                "TTSDK/Image": []
+            }
+        }
+    ]
+}
