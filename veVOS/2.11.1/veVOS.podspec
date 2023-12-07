@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   vevideokitversion = "0.3.6"
-  ttversion = "1.39.3.9-onekit"
+  ttversion = "1.39.3.12-premium"
   ffmpegversion = "1.25.136.101-tob-dynamic-biz"
 
   spec.subspec "RTC" do |rtc|
