@@ -423,7 +423,7 @@
       subspec.dependency 'TTSDK/VolcLog-VE'
       subspec.dependency 'TTSDK/Quic/Push'
       subspec.libraries = 'stdc++'
-      subspec.dependency 'TTVideoEditor', '11.8.1.1-VE'
+      subspec.dependency 'TTVideoEditor'
       subspec.dependency "TTSDK/Encode-VE/vc0"
       subspec.dependency "TTSDK/Encode-VE/vc1"
       subspec.dependency 'TTSDK/BMF'
