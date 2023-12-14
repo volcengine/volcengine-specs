@@ -375,7 +375,11 @@
       subspec.dependency 'TTSDK/VolcLog'
       subspec.dependency 'TTSDK/Quic/Push'
       subspec.libraries = 'stdc++'
-      subspec.dependency 'TTVideoEditor', '11.8.1.83-D'
+      if ENV['TT_VIDEO_EDITOR_VERSION'].nil?
+        subspec.dependency 'TTVideoEditor', '11.8.1.83-D'
+      else
+        subspec.dependency 'TTVideoEditor'
+      end
       subspec.dependency "TTSDK/Encode/vc0"
       subspec.dependency "TTSDK/Encode/vc1"
       subspec.dependency 'TTSDK/BMF'
@@ -423,7 +427,7 @@
       subspec.dependency 'TTSDK/VolcLog-VE'
       subspec.dependency 'TTSDK/Quic/Push'
       subspec.libraries = 'stdc++'
-      subspec.dependency 'TTVideoEditor', '11.8.1.1-VE'
+      subspec.dependency 'TTVideoEditor'
       subspec.dependency "TTSDK/Encode-VE/vc0"
       subspec.dependency "TTSDK/Encode-VE/vc1"
       subspec.dependency 'TTSDK/BMF'
