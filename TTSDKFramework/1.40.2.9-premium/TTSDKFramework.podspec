@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.default_subspecs = "Base"
 
-  spec.static_framework = false
+  spec.static_framework = true
 
   spec.module_name = ENV['TTSDK_FRAMEWORK_MODULE_NAME'] || 'TTSDKFramework'
   spec.header_dir = ENV['TTSDK_FRAMEWORK_MODULE_NAME'] || 'TTSDKFramework'
