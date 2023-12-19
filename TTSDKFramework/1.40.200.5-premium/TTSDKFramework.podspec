@@ -208,7 +208,11 @@ Pod::Spec.new do |spec|
     subspec.dependency 'TTSDKFramework/ByteAudio'
     subspec.dependency 'TTSDKFramework/VolcLog'
     subspec.dependency 'TTSDKFramework/Quic/Push'
-    subspec.dependency 'TTVideoEditor', '11.8.1.83-D'
+    if ENV['TT_VIDEO_EDITOR_VERSION'].nil?
+      subspec.dependency 'TTVideoEditor', '11.8.1.83-D'
+    else
+      subspec.dependency 'TTVideoEditor', "#{ENV['TT_VIDEO_EDITOR_VERSION']}"
+    end
     subspec.dependency "TTSDKFramework/Encode/vc0"
     subspec.dependency "TTSDKFramework/Encode/vc1"
     subspec.dependency 'TTSDKFramework/BMF'
