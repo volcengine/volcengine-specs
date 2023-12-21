@@ -28,8 +28,6 @@ Pod::Spec.new do |s|
   s.dependency 'RangersAppLog/Log', '>= 6.15.1'
   s.dependency 'RangersAppLog/Host/CN', '>= 6.15.1'
 
-  s.dependency 'PangrowthTTVideoEngine-dynamic', '>= 1.0.0.0'
-
   s.preserve_paths = 'PangrowthDJX-lite/*.framework', 'PangrowthDJX-lite/*.bundle', 'LICENSE'
   s.vendored_frameworks = ['PangrowthDJX-lite/PangrowthDJX.framework']
   s.resources = ['PangrowthDJX-lite/DJXSDK.bundle']
