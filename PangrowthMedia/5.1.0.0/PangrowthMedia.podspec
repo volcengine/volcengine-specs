@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://www.pangle.cn/'
   s.source           = { :http => "https://sf3-fe-tos.pglstatp-toutiao.com/obj/pangle-empower/pangrowth-media-static/#{s.version.to_s}/PangrowthMedia-#{s.version.to_s}.zip" }
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC'] }
 
