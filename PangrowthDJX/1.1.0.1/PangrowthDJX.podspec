@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   s.ios.dependency 'RangersAppLog/Host/CN', '>= 6.15.1'
 
   s.vendored_frameworks = ['PangrowthDJX/PangrowthDJX.framework']
-  s.resources = ['PangrowthDJX/LCDSDK.bundle', 'PangrowthDJX/ttplayer.metallib']
+  s.resources = ['PangrowthDJX/DJXSDK.bundle', 'PangrowthDJX/ttplayer.metallib']
   s.preserve_paths = 'PangrowthDJX/*.framework', 'PangrowthDJX/*.bundle', 'PangrowthDJX/ttplayer.metallib'
 
   valid_archs = ['armv7', 'i386', 'x86_64', 'arm64']
