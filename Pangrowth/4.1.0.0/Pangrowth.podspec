@@ -32,19 +32,6 @@ Pangrowth is an SDK that integrates novels, media, and live broadcasts.
   s.subspec 'media-dynamic' do |ss|
     ss.dependency 'PangrowthMedia-dynamic', '5.1.2.0'
   end
-
-  s.subspec 'shortplay' do |ss|
-    ss.dependency 'PangrowthDJX', '1.1.0.1'
-  end
-
-  s.subspec 'shortplay-dynamic' do |ss|
-    ss.dependency 'PangrowthDJX-lite', '1.1.0.1'
-    ss.dependency 'PangrowthTTVideoEngine-dynamic', '1.0.0.0'
-  end
-
-  s.subspec 'shortplay-lite' do |ss|
-    ss.dependency 'PangrowthDJX-lite', '1.1.0.1'
-  end
   
   s.default_subspecs = []
 end
