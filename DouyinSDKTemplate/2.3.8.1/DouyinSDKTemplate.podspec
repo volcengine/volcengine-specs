@@ -48,7 +48,6 @@ spec.subspec "ToB" do |tob|
 
     # lottie 库不能到 3.x
     tob.dependency 'lottie-ios', '2.5.3'
-    tob.dependency 'RangersAPM', '3.6.4'
     tob.dependency 'IGListKit', '3.4.0'
     tob.dependency 'MMKV', '>= 1.0.19'
     tob.dependency 'Masonry', '>= 1.1.0'
