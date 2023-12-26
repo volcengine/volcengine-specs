@@ -13,7 +13,7 @@
     spec.author       = { "chenzhaojie" => "chenzhaojie@bytedance.com" }
     spec.platform     = :ios, "11.0"
   
-    spec.source = {:http => 'http://voffline.byted.org/download/tos/schedule/iOSPackageBackUp/288842424/TTSDK.zip'}
+    spec.source = {:http => 'https://hstob-cdn-tos.volccdn.com/volcengine/TTSDK/1.40.2.8-premium/TTSDK.zip'}
     
     spec.default_subspecs = 'Core', 'Effect', 'TTFFmpeg', 'PlayerCore', 'LivePull', 'LivePush', 'Player', 'Image'
   
