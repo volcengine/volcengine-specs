@@ -1,0 +1,65 @@
+{
+    "authors": {
+        "bytertc": "bytertc@bytedance.com"
+    },
+    "default_subspecs": [
+        "Core",
+        "bytevc1enc"
+    ],
+    "extra": {
+        "native_source_depends": [
+            {
+                "binary_md5": "",
+                "binary_name": "VEGameRTC.framework",
+                "git": "https://code.byted.org/bytertc/ByteRTC.git",
+                "module": "VEGameRTC",
+                "sha1": "ffec390b48cf662d05715ee2fea7354d26ca2773"
+            },
+            {
+                "binary_md5": "",
+                "binary_name": "VEGameRTCScreenCapturer.framework",
+                "git": "https://code.byted.org/bytertc/ByteRTC.git",
+                "module": "VEGameRTC",
+                "sha1": "ffec390b48cf662d05715ee2fea7354d26ca2773"
+            },
+            {
+                "binary_md5": "",
+                "binary_name": "bytevc1enc.framework",
+                "git": "https://code.byted.org/bytertc/ByteRTC.git",
+                "module": "VEGameRTC",
+                "sha1": "ffec390b48cf662d05715ee2fea7354d26ca2773"
+            }
+        ]
+    },
+    "homepage": "https://github.com/volcengine/VolcEngineRTC",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "name": "VEGameRTC",
+    "platforms": {
+        "ios": "11.0"
+    },
+    "slardar_fileMap": {},
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VEGameRTC/352.104.036/VEGameRTC.zip"
+    },
+    "subspecs": [
+        {
+            "name": "Core",
+            "vendored_frameworks": "VEGameRTC.framework"
+        },
+        {
+            "name": "ScreenCapture",
+            "vendored_frameworks": "VEGameRTCScreenCapturer.framework"
+        },
+        {
+            "name": "bytevc1enc",
+            "vendored_frameworks": "bytevc1enc.framework"
+        }
+    ],
+    "summary": "framework_summary",
+    "version": "352.104.036",
+    "repoId": "42168",
+    "description": "framework_description"
+}
