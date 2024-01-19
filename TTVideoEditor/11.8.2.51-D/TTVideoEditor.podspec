@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "TTVideoEditor"
-  s.version = "11.8.2.50-D"
+  s.version = "11.8.2.51-D"
   s.summary = "TTVideoEditor"
   s.license = "MIT"
   s.authors = {"zhouyi.ysj"=>"zhouyi.ysj@bytedance.com"}
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.weak_frameworks = ["Metal", "MetalPerformanceShaders", "Photos", "CoreML", "MetalKit"]
   s.libraries = ["xml2", "iconv"]
   s.requires_arc = true
-  s.source = {"http"=>"https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTVideoEditor/11.8.2.50-D/TTVideoEditor.zip"}
+  s.source = {"http"=>"https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTVideoEditor/11.8.2.51-D/TTVideoEditor.zip"}
 
   s.ios.deployment_target    = '8.0'
   s.ios.vendored_framework   = 'ios/TTVideoEditor.framework'
