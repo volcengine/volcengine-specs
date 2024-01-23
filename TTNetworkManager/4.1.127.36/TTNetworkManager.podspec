@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "TTNetworkManager"
-  s.version          = 4.1.127.36
+  s.version          = "4.1.127.36"
   s.summary          = "iOS client network sdk"
   s.description      = "Network SDK for iOS"
   s.homepage         = 'https://github.com/volcengine/volcengine-specs'
