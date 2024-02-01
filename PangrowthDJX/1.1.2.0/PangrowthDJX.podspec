@@ -25,9 +25,9 @@ Pod::Spec.new do |s|
   s.dependency 'RangersAPM/HMD', '~> 3.8.4'
   s.dependency 'RangersAPM/EventMonitor', '~> 3.8.4'
   s.dependency 'RangersAPM/CN', '~> 3.8.4'
-  s.dependency 'RangersAppLog/Core', '~> 6.16.3'
-  s.dependency 'RangersAppLog/Log', '~> 6.16.3'
-  s.dependency 'RangersAppLog/Host/CN', '~> 6.16.3'
+  s.dependency 'RangersAppLog/Core', '>= 6.15.1'
+  s.dependency 'RangersAppLog/Log', '>= 6.15.1'
+  s.dependency 'RangersAppLog/Host/CN', '>= 6.15.1'
 
   s.vendored_frameworks = ['PangrowthDJX/PangrowthDJX.framework']
   s.resources = ['PangrowthDJX/DJXSDK.bundle', 'PangrowthDJX/ttplayer.metallib']
