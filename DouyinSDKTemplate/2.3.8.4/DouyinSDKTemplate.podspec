@@ -39,7 +39,7 @@ spec.static_framework = true
 spec.subspec "ToB" do |tob|
     # ToB 公用依赖
     # 此处的依赖实际是需要增加版本号的
-    tob.dependency "DouyinSDK/Init", '2.3.8.2'
+    tob.dependency "DouyinSDK/Init", '2.3.8.4'
     tob.dependency "DouyinSDK/Services/Security"
     tob.dependency "DouyinSDK/Services/APM"
     tob.dependency "DouyinSDK/Services/AppLog"
