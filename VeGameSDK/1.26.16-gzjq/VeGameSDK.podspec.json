@@ -1,0 +1,37 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "11.0"
+    },
+    "source_files": [
+        "VeGameSDK-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_VeGameSDK_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "vendored_frameworks": "VeGame.framework",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VeGameSDK/1.26.16-gzjq/VeGameSDK.framework.tar.xz"
+    },
+    "version": "1.26.16-gzjq",
+    "authors": {
+        "zhaozuotong": "zhaozuotong@bytedance.com"
+    },
+    "homepage": "https://github.com/volcengine/veGame",
+    "repoId": "40702",
+    "name": "VeGameSDK"
+}
