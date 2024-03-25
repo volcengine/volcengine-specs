@@ -84,6 +84,7 @@
         {
             "public_header_files": [
                 "GMPReachSDK/GMPReachSDK/Classes/Popup/Manager/GMPPopupManager.h",
+                "GMPReachSDK/GMPReachSDK/Classes/Popup/Manager/GMPPopupWindowControl.h",
                 "GMPReachSDK/GMPReachSDK/Classes/Popup/Define/GMPPopupConfigKey.h"
             ],
             "preserve_paths": [
@@ -131,7 +132,7 @@
             ],
             "dependencies": {
                 "RangersAppLog": [
-                    "< 6.16.0"
+                    ">= 6.16.2"
                 ]
             },
             "ios": {
