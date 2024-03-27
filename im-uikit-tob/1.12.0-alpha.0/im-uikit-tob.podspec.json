@@ -1,0 +1,59 @@
+{
+    "requires_arc": true,
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/im-uikit-tob/1.12.0-alpha.0/im-uikit-tob.framework.tar.xz"
+    },
+    "prepare_command": "",
+    "resource_bundles": {
+        "TIMOEmojiNew": [
+            "DevelopProject/BIMUIKit/**/TIMOEmojiNew.bundle/**/*"
+        ],
+        "BIMUIKit": [
+            "DevelopProject/BIMUIKit/**/BIMUIKit.bundle/*"
+        ]
+    },
+    "source_files": [
+        "**/BIMUIKit/**/*.{h,m,c}",
+        "im-uikit-tob-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "AVKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_im-uikit-tob_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "platforms": {
+        "ios": "9.0"
+    },
+    "version": "1.12.0-alpha.0",
+    "frameworks": [
+        "UIKit",
+        "AVKit"
+    ],
+    "authors": {
+        "yangzhanjiang": "yangzhanjiang@bytedance.com"
+    },
+    "dependencies": {
+        "Masonry": [],
+        "imsdk-tob": [
+            "1.12.0-alpha.0"
+        ],
+        "SDWebImage": [],
+        "MJRefresh": []
+    },
+    "homepage": "https://github.com/volcengine/VolcEngineIM/tree/main/iOS",
+    "repoId": "38720",
+    "name": "im-uikit-tob"
+}
