@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.homepage = "https://github.com/volcengine"
   s.description = "ttvideoeditor"
   s.weak_frameworks = ["Metal", "MetalPerformanceShaders", "Photos", "CoreML", "MetalKit"]
-  s.libraries = ["xml2", "iconv"]
+  s.libraries = ["xml2", "iconv", "compression", "z", "c++"]
   s.requires_arc = true
   s.source = {"http"=>"https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/TTVideoEditor/11.8.5.21-VE/TTVideoEditor.zip"}
 
