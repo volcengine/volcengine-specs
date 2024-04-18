@@ -46,6 +46,7 @@ Pod::Spec.new do |spec|
     spec.subspec "Uploader" do |uploader|
       uploader.dependency "TTSDK/Uploader-VE", "#{ttversion}"
       uploader.dependency "VEVideoKit/boringssl", "#{vevideokitversion}"
+      uploader.dependency 'SSZipArchive', '~> 2.2'
     end
   
     spec.subspec "IM" do |im|
