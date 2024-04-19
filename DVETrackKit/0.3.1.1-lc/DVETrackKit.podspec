@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "DVETrackKit"
-  s.version = "0.3.2-lc"
+  s.version = "0.3.1.1-lc"
   s.summary = "DVETrackKit"
   s.license = "MIT"
   s.authors = {"zhangyuanming"=>"zhangyuanming@bytedance.com"}
