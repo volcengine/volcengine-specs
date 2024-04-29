@@ -1,0 +1,85 @@
+{
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ],
+    "default_subspecs": [
+        "Core"
+    ],
+    "description": "framework_description",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "platforms": {
+        "ios": "11.0"
+    },
+    "source_files": [
+        "VeGameSDK-bitdummy.m"
+    ],
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_VeGameSDK_*awesome_*.a"
+    },
+    "summary": "framework_summary",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VeGameSDK/1.41.0/VeGameSDK.framework.tar.xz"
+    },
+    "version": "1.41.0",
+    "authors": {
+        "yinhaichao": "yinhaichao@bytedance.com"
+    },
+    "homepage": "https://github.com/volcengine/veGame",
+    "repoId": "40702",
+    "subspecs": [
+        {
+            "name": "Core",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "vendored_frameworks": "VeGame.framework",
+            "dependencies": {
+                "VEGameRTC/Core": [
+                    "352.104.036"
+                ]
+            },
+            "source_files": [
+                "VeGameSDK-bitdummy.m"
+            ]
+        },
+        {
+            "vendored_frameworks": "VeGamePad.framework",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_VeGamePad_*awesome_*.a"
+            },
+            "name": "VeGamePad",
+            "source_files": [
+                "VeGameSDK-bitdummy.m"
+            ]
+        },
+        {
+            "vendored_frameworks": "VeVirtualKeyboard.framework",
+            "preserve_paths": [
+                "**/*.bwp"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_VeVirtualKeyboard_*awesome_*.a"
+            },
+            "name": "VeVirtualKeyboard",
+            "source_files": [
+                "VeGameSDK-bitdummy.m"
+            ]
+        }
+    ],
+    "name": "VeGameSDK"
+}
