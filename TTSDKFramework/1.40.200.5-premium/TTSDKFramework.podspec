@@ -13,7 +13,7 @@ Pod::Spec.new do |spec|
   spec.author = { "shangjincheng-bd" => "shangjincheng@bytedance.com" }
   spec.platform = :ios, "11.0"
 
-  spec.source = { :http => "https://byteplus-sdk.tos-ap-southeast-1.bytepluses.com/ttsdk/iOS/TTSDKFramework-#{spec.version}-ta.zip", :type => :zip }
+  spec.source = { :http => "https://lf16-bpsdk.bytepluscdn.com/obj/byteplussdk-sg/TTSDKFramework/1.40.200.5-premium/TTSDKFramework-1.40.200.5-premium-ta.zip", :type => :zip }
 
   spec.default_subspecs = "Base"
 
