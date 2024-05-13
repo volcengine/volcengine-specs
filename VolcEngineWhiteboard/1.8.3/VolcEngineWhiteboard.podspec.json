@@ -1,0 +1,23 @@
+{
+    "name": "VolcEngineWhiteboard",
+    "version": "1.8.3",
+    "summary": "framework_summary",
+    "homepage": "https://github.com/volcengine",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "bytertc": "bytertc@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VolcEngineWhiteboard/1.8.3/WhiteBoard.framework.zip"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "preserve_paths": "WhiteBoard.framework.dSYM",
+    "vendored_frameworks": "WhiteBoard.framework",
+    "repoId": "34535",
+    "description": "framework_description"
+}
