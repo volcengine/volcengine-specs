@@ -471,7 +471,7 @@
       ]
       subspec.vendored_libraries = [
         'TTSDK/LiveStreamFramework/**/libLiveStreamFramework_{_glbase_rtcBase,ktv,lite,liveStream,rtcBase,screenRecorder,tools}_ios.a',
-        "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_{base,glbase,session,webrtc,_base_webrtc,ntp,audio-effect,disklog,effect,effect-wrapper,camera,volc_base_log,di}_ios.a",
+        "TTSDK/LiveStreamFramework/**/libLiveStreamFramework_{base,glbase,session,webrtc,_base_webrtc,ntp,audio-effect,disklog,effect,effect-wrapper,camera,volc_base_log,di,_glbase_effect}_ios.a",
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_LivePush_ios.a',
         'TTSDK/libyuv-iOS/**/*.a',
         'TTSDK/LiveStreamFramework/ios-arch-iphone/libLiveStreamFramework_rtmpq_ios.a'
