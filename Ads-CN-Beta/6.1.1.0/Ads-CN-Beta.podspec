@@ -39,6 +39,11 @@ Pod::Spec.new do |s|
     ss.dependency 'Ads-CN-Beta/BUAdSDK'
   end
   
+  s.subspec 'BUAdLive-Only' do |ss|
+    ss.vendored_frameworks = ['SDK/BUAdLive.xcframework']
+    ss.preserve_paths = 'SDK/BUAdLive.xcframework'
+  end
+  
   s.subspec 'BUAdLive' do |ss|
     ss.vendored_frameworks = ['SDK/BUAdLive.xcframework']
     ss.preserve_paths = 'SDK/BUAdLive.xcframework'
