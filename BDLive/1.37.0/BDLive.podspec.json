@@ -1,22 +1,23 @@
 {
-    "prepare_command": "",
-    "preserve_paths": [
-        "**/*.bwp"
-    ],
-    "default_subspecs": [
-        "Viewer"
-    ],
+    "name": "BDLive",
+    "version": "1.37.0",
+    "summary": "framework_summary",
     "description": "framework_description",
+    "homepage": "https://www.volcengine.com/product/live-saas",
     "license": {
         "type": "Copyright",
         "text": "Bytedance copyright"
     },
+    "authors": {
+        "volcengine": "service@volcengine.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/BDLive/1.37.0/BDLive.framework.tar.xz"
+    },
+    "static_framework": true,
     "platforms": {
         "ios": "11.0"
     },
-    "source_files": [
-        "BDLive-bitdummy.m"
-    ],
     "ios": {
         "frameworks": [
             "WebKit",
@@ -27,19 +28,9 @@
         ],
         "vendored_libraries": "ios-arch-iphone/*_BDLive_*awesome_*.a"
     },
-    "summary": "framework_summary",
-    "source": {
-        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/BDLive/1.37.0/BDLive.framework.tar.xz"
-    },
-    "version": "1.37.0",
-    "authors": {
-        "volcengine": "service@volcengine.com"
-    },
-    "static_framework": true,
-    "homepage": "https://www.volcengine.com/product/live-saas",
-    "repoId": "28443",
     "subspecs": [
         {
+            "name": "Common",
             "public_header_files": [
                 "BDLive/BDLive.h",
                 "BDLive/Common/Category/NSError+BDLErrorCode.h",
@@ -82,48 +73,74 @@
                 "BDLive/Common/View/Popup/BDLPopupBaseView.h",
                 "BDLive/Common/View/BaseView/BDLBaseView.h"
             ],
-            "name": "Common",
-            "resource_bundles": {
-                "BDLEmoji": [
-                    "BDLive/Common/Resources/BDLEmoji.bundle/**/*"
-                ]
-            },
-            "preserve_paths": [
-                "**/*.bwp"
-            ],
-            "ios": {
-                "vendored_libraries": "ios-arch-iphone/*_Common_*awesome_*.a"
-            },
-            "dependencies": {
-                "RangersAppLog/Core": [],
-                "RangersAppLog/Log": [],
-                "MJRefresh": [],
-                "SDWebImageWebPCoder": [],
-                "MBProgressHUD": [],
-                "RangersAppLog/Host": [],
-                "YYModel": [],
-                "TTSDKFramework/Uploader": [
-                    "1.41.2.8-premium"
-                ],
-                "Masonry": [],
-                "SDWebImage": [],
-                "TTNetworkManager": [
-                    "4.1.127.37"
-                ]
-            },
             "source_files": [
                 "BDLive/BDLive.h",
                 "BDLive/Common/**/*.{h,m,mm,c}",
                 "BDLive-bitdummy.m"
             ],
+            "exclude_files": [
+                "BDLive/Common/Env/SG/*.{h,m,mm,c}"
+            ],
             "pod_target_xcconfig": {
                 "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited)  BDL_CN=1"
             },
-            "exclude_files": [
-                "BDLive/Common/Env/SG/*.{h,m,mm,c}"
+            "resource_bundles": {
+                "BDLEmoji": [
+                    "BDLive/Common/Resources/BDLEmoji.bundle/**/*"
+                ]
+            },
+            "dependencies": {
+                "MJRefresh": [],
+                "Masonry": [],
+                "MBProgressHUD": [],
+                "SDWebImage": [],
+                "SDWebImageWebPCoder": [],
+                "RangersAppLog/Host": [],
+                "RangersAppLog/Core": [],
+                "RangersAppLog/Log": [],
+                "YYModel": [],
+                "TTNetworkManager": [
+                    "4.1.127.37"
+                ],
+                "TTSDKFramework/Uploader": [
+                    "1.41.2.8-premium"
+                ]
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Common_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
             ]
         },
         {
+            "name": "ViewerWithoutRTC",
+            "resource_bundles": {
+                "BDLViewerAssets": [
+                    "BDLive/Viewer/Resources/BDLViewerAssets.xcassets"
+                ],
+                "BDLViewerLanguage": [
+                    "BDLive/Viewer/Resources/Language/**/*.{strings,stringsdict}"
+                ],
+                "BDLViewerGif": [
+                    "BDLive/Viewer/Resources/Gif/*"
+                ]
+            },
+            "dependencies": {
+                "MJRefresh": [],
+                "YYCategories": [],
+                "BDLive/Common": [],
+                "TTSDKFramework/LivePull": [
+                    "1.41.2.8-premium"
+                ],
+                "TTSDKFramework/Player": []
+            },
+            "frameworks": [
+                "EventKit",
+                "MobileCoreServices",
+                "Photos",
+                "AVFoundation"
+            ],
             "public_header_files": [
                 "BDLive/Viewer/ActivityService/BDLAwardUserResponse.h",
                 "BDLive/Viewer/ActivityService/BDLAwardWinnersResponse.h",
@@ -285,23 +302,44 @@
                 "BDLive/Viewer/Tools/BDLCalendarUtils.h",
                 "BDLive/Viewer/TopComment/BDLTopCommentView.h"
             ],
-            "name": "ViewerWithoutRTC",
+            "source_files": [
+                "BDLive/Viewer/**/*.{h,m,mm,c}",
+                "BDLive-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_ViewerWithoutRTC_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Viewer",
             "resource_bundles": {
                 "BDLViewerAssets": [
                     "BDLive/Viewer/Resources/BDLViewerAssets.xcassets"
                 ],
+                "BDLViewerLanguage": [
+                    "BDLive/Viewer/Resources/Language/**/*.{strings,stringsdict}"
+                ],
                 "BDLViewerGif": [
                     "BDLive/Viewer/Resources/Gif/*"
                 ],
-                "BDLViewerLanguage": [
-                    "BDLive/Viewer/Resources/Language/**/*.{strings,stringsdict}"
+                "BDLAudienceLinkAssert": [
+                    "BDLive/AudienceLink/Resources/BDLAudienceLinkAssert.xcassets"
+                ],
+                "BDLAudienceLinkLanguage": [
+                    "BDLive/AudienceLink/Resources/Language/**/*.{strings,stringsdict}"
                 ]
             },
-            "preserve_paths": [
-                "**/*.bwp"
-            ],
-            "ios": {
-                "vendored_libraries": "ios-arch-iphone/*_ViewerWithoutRTC_*awesome_*.a"
+            "dependencies": {
+                "MJRefresh": [],
+                "YYCategories": [],
+                "BDLive/Common": [],
+                "TTSDKFramework/LivePull-RTS": [
+                    "1.41.2.8-premium"
+                ],
+                "TTSDKFramework/Player-SR": []
             },
             "frameworks": [
                 "EventKit",
@@ -309,21 +347,6 @@
                 "Photos",
                 "AVFoundation"
             ],
-            "dependencies": {
-                "TTSDKFramework/Player": [],
-                "TTSDKFramework/LivePull": [
-                    "1.41.2.8-premium"
-                ],
-                "BDLive/Common": [],
-                "YYCategories": [],
-                "MJRefresh": []
-            },
-            "source_files": [
-                "BDLive/Viewer/**/*.{h,m,mm,c}",
-                "BDLive-bitdummy.m"
-            ]
-        },
-        {
             "public_header_files": [
                 "BDLive/AudienceLink/Data/BDLAudienceLinkLayoutResponse.h",
                 "BDLive/AudienceLink/Data/BDLAudienceLinkRTCTokenResponse.h",
@@ -496,52 +519,20 @@
                 "BDLive/Viewer/Tools/BDLCalendarUtils.h",
                 "BDLive/Viewer/TopComment/BDLTopCommentView.h"
             ],
-            "name": "Viewer",
-            "resource_bundles": {
-                "BDLViewerAssets": [
-                    "BDLive/Viewer/Resources/BDLViewerAssets.xcassets"
-                ],
-                "BDLViewerGif": [
-                    "BDLive/Viewer/Resources/Gif/*"
-                ],
-                "BDLViewerLanguage": [
-                    "BDLive/Viewer/Resources/Language/**/*.{strings,stringsdict}"
-                ],
-                "BDLAudienceLinkLanguage": [
-                    "BDLive/AudienceLink/Resources/Language/**/*.{strings,stringsdict}"
-                ],
-                "BDLAudienceLinkAssert": [
-                    "BDLive/AudienceLink/Resources/BDLAudienceLinkAssert.xcassets"
-                ]
-            },
-            "preserve_paths": [
-                "**/*.bwp"
-            ],
-            "ios": {
-                "vendored_libraries": "ios-arch-iphone/*_Viewer_*awesome_*.a"
-            },
-            "frameworks": [
-                "EventKit",
-                "MobileCoreServices",
-                "Photos",
-                "AVFoundation"
-            ],
-            "dependencies": {
-                "TTSDKFramework/LivePull-RTS": [
-                    "1.41.2.8-premium"
-                ],
-                "TTSDKFramework/Player-SR": [],
-                "BDLive/Common": [],
-                "YYCategories": [],
-                "MJRefresh": []
-            },
             "source_files": [
                 "BDLive/Viewer/**/*.{h,m,mm,c}",
                 "BDLive/AudienceLink/**/*.{h,m,mm,c}",
                 "BDLive-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Viewer_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
             ]
         },
         {
+            "name": "LiveStreaming",
             "public_header_files": [
                 "BDLive/LiveStreaming/BDLLiveStreaming.h",
                 "BDLive/LiveStreaming/BDLLiveStreamingModel.h",
@@ -551,76 +542,11 @@
                 "BDLive/LiveStreaming/Model/BDLEffectConfig.h",
                 "BDLive/LiveStreaming/Tools/EventReporter/BDLLiveStreamingEventReporter.h"
             ],
-            "vendored_libraries": "BDLive/LiveStreaming/SDK/BytedEffectSDK/libeffect-sdk.a",
-            "name": "LiveStreaming",
-            "resource_bundles": {
-                "BDLLanguageStreaming": [
-                    "BDLive/LiveStreaming/Resource/Language/**/*.{strings,stringsdict}"
-                ],
-                "BDLLiveStreamingImageResource": [
-                    "BDLive/LiveStreaming/Resource/Assets/LiveStream.xcassets"
-                ],
-                "BDLLiveStreamingAudioResource": [
-                    "BDLive/LiveStreaming/Resource/Audio/*.*"
-                ]
-            },
             "source_files": [
                 "BDLive/LiveStreaming/**/*.{h,m,mm,c,cpp}",
                 "BDLive/ScreenShare/**/*.{h,m,mm,c,cpp}",
                 "BDLive-bitdummy.m"
             ],
-            "ios": {
-                "vendored_libraries": "ios-arch-iphone/*_LiveStreaming_*awesome_*.a"
-            },
-            "libraries": [
-                "stdc++",
-                "z"
-            ],
-            "frameworks": [
-                "Accelerate",
-                "AssetsLibrary",
-                "AVFoundation",
-                "CoreGraphics",
-                "CoreImage",
-                "CoreMedia",
-                "CoreVideo",
-                "Foundation",
-                "QuartzCore",
-                "UIKit",
-                "CoreMotion",
-                "GLKit"
-            ],
-            "dependencies": {
-                "TTSDKFramework/LivePush-RTS": [
-                    "1.41.2.8-premium"
-                ],
-                "SSZipArchive": [],
-                "BDLive/Common": [],
-                "YYCategories": []
-            },
-            "weak_frameworks": [
-                "Metal",
-                "MetalPerformanceShaders",
-                "Photos",
-                "CoreML",
-                "PhotosUI"
-            ],
-            "preserve_paths": [
-                "**/*.bwp"
-            ]
-        },
-        {
-            "public_header_files": [
-                "BDLive/LiveStreaming/BDLLiveStreaming.h",
-                "BDLive/LiveStreaming/BDLLiveStreamingModel.h",
-                "BDLive/LiveStreaming/Category/UIView+BDLLandscape.h",
-                "BDLive/LiveStreaming/Controller/BDLLiveStreamingController.h",
-                "BDLive/LiveStreaming/Model/BDLGetPageWatchDataModel.h",
-                "BDLive/LiveStreaming/Model/BDLEffectConfig.h",
-                "BDLive/LiveStreaming/Tools/EventReporter/BDLLiveStreamingEventReporter.h"
-            ],
-            "vendored_libraries": "BDLive/LiveStreaming/SDK/BytedEffectSDK/libeffect-sdk.a",
-            "name": "LiveStreamingWithoutRTC",
             "resource_bundles": {
                 "BDLLanguageStreaming": [
                     "BDLive/LiveStreaming/Resource/Language/**/*.{strings,stringsdict}"
@@ -632,17 +558,6 @@
                     "BDLive/LiveStreaming/Resource/Audio/*.*"
                 ]
             },
-            "source_files": [
-                "BDLive/LiveStreaming/**/*.{h,m,mm,c,cpp}",
-                "BDLive-bitdummy.m"
-            ],
-            "ios": {
-                "vendored_libraries": "ios-arch-iphone/*_LiveStreamingWithoutRTC_*awesome_*.a"
-            },
-            "libraries": [
-                "stdc++",
-                "z"
-            ],
             "frameworks": [
                 "Accelerate",
                 "AssetsLibrary",
@@ -657,14 +572,6 @@
                 "CoreMotion",
                 "GLKit"
             ],
-            "dependencies": {
-                "TTSDKFramework/LivePush": [
-                    "1.41.2.8-premium"
-                ],
-                "SSZipArchive": [],
-                "BDLive/Common": [],
-                "YYCategories": []
-            },
             "weak_frameworks": [
                 "Metal",
                 "MetalPerformanceShaders",
@@ -672,27 +579,120 @@
                 "CoreML",
                 "PhotosUI"
             ],
+            "libraries": [
+                "stdc++",
+                "z"
+            ],
+            "vendored_libraries": "BDLive/LiveStreaming/SDK/BytedEffectSDK/libeffect-sdk.a",
+            "dependencies": {
+                "YYCategories": [],
+                "BDLive/Common": [],
+                "SSZipArchive": [],
+                "TTSDKFramework/LivePush-RTS": [
+                    "1.41.2.8-premium"
+                ]
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_LiveStreaming_*awesome_*.a"
+            },
             "preserve_paths": [
                 "**/*.bwp"
             ]
         },
         {
+            "name": "LiveStreamingWithoutRTC",
+            "public_header_files": [
+                "BDLive/LiveStreaming/BDLLiveStreaming.h",
+                "BDLive/LiveStreaming/BDLLiveStreamingModel.h",
+                "BDLive/LiveStreaming/Category/UIView+BDLLandscape.h",
+                "BDLive/LiveStreaming/Controller/BDLLiveStreamingController.h",
+                "BDLive/LiveStreaming/Model/BDLGetPageWatchDataModel.h",
+                "BDLive/LiveStreaming/Model/BDLEffectConfig.h",
+                "BDLive/LiveStreaming/Tools/EventReporter/BDLLiveStreamingEventReporter.h"
+            ],
+            "source_files": [
+                "BDLive/LiveStreaming/**/*.{h,m,mm,c,cpp}",
+                "BDLive-bitdummy.m"
+            ],
+            "resource_bundles": {
+                "BDLLanguageStreaming": [
+                    "BDLive/LiveStreaming/Resource/Language/**/*.{strings,stringsdict}"
+                ],
+                "BDLLiveStreamingImageResource": [
+                    "BDLive/LiveStreaming/Resource/Assets/LiveStream.xcassets"
+                ],
+                "BDLLiveStreamingAudioResource": [
+                    "BDLive/LiveStreaming/Resource/Audio/*.*"
+                ]
+            },
+            "frameworks": [
+                "Accelerate",
+                "AssetsLibrary",
+                "AVFoundation",
+                "CoreGraphics",
+                "CoreImage",
+                "CoreMedia",
+                "CoreVideo",
+                "Foundation",
+                "QuartzCore",
+                "UIKit",
+                "CoreMotion",
+                "GLKit"
+            ],
+            "weak_frameworks": [
+                "Metal",
+                "MetalPerformanceShaders",
+                "Photos",
+                "CoreML",
+                "PhotosUI"
+            ],
+            "libraries": [
+                "stdc++",
+                "z"
+            ],
+            "vendored_libraries": "BDLive/LiveStreaming/SDK/BytedEffectSDK/libeffect-sdk.a",
+            "dependencies": {
+                "YYCategories": [],
+                "BDLive/Common": [],
+                "SSZipArchive": [],
+                "TTSDKFramework/LivePush": [
+                    "1.41.2.8-premium"
+                ]
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_LiveStreamingWithoutRTC_*awesome_*.a"
+            },
             "preserve_paths": [
                 "**/*.bwp"
-            ],
+            ]
+        },
+        {
+            "name": "ScreenShare",
             "dependencies": {
                 "VolcEngineRTC-VE/ScreenCapture": [
                     "3.52.155"
                 ]
             },
+            "source_files": [
+                "BDLive-bitdummy.m"
+            ],
             "ios": {
                 "vendored_libraries": "ios-arch-iphone/*_ScreenShare_*awesome_*.a"
             },
-            "name": "ScreenShare",
-            "source_files": [
-                "BDLive-bitdummy.m"
+            "preserve_paths": [
+                "**/*.bwp"
             ]
         }
     ],
-    "name": "BDLive"
+    "repoId": "28443",
+    "source_files": [
+        "BDLive-bitdummy.m"
+    ],
+    "default_subspecs": [
+        "Viewer"
+    ],
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ]
 }
