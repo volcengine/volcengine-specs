@@ -1,0 +1,36 @@
+{
+    "name": "BDHTTPDNS-tob",
+    "version": "0.5.7",
+    "summary": "framework_summary",
+    "authors": {
+        "liuzhe.1939": "liuzhe.1939@bytedance.com"
+    },
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "description": "framework_description",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/BDHTTPDNS-tob/0.5.7/BDHTTPDNS-tob_swift5_1_3_framework.tar.xz"
+    },
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "pod_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    },
+    "user_target_xcconfig": {
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "static_framework": true,
+    "repoId": "44405",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/BDHTTPDNS_tob.xcframework"
+    }
+}
