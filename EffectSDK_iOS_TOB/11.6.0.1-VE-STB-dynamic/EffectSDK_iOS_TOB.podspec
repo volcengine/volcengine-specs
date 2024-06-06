@@ -5,7 +5,7 @@
 
 Pod::Spec.new do |s|
 s.name         = "EffectSDK_iOS_TOB"
-s.version      = "11.6.0-VE-STB-dynamic"
+s.version      = "11.6.0.1-VE-STB-dynamic"
 s.summary      = "EffectSDK_iOS_TOB"
 s.description      = <<-DESC
 A cross platform render effect library for livestream and short vedio.
