@@ -24,5 +24,5 @@ Pod::Spec.new do |s|
   s.ios.preserve_paths = ['Headers/*.{h}']
   s.ios.module_map = "Modules/module.modulemap"
   s.dependency 'TTVideoEditor', '>=9.x'
-  s.pod_target_xcconfig = { "VALID_ARCHS" => "armv7 arm64" }
+  s.pod_target_xcconfig = { "VALID_ARCHS" => "arm64 , x86_64" }
 end
