@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.source           = { :http => "https://hstob-cdn-tos.volccdn.com/volcengine/TTNetworkManager/4.1.127.40/TTNetworkManager.zip" }
 
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '12.0'
   s.requires_arc = true
   s.pod_target_xcconfig = {
     # 'DEFINES_MODULE' => 'YES',
