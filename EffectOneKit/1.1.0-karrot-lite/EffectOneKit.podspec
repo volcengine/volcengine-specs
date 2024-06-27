@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.authors = "EffectOne"
   s.homepage = "https://github.com/volcengine/volcengine-specs"
   s.description = "make better video editing and development experience"
-  s.source = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/#{$EFFECT_ONE_KEY}/1.1.0-karrot-lite/EffectOneKit.framework.zip"}
+  s.source = { :http => "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/EffectOneKit/1.1.0-karrot-lite/EffectOneKit.framework.zip"}
 
   s.ios.deployment_target = '9.0'
 
