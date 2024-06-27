@@ -1,0 +1,90 @@
+{
+    "name": "VEVideoKit",
+    "version": "0.3.8",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://github.com/volcengine/veMARS_SwiftOneKit",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "wangzhiyong": "wangzhiyong.7717@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VEVideoKit/0.3.8/VEVideoKit.framework.tar.xz"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "requires_arc": true,
+    "static_framework": true,
+    "pod_target_xcconfig": {
+        "BITCODE_GENERATION_MODE": "bitcode"
+    },
+    "preserve_paths": [
+        "NOTICE",
+        "**/*.bwp"
+    ],
+    "subspecs": [
+        {
+            "name": "boringssl",
+            "vendored_frameworks": "VEVideoKit/boringssl/*.framework",
+            "source_files": [
+                "VEVideoKit-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_boringssl_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "TTNetworkManager",
+            "dependencies": {
+                "TTNetworkManager": [
+                    "4.1.127.43"
+                ]
+            },
+            "source_files": [
+                "VEVideoKit-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_TTNetworkManager_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "VolcEngineAudio",
+            "vendored_frameworks": [
+                "VEVideoKit/byteaudio.xcframework",
+                "VEVideoKit/RealXBase.xcframework"
+            ],
+            "source_files": [
+                "VEVideoKit-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_VolcEngineAudio_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        }
+    ],
+    "repoId": "28296",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_VEVideoKit_*awesome_*.a"
+    },
+    "source_files": [
+        "VEVideoKit-bitdummy.m"
+    ],
+    "prepare_command": ""
+}
