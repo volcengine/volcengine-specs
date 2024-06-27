@@ -368,13 +368,17 @@
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_VeLiveCore_ios.a',
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_Live-CN_ios.a',
         'TTSDK/VCloudPandora/ios-arch-iphone/libVCloudPandora_Live-SG_ios.a',
-        'TTSDK/VeLiveCommon/ios-arch-iphone/libVeLiveCommon_HttpDNS_ios.a',
-        'TTSDK/VeLiveCommon/ios-arch-iphone/libVeLiveCommon_Core_ios.a.a',
+        'TTSDK/VeLiveCommon/ios-arch-iphone/*.a',
       ]
       subspec.public_header_files = [
-         'TTSDK/VeLiveCommon/iOS/VeLiveCommon/Classes/Core/VeLiveCommon.h',
-         'TTSDK/VeLiveCommon/iOS/VeLiveCommon/Classes/HttpDNS/VeLiveCommon+HttpDNS.h',
+         'TTSDK/VeLiveCommon/iOS/VeLiveCommon/Classes/**/*.h',
       ]
+      subspec.source_files = [
+        'TTSDK/VeLiveCommon/iOS/VeLiveCommon/Classes/**/*.h',
+      ]
+      subspec.resource_bundles = {
+        'VeLive' => ['TTSDK/VeLiveCommon/iOS/VeLiveCommon/Assets/PrivacyInfo.xcprivacy']
+      }
       subspec.dependency 'TTSDK/TTNet-VE'
       subspec.dependency 'TTSDK/Quic-VE/Core'
       subspec.dependency 'TTSDK/Reachability'
