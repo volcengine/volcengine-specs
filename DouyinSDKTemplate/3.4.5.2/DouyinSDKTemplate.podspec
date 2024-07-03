@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "DouyinSDKTemplate"
-  spec.version      = "3.4.5.1"
+  spec.version      = "3.4.5.2"
   spec.summary      = "A short description of DouyinSDKTemplate."
   spec.description  = <<-DESC
   A long description of DouyinSDKTemplate.
