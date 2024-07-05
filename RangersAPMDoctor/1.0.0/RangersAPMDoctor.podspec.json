@@ -14,7 +14,6 @@
     "source": {
         "http": "https://hstob-cdn-tos.volccdn.com/volcengine/RangersAPMDoctor/1.0.0/RangersAPMDoctor.framework.tar.xz"
     },
-    "prefix_header_file": "HMDDoctor/RangersAPMDoctor.pch",
     "static_framework": true,
     "platforms": {
         "ios": "9.0"
@@ -25,10 +24,10 @@
     ],
     "public_header_files": "HMDDoctor/Classes/Doctor/ToB/Public/**/*.h",
     "dependencies": {
-        "HeimdallrFinder/Public": [
+        "RangersAPM/Public": [
             ">= 4.1.0"
         ],
-        "HeimdallrFinder/HMD": [
+        "RangersAPM/HMD": [
             ">= 4.1.0"
         ]
     },
@@ -42,8 +41,5 @@
         ],
         "vendored_libraries": "ios-arch-iphone/*_RangersAPMDoctor_*awesome_*.a"
     },
-    "prepare_command": "",
-    "preserve_paths": [
-        "**/*.bwp"
-    ]
+    "prepare_command": ""
 }
