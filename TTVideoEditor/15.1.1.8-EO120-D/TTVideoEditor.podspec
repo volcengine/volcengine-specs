@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "TTVideoEditor"
-  s.version = "15.1.1.7-EO120-D"
+  s.version = "15.1.1.8-EO120-D"
   s.summary = "TTVideoEditor"
   s.license = "MIT"
   s.authors = {"bytedance.ysj"=>"bytedance.ysj@bytedance.com"}
