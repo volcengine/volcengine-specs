@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
 
-  s.vendored_frameworks = "EffectOneKit.framework"
+  s.vendored_frameworks = "EffectOneKit.xcframework"
 end
