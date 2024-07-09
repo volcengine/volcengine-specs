@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EffectOneKit'
-  s.version          = '1.1.0-karrot-eolite
+  s.version          = '1.1.0-karrot-eolite'
   s.summary = "EffectOneKit"
   s.license          = {
     :type => 'Copyright',
