@@ -1,6 +1,6 @@
 {
   "name": "AwemeOpenSDK",
-  "version": "3.4.5.1-fz",
+  "version": "3.4.5.1-fz1",
   "summary": "字节跳动抖音开放平台内容SDK",
   "homepage": "https://developer.open-douyin.com/",
   "license": {
@@ -11,7 +11,7 @@
     "liubo.lb": "liubo.lb@bytedance.com"
   },
   "source": {
-    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/AwemeOpenSDK/3.4.5.2-alpha.1/AwemeOpenSDK.zip"
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/AwemeOpenSDK/3.4.5.2-alpha.2/AwemeOpenSDK.zip"
   },
   "description": "字节跳动抖音开放平台内容SDK",
   "platforms": {
