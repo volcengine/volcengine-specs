@@ -1,0 +1,81 @@
+{
+    "name": "PangrowthDJX",
+    "version": "1.1.8.0-rc.1",
+    "summary": "LCDSDK is a SDK from Bytedance providing content service.",
+    "description": "Bytedance provides content which include video\u3001feed\u3001video card etc.",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "sunxianglin": "sunxianglin@bytedance.com"
+    },
+    "homepage": "https://www.pangle.cn/",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/PangrowthDJX/1.1.8.0-rc.1/PangrowthDJX-1.1.8.0-rc.1.zip"
+    },
+    "platforms": {
+        "ios": "10.0"
+    },
+    "pod_target_xcconfig": {
+        "OTHER_LDFLAGS": [
+            "-lObjC"
+        ]
+    },
+    "frameworks": [
+        "MetalKit",
+        "CoreMotion",
+        "SystemConfiguration",
+        "OpenAL",
+        "VideoToolbox"
+    ],
+    "libraries": [
+        "c++",
+        "z",
+        "iconv",
+        "xml2",
+        "bz2",
+        "c++abi"
+    ],
+    "dependencies": {
+        "RangersAPM/Core": [
+            "~> 3.8.4"
+        ],
+        "RangersAPM/Public": [
+            "~> 3.8.4"
+        ],
+        "RangersAPM/Crash": [
+            "~> 3.8.4"
+        ],
+        "RangersAPM/HMD": [
+            "~> 3.8.4"
+        ],
+        "RangersAPM/EventMonitor": [
+            "~> 3.8.4"
+        ],
+        "RangersAPM/CN": [
+            "~> 3.8.4"
+        ],
+        "RangersAppLog/Core": [
+            ">= 6.16.3"
+        ],
+        "RangersAppLog/Log": [
+            ">= 6.16.3"
+        ],
+        "RangersAppLog/Host/CN": [
+            ">= 6.16.3"
+        ]
+    },
+    "vendored_frameworks": [
+        "PangrowthDJX/PangrowthDJX.framework"
+    ],
+    "resources": [
+        "PangrowthDJX/DJXSDK.bundle",
+        "PangrowthDJX/ttplayer.metallib"
+    ],
+    "preserve_paths": [
+        "PangrowthDJX/*.framework",
+        "PangrowthDJX/*.bundle",
+        "PangrowthDJX/ttplayer.metallib"
+    ]
+}
