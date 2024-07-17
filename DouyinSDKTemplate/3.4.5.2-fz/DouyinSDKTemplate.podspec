@@ -60,7 +60,7 @@ spec.subspec "ToB" do |tob|
     # ToB 小视频
     tob.subspec "Media" do |media|
         media.dependency 'MetaAD', '1.0.0.6'
-        media.dependency "AwemeOpenSDK/TemplateToB", '= 3.4.5.1-fz'
+        media.dependency "AwemeOpenSDK/TemplateToB", '= 3.4.5.2-fz'
         # TTSDKFramework 接入方式适配
         unless $DouyinSDKUseTTSDKFramework == true
           media.dependency "TTSDK/Player"
