@@ -1,0 +1,45 @@
+{
+    "name": "RangersAPMDoctor",
+    "version": "1.0.2",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://www.volcengine.com/docs/6431/68850",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "volcengine": "volcengine.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/RangersAPMDoctor/1.0.2/RangersAPMDoctor.framework.tar.xz"
+    },
+    "static_framework": true,
+    "platforms": {
+        "ios": "9.0"
+    },
+    "source_files": [
+        "HMDDoctor/Classes/Doctor/{Common,ToB}/**/*.{h,m}",
+        "RangersAPMDoctor-bitdummy.m"
+    ],
+    "public_header_files": "HMDDoctor/Classes/Doctor/ToB/Public/**/*.h",
+    "dependencies": {
+        "RangersAPM/Public": [
+            ">= 4.1.0"
+        ],
+        "RangersAPM/HMD": [
+            ">= 4.1.0"
+        ]
+    },
+    "frameworks": "UIKit",
+    "repoId": "43050",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_RangersAPMDoctor_*awesome_*.a"
+    },
+    "prepare_command": ""
+}
