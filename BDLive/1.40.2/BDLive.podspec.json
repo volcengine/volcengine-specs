@@ -48,6 +48,7 @@
                 "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited)  BDL_CN=1"
             },
             "source_files": [
+                "BDLive/BDLive.h",
                 "BDLive/Base/**/*.{h,m,mm,c}",
                 "BDLive-bitdummy.m"
             ],
@@ -103,7 +104,6 @@
                 "BDLive/Common/View/BaseView/BDLBaseView.h"
             ],
             "source_files": [
-                "BDLive/BDLive.h",
                 "BDLive/Common/**/*.{h,m,mm,c}",
                 "BDLive-bitdummy.m"
             ],
