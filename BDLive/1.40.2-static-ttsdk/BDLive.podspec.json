@@ -35,17 +35,42 @@
     },
     "subspecs": [
         {
-            "name": "Common",
+            "name": "Base",
             "public_header_files": [
                 "BDLive/BDLive.h",
-                "BDLive/Common/Category/NSError+BDLErrorCode.h",
+                "BDLive/Base/Category/Error/NSError+BDLErrorCode.h",
+                "BDLive/Base/Define/BaseDefines/BDLBaseDefines.h",
+                "BDLive/Base/Model/BaseModel/BDLBaseModel.h",
+                "BDLive/Base/Model/BaseResponse/BDLBaseResponse.h",
+                "BDLive/Base/Model/ResponseMetaData/BDLResponseMetaData.h"
+            ],
+            "pod_target_xcconfig": {
+                "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited)  BDL_CN=1"
+            },
+            "source_files": [
+                "BDLive/BDLive.h",
+                "BDLive/Base/**/*.{h,m,mm,c}",
+                "BDLive-bitdummy.m"
+            ],
+            "dependencies": {
+                "YYModel": []
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Base_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Common",
+            "public_header_files": [
                 "BDLive/Common/Category/UIView+BDLDraggable.h",
                 "BDLive/Common/Data/Defines/BDLDefines.h",
                 "BDLive/Common/Data/Model/BDLActivityModel.h",
                 "BDLive/Common/Data/Model/BDLActTagModel.h",
                 "BDLive/Common/Data/Model/BDLAdvertisementModel.h",
                 "BDLive/Common/Data/Model/BDLAttentionDetectionConfigModel.h",
-                "BDLive/Common/Data/Model/BDLBaseModel.h",
                 "BDLive/Common/Data/Model/BDLBasicModel.h",
                 "BDLive/Common/Data/Model/BDLBusinessAccountModel.h",
                 "BDLive/Common/Data/Model/BDLCardModel.h",
@@ -67,8 +92,6 @@
                 "BDLive/Common/Data/Model/BDLTaskAwardConfigModel.h",
                 "BDLive/Common/Data/Model/BDLThumbUpConfigModel.h",
                 "BDLive/Common/Data/Model/BDLVerticalIconUrlModel.h",
-                "BDLive/Common/Data/Response/BDLBaseResponse.h",
-                "BDLive/Common/Data/Response/BDLResponseMetaData.h",
                 "BDLive/Common/Data/Response/BDLSendActivityMessageResponse.h",
                 "BDLive/Common/Data/Response/BDLImageUploadTokenResponse.h",
                 "BDLive/Common/Service/BDLCustomIMService.h",
@@ -81,16 +104,10 @@
                 "BDLive/Common/View/BaseView/BDLBaseView.h"
             ],
             "source_files": [
-                "BDLive/BDLive.h",
                 "BDLive/Common/**/*.{h,m,mm,c}",
                 "BDLive-bitdummy.m"
             ],
-            "exclude_files": [
-                "BDLive/Common/Env/SG/*.{h,m,mm,c}"
-            ],
-            "pod_target_xcconfig": {
-                "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited)  BDL_CN=1"
-            },
+            "exclude_files": [],
             "resource_bundles": {
                 "BDLEmoji": [
                     "BDLive/Common/Resources/BDLEmoji.bundle/**/*"
@@ -103,18 +120,34 @@
                 ]
             },
             "dependencies": {
+                "BDLive/Base": [],
                 "MJRefresh": [],
                 "Masonry": [],
                 "MBProgressHUD": [],
                 "SDWebImage": [],
                 "SDWebImageWebPCoder": [],
-                "YYModel": [],
                 "TTSDK/Uploader": [
                     "1.41.3.7-premium"
                 ]
             },
             "ios": {
                 "vendored_libraries": "ios-arch-iphone/*_Common_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "PullBase",
+            "public_header_files": [
+                "BDLive/PullBase/Model/ReportActivityDataResponse/BDLReportActivityDataResponse.h"
+            ],
+            "source_files": [
+                "BDLive/PullBase/**/*.{h,m,mm,c}",
+                "BDLive-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_PullBase_*awesome_*.a"
             },
             "preserve_paths": [
                 "**/*.bwp"
@@ -137,8 +170,13 @@
                 "MJRefresh": [],
                 "YYCategories": [],
                 "BDLive/Common": [],
-                "TTSDK/LivePull": [],
-                "TTSDK/Player": []
+                "BDLive/PullBase": [],
+                "TTSDK/LivePull": [
+                    "1.41.3.7-premium"
+                ],
+                "TTSDK/Player": [
+                    "1.41.3.7-premium"
+                ]
             },
             "frameworks": [
                 "EventKit",
@@ -165,7 +203,6 @@
                 "BDLive/Viewer/ActivityService/BDLParticipateAwardResponse.h",
                 "BDLive/Viewer/ActivityService/BDLPollingActivityMessageResponse.h",
                 "BDLive/Viewer/ActivityService/BDLRegisterResponse.h",
-                "BDLive/Viewer/ActivityService/BDLReportActivityDataResponse.h",
                 "BDLive/Viewer/ActivityService/BDLSearchActivityMessageResponse.h",
                 "BDLive/Viewer/ActivityService/BDLTaskAwardRecordResponse.h",
                 "BDLive/Viewer/ActivityService/BDLTaskAwardResultListResponse.h",
@@ -353,8 +390,13 @@
                 "MJRefresh": [],
                 "YYCategories": [],
                 "BDLive/Common": [],
-                "TTSDK/LivePull-RTS": [],
-                "TTSDK/Player-SR": []
+                "BDLive/PullBase": [],
+                "TTSDK/LivePull-RTS": [
+                    "1.41.3.7-premium"
+                ],
+                "TTSDK/Player-SR": [
+                    "1.41.3.7-premium"
+                ]
             },
             "frameworks": [
                 "EventKit",
@@ -381,7 +423,6 @@
                 "BDLive/Viewer/ActivityService/BDLParticipateAwardResponse.h",
                 "BDLive/Viewer/ActivityService/BDLPollingActivityMessageResponse.h",
                 "BDLive/Viewer/ActivityService/BDLRegisterResponse.h",
-                "BDLive/Viewer/ActivityService/BDLReportActivityDataResponse.h",
                 "BDLive/Viewer/ActivityService/BDLSearchActivityMessageResponse.h",
                 "BDLive/Viewer/ActivityService/BDLTaskAwardRecordResponse.h",
                 "BDLive/Viewer/ActivityService/BDLTaskAwardResultListResponse.h",
@@ -559,6 +600,30 @@
             ]
         },
         {
+            "name": "VodPlayer",
+            "public_header_files": [
+                "BDLive/VodPlayer/BDLVodPlayer.h"
+            ],
+            "source_files": [
+                "BDLive/VodPlayer/**/*.{h,m,mm,c,cpp}",
+                "BDLive-bitdummy.m"
+            ],
+            "dependencies": {
+                "BDLive/Base": [],
+                "BDLive/PullBase": [],
+                "Masonry": [],
+                "TTSDK/Player": [
+                    "1.41.3.7-premium"
+                ]
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_VodPlayer_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
             "name": "LiveStreaming",
             "public_header_files": [
                 "BDLive/LiveStreaming/BDLLiveStreaming.h",
@@ -623,7 +688,9 @@
                 "YYCategories": [],
                 "BDLive/Common": [],
                 "SSZipArchive": [],
-                "TTSDK/LivePush-RTS": []
+                "TTSDK/LivePush-RTS": [
+                    "1.41.3.7-premium"
+                ]
             },
             "ios": {
                 "vendored_libraries": "ios-arch-iphone/*_LiveStreaming_*awesome_*.a"
@@ -696,7 +763,9 @@
                 "YYCategories": [],
                 "BDLive/Common": [],
                 "SSZipArchive": [],
-                "TTSDK/LivePush": []
+                "TTSDK/LivePush": [
+                    "1.41.3.7-premium"
+                ]
             },
             "ios": {
                 "vendored_libraries": "ios-arch-iphone/*_LiveStreamingWithoutRTC_*awesome_*.a"
