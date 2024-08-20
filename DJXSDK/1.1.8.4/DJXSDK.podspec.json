@@ -1,0 +1,76 @@
+{
+    "name": "DJXSDK",
+    "version": "1.1.8.4",
+    "summary": "Pangrowth is an SDK that integrates novels, media, and live broadcasts.",
+    "description": "Pangrowth is an SDK that integrates novels, media, and live broadcasts.",
+    "homepage": "https://www.pangle.cn/",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "sunxianglin": "sunxianglin@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/DJXSDK/1.1.8.4/DJXSDK.zip"
+    },
+    "platforms": {
+        "ios": "10.0"
+    },
+    "dependencies": {
+        "RangersAppLog/Core": [
+            ">= 6.16.3"
+        ],
+        "RangersAppLog/Host/CN": [
+            ">= 6.16.3"
+        ],
+        "RangersAPM/Core": [
+            ">= 3.10.6"
+        ],
+        "RangersAPM/Crash": [
+            ">= 3.10.6"
+        ],
+        "RangersAPM/EventMonitor": [
+            ">= 3.10.6"
+        ],
+        "RangersAPM/HMD": [
+            ">= 3.10.6"
+        ],
+        "RangersAPM/Public": [
+            ">= 3.10.6"
+        ],
+        "RangersAPM/CN": [
+            ">= 3.10.6"
+        ]
+    },
+    "default_subspecs": [],
+    "subspecs": [
+        {
+            "name": "shortplay",
+            "dependencies": {
+                "PangrowthDJX": [
+                    "1.1.8.4"
+                ]
+            }
+        },
+        {
+            "name": "shortplay-dynamic",
+            "dependencies": {
+                "PangrowthDJX-lite": [
+                    "1.1.8.4"
+                ],
+                "PangrowthTTVideoEngine-dynamic": [
+                    "1.0.0.0"
+                ]
+            }
+        },
+        {
+            "name": "shortplay-lite",
+            "dependencies": {
+                "PangrowthDJX-lite": [
+                    "1.1.8.4"
+                ]
+            }
+        }
+    ]
+}
