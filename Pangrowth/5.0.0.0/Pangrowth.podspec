@@ -27,19 +27,23 @@ Pangrowth is an SDK that integrates novels, media, and live broadcasts.
   end
 
   s.subspec 'djx' do |ss|
+    ss.dependency 'PGXToolbox', '2.0.0.0'
     ss.dependency 'PangrowthDJX', '2.0.0.0'
   end
 
   s.subspec 'djx-dynamic' do |ss|
+    ss.dependency 'PGXToolbox', '2.0.0.0'
     ss.dependency 'PangrowthDJX-lite', '2.0.0.0'
     ss.dependency 'PangrowthTTVideoEngine-dynamic', '1.0.0.0'
   end
 
   s.subspec 'djx-lite' do |ss|
+    ss.dependency 'PGXToolbox', '2.0.0.0'
     ss.dependency 'PangrowthDJX-lite', '2.0.0.0'
   end
 
   s.subspec 'nov' do |ss|
+    ss.dependency 'PGXToolbox', '2.0.0.0'
     ss.dependency 'PangrowthMiniStory', '2.0.0.0'
   end
 
