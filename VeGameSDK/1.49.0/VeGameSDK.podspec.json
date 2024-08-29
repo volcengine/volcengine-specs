@@ -12,7 +12,7 @@
         "yinhaichao": "yinhaichao@bytedance.com"
     },
     "source": {
-        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VeGameSDK/1.49.0/VeGameSDK.framework.tar.xz"
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VeGameSDK/1.49.1/VeGameSDK.framework.tar.xz"
     },
     "platforms": {
         "ios": "11.0"
