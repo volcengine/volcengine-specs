@@ -1,0 +1,175 @@
+{
+    "name": "DataIRIS",
+    "version": "0.1.2-xcfmwk",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://apploghome.bytedance.net/",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "Vincent.Feng": "fengchengqi@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/DataIRIS/0.1.2-xcfmwk/DataIRIS_swift5_1_3_framework.tar.xz"
+    },
+    "platforms": {
+        "ios": "10.0",
+        "osx": "10.10"
+    },
+    "requires_arc": true,
+    "static_framework": true,
+    "pod_target_xcconfig": {
+        "HEADER_SEARCH_PATHS": "\"${PODS_TARGET_SRCROOT}\"",
+        "DEFINES_MODULE": "YES"
+    },
+    "repoId": "41067",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+    },
+    "testspecs": [
+        {
+            "name": "Tests",
+            "test_type": "unit",
+            "resource_bundles": {
+                "IRISUnitTestBundle": [
+                    "DataIRIS/**/tests/**/resources/**/*.*"
+                ]
+            },
+            "dependencies": {
+                "OCMock": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        }
+    ],
+    "subspecs": [
+        {
+            "name": "Defines",
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "Core",
+            "libraries": [
+                "c++",
+                "z"
+            ],
+            "dependencies": {
+                "DataIRIS/Defines": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "Event",
+            "dependencies": {
+                "DataIRIS/Core": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "EventSchemaJSON",
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "EventStoreFMDB",
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "RemoteSettings",
+            "dependencies": {
+                "DataIRIS/Defines": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "Throttlter",
+            "dependencies": {
+                "DataIRIS/Defines": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "Session",
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "Aggregation",
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "Sentry",
+            "dependencies": {
+                "DataIRIS/Event": [],
+                "DataIRIS/Aggregation": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "DevTools",
+            "dependencies": {
+                "DataIRIS/DevToolsBundle": [],
+                "DataIRIS/Core": [],
+                "DataIRIS/Event": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "DevToolsBundle",
+            "resource_bundles": {
+                "IRISDevToolsBundle": [
+                    "DataIRIS/devtools/assets/**/*.{png}"
+                ]
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        },
+        {
+            "name": "Legacy",
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.xcframework"
+            }
+        }
+    ]
+}
