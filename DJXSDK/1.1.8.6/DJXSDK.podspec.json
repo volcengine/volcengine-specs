@@ -78,7 +78,7 @@
                 "PangrowthDJX-premium": [
                     "1.1.8.6"
                 ],
-                "TTSDKFramework/Player-SR": [
+                "TTSDKFramework/Player": [
                     ">= 1.42.3.4-premium"
                 ]
             }
