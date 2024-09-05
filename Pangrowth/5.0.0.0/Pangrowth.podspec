@@ -14,16 +14,16 @@ Pangrowth is an SDK that integrates novels, media, and live broadcasts.
   s.ios.deployment_target = '12.0'
 
   s.subspec 'media' do |ss|
-    ss.dependency 'PangrowthMedia', '5.3.0.0'
+    ss.dependency 'PangrowthMedia', '5.4.0.0'
   end
 
   s.subspec 'media-dynamic' do |ss|
-    ss.dependency 'PangrowthMedia-lite', '5.3.2.0'
+    ss.dependency 'PangrowthMedia-lite', '5.4.2.0'
     ss.dependency 'PangrowthTTVideoEngine-dynamic', '1.0.0.0'
   end
 
   s.subspec 'media-lite' do |ss|
-    ss.dependency 'PangrowthMedia-lite', '5.3.2.0'
+    ss.dependency 'PangrowthMedia-lite', '5.4.2.0'
   end
 
   s.subspec 'djx' do |ss|
