@@ -1,0 +1,79 @@
+{
+    "name": "PangrowthDJX-premium",
+    "version": "1.1.8.6",
+    "summary": "PangrowthDJX is a SDK from Bytedance providing content service.",
+    "description": "Bytedance provides content which include video\u3001feed\u3001video card etc.",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "yuxuri": "yuxuri@bytedance.com"
+    },
+    "homepage": "https://www.pangle.cn/",
+    "source": {
+        "http": "https://sf3-fe-tos.pglstatp-toutiao.com/obj/pangle-empower/pangrowth-djx/1.1.8.6/PangrowthDJX-premium-1.1.8.6.zip"
+    },
+    "platforms": {
+        "ios": "12.0"
+    },
+    "pod_target_xcconfig": {
+        "OTHER_LDFLAGS": [
+            "-lObjC"
+        ]
+    },
+    "frameworks": [
+        "MetalKit",
+        "CoreMotion",
+        "SystemConfiguration",
+        "OpenAL",
+        "VideoToolbox"
+    ],
+    "libraries": [
+        "c++",
+        "z",
+        "iconv",
+        "xml2",
+        "bz2",
+        "c++abi"
+    ],
+    "dependencies": {
+        "RangersAPM/Core": [
+            ">= 3.10.6"
+        ],
+        "RangersAPM/Public": [
+            ">= 3.10.6"
+        ],
+        "RangersAPM/Crash": [
+            ">= 3.10.6"
+        ],
+        "RangersAPM/HMD": [
+            ">= 3.10.6"
+        ],
+        "RangersAPM/EventMonitor": [
+            ">= 3.10.6"
+        ],
+        "RangersAPM/CN": [
+            ">= 3.10.6"
+        ],
+        "RangersAppLog/Core": [
+            ">= 6.16.3"
+        ],
+        "RangersAppLog/Log": [
+            ">= 6.16.3"
+        ],
+        "RangersAppLog/Host/CN": [
+            ">= 6.16.3"
+        ]
+    },
+    "vendored_frameworks": [
+        "PangrowthDJX-premium/PangrowthDJX.framework"
+    ],
+    "resources": [
+        "PangrowthDJX-premium/DJXSDK.bundle"
+    ],
+    "preserve_paths": [
+        "PangrowthDJX-premium/*.framework",
+        "PangrowthDJX-premium/*.bundle"
+    ]
+}
