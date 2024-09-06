@@ -49,7 +49,7 @@
             "name": "shortplay",
             "dependencies": {
                 "PangrowthDJX": [
-                    "1.1.8.2"
+                    "1.1.8.4"
                 ]
             }
         },
@@ -57,7 +57,7 @@
             "name": "shortplay-dynamic",
             "dependencies": {
                 "PangrowthDJX-lite": [
-                    "1.1.8.2"
+                    "1.1.8.4"
                 ],
                 "PangrowthTTVideoEngine-dynamic": [
                     "1.0.0.0"
@@ -68,7 +68,7 @@
             "name": "shortplay-lite",
             "dependencies": {
                 "PangrowthDJX-lite": [
-                    "1.1.8.2"
+                    "1.1.8.4"
                 ]
             }
         },
