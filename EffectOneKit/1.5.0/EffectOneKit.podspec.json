@@ -10,7 +10,7 @@
     "homepage": "https://github.com/volcengine/volcengine-specs",
     "description": "framework_description",
     "source": {
-        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/EffectOneKit/1.5.0/EffectOneKit.xcframework.zip"
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/EffectOneKit/1.5.0.2/EffectOneKit.xcframework.zip"
     },
     "platforms": {
         "ios": "9.0"
