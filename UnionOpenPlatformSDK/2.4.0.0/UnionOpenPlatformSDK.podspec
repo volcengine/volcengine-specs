@@ -10,8 +10,6 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://game.open.douyin.com'
   s.license          = { :type => 'Copyright', :text => 'Copyright 2020 bytedance.com. All rights reserved.' }
   s.author           = { 'ByteDance' => 'bytedance.com' }
-  # https://hstob-cdn-tos.volccdn.com/volcengine/  
-  # https://tosv.byted.org/obj/osdkbucket/OSDK_iOS_Package/
   s.source = { :http => "https://hstob-cdn-tos.volccdn.com/volcengine/#{s.name}/#{s.version.to_s}/#{s.name}.zip" }
   puts "s.source: #{s.source}"
   
@@ -24,8 +22,8 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = "#{s.name}/Core/UnionOpenPlatformCore.framework"
 
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'GENERATE_INFOPLIST_FILE' => "YES"}
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'GENERATE_INFOPLIST_FILE' => "YES"}
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'GENERATE_INFOPLIST_FILE' => 'YES'}
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'GENERATE_INFOPLIST_FILE' => 'YES'}
 
   s.subspec 'DataLink' do |ss|
     # DataLink不直接依赖抖音
@@ -35,9 +33,9 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Douyin' do |ss|
-    ss.source_files  = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework/Headers/*.h", "#{s.name}/Douyin/DouyinOpenSDK.framework/Headers/*.h"] #'Douyin/DouyinOpenSDK.framework/Modules/*.h' 需要给嘛？
+    ss.source_files  = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework/Headers/*.h", "#{s.name}/Douyin/DouyinOpenSDK.framework/Headers/*.h"]
 
-    ss.vendored_frameworks = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework", "#{s.name}/DouyinOpenSDK.framework"]
+    ss.vendored_frameworks = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework", "#{s.name}/Douyin/DouyinOpenSDK.framework"]
   end
 
   # s.subspec 'CPS' do |ss|
