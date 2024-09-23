@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
   s.weak_framework = 'ApptrackingTransparency'
 
   s.source_files = "#{s.name}/Core/UnionOpenPlatformCore.framework/Headers/*.h"
+  s.public_header_files = "#{s.name}/Core/UnionOpenPlatformCore.framework/Headers/*.h"
 
   s.vendored_frameworks = "#{s.name}/Core/UnionOpenPlatformCore.framework"
 
@@ -28,12 +29,14 @@ Pod::Spec.new do |s|
   s.subspec 'DataLink' do |ss|
     # DataLink不直接依赖抖音
     ss.source_files  = "#{s.name}/DataLink/UnionOpenPlatformDataLink.framework/Headers/*.h"
+    ss.public_header_files  = "#{s.name}/DataLink/UnionOpenPlatformDataLink.framework/Headers/*.h"
 
     ss.vendored_frameworks = "#{s.name}/DataLink/UnionOpenPlatformDataLink.framework"
   end
 
   s.subspec 'Douyin' do |ss|
     ss.source_files  = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework/Headers/*.h", "#{s.name}/Douyin/DouyinOpenSDK.framework/Headers/*.h"]
+    ss.public_header_files  = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework/Headers/*.h", "#{s.name}/Douyin/DouyinOpenSDK.framework/Headers/*.h"]
 
     ss.vendored_frameworks = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework", "#{s.name}/Douyin/DouyinOpenSDK.framework"]
   end
@@ -51,6 +54,7 @@ Pod::Spec.new do |s|
     ss.dependency "#{s.name}/Douyin"
 
     ss.source_files  = "#{s.name}/Share/UnionOpenPlatformShare.framework/Headers/*.h"
+    ss.public_header_files  = "#{s.name}/Share/UnionOpenPlatformShare.framework/Headers/*.h"
     ss.vendored_frameworks = "#{s.name}/Share/UnionOpenPlatformShare.framework"
   end
   
@@ -58,6 +62,7 @@ Pod::Spec.new do |s|
     ss.dependency "#{s.name}/Douyin"
 
     ss.source_files  = "#{s.name}/Replay/UnionOpenPlatformReplay.framework/Headers/*.h"
+    ss.public_header_files  = "#{s.name}/Replay/UnionOpenPlatformReplay.framework/Headers/*.h"
 
     ss.vendored_frameworks = ["#{s.name}/Replay/UnionOpenPlatformReplay.framework", "#{s.name}/Replay/BDAudioRecord.framework", "#{s.name}/Replay/BDAudioRecordResolver.framework"]
   end
@@ -66,12 +71,14 @@ Pod::Spec.new do |s|
     ss.dependency "#{s.name}/Douyin"
 
     ss.source_files  = "#{s.name}/TeamPlay/UnionOpenPlatformTeamPlay.framework/Headers/*.h"
+    ss.public_header_files  = "#{s.name}/TeamPlay/UnionOpenPlatformTeamPlay.framework/Headers/*.h"
 
     ss.vendored_frameworks = "#{s.name}/TeamPlay/UnionOpenPlatformTeamPlay.framework"
   end
 
   s.subspec 'DebugTool' do |ss|
     ss.source_files  = "#{s.name}/DebugTool/UnionOpenPlatformDebugTool.framework/Headers/*.h"
+    ss.public_header_files  = "#{s.name}/DebugTool/UnionOpenPlatformDebugTool.framework/Headers/*.h"
     ss.resources = "#{s.name}/DebugTool/UOPDebugToolBundle.bundle"
 
     ss.vendored_frameworks = "#{s.name}/DebugTool/UnionOpenPlatformDebugTool.framework"
