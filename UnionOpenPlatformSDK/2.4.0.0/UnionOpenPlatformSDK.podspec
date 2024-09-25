@@ -13,6 +13,9 @@ Pod::Spec.new do |s|
   s.source = { :http => "https://hstob-cdn-tos.volccdn.com/volcengine/#{s.name}/#{s.version.to_s}/#{s.name}.zip" }
   puts "s.source: #{s.source}"
   
+  s.deprecated = true
+  # s.deprecation_message = 'This version of UnionOpenPlatformSDK is deprecated. Please use version 2.4.0.1 or later for better performance and stability.'
+
   s.ios.deployment_target = '11.0'
 
   s.frameworks = 'UIKit', 'Foundation', 'Accelerate', 'MobileCoreServices'
@@ -59,7 +62,6 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Replay' do |ss|
-    ss.dependency "#{s.name}/Douyin"
 
     ss.source_files  = "#{s.name}/Replay/UnionOpenPlatformReplay.framework/Headers/*.h"
     ss.public_header_files  = "#{s.name}/Replay/UnionOpenPlatformReplay.framework/Headers/*.h"
