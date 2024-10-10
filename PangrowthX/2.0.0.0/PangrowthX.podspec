@@ -29,6 +29,11 @@ Pod::Spec.new do |s|
     ss.dependency 'PangrowthDJX-lite', '>= 2.1.0.0'
     ss.dependency 'PGXToolbox', '>=2.1.0.0'
   end
+  
+  s.subspec 'shortplay-dynamic' do |ss|
+    ss.dependency 'PangrowthDJX-lite', '2.1.0.0'
+    ss.dependency 'PangrowthTTVideoEngine-dynamic', '1.0.0.0'
+  end
 
   s.subspec 'ministory' do |ss|
     ss.dependency 'PangrowthMiniStory', '>=2.1.0.0'
