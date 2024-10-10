@@ -18,15 +18,20 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit', 'Foundation', 'Accelerate', 'MobileCoreServices'
   s.weak_framework = 'ApptrackingTransparency'
 
-  s.source_files = "#{s.name}/Core/UnionOpenPlatformCore.framework/Headers/*.h"
-  s.public_header_files = "#{s.name}/Core/UnionOpenPlatformCore.framework/Headers/*.h"
-
-  s.vendored_frameworks = "#{s.name}/Core/UnionOpenPlatformCore.framework"
-
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'GENERATE_INFOPLIST_FILE' => 'YES'}
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'GENERATE_INFOPLIST_FILE' => 'YES'}
 
+  s.subspec 'Core' do |ss|
+    ss.source_files = "#{s.name}/Core/UnionOpenPlatformCore.framework/Headers/*.h"
+    ss.public_header_files = "#{s.name}/Core/UnionOpenPlatformCore.framework/Headers/*.h"
+
+    ss.vendored_frameworks = "#{s.name}/Core/UnionOpenPlatformCore.framework"
+  end
+
+
   s.subspec 'DataLink' do |ss|
+    ss.dependency "#{s.name}/Core"
+
     # DataLink不直接依赖抖音
     ss.source_files  = "#{s.name}/DataLink/UnionOpenPlatformDataLink.framework/Headers/*.h"
     ss.public_header_files  = "#{s.name}/DataLink/UnionOpenPlatformDataLink.framework/Headers/*.h"
@@ -35,6 +40,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Douyin' do |ss|
+    ss.dependency "#{s.name}/Core"
+
     ss.source_files  = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework/Headers/*.h", "#{s.name}/Douyin/DouyinOpenSDK.framework/Headers/*.h"]
     ss.public_header_files  = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework/Headers/*.h", "#{s.name}/Douyin/DouyinOpenSDK.framework/Headers/*.h"]
 
@@ -50,6 +57,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Replay' do |ss|
+    ss.dependency "#{s.name}/Core"
 
     ss.source_files  = "#{s.name}/Replay/UnionOpenPlatformReplay.framework/Headers/*.h"
     ss.public_header_files  = "#{s.name}/Replay/UnionOpenPlatformReplay.framework/Headers/*.h"
@@ -67,6 +75,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'DebugTool' do |ss|
+    ss.dependency "#{s.name}/Core"
+    
     ss.source_files  = "#{s.name}/DebugTool/UnionOpenPlatformDebugTool.framework/Headers/*.h"
     ss.public_header_files  = "#{s.name}/DebugTool/UnionOpenPlatformDebugTool.framework/Headers/*.h"
     ss.resources = "#{s.name}/DebugTool/UOPDebugToolBundle.bundle"
