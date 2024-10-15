@@ -28,7 +28,6 @@ Pod::Spec.new do |s|
     ss.vendored_frameworks = "#{s.name}/Core/UnionOpenPlatformCore.framework"
   end
 
-
   s.subspec 'DataLink' do |ss|
     ss.dependency "#{s.name}/Core"
 
@@ -74,9 +73,7 @@ Pod::Spec.new do |s|
     ss.vendored_frameworks = "#{s.name}/TeamPlay/UnionOpenPlatformTeamPlay.framework"
   end
 
-  s.subspec 'DebugTool' do |ss|
-    ss.dependency "#{s.name}/Core"
-    
+  s.subspec 'DebugTool' do |ss|    
     ss.source_files  = "#{s.name}/DebugTool/UnionOpenPlatformDebugTool.framework/Headers/*.h"
     ss.public_header_files  = "#{s.name}/DebugTool/UnionOpenPlatformDebugTool.framework/Headers/*.h"
     ss.resources = "#{s.name}/DebugTool/UOPDebugToolBundle.bundle"
