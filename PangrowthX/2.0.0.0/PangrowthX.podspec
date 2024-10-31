@@ -21,13 +21,13 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'shortplay' do |ss|
-    ss.dependency 'PangrowthDJX', '>= 2.1.0.0'
-    ss.dependency 'PGXToolbox', '>=2.1.0.0'
+    ss.dependency 'PangrowthDJX', '2.1.0.0'
+    ss.dependency 'PGXToolbox', '2.1.0.0'
   end
   
   s.subspec 'shortplay-lite' do |ss|
-    ss.dependency 'PangrowthDJX-lite', '>= 2.1.0.0'
-    ss.dependency 'PGXToolbox', '>=2.1.0.0'
+    ss.dependency 'PangrowthDJX-lite', '2.1.0.0'
+    ss.dependency 'PGXToolbox', '2.1.0.0'
   end
   
   s.subspec 'shortplay-dynamic' do |ss|
@@ -36,8 +36,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ministory' do |ss|
-    ss.dependency 'PangrowthMiniStory', '>=2.1.0.0'
-    ss.dependency 'PGXToolbox', '>=2.1.0.0'
+    ss.dependency 'PangrowthMiniStory', '2.1.0.0'
+    ss.dependency 'PGXToolbox', '2.1.0.0'
   end
   
 end
