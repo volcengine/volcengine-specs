@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PangrowthX'
-  s.version          = '2.2.0.1'
+  s.version          = '2.2.0.2'
   s.summary          = 'PangrowthX is an SDK that integrates shortplay, ministory...'
   s.description      = <<-DESC
   PangrowthX is an SDK that integrates shortplay, ministory...
@@ -21,18 +21,18 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'shortplay-lite' do |ss|
-    ss.dependency 'PangrowthDJX-lite', '2.2.0.1'
-    ss.dependency 'PGXToolbox', '2.2.0.1'
+    ss.dependency 'PangrowthDJX-lite', '2.2.0.2'
+    ss.dependency 'PGXToolbox', '2.2.0.2'
   end
   
   s.subspec 'shortplay-dynamic' do |ss|
-    ss.dependency 'PangrowthDJX-lite', '2.2.0.1'
+    ss.dependency 'PangrowthDJX-lite', '2.2.0.2'
     ss.dependency 'PangrowthTTVideoEngine-dynamic', '1.0.0.0'
   end
 
   s.subspec 'ministory' do |ss|
-    ss.dependency 'PangrowthMiniStory', '2.2.0.1'
-    ss.dependency 'PGXToolbox', '2.2.0.1'
+    ss.dependency 'PangrowthMiniStory', '2.2.0.2'
+    ss.dependency 'PGXToolbox', '2.2.0.2'
   end
   
 end
