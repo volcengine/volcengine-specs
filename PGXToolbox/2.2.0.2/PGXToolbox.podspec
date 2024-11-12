@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PGXToolbox'
-  s.version          = '2.2.0.1'
+  s.version          = '2.2.0.2'
   s.summary          = 'PGXToolbox is a SDK from Bytedance providing content service.'
   s.description      = <<-DESC
   Bytedance provides content which include video、feed、video card etc.
