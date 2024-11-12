@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PangrowthMiniStory'
-  s.version          = '2.2.0.1'
+  s.version          = '2.2.0.2'
   s.summary          = 'PangrowthMiniStory is a SDK from Bytedance providing content service.'
   s.description      = <<-DESC
   Bytedance provides content which include video、feed、video card etc.
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC'] }
 
-  s.dependency 'PGXToolbox', '2.2.0.1'
+  s.dependency 'PGXToolbox', '2.2.0.2'
   s.dependency 'MMKV'
   s.dependency 'FMDB/standard'
   s.dependency 'YYCache'
