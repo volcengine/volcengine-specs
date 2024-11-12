@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PangrowthDJX-lite'
-  s.version          = '2.2.0.1'
+  s.version          = '2.2.0.2'
   s.summary          = 'PangrowthDJX is a SDK from Bytedance providing content service.'
   s.description      = <<-DESC
   Bytedance provides content which include video、feed、video card etc.
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'MetalKit', 'CoreMotion', 'SystemConfiguration', 'OpenAL', 'VideoToolbox'
   s.libraries = 'c++', 'z', 'iconv', 'xml2', 'bz2', 'c++abi'
   
-  s.dependency 'PGXToolbox', '2.2.0.1'
+  s.dependency 'PGXToolbox', '2.2.0.2'
 
   s.vendored_frameworks = ['PangrowthDJX-lite/PangrowthDJX.framework']
   s.resources = ['PangrowthDJX-lite/DJXSDK.bundle']
