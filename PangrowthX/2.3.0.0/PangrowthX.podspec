@@ -15,7 +15,6 @@ Pod::Spec.new do |s|
   s.default_subspecs = [ 'Base' ]
 
   s.subspec 'Base' do |ss|
-    ss.dependency 'Ads-CN', '>= 5.8.0.9'
     ss.dependency 'RangersApplog', '>= 6.16.3'
     ss.dependency 'RangersAPM', '>= 3.10.6'
   end
