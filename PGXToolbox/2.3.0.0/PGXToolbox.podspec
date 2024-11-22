@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
 
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC'] }
 
-  s.dependency 'Ads-CN', '>= 5.8.0.9'
   s.dependency 'RangersAPM/Crash', '>= 3.10.6'
   s.dependency 'RangersAPM/EventMonitor', '>= 3.10.6'
   s.dependency 'RangersAPM/CN', '>= 3.10.6'
