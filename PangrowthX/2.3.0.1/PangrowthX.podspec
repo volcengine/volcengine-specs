@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
     ss.dependency 'TTSDKFramework/Player', '>= 1.42.3.4-premium'
     ss.dependency 'PangrowthDJX', '2.3.0.1'
     ss.dependency 'PGXToolbox', '2.3.0.1'
-    ss.dependency 'Ads-CN-Beta', '>= 6.5.0.6'
+    ss.dependency 'Ads-CN-Beta', '>= 5.8.0.7'
   end
 
   s.subspec 'shortplay' do |ss|
