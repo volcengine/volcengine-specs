@@ -12,14 +12,9 @@ Pod::Spec.new do |s|
   s.source           = { :http => "https://sf3-fe-tos.pglstatp-toutiao.com/obj/pangle-empower/pangrowth/Pangrowth.zip" }
 
   s.ios.deployment_target = '12.0'
-  s.default_subspecs = [ 'Base' ]
-
-  s.subspec 'Base' do |ss|
-    ss.dependency 'RangersApplog', '>= 6.16.3'
-    ss.dependency 'RangersAPM', '>= 3.10.6'
-  end
 
   s.subspec 'shortplay' do |ss|
+    ss.dependency 'TTSDKFramework/Player', '>= 1.42.3.4-premium'
     ss.dependency 'PangrowthDJX', '2.3.0.1'
     ss.dependency 'PGXToolbox', '2.3.0.1'
   end
