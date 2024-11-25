@@ -13,10 +13,18 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0'
 
+  s.subspec 'shortplay-beta' do |ss|
+    ss.dependency 'TTSDKFramework/Player', '>= 1.42.3.4-premium'
+    ss.dependency 'PangrowthDJX', '2.3.0.1'
+    ss.dependency 'PGXToolbox', '2.3.0.1'
+    ss.dependency 'Ads-CN-Beta', '>= 6.5.0.6'
+  end
+
   s.subspec 'shortplay' do |ss|
     ss.dependency 'TTSDKFramework/Player', '>= 1.42.3.4-premium'
     ss.dependency 'PangrowthDJX', '2.3.0.1'
     ss.dependency 'PGXToolbox', '2.3.0.1'
+    ss.dependency 'Ads-CN', '>= 5.8.0.9'
   end
 
   s.subspec 'ministory' do |ss|
