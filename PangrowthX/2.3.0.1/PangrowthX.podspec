@@ -27,9 +27,16 @@ Pod::Spec.new do |s|
     ss.dependency 'Ads-CN', '>= 5.8.0.9'
   end
 
+  s.subspec 'ministory-beta' do |ss|
+    ss.dependency 'PangrowthMiniStory', '2.3.0.1'
+    ss.dependency 'PGXToolbox', '2.3.0.1'
+    ss.dependency 'Ads-CN-Beta', '>= 5.8.0.7'
+  end
+
   s.subspec 'ministory' do |ss|
     ss.dependency 'PangrowthMiniStory', '2.3.0.1'
     ss.dependency 'PGXToolbox', '2.3.0.1'
+    ss.dependency 'Ads-CN', '>= 5.8.0.9'
   end
   
 end
