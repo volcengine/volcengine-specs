@@ -1,0 +1,54 @@
+{
+    "name": "SpeechEngineTtsToB",
+    "version": "5.4.3.8-bugfix.1-bugfix",
+    "homepage": "http://toutiao.com",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "Bytedance, Inc.",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/SpeechEngineTtsToB/5.4.3.8-bugfix.1-bugfix/SpeechEngineTtsToB_swift5_1_3_framework.tar.xz"
+    },
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "platforms": {
+        "ios": "9.0"
+    },
+    "static_framework": false,
+    "requires_arc": true,
+    "ios": {
+        "frameworks": [
+            "AudioToolbox",
+            "AVFoundation",
+            "QuartzCore",
+            "OpenGLES",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/SpeechEngineTtsToB.framework"
+    },
+    "libraries": "c++",
+    "dependencies": {
+        "TTNetworkManager": [
+            "5.0.29.22"
+        ],
+        "FileMD5Hash": [
+            "2.0.0"
+        ],
+        "FMDB": [
+            "2.7.5"
+        ],
+        "SSZipArchive": [
+            "2.2.3"
+        ],
+        "Mantle": [
+            "2.1.2"
+        ],
+        "OneKit/boringssl": [
+            "1.4.2"
+        ]
+    },
+    "repoId": "32737"
+}
