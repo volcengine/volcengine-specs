@@ -12,7 +12,7 @@
     },
     "homepage": "https://www.pangle.cn/",
     "source": {
-        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/PangrowthDJX/2.5.0.0/PangrowthDJX-2.5.0.0.zip"
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/PangrowthDJX/2.5.0.3/PangrowthDJX-2.5.0.3.zip"
     },
     "platforms": {
         "ios": "12.0"
