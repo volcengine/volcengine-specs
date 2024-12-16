@@ -1,0 +1,84 @@
+{
+    "name": "PangrowthX",
+    "version": "1.1.8.4-alpha.0",
+    "summary": "PangrowthX is an SDK that integrates shortplay, ministory...",
+    "description": "PangrowthX is an SDK that integrates shortplay, ministory...",
+    "homepage": "https://www.pangle.cn/",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "wangzhengbei": "wangzhengbei@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/PangrowthX/1.1.8.4-alpha.0/Pangrowth.zip"
+    },
+    "platforms": {
+        "ios": "12.0"
+    },
+    "subspecs": [
+        {
+            "name": "shortplay-beta",
+            "dependencies": {
+                "TTSDKFramework/Player": [
+                    ">= 1.42.3.4-premium"
+                ],
+                "PangrowthDJX": [
+                    "1.1.8.4-alpha.0"
+                ],
+                "PGXToolbox": [
+                    "1.1.8.4-alpha.0"
+                ],
+                "Ads-CN-Beta": [
+                    ">= 5.8.0.7"
+                ]
+            }
+        },
+        {
+            "name": "shortplay",
+            "dependencies": {
+                "TTSDKFramework/Player": [
+                    ">= 1.42.3.4-premium"
+                ],
+                "PangrowthDJX": [
+                    "1.1.8.4-alpha.0"
+                ],
+                "PGXToolbox": [
+                    "1.1.8.4-alpha.0"
+                ],
+                "Ads-CN": [
+                    ">= 5.8.0.9"
+                ]
+            }
+        },
+        {
+            "name": "ministory-beta",
+            "dependencies": {
+                "PangrowthMiniStory": [
+                    "1.1.8.4-alpha.0"
+                ],
+                "PGXToolbox": [
+                    "1.1.8.4-alpha.0"
+                ],
+                "Ads-CN-Beta": [
+                    ">= 5.8.0.7"
+                ]
+            }
+        },
+        {
+            "name": "ministory",
+            "dependencies": {
+                "PangrowthMiniStory": [
+                    "1.1.8.4-alpha.0"
+                ],
+                "PGXToolbox": [
+                    "1.1.8.4-alpha.0"
+                ],
+                "Ads-CN": [
+                    ">= 5.8.0.9"
+                ]
+            }
+        }
+    ]
+}
