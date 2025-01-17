@@ -32,6 +32,9 @@
                 ],
                 "Ads-CN-Beta/BUAdSDK": [
                     ">= 5.8.0.7"
+                ],
+                "Ads-CN-Beta/CSJMediation": [
+                  ">= 5.8.0.7"
                 ]
             }
         },
@@ -63,6 +66,9 @@
                 ],
                 "Ads-CN-Beta/BUAdSDK": [
                     ">= 5.8.0.7"
+                ],
+                "Ads-CN-Beta/CSJMediation": [
+                  ">= 5.8.0.7"
                 ]
             }
         },
