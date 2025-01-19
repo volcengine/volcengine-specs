@@ -32,9 +32,6 @@
                 ],
                 "Ads-CN-Beta/BUAdSDK": [
                     ">= 5.8.0.7"
-                ],
-                "Ads-CN-Beta/CSJMediation": [
-                  ">= 5.8.0.7"
                 ]
             }
         },
@@ -50,7 +47,7 @@
                 "PGXToolbox": [
                     "2.6.0.0"
                 ],
-                "Ads-CN": [
+                "Ads-CN/BUAdSDK": [
                     ">= 5.8.0.9"
                 ]
             }
@@ -66,9 +63,6 @@
                 ],
                 "Ads-CN-Beta/BUAdSDK": [
                     ">= 5.8.0.7"
-                ],
-                "Ads-CN-Beta/CSJMediation": [
-                  ">= 5.8.0.7"
                 ]
             }
         },
@@ -81,7 +75,7 @@
                 "PGXToolbox": [
                     "2.6.0.0"
                 ],
-                "Ads-CN": [
+                "Ads-CN/BUAdSDK": [
                     ">= 5.8.0.9"
                 ]
             }
