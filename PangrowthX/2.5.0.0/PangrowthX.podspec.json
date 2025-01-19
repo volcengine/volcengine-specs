@@ -30,7 +30,7 @@
                 "PGXToolbox": [
                     "2.5.0.0"
                 ],
-                "Ads-CN-Beta": [
+                "Ads-CN-Beta/BUAdSDK": [
                     ">= 5.8.0.7"
                 ]
             }
@@ -47,7 +47,7 @@
                 "PGXToolbox": [
                     "2.5.0.0"
                 ],
-                "Ads-CN": [
+                "Ads-CN/BUAdSDK": [
                     ">= 5.8.0.9"
                 ]
             }
@@ -61,7 +61,7 @@
                 "PGXToolbox": [
                     "2.5.0.0"
                 ],
-                "Ads-CN-Beta": [
+                "Ads-CN-Beta/BUAdSDK": [
                     ">= 5.8.0.7"
                 ]
             }
@@ -75,7 +75,7 @@
                 "PGXToolbox": [
                     "2.5.0.0"
                 ],
-                "Ads-CN": [
+                "Ads-CN/BUAdSDK": [
                     ">= 5.8.0.9"
                 ]
             }
