@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
     ss.source_files  = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework/Headers/*.h", "#{s.name}/Douyin/DouyinOpenSDK.framework/Headers/*.h"]
     ss.public_header_files  = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework/Headers/*.h", "#{s.name}/Douyin/DouyinOpenSDK.framework/Headers/*.h"]
 
-    ss.vendored_frameworks = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework", "#{s.name}/Douyin/DouyinOpenSDK.framework"]
+    ss.vendored_frameworks = ["#{s.name}/Douyin/UnionOpenPlatformDouyin.framework", "#{s.name}/Douyin/DouyinOpenSDK.framework", "#{s.name}/Douyin/BDTicketGuard.framework"]
   end
 
   s.subspec 'Share' do |ss|
