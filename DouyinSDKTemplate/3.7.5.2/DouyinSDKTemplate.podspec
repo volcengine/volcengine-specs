@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "DouyinSDKTemplate"
-  spec.version      = "3.7.5.1"
+  spec.version      = "3.7.5.2"
   spec.summary      = "A short description of DouyinSDKTemplate."
   spec.description  = <<-DESC
   A long description of DouyinSDKTemplate.
@@ -56,13 +56,13 @@ spec.subspec "ToB" do |tob|
 
     # 其他二方库
     tob.dependency 'DouyinOpenSDK', '>= 4.1.4'
-    tob.dependency "AwemeOpenSDK/ToBBuiltIn", '= 3.7.5.1'
+    tob.dependency "AwemeOpenSDK/ToBBuiltIn", '= 3.7.5.2'
 
     tob.subspec "Media" do |media|
         media.dependency 'MetaAD', '1.0.0.7'
-        media.dependency "AwemeOpenSDK/TemplateToB/Feed", '= 3.7.5.1'
-        media.dependency "AwemeOpenSDK/TemplateToB/Series", '= 3.7.5.1'
-        media.dependency "AwemeOpenSDK/TemplateToB/Optional", '= 3.7.5.1'
+        media.dependency "AwemeOpenSDK/TemplateToB/Feed", '= 3.7.5.2'
+        media.dependency "AwemeOpenSDK/TemplateToB/Series", '= 3.7.5.2'
+        media.dependency "AwemeOpenSDK/TemplateToB/Optional", '= 3.7.5.2'
         # TTSDKFramework 接入方式适配
         unless $DouyinSDKUseTTSDKFramework == true
           media.dependency "TTSDK/Player"
@@ -74,7 +74,7 @@ spec.subspec "ToB" do |tob|
     end
 
     tob.subspec "Series" do |series|
-        series.dependency "AwemeOpenSDK/TemplateToB/Series", '= 3.7.5.1'
+        series.dependency "AwemeOpenSDK/TemplateToB/Series", '= 3.7.5.2'
         # TTSDKFramework 接入方式适配
         unless $DouyinSDKUseTTSDKFramework == true
           series.dependency "TTSDK/Player"
@@ -86,7 +86,7 @@ spec.subspec "ToB" do |tob|
     end
     
     tob.subspec "LiteMedia" do |lite_media|
-        lite_media.dependency "AwemeOpenSDK/TemplateToB/Feed", '= 3.7.5.1'
+        lite_media.dependency "AwemeOpenSDK/TemplateToB/Feed", '= 3.7.5.2'
         # TTSDKFramework 接入方式适配
         unless $DouyinSDKUseTTSDKFramework == true
           lite_media.dependency "TTSDK/Player"
