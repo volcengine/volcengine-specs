@@ -39,12 +39,12 @@ spec.static_framework = true
 spec.subspec "ToB" do |tob|
     # ToB 公用依赖
     # 此处的依赖实际是需要增加版本号的
-    tob.dependency "DouyinSDK/Init", '3.7.5.1'
-    tob.dependency "DouyinSDK/Services/Security", '3.7.5.1'
-    tob.dependency "DouyinSDK/Services/APM", '3.7.5.1'
-    tob.dependency "DouyinSDK/Services/AppLog", '3.7.5.1'
-    tob.dependency "DouyinSDK/Services/SDKSetting", '3.7.5.1'
-    tob.dependency "DouyinSDK/Services/Auth", '3.7.5.1'
+    tob.dependency "DouyinSDK/Init", '3.7.5.2'
+    tob.dependency "DouyinSDK/Services/Security", '3.7.5.2'
+    tob.dependency "DouyinSDK/Services/APM", '3.7.5.2'
+    tob.dependency "DouyinSDK/Services/AppLog", '3.7.5.2'
+    tob.dependency "DouyinSDK/Services/SDKSetting", '3.7.5.2'
+    tob.dependency "DouyinSDK/Services/Auth", '3.7.5.2'
 
     # lottie 库不能到 3.x
     tob.dependency 'lottie-ios', '2.5.3'
