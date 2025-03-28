@@ -21,9 +21,6 @@
         {
             "name": "shortplay-beta",
             "dependencies": {
-                "TTSDKFramework/Player-SR": [
-                    ">= 1.42.3.4-premium"
-                ],
                 "PangrowthDJX": [
                     "2.7.1.2"
                 ],
@@ -38,9 +35,6 @@
         {
             "name": "shortplay",
             "dependencies": {
-                "TTSDKFramework/Player-SR": [
-                    ">= 1.42.3.4-premium"
-                ],
                 "PangrowthDJX": [
                     "2.7.1.2"
                 ],
