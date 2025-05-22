@@ -1,0 +1,175 @@
+{
+    "name": "MultiModalKitToB",
+    "version": "0.0.1-alpha.26",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "liumiao": "liumiao.smile@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/MultiModalKitToB/0.0.1-alpha.26/MultiModalKitToB_swift5_1_3_framework.tar.xz"
+    },
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "OTHER_SWIFT_FLAGS": "-D MultiModalKit_ToB",
+        "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) MultiModalKit_ToB=1",
+        "BUILD_LIBRARY_FOR_DISTRIBUTION": "YES"
+    },
+    "platforms": {
+        "ios": "13.0"
+    },
+    "ios": {
+        "frameworks": [
+            "CoreML",
+            "AVFoundation",
+            "CoreLocation",
+            "MetalKit",
+            "Metal",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+    },
+    "repoId": "50609",
+    "subspecs": [
+        {
+            "name": "Core",
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            }
+        },
+        {
+            "name": "AudioCapability",
+            "dependencies": {
+                "MultiModalKitToB/Core": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            }
+        },
+        {
+            "name": "ObjectSegment",
+            "dependencies": {
+                "MultiModalKitToB/Core": []
+            },
+            "pod_target_xcconfig": {
+                "OTHER_SWIFT_FLAGS": "-D AIM_Segment"
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            }
+        },
+        {
+            "name": "ObjectDetect",
+            "dependencies": {
+                "MultiModalKitToB/Core": []
+            },
+            "pod_target_xcconfig": {
+                "OTHER_SWIFT_FLAGS": "-D AIM_Detect"
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            }
+        },
+        {
+            "name": "Realtime",
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            },
+            "subspecs": [
+                {
+                    "name": "RCore",
+                    "dependencies": {
+                        "MultiModalKitToB/Core": [],
+                        "MultiModalKitToB/VLM": []
+                    }
+                },
+                {
+                    "name": "Local",
+                    "dependencies": {
+                        "MultiModalKitToB/Realtime/RCore": [],
+                        "MultiModalKitToB/Memory": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "VLM",
+            "pod_target_xcconfig": {
+                "OTHER_SWIFT_FLAGS": "-D AIM_VLM"
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            },
+            "subspecs": [
+                {
+                    "name": "VLMCore",
+                    "dependencies": {
+                        "MultiModalKitToB/Core": []
+                    }
+                },
+                {
+                    "name": "VLMVolc",
+                    "dependencies": {
+                        "MultiModalKitToB/VLM/VLMCore": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Memory",
+            "dependencies": {
+                "MultiModalKitToB/Core": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            }
+        },
+        {
+            "name": "Network",
+            "dependencies": {
+                "MultiModalKitToB/Core": [],
+                "TTNetworkManager": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            }
+        },
+        {
+            "name": "Algorithm",
+            "vendored_frameworks": "ios/MultiModalKit/Sources/OpenAlgorithm/Frameworks/*.framework",
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            }
+        },
+        {
+            "name": "AICamera",
+            "dependencies": {
+                "MMKV": [],
+                "WCDB.swift": [
+                    ">= 1.0.6",
+                    "< 2.0.0"
+                ]
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            }
+        },
+        {
+            "name": "Speech",
+            "dependencies": {
+                "MultiModalKitToB/Core": [],
+                "SpeechEngineToB": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/MultiModalKitToB.xcframework"
+            }
+        }
+    ]
+}
