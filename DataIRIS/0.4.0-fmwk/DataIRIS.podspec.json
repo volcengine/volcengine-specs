@@ -1,0 +1,179 @@
+{
+    "name": "DataIRIS",
+    "version": "0.4.0-fmwk",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://apploghome.bytedance.net/",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "Vincent.Feng": "fengchengqi@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/DataIRIS/0.4.0-fmwk/DataIRIS_swift5_1_3_framework.tar.xz"
+    },
+    "platforms": {
+        "ios": "10.0",
+        "osx": "10.10"
+    },
+    "requires_arc": true,
+    "static_framework": true,
+    "pod_target_xcconfig": {
+        "HEADER_SEARCH_PATHS": "\"${PODS_TARGET_SRCROOT}\"",
+        "DEFINES_MODULE": "YES"
+    },
+    "repoId": "41067",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+    },
+    "testspecs": [
+        {
+            "name": "Tests",
+            "test_type": "unit",
+            "dependencies": {
+                "OCMock": []
+            },
+            "requires_app_host": true,
+            "xcconfig": {
+                "DEBUG_INFORMATION_FORMAT": "dwarf-with-dsym"
+            },
+            "scheme": {
+                "code_coverage": true,
+                "environment_variables": {
+                    "UNIT_TEST": "1"
+                },
+                "launch_arguments": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        }
+    ],
+    "subspecs": [
+        {
+            "name": "Defines",
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "Core",
+            "libraries": [
+                "c++",
+                "z"
+            ],
+            "dependencies": {
+                "DataIRIS/Defines": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "Event",
+            "dependencies": {
+                "DataIRIS/Core": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "EventSchemaJSON",
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "EventStoreFMDB",
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "RemoteSettings",
+            "dependencies": {
+                "DataIRIS/Defines": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "Throttlter",
+            "dependencies": {
+                "DataIRIS/Defines": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "Session",
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "Aggregation",
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "Sentry",
+            "dependencies": {
+                "DataIRIS/Event": [],
+                "DataIRIS/Aggregation": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "DataCore",
+            "dependencies": {
+                "DataIRISFoundation/Foundation": [],
+                "DataSentry/Defines": [],
+                "FMDB": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "DataPriority",
+            "dependencies": {
+                "DataIRIS/DataCore": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        },
+        {
+            "name": "Legacy",
+            "dependencies": {
+                "DataIRIS/Event": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataIRIS.framework"
+            }
+        }
+    ]
+}
