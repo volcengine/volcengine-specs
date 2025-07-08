@@ -70,7 +70,7 @@ Pod::Spec.new do |s|
     ss.dependency 'DouyinSDK/Services/Security','2.2.0.2-saas'
     ss.dependency 'DouyinSDK/Services/CommonParams', '2.2.0.2-saas'
     ss.dependency 'TTSDKFramework/LivePull', '1.46.2.7-premium'
-    ss.dependency 'DouyinOpenSDK','4.1.6'
+    # ss.dependency 'DouyinOpenSDK','4.1.6'
     ss.dependency 'RangersAppLog/Log', '6.16.9'
     ss.dependency 'RangersAppLog/Unique', '6.16.9'
   end
