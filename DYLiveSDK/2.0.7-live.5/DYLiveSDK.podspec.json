@@ -1,0 +1,772 @@
+{
+  "name": "DYLiveSDK",
+  "version": "2.0.7-live.5",
+  "summary": "A short description of DYLiveSDK.",
+  "description": "A long description of DYLiveSDK.",
+  "homepage": "http://EXAMPLE/DYLiveSDK",
+  "license": "MIT",
+  "authors": {
+    "zhangqingquan": "zhangqingquan@bytedance.com"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "http": "https://sf3-ttcdn-tos.pstatp.com/obj/volcengine/DYLiveSDK/2.0.7-live.5/DYLiveSDK.zip"
+  },
+  "pod_target_xcconfig": {
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1"
+  },
+  "static_framework": true,
+  "subspecs": [
+    {
+      "name": "Core",
+      "subspecs": [
+        {
+          "name": "InfoCenter",
+          "source_files": [
+            "DYLiveSDK/Classes/Core/InfoCenter/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "dependencies": {
+            "DouyinSDK/Init": [
+
+            ],
+            "DouyinSDK/Services/SDKSetting": [
+
+            ],
+            "DouyinSDK/Services/AuthCore/Base": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "DYLiveSDK/Classes/Core/InfoCenter/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DYLiveSDK/Classes/Core/InfoCenter/**/*.o",
+              "libDYLiveSDK-2390065.a"
+            ]
+          }
+        },
+        {
+          "name": "AppLog",
+          "source_files": [
+            "DYLiveSDK/Classes/Core/AppLog/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "dependencies": {
+            "DouyinSDK/Init": [
+
+            ],
+            "DouyinSDK/Services/AppLog": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "DYLiveSDK/Classes/Core/AppLog/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DYLiveSDK/Classes/Core/AppLog/**/*.o",
+              "libDYLiveSDK-b3ac692.a"
+            ]
+          }
+        },
+        {
+          "name": "BasicUI",
+          "source_files": [
+            "DYLiveSDK/Classes/Core/BasicUI/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "vendored_libraries": [
+            "DYLiveSDK/Classes/Core/BasicUI/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DYLiveSDK/Classes/Core/BasicUI/**/*.o",
+              "libDYLiveSDK-6942717.a"
+            ]
+          }
+        },
+        {
+          "name": "Net",
+          "source_files": [
+            "DYLiveSDK/Classes/Core/Net/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "dependencies": {
+            "DouyinSDK/Init": [
+
+            ],
+            "DYLiveSDK/Core/InfoCenter": [
+
+            ],
+            "DYLiveSDK/Core/AppLog": [
+
+            ],
+            "DouyinSDK/Services/Security": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "DYLiveSDK/Classes/Core/Net/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DYLiveSDK/Classes/Core/Net/**/*.o",
+              "libDYLiveSDK-c9875b6.a"
+            ]
+          }
+        },
+        {
+          "name": "LaunchTask",
+          "subspecs": [
+            {
+              "name": "TTNet",
+              "source_files": [
+                "DYLiveSDK/Classes/Core/LaunchTask/TTNet/**/*.{h,m,mm}",
+                "bitdummy.m"
+              ],
+              "dependencies": {
+                "DYLiveSDK/Core/InfoCenter": [
+
+                ],
+                "DYLiveSDK/Core/AppLog": [
+
+                ],
+                "TTNetworkManager": [
+
+                ]
+              },
+              "vendored_libraries": [
+                "DYLiveSDK/Classes/Core/LaunchTask/TTNet/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DYLiveSDK/Classes/Core/LaunchTask/TTNet/**/*.o",
+                  "libDYLiveSDK-281d6ec.a"
+                ]
+              }
+            },
+            {
+              "name": "BroadcastStatus",
+              "source_files": [
+                "DYLiveSDK/Classes/Core/LaunchTask/BroadcastStatus/**/*.{h,m,mm}",
+                "bitdummy.m"
+              ],
+              "dependencies": {
+                "DouyinSDK/Init": [
+
+                ],
+                "DouyinSDK/Services/AppLog": [
+
+                ]
+              },
+              "vendored_libraries": [
+                "DYLiveSDK/Classes/Core/LaunchTask/BroadcastStatus/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DYLiveSDK/Classes/Core/LaunchTask/BroadcastStatus/**/*.o",
+                  "libDYLiveSDK-d55cc32.a"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Locate",
+          "source_files": [
+            "DYLiveSDK/Classes/Core/Locate/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "vendored_libraries": [
+            "DYLiveSDK/Classes/Core/Locate/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DYLiveSDK/Classes/Core/Locate/**/*.o",
+              "libDYLiveSDK-e04da2e.a"
+            ]
+          }
+        },
+        {
+          "name": "User",
+          "source_files": [
+            "DYLiveSDK/Classes/Core/User/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DYLiveSDK/Classes/Core/User/DYLiveUser.h",
+          "dependencies": {
+            "DYLiveSDK/Core/Net": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "DYLiveSDK/Classes/Core/User/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DYLiveSDK/Classes/Core/User/**/*.o",
+              "libDYLiveSDK-e2ef984.a"
+            ]
+          }
+        },
+        {
+          "name": "Resources",
+          "subspecs": [
+            {
+              "name": "Base",
+              "source_files": [
+                "DYLiveSDK/Classes/Core/Resource/**/*.{h,m,mm}",
+                "bitdummy.m"
+              ],
+              "vendored_libraries": [
+                "DYLiveSDK/Classes/Core/Resource/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DYLiveSDK/Classes/Core/Resource/**/*.o",
+                  "libDYLiveSDK-667ec09.a"
+                ]
+              }
+            },
+            {
+              "name": "LiveResources",
+              "dependencies": {
+                "DYLiveSDK/Core/Resources/Base": [
+
+                ]
+              },
+              "resources": [
+                "rock_bundles/Pods-Rock/DYLiveSDKResources.bundle"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Toast",
+          "source_files": [
+            "DYLiveSDK/Classes/Core/Toast/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "dependencies": {
+            "Masonry": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "DYLiveSDK/Classes/Core/Toast/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DYLiveSDK/Classes/Core/Toast/**/*.o",
+              "libDYLiveSDK-078499f.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "DouyinLogin",
+      "public_header_files": "DYLiveSDK/Classes/Core/DouyinLogin/DYLiveDouyinLogin.h",
+      "source_files": [
+        "DYLiveSDK/Classes/DouyinLogin/**/*.{h,m,mm}",
+        "DYLiveSDK/Classes/Core/DouyinLogin/DYLiveDouyinLogin.h",
+        "bitdummy.m"
+      ],
+      "dependencies": {
+        "DouyinSDK/Init": [
+
+        ],
+        "DYLiveSDK/Core/InfoCenter": [
+
+        ],
+        "DYLiveSDK/Core/AppLog": [
+
+        ],
+        "DYLiveSDK/Core/Net": [
+
+        ],
+        "DouyinSDK/Services/Auth": [
+
+        ],
+        "DYLiveSDK/Core/User": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "DYLiveSDK/Classes/DouyinLogin/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DYLiveSDK/Classes/DouyinLogin/**/*.o",
+          "libDYLiveSDK-0fb3b67.a"
+        ]
+      }
+    },
+    {
+      "name": "Broadcast",
+      "source_files": [
+        "DYLiveSDK/Classes/Broadcast/**/*.{h,m,mm}",
+        "bitdummy.m"
+      ],
+      "public_header_files": "DYLiveSDK/Classes/Broadcast/DYLiveBroadcast.h",
+      "dependencies": {
+        "DYLiveSDK/Core/Net": [
+
+        ],
+        "DYLiveSDK/Core/AppLog": [
+
+        ],
+        "DYLiveSDK/Core/User": [
+
+        ],
+        "DYLiveSDK/DouyinLogin": [
+
+        ],
+        "DouyinSDK/Services/Log/Base": [
+
+        ],
+        "DouyinSDK/Services/Storage": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "DYLiveSDK/Classes/Broadcast/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DYLiveSDK/Classes/Broadcast/**/*.o",
+          "libDYLiveSDK-cf48a2a.a"
+        ]
+      }
+    },
+    {
+      "name": "Player",
+      "source_files": [
+        "DYLiveSDK/Classes/Player/**/*.{h,m,mm}",
+        "bitdummy.m"
+      ],
+      "public_header_files": "DYLiveSDK/Classes/Player/DYLivePlayer.h",
+      "dependencies": {
+        "TTSDK/LivePull-Lite": [
+
+        ],
+        "DYLiveSDK/Core/InfoCenter": [
+
+        ],
+        "DouyinSDK/Init": [
+
+        ],
+        "DouyinSDK/Services/SDKSetting": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "DYLiveSDK/Classes/Player/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DYLiveSDK/Classes/Player/**/*.o",
+          "libDYLiveSDK-45d8bf1.a"
+        ]
+      }
+    },
+    {
+      "name": "LivePreview",
+      "source_files": [
+        "DYLiveSDK/Classes/LivePreview/**/*.{h,m,mm}",
+        "bitdummy.m"
+      ],
+      "public_header_files": [
+        "DYLiveSDK/Classes/LivePreview/DYLivePreviewManager.h",
+        "DYLiveSDK/Classes/LivePreview/Model/DYLivePreviewRoomModel.h",
+        "DYLiveSDK/Classes/LivePreview/Model/DYLiveRecSingleCardModel.h",
+        "DYLiveSDK/Classes/LivePreview/View/DYLiveFullScreenPreviewView.h",
+        "DYLiveSDK/Classes/LivePreview/View/DYLivePureStreamPreviewView.h",
+        "DYLiveSDK/Classes/LivePreview/View/DYLiveRecSingleCardView.h"
+      ],
+      "dependencies": {
+        "DYLiveSDK/Core/Net": [
+
+        ],
+        "DYLiveSDK/Core/AppLog": [
+
+        ],
+        "TTSDK/LivePull-Lite": [
+
+        ],
+        "Mantle": [
+
+        ],
+        "lottie-ios": [
+
+        ],
+        "DYLiveSDK/Core/Resources/LiveResources": [
+
+        ],
+        "SDWebImage": [
+
+        ],
+        "DYLiveSDK/Player": [
+
+        ],
+        "Masonry": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "DYLiveSDK/Classes/LivePreview/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DYLiveSDK/Classes/LivePreview/**/*.o",
+          "libDYLiveSDK-5d980c5.a"
+        ]
+      }
+    },
+    {
+      "name": "LiveLocation",
+      "source_files": [
+        "DYLiveSDK/Classes/LiveLocation/**/*.{h,m,mm}",
+        "bitdummy.m"
+      ],
+      "public_header_files": [
+        "DYLiveSDK/Classes/LiveLocation/View/DYLiveLocationView.h",
+        "DYLiveSDK/Classes/LiveLocation/Model/DYLiveLocationViewConfig.h"
+      ],
+      "dependencies": {
+        "DYLiveSDK/Core/Resources/LiveResources": [
+
+        ],
+        "DYLiveSDK/Core/InfoCenter": [
+
+        ],
+        "DYLiveSDK/Core/AppLog": [
+
+        ],
+        "DYLiveSDK/Core/User": [
+
+        ],
+        "DYLiveSDK/Core/Locate": [
+
+        ],
+        "DYLiveSDK/Core/Toast": [
+
+        ],
+        "DouyinSDK/Services/Log/Base": [
+
+        ],
+        "DouyinSDK/Services/Storage": [
+
+        ],
+        "Masonry": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "DYLiveSDK/Classes/LiveLocation/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DYLiveSDK/Classes/LiveLocation/**/*.o",
+          "libDYLiveSDK-86b3c73.a"
+        ]
+      }
+    },
+    {
+      "name": "LiveScreen",
+      "source_files": [
+        "DYLiveSDK/Classes/LiveScreen/**/*.{h,m,mm}",
+        "bitdummy.m"
+      ],
+      "public_header_files": [
+        "DYLiveSDK/Classes/LiveScreen/DYLiveScreenDelegate.h",
+        "DYLiveSDK/Classes/LiveScreen/DYLiveScreen.h"
+      ],
+      "dependencies": {
+        "DYLiveSDK/Core/Resources/LiveResources": [
+
+        ],
+        "DYLiveSDK/Core/InfoCenter": [
+
+        ],
+        "DYLiveSDK/Core/AppLog": [
+
+        ],
+        "DYLiveSDK/Core/User": [
+
+        ],
+        "DYLiveSDK/Core/Toast": [
+
+        ],
+        "DYLiveSDK/Broadcast": [
+
+        ],
+        "DouyinSDK/Services/Log/Base": [
+
+        ],
+        "DouyinSDK/Services/Storage": [
+
+        ],
+        "DYLiveSDK/PublicScreen_Core": [
+
+        ],
+        "Masonry": [
+
+        ],
+        "libwebp": [
+
+        ],
+        "SDWebImageWebPCoder": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "DYLiveSDK/Classes/LiveScreen/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DYLiveSDK/Classes/LiveScreen/**/*.o",
+          "libDYLiveSDK-4c05bda.a"
+        ]
+      }
+    },
+    {
+      "name": "PublicScreen_Core",
+      "source_files": [
+        "DYLiveSDK/Classes/PublicScreen_Core/**/*.{h,m,mm}",
+        "bitdummy.m"
+      ],
+      "dependencies": {
+        "DYLiveSDK/Core/LaunchTask/TTNet": [
+
+        ],
+        "DYLiveSDK/Core/InfoCenter": [
+
+        ],
+        "DYLiveSDK/Core/AppLog": [
+
+        ],
+        "DouyinSDK/Services/Storage": [
+
+        ],
+        "DouyinSDK/Utils/ZipUtil": [
+
+        ],
+        "DouyinSDK/Services/Log/Base": [
+
+        ],
+        "DYLiveSDK/Core/LaunchTask/BroadcastStatus": [
+
+        ],
+        "DYLiveSDK/PublicScreen": [
+
+        ],
+        "Protobuf": [
+
+        ],
+        "libextobjc": [
+
+        ],
+        "Masonry": [
+
+        ],
+        "Mantle": [
+
+        ],
+        "SDWebImage": [
+
+        ]
+      },
+      "exclude_files": [
+        "DYLiveSDK/Classes/PublicScreen_Core/PBModel/**/*.{h,m}",
+        "DYLiveSDK/Classes/PublicScreen_Core/PBModel/**/*.o"
+      ],
+      "vendored_libraries": [
+        "DYLiveSDK/Classes/PublicScreen_Core/**/*.o"
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DYLiveSDK/Classes/PublicScreen_Core/**/*.o",
+          "libDYLiveSDK-0a3fdde.a"
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "IDL",
+          "source_files": [
+            "DYLiveSDK/Classes/PublicScreen_Core/PBModel/**/*.{h,m}",
+            "bitdummy.m"
+          ],
+          "requires_arc": false,
+          "vendored_libraries": [
+            "DYLiveSDK/Classes/PublicScreen_Core/PBModel/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DYLiveSDK/Classes/PublicScreen_Core/PBModel/**/*.o",
+              "libDYLiveSDK-e90a070.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PublicScreen",
+      "source_files": [
+        "DYLiveSDK/Classes/PublicScreen/**/*.{m}",
+        "bitdummy.m"
+      ],
+      "vendored_frameworks": "DYLiveSDK/Classes/PublicScreen/**/*.{framework}",
+      "vendored_libraries": [
+        "DYLiveSDK/Classes/PublicScreen/**/*.{a}",
+        "DYLiveSDK/Classes/PublicScreen/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DYLiveSDK/Classes/PublicScreen/**/*.{a}",
+          "DYLiveSDK/Classes/PublicScreen/**/*.o",
+          "libDYLiveSDK-2b94a8a.a",
+          "DYLiveSDK/Classes/PublicScreen/**/*.{a}"
+        ]
+      }
+    },
+    {
+      "name": "GameLive",
+      "source_files": [
+        "DYLiveSDK/Classes/GameLive/**/*.{h,m,mm}",
+        "bitdummy.m"
+      ],
+      "public_header_files": [
+        "DYLiveSDK/Classes/GameLive/LiveIM/DYLiveGameBroadcast.h",
+        "DYLiveSDK/Classes/GameLive/LiveIM/DLiveGameBroadcastDelegate.h"
+      ],
+      "dependencies": {
+        "DYLiveSDK/Core/Resources/LiveResources": [
+
+        ],
+        "DYLiveSDK/Core/Toast": [
+
+        ],
+        "DYLiveSDK/Core/BasicUI": [
+
+        ],
+        "DYLiveSDK/Broadcast": [
+
+        ],
+        "DYLiveSDK/PublicScreen_Core": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "DYLiveSDK/Classes/GameLive/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DYLiveSDK/Classes/GameLive/**/*.o",
+          "libDYLiveSDK-d3d94cd.a"
+        ]
+      }
+    },
+    {
+      "name": "Alog",
+      "source_files": [
+        "DYLiveSDK/Classes/Alog/**/*.{h,m,mm}",
+        "bitdummy.m"
+      ],
+      "public_header_files": "DYLiveSDK/Classes/Alog/DYLiveAPMManager.h",
+      "dependencies": {
+        "DouyinSDK/Init": [
+
+        ],
+        "DouyinSDK/Services/Log/APMImpl": [
+
+        ],
+        "DYLiveSDK/Core/AppLog": [
+
+        ],
+        "RangersAPM/CN": [
+
+        ],
+        "RangersAPM/APMLog": [
+
+        ],
+        "RangersAPM/CloudCommand": [
+
+        ]
+      },
+      "vendored_libraries": [
+        "DYLiveSDK/Classes/Alog/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DYLiveSDK/Classes/Alog/**/*.o",
+          "libDYLiveSDK-d7acb5a.a"
+        ]
+      }
+    }
+  ]
+}
