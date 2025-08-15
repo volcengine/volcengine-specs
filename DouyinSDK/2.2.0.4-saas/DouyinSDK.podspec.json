@@ -1,0 +1,822 @@
+{
+  "name": "DouyinSDK",
+  "version": "2.2.0.4-saas",
+  "summary": "A short description of DouyinSDK.",
+  "description": "A long description of DouyinSDK.",
+  "homepage": "https://developer.open-douyin.com/",
+  "license": {
+    "type": "Copyright",
+    "text": "Bytedance copyright"
+  },
+  "authors": {
+    "yangqihang": "yangqihang@bytedance.com"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "http": "https://hstob-cdn-tos.volccdn.com/volcengine/DouyinSDK/2.2.0.4-saas/DouyinSDK.zip"
+  },
+  "pod_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "$(inherited) arm64 i386"
+  },
+  "default_subspecs": "Init",
+  "static_framework": true,
+  "subspecs": [
+    {
+      "name": "Init",
+      "source_files": [
+        "DouyinSDK/Classes/Init/**/*.{h,m,mm}",
+        "bitdummy.m"
+      ],
+      "public_header_files": [
+        "DouyinSDK/Classes/Init/DYSDKLauncher.h",
+        "DouyinSDK/Classes/Init/Private/DYSDKLauncherHeader.h",
+        "DouyinSDK/Classes/Init/Private/DYSDKLaunchRegister.h"
+      ],
+      "vendored_libraries": [
+        "DouyinSDK/Classes/Init/**/*.o"
+      ],
+      "exclude_files": [
+
+      ],
+      "ios": {
+        "vendored_libraries": [
+          "DouyinSDK/Classes/Init/**/*.o",
+          "libDouyinSDK-f1f0c54.a"
+        ]
+      }
+    },
+    {
+      "name": "Services",
+      "subspecs": [
+        {
+          "name": "CommonParams",
+          "source_files": [
+            "DouyinSDK/Classes/Services/CommonParams/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/Services/CommonParams/Public/**/*.{h}",
+          "dependencies": {
+            "DouyinSDK/Init": [
+
+            ],
+            "OneKit/BaseKit": [
+
+            ],
+            "DouyinSDK/Services/AppLog": [
+
+            ],
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/CommonParams/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/CommonParams/**/*.o",
+              "libDouyinSDK-9035a56.a"
+            ]
+          }
+        },
+        {
+          "name": "SDKSetting",
+          "dependencies": {
+            "DouyinSDK/Init": [
+
+            ],
+            "DouyinSDK/Utils/DefineUtil": [
+
+            ],
+            "DouyinSDK/Utils/ZipUtil": [
+
+            ],
+            "DouyinSDK/Services/Reachability": [
+
+            ],
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "source_files": [
+            "DouyinSDK/Classes/Services/SDKSetting/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/Services/SDKSetting/**/*.{h}",
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/SDKSetting/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/SDKSetting/**/*.o",
+              "libDouyinSDK-de5b198.a"
+            ]
+          }
+        },
+        {
+          "name": "AppLog",
+          "source_files": [
+            "DouyinSDK/Classes/Services/AppLog/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/Services/AppLog/DYSDKAppLogService.h",
+          "dependencies": {
+            "RangersAppLog/Host/CN": [
+
+            ],
+            "RangersAppLog/Core": [
+
+            ],
+            "DouyinSDK/Services/SDKSetting": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/AppLog/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/AppLog/**/*.o",
+              "libDouyinSDK-d21280f.a"
+            ]
+          }
+        },
+        {
+          "name": "Security",
+          "source_files": [
+            "DouyinSDK/Classes/Services/Security/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/Services/Security/DYSDKSecurityService.h",
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/Security/**/*.o",
+              "DouyinSDK/Classes/Services/Security/MetaSec/Frameworks/libmetasecltb_ml.a",
+              "libDouyinSDK-c8b5b36.a"
+            ]
+          },
+          "weak_frameworks": [
+            "DeviceCheck",
+            "CoreLocation",
+            "CoreMotion"
+          ],
+          "libraries": [
+            "c++",
+            "resolv.9",
+            "z"
+          ],
+          "dependencies": {
+            "DouyinSDK/Services/AppLog": [
+
+            ],
+            "DouyinSDK/Services/SDKSetting": [
+
+            ],
+            "DouyinSDK/Services/Privacy": [
+
+            ],
+            "DouyinSDK/Init": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/Security/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        },
+        {
+          "name": "Reachability",
+          "source_files": [
+            "DouyinSDK/Classes/Services/Reachability/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "frameworks": [
+            "SystemConfiguration",
+            "CoreFoundation"
+          ],
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/Reachability/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/Reachability/**/*.o",
+              "libDouyinSDK-7c29869.a"
+            ]
+          }
+        },
+        {
+          "name": "VideoEngine",
+          "dependencies": {
+            "DouyinSDK/Init": [
+
+            ],
+            "DouyinSDK/Services/SDKSetting": [
+
+            ]
+          },
+          "source_files": [
+            "DouyinSDK/Classes/Services/VideoEngine/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/VideoEngine/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/VideoEngine/**/*.o",
+              "libDouyinSDK-35b2727.a"
+            ]
+          }
+        },
+        {
+          "name": "APM",
+          "source_files": [
+            "DouyinSDK/Classes/Services/APM/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/Services/APM/DYSDKInitialConfig+APM.h",
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/APM/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/APM/**/*.o",
+              "DouyinSDK/Classes/Services/APM/**/*.o",
+              "DouyinSDK/Classes/Services/APM/**/*.o",
+              "libDouyinSDK-b636a77.a",
+              "libDouyinSDK-f2d52bc.a",
+              "libDouyinSDK-a443c22.a"
+            ]
+          },
+          "subspecs": [
+            {
+              "name": "AAA",
+              "source_files": [
+                "DouyinSDK/Classes/Services/APM/AAA/**/*.{h,m,mm}",
+                "bitdummy.m"
+              ],
+              "vendored_libraries": [
+                "DouyinSDK/Classes/Services/APM/AAA/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DouyinSDK/Classes/Services/APM/AAA/**/*.o",
+                  "libDouyinSDK-0000000.a"
+                ]
+              }
+            },
+            {
+              "name": "ZZZ",
+              "source_files": [
+                "DouyinSDK/Classes/Services/APM/ZZZ/**/*.{h,m,mm}",
+                "bitdummy.m"
+              ],
+              "vendored_libraries": [
+                "DouyinSDK/Classes/Services/APM/ZZZ/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DouyinSDK/Classes/Services/APM/ZZZ/**/*.o",
+                  "libDouyinSDK-zzzzzzz.a"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Auth",
+          "source_files": [
+            "DouyinSDK/Classes/Services/Auth/**/*.{h,m,mm}",
+            "rock_dummy/rock_dummy_14a59e8.m",
+            "bitdummy.m"
+          ],
+          "public_header_files": [
+            "DouyinSDK/Classes/Services/Auth/DYSDKInitialConfig+DouyinAuth.h",
+            "DouyinSDK/Classes/Services/Auth/DYSDKHostAuthFunction.h"
+          ],
+          "pod_target_xcconfig": {
+            "ASSETCATALOG_COMPILER_OPTIMIZATION": "space"
+          },
+          "dependencies": {
+            "DouyinSDK/Services/SDKSetting": [
+
+            ],
+            "DouyinSDK/Services/Log/Base": [
+
+            ],
+            "DouyinSDK/Services/AuthCore/Base": [
+
+            ],
+            "DouyinSDK/Services/AuthCore/Flow": [
+
+            ],
+            "Masonry": [
+
+            ],
+            "DouyinOpenSDK": [
+
+            ],
+            "DouyinSDK/Services/Storage": [
+
+            ],
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ],
+            "OneKit/ByteDanceKit/UIKit": [
+
+            ]
+          },
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/Auth/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/Auth/**/*.o",
+              "libDouyinSDK-14a59e8.a"
+            ]
+          },
+          "resources": [
+            "rock_bundles/Pods-Rock/DouyinSDKAuthBundle.bundle"
+          ]
+        },
+        {
+          "name": "AuthCore",
+          "dependencies": {
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "subspecs": [
+            {
+              "name": "Base",
+              "source_files": [
+                "DouyinSDK/Classes/Services/AuthCore/Base/**/*.{h,m,mm}",
+                "bitdummy.m"
+              ],
+              "public_header_files": "DouyinSDK/Classes/Services/AuthCore/Base/*.{h}",
+              "vendored_libraries": [
+                "DouyinSDK/Classes/Services/AuthCore/Base/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DouyinSDK/Classes/Services/AuthCore/Base/**/*.o",
+                  "libDouyinSDK-c28671e.a"
+                ]
+              }
+            },
+            {
+              "name": "Flow",
+              "source_files": [
+                "DouyinSDK/Classes/Services/AuthCore/Flow/**/*.{h,m,mm}",
+                "bitdummy.m"
+              ],
+              "public_header_files": "DouyinSDK/Classes/Services/AuthCore/Flow/**/*.{h}",
+              "dependencies": {
+                "DouyinSDK/Services/AuthCore/Base": [
+
+                ]
+              },
+              "vendored_libraries": [
+                "DouyinSDK/Classes/Services/AuthCore/Flow/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DouyinSDK/Classes/Services/AuthCore/Flow/**/*.o",
+                  "libDouyinSDK-e6812d4.a"
+                ]
+              }
+            },
+            {
+              "name": "UI",
+              "source_files": [
+                "DouyinSDK/Classes/Services/AuthCore/UI/**/*.{h,m,mm}",
+                "rock_dummy/rock_dummy_2137f61.m",
+                "bitdummy.m"
+              ],
+              "resource_bundles": {
+                "DouyinSDKAuthCoreBundle": [
+                  "DouyinSDK/Resources/AuthCore/**/*.{xcassets,bundle,plist}"
+                ]
+              },
+              "dependencies": {
+                "DouyinSDK/Services/AuthCore/Base": [
+
+                ],
+                "Masonry": [
+
+                ]
+              },
+              "vendored_libraries": [
+                "DouyinSDK/Classes/Services/AuthCore/UI/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DouyinSDK/Classes/Services/AuthCore/UI/**/*.o",
+                  "libDouyinSDK-2137f61.a"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "WebImage",
+          "dependencies": {
+          },
+          "source_files": [
+            "DouyinSDK/Classes/Services/WebImage/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/WebImage/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/WebImage/**/*.o",
+              "libDouyinSDK-4550ed6.a"
+            ]
+          }
+        },
+        {
+          "name": "Privacy",
+          "dependencies": {
+            "DouyinSDK/Init": [
+
+            ]
+          },
+          "source_files": [
+            "DouyinSDK/Classes/Services/Privacy/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/Services/Privacy/DYSDKInitialConfig+Privacy.h",
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/Privacy/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/Privacy/**/*.o",
+              "libDouyinSDK-f02dfcd.a"
+            ]
+          }
+        },
+        {
+          "name": "Log",
+          "dependencies": {
+            "DouyinSDK/Init": [
+
+            ],
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "subspecs": [
+            {
+              "name": "Base",
+              "source_files": [
+                "DouyinSDK/Classes/Services/Log/Base/**/*.{h,m,mm}",
+                "bitdummy.m"
+              ],
+              "vendored_libraries": [
+                "DouyinSDK/Classes/Services/Log/Base/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DouyinSDK/Classes/Services/Log/Base/**/*.o",
+                  "libDouyinSDK-5089a74.a"
+                ]
+              }
+            },
+            {
+              "name": "APMImpl",
+              "source_files": [
+                "DouyinSDK/Classes/Services/Log/APM/**/*.{h,m,mm}",
+                "bitdummy.m"
+              ],
+              "dependencies": {
+                "DouyinSDK/Services/Log/Base": [
+
+                ],
+                "RangersAPM/APMLog": [
+
+                ]
+              },
+              "vendored_libraries": [
+                "DouyinSDK/Classes/Services/Log/APM/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DouyinSDK/Classes/Services/Log/APM/**/*.o",
+                  "libDouyinSDK-653b9fe.a"
+                ]
+              }
+            },
+            {
+              "name": "TOC",
+              "source_files": [
+                "DouyinSDK/Classes/Services/Log/TOC/**/*.{h,m,mm}",
+                "bitdummy.m"
+              ],
+              "dependencies": {
+                "DouyinSDK/Services/Log/Base": [
+
+                ],
+                "BDAlogProtocol": [
+
+                ]
+              },
+              "vendored_libraries": [
+                "DouyinSDK/Classes/Services/Log/TOC/**/*.o"
+              ],
+              "exclude_files": [
+
+              ],
+              "ios": {
+                "vendored_libraries": [
+                  "DouyinSDK/Classes/Services/Log/TOC/**/*.o",
+                  "libDouyinSDK-2073072.a"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Storage",
+          "dependencies": {
+            "MMKV": [
+
+            ],
+            "DouyinSDK/Services/Log/Base": [
+
+            ],
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "source_files": [
+            "DouyinSDK/Classes/Services/Storage/**/*.{h,m,mm,c}",
+            "bitdummy.m"
+          ],
+          "public_header_files": [
+            "DouyinSDK/Classes/Services/Storage/DYSDKMMKVStorage.h",
+            "DouyinSDK/Classes/Services/Storage/DYSDKStorageDefine.h"
+          ],
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/Storage/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/Storage/**/*.o",
+              "libDouyinSDK-3162c5b.a"
+            ]
+          }
+        },
+        {
+          "name": "ServiceProvider",
+          "dependencies": {
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "source_files": [
+            "DouyinSDK/Classes/Services/ServiceProvider/**/*.{h,m,mm,c}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/Services/ServiceProvider/**/*.{h}",
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/ServiceProvider/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/ServiceProvider/**/*.o",
+              "libDouyinSDK-90c9451.a"
+            ]
+          }
+        },
+        {
+          "name": "LiveInterface",
+          "dependencies": {
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "source_files": [
+            "DouyinSDK/Classes/Services/LiveInterface/**/*.{h,m,mm,c}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/Services/LiveInterface/**/*.{h}",
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/LiveInterface/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Services/LiveInterface/**/*.o",
+              "libDouyinSDK-670aa5d.a"
+            ]
+          }
+        },
+        {
+          "name": "VideoOpenInterface",
+          "dependencies": {
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "source_files": [
+            "DouyinSDK/Classes/Services/VideoOpenInterface/**/*.{h,m,mm,c}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/Services/VideoOpenInterface/**/*.{h}",
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Services/VideoOpenInterface/**/*.o"
+          ],
+          "exclude_files": [
+
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Utils",
+      "subspecs": [
+        {
+          "name": "DefineUtil",
+          "source_files": [
+            "DouyinSDK/Classes/Utils/Define/**/*.{h,m,mm}",
+            "bitdummy.m"
+          ],
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Utils/Define/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Utils/Define/**/*.o",
+              "libDouyinSDK-e150489.a"
+            ]
+          }
+        },
+        {
+          "name": "ZipUtil",
+          "source_files": [
+            "DouyinSDK/Classes/Utils/ZipArchive/**/*.{h,m,mm,c}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/Utils/ZipArchive/DYSDKZipArchive.h",
+          "vendored_libraries": [
+            "DouyinSDK/Classes/Utils/ZipArchive/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/Utils/ZipArchive/**/*.o",
+              "libDouyinSDK-174a52c.a"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "BusinessHostProviders",
+      "dependencies": {
+        "DouyinSDK/Init": [
+
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "Basic",
+          "dependencies": {
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "source_files": [
+            "DouyinSDK/Classes/BusinessHostProviders/Basic/**/*.{h,m,mm,c}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/BusinessHostProviders/Basic/**/*.{h}",
+          "vendored_libraries": [
+            "DouyinSDK/Classes/BusinessHostProviders/Basic/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/BusinessHostProviders/Basic/**/*.o",
+              "libDouyinSDK-018bffb.a"
+            ]
+          }
+        },
+        {
+          "name": "Feed",
+          "dependencies": {
+            "DouyinSDK/BusinessHostProviders/Basic": [
+
+            ],
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "source_files": [
+            "DouyinSDK/Classes/BusinessHostProviders/Feed/**/*.{h,m,mm,c}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/BusinessHostProviders/Feed/**/*.{h}"
+        },
+        {
+          "name": "Series",
+          "dependencies": {
+            "DouyinSDK/BusinessHostProviders/Basic": [
+
+            ],
+            "OneKit/ByteDanceKit/Foundation": [
+
+            ]
+          },
+          "source_files": [
+            "DouyinSDK/Classes/BusinessHostProviders/Series/**/*.{h,m,mm,c}",
+            "bitdummy.m"
+          ],
+          "public_header_files": "DouyinSDK/Classes/BusinessHostProviders/Series/**/*.{h}",
+          "vendored_libraries": [
+            "DouyinSDK/Classes/BusinessHostProviders/Series/**/*.o"
+          ],
+          "exclude_files": [
+
+          ],
+          "ios": {
+            "vendored_libraries": [
+              "DouyinSDK/Classes/BusinessHostProviders/Series/**/*.o",
+              "libDouyinSDK-e0557f2.a"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
