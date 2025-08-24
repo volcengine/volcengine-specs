@@ -1,0 +1,149 @@
+{
+    "name": "GMPReachSDK",
+    "version": "2.1.7",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://github.com/liaozhangcheng/GMPReachSDK",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "liaozhangcheng": "liaozhangcheng@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/GMPReachSDK/2.1.7/GMPReachSDK.framework.tar.xz"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "static_framework": true,
+    "prefix_header_contents": [
+        "#import \"NSDictionary+GMP.h\"",
+        "#import \"GMPLog.h\""
+    ],
+    "subspecs": [
+        {
+            "name": "Core",
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Core/**/*",
+                "GMPReachSDK-bitdummy.m"
+            ],
+            "public_header_files": "",
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Resource",
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Resource/**/*",
+                "GMPReachSDK-bitdummy.m"
+            ],
+            "public_header_files": "GMPReachSDK/GMPReachSDK/Classes/Resource/Public/*.h",
+            "dependencies": {
+                "GMPReachSDK/Core": [],
+                "SDWebImage": []
+            },
+            "resource_bundles": {
+                "GMPResource": [
+                    "GMPReachSDK/GMPReachSDK/Assets/Resource/*.xcassets"
+                ]
+            },
+            "prefix_header_contents": "#import \"GMPResourceConfigKey.h\"",
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Resource_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Popup",
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Popup/**/*",
+                "GMPReachSDK-bitdummy.m"
+            ],
+            "public_header_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Popup/Manager/GMPPopupManager.h",
+                "GMPReachSDK/GMPReachSDK/Classes/Popup/Manager/GMPPopupWindowControl.h",
+                "GMPReachSDK/GMPReachSDK/Classes/Popup/Define/GMPPopupConfigKey.h"
+            ],
+            "dependencies": {
+                "GMPReachSDK/Core": [],
+                "SDWebImage": []
+            },
+            "resource_bundles": {
+                "GMPPopup": [
+                    "GMPReachSDK/GMPReachSDK/Assets/Popup/*.xcassets"
+                ]
+            },
+            "prefix_header_contents": "#import \"GMPPopupConfigKey.h\"",
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Popup_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Push",
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Push/**/*",
+                "GMPReachSDK-bitdummy.m"
+            ],
+            "public_header_files": "GMPReachSDK/GMPReachSDK/Classes/Push/GMPPushManager.h",
+            "dependencies": {
+                "GMPReachSDK/Core": []
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Push_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Finder",
+            "source_files": [
+                "GMPReachSDK/GMPReachSDK/Classes/Finder/**/*",
+                "GMPReachSDK-bitdummy.m"
+            ],
+            "dependencies": {
+                "RangersAppLog": [
+                    ">= 6.16.2"
+                ]
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Finder_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        }
+    ],
+    "repoId": "23540",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_GMPReachSDK_*awesome_*.a"
+    },
+    "source_files": [
+        "GMPReachSDK-bitdummy.m"
+    ],
+    "default_subspecs": [
+        "Resource",
+        "Popup",
+        "Core"
+    ],
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ]
+}
