@@ -1,0 +1,57 @@
+{
+    "name": "SpeechEngineToB",
+    "version": "0.0.8.1-bugfix.1-bugfix",
+    "homepage": "http://toutiao.com",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "Bytedance, Inc.",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/SpeechEngineToB/0.0.8.1-bugfix.1-bugfix/SpeechEngineToB.framework.tar.xz"
+    },
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "platforms": {
+        "ios": "9.0"
+    },
+    "static_framework": true,
+    "requires_arc": true,
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES"
+    },
+    "source_files": [
+        "pod/classes/SpeechEngine/**/*.{h,m,mm}",
+        "pod/classes/ResourceManager/**/*.{h,m,mm}",
+        "SpeechEngineToB-bitdummy.m"
+    ],
+    "public_header_files": [
+        "pod/classes/SpeechEngine/SpeechEngineDefines.h",
+        "pod/classes/SpeechEngine/SpeechEngine.h",
+        "pod/classes/ResourceManager/SpeechResourceManager.h"
+    ],
+    "ios": {
+        "frameworks": [
+            "AudioToolbox",
+            "AVFoundation",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_SpeechEngineToB_*awesome_*.a"
+    },
+    "vendored_libraries": "pod/libs/*.a",
+    "libraries": [
+        "c++",
+        "speechsdk",
+        "z"
+    ],
+    "dependencies": {
+        "TTNetworkManager": []
+    },
+    "repoId": "41718",
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ]
+}
