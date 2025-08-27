@@ -1,0 +1,257 @@
+{
+    "name": "imsdk-tob",
+    "version": "1.25.0-alpha.0",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://github.com/",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "bob.song": "bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/imsdk-tob/1.25.0-alpha.0/imsdk-tob.framework.tar.xz"
+    },
+    "platforms": {
+        "ios": "11.0"
+    },
+    "user_target_xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1"
+    },
+    "pod_target_xcconfig": {
+        "OTHER_CPLUSPLUSFLAGS": "-fno-c++-static-destructors"
+    },
+    "xcconfig": {
+        "GCC_PREPROCESSOR_DEFINITIONS[config=Release]": "$(inherited) NDEBUG=1"
+    },
+    "subspecs": [
+        {
+            "name": "Feature_EssentialPB",
+            "requires_arc": false,
+            "source_files": [
+                "DevelopProject/TTIMSDK/Features/Essential/**/Timn.pbobjc.{h,m}",
+                "imsdk-tob-bitdummy.m"
+            ],
+            "private_header_files": "DevelopProject/TTIMSDK/Features/Essential/**/*.h",
+            "dependencies": {
+                "Protobuf": [
+                    "3.21.9"
+                ]
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Feature_EssentialPB_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Config",
+            "subspecs": [
+                {
+                    "name": "CN",
+                    "source_files": [
+                        "DevelopProject/TTIMSDK/ToB/AppConfig/CN/**/*",
+                        "imsdk-tob-bitdummy.m"
+                    ],
+                    "private_header_files": "DevelopProject/TTIMSDK/ToB/AppConfig/CN/**/*",
+                    "dependencies": {
+                        "RangersAppLog/Host/CN": [],
+                        "RangersAPM/CN": []
+                    },
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_CN_*awesome_*.a"
+                    }
+                },
+                {
+                    "name": "Global",
+                    "source_files": [
+                        "DevelopProject/TTIMSDK/ToB/AppConfig/Global/**/*",
+                        "imsdk-tob-bitdummy.m"
+                    ],
+                    "private_header_files": "DevelopProject/TTIMSDK/ToB/AppConfig/Global/**/*",
+                    "dependencies": {
+                        "RangersAppLog/Host/SG": [],
+                        "RangersAPM/Global": []
+                    },
+                    "ios": {
+                        "vendored_libraries": "ios-arch-iphone/*_Global_*awesome_*.a"
+                    }
+                }
+            ],
+            "source_files": [
+                "imsdk-tob-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Config_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Core",
+            "dependencies": {
+                "imsdk-tob/Core_Common": [],
+                "TTSDK/Uploader": [
+                    ">=1.43.1.9-premium",
+                    "<=1.46.2.9-premium"
+                ]
+            },
+            "source_files": [
+                "imsdk-tob-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Core_VE",
+            "dependencies": {
+                "imsdk-tob/Core_Common": [],
+                "TTSDK/Uploader-VE": [
+                    "<1.99"
+                ],
+                "SSZipArchive": []
+            },
+            "source_files": [
+                "imsdk-tob-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_VE_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Core_Common",
+            "source_files": [
+                "DevelopProject/TTIMSDK/ToB/Core/**/*",
+                "DevelopProject/TTIMSDK/Bridges/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Config/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/ConversationInfo/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/CurrentUser/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/ErrorHandler/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Logger/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageRead/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/BroadCast/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Notifier/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessagePuller/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageSender/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Setting/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageStore/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/User/**/*",
+                "DevelopProject/TTIMSDK/Features/Essential/**/*",
+                "DevelopProject/TTIMSDK/Features/WebSocket_TTPushManager/**/*",
+                "DevelopProject/TTIMSDK/Foundation/**/*",
+                "DevelopProject/TTIMSDK/Kit/Common/**/*",
+                "DevelopProject/TTIMSDK/Kit/WebSocket/**/*",
+                "DevelopProject/TTIMSDK/Sugar/MediaFileUploader/**/*",
+                "DevelopProject/TTIMSDK/Sugar/MediaFileUploaderImpl_TTSDKFileUploadClient/**/*",
+                "DevelopProject/TTIMSDK/FoundationPlugins/HttpTTNetworkImp/**/*",
+                "DevelopProject/TTIMSDK/FoundationPlugins/TTNetworkTool_4.x/**/*",
+                "DevelopProject/TTIMSDK/Protocols/**/*",
+                "DevelopProject/TTIMSDK/Sugar/LiveGroup/**/*",
+                "DevelopProject/TTIMSDK/Sugar/Friend/**/*",
+                "DevelopProject/TTIMSDK/Sugar/FTS_Core/**/*",
+                "DevelopProject/TTIMSDK/Sugar/FTS_ToB/**/*",
+                "DevelopProject/TTIMSDK/Sugar/AttachmentDownloader/**/*",
+                "imsdk-tob-bitdummy.m"
+            ],
+            "private_header_files": [
+                "DevelopProject/TTIMSDK/ToB/Core/private/**/*.h",
+                "DevelopProject/TTIMSDK/Bridges/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Config/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/ConversationInfo/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/CurrentUser/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/ErrorHandler/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Logger/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageRead/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/BroadCast/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Notifier/**/*.h",
+                "DevelopProject/TTIMSDK/Features/Core/MessagePuller/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageSender/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/Setting/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/MessageStore/**/*",
+                "DevelopProject/TTIMSDK/Features/Core/User/**/*",
+                "DevelopProject/TTIMSDK/Features/Essential/**/*",
+                "DevelopProject/TTIMSDK/Features/WebSocket_TTPushManager/**/*",
+                "DevelopProject/TTIMSDK/Foundation/**/*",
+                "DevelopProject/TTIMSDK/Kit/Common/**/*",
+                "DevelopProject/TTIMSDK/Kit/WebSocket/**/*",
+                "DevelopProject/TTIMSDK/Sugar/MediaFileUploader/**/*",
+                "DevelopProject/TTIMSDK/Sugar/MediaFileUploaderImpl_TTSDKFileUploadClient/**/*",
+                "DevelopProject/TTIMSDK/FoundationPlugins/HttpTTNetworkImp/**/*",
+                "DevelopProject/TTIMSDK/FoundationPlugins/TTNetworkTool_4.x/**/*",
+                "DevelopProject/TTIMSDK/Protocols/**/*",
+                "DevelopProject/TTIMSDK/Sugar/LiveGroup/**/*",
+                "DevelopProject/TTIMSDK/Sugar/Friend/**/*",
+                "DevelopProject/TTIMSDK/Sugar/FTS_Core/**/*",
+                "DevelopProject/TTIMSDK/Sugar/FTS_ToB/**/*",
+                "DevelopProject/TTIMSDK/Sugar/AttachmentDownloader/**/*"
+            ],
+            "exclude_files": "DevelopProject/TTIMSDK/Features/Essential/**/Timn.pbobjc.{h,m}",
+            "dependencies": {
+                "OneKit/Reachability": [],
+                "OneKit/ByteDanceKit/Foundation": [],
+                "OneKit/BaseKit": [],
+                "WCDB.objc": [
+                    "~>2.1.11"
+                ],
+                "libextobjc": [],
+                "Mantle": [],
+                "OneKit/OKModel": [],
+                "TTNetworkManager": [
+                    "~>4.1"
+                ],
+                "Protobuf": [],
+                "YYCache": [],
+                "Bolts/Tasks": [],
+                "MMKV": [],
+                "IGListDiffKit": [],
+                "OneKit/ByteDanceKit": [],
+                "RSSwizzle": [],
+                "RangersAPM/APMLog": [],
+                "RangersAPM/Crash": [],
+                "RangersAPM/WatchDog": [],
+                "RangersAppLog/Core": [],
+                "imsdk-tob/Feature_EssentialPB": []
+            },
+            "resource_bundles": {
+                "TIMSDK.Privacy": "PrivacyInfo.xcprivacy"
+            },
+            "frameworks": "AVFoundation",
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Core_Common_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        }
+    ],
+    "repoId": "36572",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_imsdk-tob_*awesome_*.a"
+    },
+    "source_files": [
+        "imsdk-tob-bitdummy.m"
+    ],
+    "default_subspecs": [
+        "Core"
+    ],
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ]
+}
