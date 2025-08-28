@@ -1,0 +1,109 @@
+{
+    "name": "im-uikit-tob",
+    "version": "1.25.0",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://github.com/volcengine/VolcEngineIM/tree/main/iOS",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "yangzhanjiang": "yangzhanjiang@bytedance.com"
+    },
+    "platforms": {
+        "ios": "11.0"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/im-uikit-tob/1.25.0/im-uikit-tob.framework.tar.xz"
+    },
+    "frameworks": [
+        "UIKit",
+        "AVKit"
+    ],
+    "requires_arc": true,
+    "subspecs": [
+        {
+            "name": "UIKit_Common",
+            "source_files": [
+                "**/BIMUIKit/**/*.{h,m,c}",
+                "im-uikit-tob-bitdummy.m"
+            ],
+            "resource_bundles": {
+                "TIMOEmojiNew": [
+                    "DevelopProject/BIMUIKit/**/TIMOEmojiNew.bundle/**/*"
+                ],
+                "BIMUIKit": [
+                    "DevelopProject/BIMUIKit/**/BIMUIKit.bundle/*"
+                ]
+            },
+            "dependencies": {
+                "Masonry": [],
+                "MJRefresh": [],
+                "SDWebImage": []
+            },
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_UIKit_Common_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "Default",
+            "dependencies": {
+                "im-uikit-tob/UIKit_Common": [],
+                "imsdk-tob": [
+                    "1.25.0"
+                ]
+            },
+            "source_files": [
+                "im-uikit-tob-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_Default_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        },
+        {
+            "name": "VE",
+            "dependencies": {
+                "im-uikit-tob/UIKit_Common": [],
+                "imsdk-tob/Core_VE": [
+                    "1.25.0"
+                ]
+            },
+            "source_files": [
+                "im-uikit-tob-bitdummy.m"
+            ],
+            "ios": {
+                "vendored_libraries": "ios-arch-iphone/*_VE_*awesome_*.a"
+            },
+            "preserve_paths": [
+                "**/*.bwp"
+            ]
+        }
+    ],
+    "repoId": "38720",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "AVKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_im-uikit-tob_*awesome_*.a"
+    },
+    "source_files": [
+        "im-uikit-tob-bitdummy.m"
+    ],
+    "default_subspecs": [
+        "Default"
+    ],
+    "prepare_command": "",
+    "preserve_paths": [
+        "**/*.bwp"
+    ]
+}
