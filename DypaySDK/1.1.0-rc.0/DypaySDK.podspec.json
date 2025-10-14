@@ -1,0 +1,51 @@
+{
+    "name": "DypaySDK",
+    "version": "1.1.0-rc.0",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://github.com/caijing_ios/DypaySDK",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "xiongpeng": "xiongpeng@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/DypaySDK/1.1.0-rc.0/DypaySDK_swift5_1_3_framework.tar.xz"
+    },
+    "platforms": {
+        "ios": "10.0"
+    },
+    "requires_arc": true,
+    "static_framework": true,
+    "repoId": "42969",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/DypaySDK.xcframework"
+    },
+    "subspecs": [
+        {
+            "name": "Core",
+            "resource_bundles": {
+                "DypaySDK": [
+                    "DypaySDK/Assets/*.xcassets",
+                    "DypaySDK/PrivacyInfo.xcprivacy"
+                ]
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DypaySDK.xcframework"
+            }
+        },
+        {
+            "name": "DataTracker",
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DypaySDK.xcframework"
+            }
+        }
+    ]
+}
