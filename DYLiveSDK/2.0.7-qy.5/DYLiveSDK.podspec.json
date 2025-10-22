@@ -589,18 +589,6 @@
         ],
         "SDWebImage": [
 
-        ],
-        "TTReachability": [
-
-        ],
-        "ZstdDecompressKit": [
-
-        ],
-        "IESLiveIM": [
-
-        ],
-        "HTSLiveAsyncLabel": [
-
         ]
       },
       "exclude_files": [
@@ -643,10 +631,6 @@
       "name": "PublicScreen",
       "source_files": [
         "DYLiveSDK/Classes/PublicScreen/**/*.{m}"
-      ],
-      "exclude_files": [
-        "DYLiveSDK/Classes/PublicScreen/TTReachability/**/*",
-        "DYLiveSDK/Classes/PublicScreen/TTReachability/**/*.o"
       ],
       "private_header_files": "DYLiveSDK/Classes/PublicScreen/**/*.{h}",
       "vendored_frameworks": [
