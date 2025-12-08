@@ -1,0 +1,20 @@
+{
+    "name": "EffectOneKit",
+    "version": "1.8.0-fwd-rc.21",
+    "summary": "framework_summary",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "EffectOne",
+    "homepage": "https://github.com/volcengine/volcengine-specs",
+    "description": "framework_description",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/EffectOneKit/1.8.0-fwd-rc.21/EffectOneKit.xcframework.zip"
+    },
+    "platforms": {
+        "ios": "9.0"
+    },
+    "vendored_frameworks": "EffectOneKit.xcframework",
+    "repoId": "44083"
+}
