@@ -1,0 +1,22 @@
+{
+    "name": "VolcApiEngine",
+    "version": "1.6.9",
+    "summary": "framework_summary",
+    "homepage": "https://github.com/volcengine",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "bytertc": "vcloud-fe@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VolcApiEngine/1.6.9/VolcApiEngine.xcframework.zip"
+    },
+    "platforms": {
+        "ios": "12.0"
+    },
+    "vendored_frameworks": "VolcApiEngine.xcframework",
+    "description": "framework_description",
+    "repoId": "45763"
+}
