@@ -1,0 +1,84 @@
+{
+    "name": "PangrowthX",
+    "version": "2.9.0.2",
+    "summary": "PangrowthX is an SDK that integrates shortplay, ministory...",
+    "description": "PangrowthX is an SDK that integrates shortplay, ministory...",
+    "homepage": "https://www.pangle.cn/",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "wangzhengbei": "wangzhengbei@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/PangrowthX/2.9.0.2/Pangrowth.zip"
+    },
+    "platforms": {
+        "ios": "12.0"
+    },
+    "subspecs": [
+        {
+            "name": "shortplay-beta",
+            "dependencies": {
+                "TTSDKFramework/Player-SR": [
+                    ">= 1.42.3.4-premium"
+                ],
+                "PangrowthDJX": [
+                    "2.9.0.2"
+                ],
+                "PGXToolbox": [
+                    "2.9.0.2"
+                ],
+                "Ads-CN-Beta/BUAdSDK": [
+                    ">= 5.8.0.7"
+                ]
+            }
+        },
+        {
+            "name": "shortplay",
+            "dependencies": {
+                "TTSDKFramework/Player-SR": [
+                    ">= 1.42.3.4-premium"
+                ],
+                "PangrowthDJX": [
+                    "2.9.0.2"
+                ],
+                "PGXToolbox": [
+                    "2.9.0.2"
+                ],
+                "Ads-CN/BUAdSDK": [
+                    ">= 5.8.0.9"
+                ]
+            }
+        },
+        {
+            "name": "ministory-beta",
+            "dependencies": {
+                "PangrowthMiniStory": [
+                    "2.9.0.2"
+                ],
+                "PGXToolbox": [
+                    "2.9.0.2"
+                ],
+                "Ads-CN-Beta/BUAdSDK": [
+                    ">= 5.8.0.7"
+                ]
+            }
+        },
+        {
+            "name": "ministory",
+            "dependencies": {
+                "PangrowthMiniStory": [
+                    "2.9.0.2"
+                ],
+                "PGXToolbox": [
+                    "2.9.0.2"
+                ],
+                "Ads-CN/BUAdSDK": [
+                    ">= 5.8.0.9"
+                ]
+            }
+        }
+    ]
+}
