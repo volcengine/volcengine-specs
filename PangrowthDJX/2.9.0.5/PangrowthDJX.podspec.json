@@ -1,0 +1,52 @@
+{
+    "name": "PangrowthDJX",
+    "version": "2.9.0.5",
+    "summary": "PangrowthDJX is a SDK from Bytedance providing content service.",
+    "description": "Bytedance provides content which include video\u3001feed\u3001video card etc.",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "sunxianglin": "sunxianglin@bytedance.com"
+    },
+    "homepage": "https://www.pangle.cn/",
+    "source": {
+        "http": "https://sf3-fe-tos.pglstatp-toutiao.com/obj/pangle-empower/pangrowth-djx/2.9.0.5/PangrowthDJX-2.9.0.5.zip"
+    },
+    "platforms": {
+        "ios": "12.0"
+    },
+    "pod_target_xcconfig": {
+        "OTHER_LDFLAGS": [
+            "-lObjC"
+        ]
+    },
+    "frameworks": [
+        "MetalKit",
+        "CoreMotion",
+        "SystemConfiguration",
+        "OpenAL",
+        "VideoToolbox"
+    ],
+    "libraries": [
+        "c++",
+        "z",
+        "iconv",
+        "xml2",
+        "bz2",
+        "c++abi"
+    ],
+    "dependencies": {
+        "PGXToolbox": [
+            "2.9.0.5"
+        ]
+    },
+    "vendored_frameworks": [
+        "PangrowthDJX/PangrowthDJX.framework"
+    ],
+    "resources": [
+        "PangrowthDJX/DJXSDK.bundle"
+    ],
+    "preserve_paths": "PangrowthDJX/*.*"
+}
