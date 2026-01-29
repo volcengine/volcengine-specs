@@ -1,0 +1,97 @@
+{
+    "name": "VolcEngineRTC",
+    "version": "3.60.14.1650",
+    "summary": "framework_summary",
+    "homepage": "https://github.com/volcengine/VolcEngineRTC",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "bytertc": "bytertc@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VolcEngineRTC/3.60.14.1650/VolcEngineRTC.zip"
+    },
+    "platforms": {
+        "ios": "11.0"
+    },
+    "default_subspecs": [
+        "Core",
+        "RealXBase",
+        "RTCFFmpeg",
+        "CVByteNN",
+        "BMF",
+        "ByteRTCVideoDenoiseExtension",
+        "ByteRTCVideoSharpenExtension",
+        "ByteRTCVideoSRExtension"
+    ],
+    "subspecs": [
+        {
+            "name": "Core",
+            "vendored_frameworks": "VolcEngineRTC.xcframework"
+        },
+        {
+            "name": "ScreenCapture",
+            "vendored_frameworks": "VolcEngineRTCScreenCapturer.xcframework"
+        },
+        {
+            "name": "RTCFFmpeg",
+            "vendored_frameworks": "RTCFFmpeg.xcframework"
+        },
+        {
+            "name": "ByteRTCFFmpegAudioExtension",
+            "vendored_frameworks": "ByteRTCFFmpegAudioExtension.xcframework"
+        },
+        {
+            "name": "CVByteNN",
+            "vendored_frameworks": "bytenn.xcframework"
+        },
+        {
+            "name": "BMF",
+            "vendored_frameworks": "bmf_mods_shared.xcframework"
+        },
+        {
+            "name": "RealX",
+            "vendored_frameworks": "RealX.xcframework"
+        },
+        {
+            "name": "RealXBase",
+            "vendored_frameworks": "RealXBase.xcframework"
+        },
+        {
+            "name": "bytevc1enc",
+            "vendored_frameworks": "bytevc1enc.xcframework"
+        },
+        {
+            "name": "ByteRTCNICOExtension",
+            "vendored_frameworks": "ByteRTCNICOExtension.xcframework"
+        },
+        {
+            "name": "ByteRTCFDK-AACExtension",
+            "vendored_frameworks": "ByteRTCFDK-AACExtension.xcframework"
+        },
+        {
+            "name": "ByteRTCVp8CodecExtension",
+            "vendored_frameworks": "ByteRTCVp8CodecExtension.xcframework"
+        },
+        {
+            "name": "h265enc",
+            "vendored_frameworks": "h265enc.xcframework"
+        },
+        {
+            "name": "ByteRTCVideoDenoiseExtension",
+            "vendored_frameworks": "ByteRTCVideoDenoiseExtension.xcframework"
+        },
+        {
+            "name": "ByteRTCVideoSharpenExtension",
+            "vendored_frameworks": "ByteRTCVideoSharpenExtension.xcframework"
+        },
+        {
+            "name": "ByteRTCVideoSRExtension",
+            "vendored_frameworks": "ByteRTCVideoSRExtension.xcframework"
+        }
+    ],
+    "repoId": "22965",
+    "description": "framework_description"
+}
