@@ -1,0 +1,188 @@
+{
+    "name": "RangersAppLog",
+    "version": "6.17.7-alpha.0",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://github.com/bytedance/RangersAppLog",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "zhangtianfu": "zhangtianfu@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/RangersAppLog/6.17.7-alpha.0/RangersAppLog_swift5_1_3_framework.tar.xz"
+    },
+    "platforms": {
+        "ios": "9.0",
+        "osx": "10.10"
+    },
+    "requires_arc": true,
+    "static_framework": true,
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "BITCODE_GENERATION_MODE": "bitcode"
+    },
+    "repoId": "20317",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+    },
+    "subspecs": [
+        {
+            "name": "Core",
+            "frameworks": [
+                "CoreGraphics",
+                "Foundation",
+                "Security",
+                "CoreTelephony",
+                "CoreFoundation",
+                "SystemConfiguration",
+                "WebKit"
+            ],
+            "ios": {
+                "frameworks": "UIKit",
+                "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+            },
+            "osx": {
+                "frameworks": "AppKit"
+            },
+            "libraries": [
+                "z",
+                "sqlite3"
+            ],
+            "dependencies": {
+                "RangersAppLog/Encryptor/VOLC": []
+            },
+            "exclude_files": [
+                "BDAutoTracker/Classes/Core/Network/BDAutoTrackNetworkResponse.{h,m}"
+            ],
+            "resource_bundles": {
+                "RangersAppLog": [
+                    "BDAutoTracker/Asserts/Core/*.txt"
+                ]
+            }
+        },
+        {
+            "name": "Host",
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+            },
+            "subspecs": [
+                {
+                    "name": "CN"
+                }
+            ]
+        },
+        {
+            "name": "Log",
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+            }
+        },
+        {
+            "name": "UITracker",
+            "platforms": {
+                "ios": "9.0"
+            },
+            "frameworks": "WebKit",
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+            }
+        },
+        {
+            "name": "Picker",
+            "platforms": {
+                "ios": "9.0"
+            },
+            "frameworks": "CoreText",
+            "dependencies": {
+                "RangersAppLog/UITracker": [],
+                "RangersAppLog/Log": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+            }
+        },
+        {
+            "name": "Exception",
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+            }
+        },
+        {
+            "name": "Exposure",
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": [],
+                "RangersAppLog/UITracker": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+            }
+        },
+        {
+            "name": "DevTools",
+            "platforms": {
+                "ios": "9.0"
+            },
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "resource_bundles": {
+                "RangersAppLogDevTools": [
+                    "BDAutoTracker/Classes/DevTools/Assets/*.*"
+                ]
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+            }
+        },
+        {
+            "name": "Encryptor",
+            "platforms": {
+                "ios": "9.0"
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+            },
+            "subspecs": [
+                {
+                    "name": "VOLC",
+                    "vendored_frameworks": "BDAutoTracker/Classes/Encryptor/Volc/Vendor/VolcEngineEncryptor.xcframework"
+                }
+            ]
+        },
+        {
+            "name": "OneID",
+            "dependencies": {
+                "RangersAppLog/Core": []
+            },
+            "ios": {
+                "vendored_frameworks": "binaries/ios/RangersAppLog.xcframework"
+            }
+        }
+    ]
+}
