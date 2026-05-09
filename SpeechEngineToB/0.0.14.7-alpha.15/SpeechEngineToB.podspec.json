@@ -1,0 +1,58 @@
+{
+    "name": "SpeechEngineToB",
+    "version": "0.0.14.7-alpha.15",
+    "homepage": "http://toutiao.com",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "Bytedance, Inc.",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/SpeechEngineToB/0.0.14.7-alpha.15/SpeechEngineToB_swift5_1_3_framework.tar.xz"
+    },
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "platforms": {
+        "ios": "14.0"
+    },
+    "static_framework": false,
+    "requires_arc": true,
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64 x86_64"
+    },
+    "header_dir": "SocketRocket",
+    "header_mappings_dir": "pod/vendor/SocketRocket/SocketRocket",
+    "ios": {
+        "frameworks": [
+            "AudioToolbox",
+            "AVFoundation",
+            "Accelerate",
+            "MetalPerformanceShaders",
+            "CoreVideo",
+            "CFNetwork",
+            "Metal",
+            "Security",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/SocketRocket.framework"
+    },
+    "vendored_libraries": "pod/libs/*.a",
+    "libraries": [
+        "c++",
+        "speechsdk",
+        "z",
+        "icucore"
+    ],
+    "dependencies": {
+        "FileMD5Hash": [],
+        "SSZipArchive": [],
+        "Mantle": [],
+        "FMDB": [
+            "2.7.5"
+        ]
+    },
+    "repoId": "41718"
+}
