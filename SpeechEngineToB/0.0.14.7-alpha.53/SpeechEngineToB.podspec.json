@@ -1,0 +1,67 @@
+{
+    "name": "SpeechEngineToB",
+    "version": "0.0.14.7-alpha.53",
+    "homepage": "http://toutiao.com",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "Bytedance, Inc.",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/SpeechEngineToB/0.0.14.7-alpha.53/SpeechEngineToB_swift5_1_3_framework.tar.xz"
+    },
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "platforms": {
+        "ios": "14.0"
+    },
+    "static_framework": false,
+    "requires_arc": true,
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) SPEECH_SDK_TOB",
+        "SUPPORTED_PLATFORMS": "iphoneos",
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64 x86_64",
+        "HEADER_SEARCH_PATHS": "$(inherited) \"${PODS_TARGET_SRCROOT}/pod/vendor/SocketRocket\"",
+        "EXPORTED_SYMBOLS_FILE": "${PODS_TARGET_SRCROOT}/pod/tob_export_symbols.version"
+    },
+    "script_phases": {
+        "name": "Fail Fast On Simulator",
+        "execution_position": "before_compile",
+        "output_files": [
+            "${DERIVED_FILE_DIR}/SpeechEngineToB_iphoneos_only.stamp"
+        ],
+        "script": "if [[ \"${PLATFORM_NAME}\" == \"iphonesimulator\" || \"${EFFECTIVE_PLATFORM_NAME}\" == \"-iphonesimulator\" ]]; then\n  if [[ \"${PROJECT_DIR}\" == /Users/Shared/bytebus/packager_projects/* || \"${PODS_ROOT}\" == /Users/Shared/bytebus/packager_projects/* ]]; then\n    echo \"warning: SpeechEngineToB skips simulator compilation under ByteBus publish template. iphoneos remains the only supported artifact.\"\n    touch \"${SCRIPT_OUTPUT_FILE_0}\"\n    exit 0\n  fi\n  echo \"error: SpeechEngineToB only supports iphoneos. Simulator is unsupported because vendored speech binaries do not include a valid iOS Simulator slice.\"\n  exit 1\nfi\ntouch \"${SCRIPT_OUTPUT_FILE_0}\"\n"
+    },
+    "ios": {
+        "frameworks": [
+            "AudioToolbox",
+            "AVFoundation",
+            "Accelerate",
+            "MetalPerformanceShaders",
+            "CoreVideo",
+            "CFNetwork",
+            "Metal",
+            "Security",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/SpeechEngineToB.framework"
+    },
+    "libraries": [
+        "c++",
+        "z",
+        "icucore",
+        "speechsdk"
+    ],
+    "dependencies": {
+        "FileMD5Hash": [],
+        "SSZipArchive": [],
+        "Mantle": [],
+        "FMDB": [
+            "2.7.5"
+        ]
+    },
+    "repoId": "41718"
+}
