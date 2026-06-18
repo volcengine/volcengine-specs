@@ -1,0 +1,50 @@
+{
+    "name": "BDAvatarKitToB",
+    "version": "1.0.0-alpha.1",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://github.com/zyqhi/BDAvatarKit",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "zyqhi": "zhouyongqiang@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/BDAvatarKitToB/1.0.0-alpha.1/BDAvatarKitToB_swift5_1_3_framework.tar.xz"
+    },
+    "platforms": {
+        "ios": "12.0"
+    },
+    "frameworks": [
+        "CFNetwork",
+        "CoreServices",
+        "Security",
+        "SystemConfiguration",
+        "UIKit",
+        "Foundation"
+    ],
+    "pod_target_xcconfig": {
+        "ENABLE_BITCODE": "NO"
+    },
+    "dependencies": {
+        "SocketRocket": [],
+        "VolcEngineRTC/Core": [],
+        "VolcEngineRTC/RealXBase": [],
+        "VolcEngineRTC/RTCFFmpeg": []
+    },
+    "vendored_frameworks": "BDAvatarKitToB_Volc/BDAvatarKit.xcframework",
+    "repoId": "56187",
+    "ios": {
+        "frameworks": [
+            "CFNetwork",
+            "CoreServices",
+            "Security",
+            "SystemConfiguration",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ]
+    }
+}
