@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = '聚合支付与直播SDK集合[通用版本]'
   s.license          = { :type => 'Commercial' }
   s.homepage         = 'https://internal.bytedance.com/your_repo'
-  s.author           = { 'YourTeam' => 'yujie.10@bytedance.net' }
+  s.author           = { 'Bytedance' => 'yujie.10@bytedance.net' }
   s.source           = { :http => "https://sf3-fe-tos.pglstatp-toutiao.com/obj/csj-sdk-static/saas/#{s.version}/Frameworks.zip" }
   s.frameworks = 'CoreFoundation', 'UIKit'
   s.weak_frameworks  = 'PhotosUI', 'DeviceCheck', 'LocalAuthentication'
@@ -21,7 +21,6 @@ Pod::Spec.new do |s|
     ss.dependency "CSJIESSaasSDK/Saas"
     ss.dependency "CSJIESSaasSDK/Douyin"
     ss.dependency "CSJIESSaasSDK/PaySDK"
-    ss.dependency "CSJIESSaasSDK/Public"
   end
 
   # 主聚合模块
@@ -33,6 +32,7 @@ Pod::Spec.new do |s|
     ss.dependency "CSJIESSaasSDK/BDSword"
     ss.dependency "CSJIESSaasSDK/Gaia"
     ss.dependency 'CSJIESSaasSDK/isecgm'
+    ss.dependency 'CSJIESSaasSDK/boringssl'
   end
 
   # 字节基础工具包
@@ -104,23 +104,32 @@ Pod::Spec.new do |s|
     ss.vendored_frameworks = 'Frameworks/isecgm.xcframework'
   end
 
-  s.subspec 'Public' do |ss|
-    ss.dependency 'Protobuf','3.8.0'
-    ss.dependency 'libwebp', '1.3.2'
-    ss.dependency 'FMDB',  '2.7.12'
-    ss.dependency 'ReactiveObjC', '3.1.0'
-    ss.dependency 'MMKV', '1.3.4'
-    ss.dependency 'Masonry', '1.1.0'
-    ss.dependency 'JSONModel', '1.8.0'
-    ss.dependency 'MJRefresh', '3.1.12'
-    ss.dependency 'lottie-saas', '2.5.4'
-    ss.dependency 'Godzippa', '2.1.1'
-    ss.dependency 'pop', '1.0.10'
-    ss.dependency 'libextobjc','0.6'
-    ss.dependency 'YYCache', '1.0.4'
-    ss.dependency 'YYText', '1.0.7'
-    ss.dependency 'IGListKit', '3.4.0'
-    ss.dependency 'KVOController', '1.2.0'
-    ss.dependency 'SSZipArchive', '2.1.5'
+  s.subspec 'boringssl' do |ss|
+    ss.preserve_paths = [
+      'Frameworks/boringssl/include/*',
+      'Frameworks/boringssl/include/**/*',
+      'Frameworks/boringssl/libboringssl.a',
+      'Frameworks/boringssl/libboringssl_asm.a'
+    ]
+    ss.ios.vendored_libraries = [
+      'Frameworks/boringssl/libboringssl.a',
+      'Frameworks/boringssl/libboringssl_asm.a'
+    ]
+    ss.libraries = 'boringssl', 'boringssl_asm'
+    ss.user_target_xcconfig = {
+      'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'boringssl_POD_VERSION=@"13_0.3.0-alpha.0-SM"'
+    }
+    ss.pod_target_xcconfig = {
+      'USE_HEADERMAP' => 'NO',
+      'HEADER_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}/Frameworks/boringssl/include"',
+      'ALWAYS_SEARCH_USER_PATHS' => 'NO',
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'boringssl_POD_VERSION=@"13_0.3.0-alpha.0-SM" TTNET_IMPLEMENT',
+      'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'
+    }
+    ss.source_files = 'Frameworks/boringssl/include/openssl/*.h'
+    ss.public_header_files = 'Frameworks/boringssl/include/openssl/*.h'
+    ss.header_mappings_dir = 'Frameworks/boringssl/include'
   end
+
 end
