@@ -1,0 +1,43 @@
+{
+    "name": "DataSailExtension",
+    "version": "1.0.0-rc.8",
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "homepage": "https://www.volcengine.com/",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": {
+        "Vincent.Feng": "fengchengqi@bytedance.com"
+    },
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/DataSailExtension/1.0.0-rc.8/DataSailExtension_swift5_1_3_framework.tar.xz"
+    },
+    "platforms": {
+        "ios": "8.0"
+    },
+    "requires_arc": true,
+    "static_framework": true,
+    "pod_target_xcconfig": {
+        "HEADER_SEARCH_PATHS": "\"${PODS_TARGET_SRCROOT}\""
+    },
+    "libraries": "z",
+    "repoId": "39311",
+    "ios": {
+        "frameworks": [
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_frameworks": "binaries/ios/DataSailExtension.xcframework"
+    },
+    "subspecs": [
+        {
+            "name": "SLS",
+            "ios": {
+                "vendored_frameworks": "binaries/ios/DataSailExtension.xcframework"
+            }
+        }
+    ]
+}
