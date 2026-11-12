@@ -36,6 +36,7 @@
     "pod_target_xcconfig": {
         "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited)  BDL_CN=1"
     },
+    "user_target_xcconfig": {},
     "subspecs": [
         {
             "name": "Base",
