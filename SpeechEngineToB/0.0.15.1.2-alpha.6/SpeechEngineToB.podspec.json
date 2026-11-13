@@ -1,0 +1,88 @@
+{
+    "name": "SpeechEngineToB",
+    "version": "0.0.15.1.2-alpha.6",
+    "homepage": "http://toutiao.com",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "Bytedance, Inc.",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/SpeechEngineToB/0.0.15.1.2-alpha.6/SpeechEngineToB.framework.tar.xz"
+    },
+    "summary": "framework_summary",
+    "description": "framework_description",
+    "platforms": {
+        "ios": "11.0"
+    },
+    "static_framework": true,
+    "requires_arc": true,
+    "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "HEADER_SEARCH_PATHS": "$(inherited) \"${PODS_TARGET_SRCROOT}/pod/frontier/Headers\"",
+        "OTHER_LDFLAGS": "$(inherited) -ObjC"
+    },
+    "source_files": [
+        "pod/classes/SpeechEngine/**/*.{h,m,mm}",
+        "pod/classes/ResourceManager/**/*.{h,m,mm}",
+        "pod/classes/Net/**/*.{h,m,mm}",
+        "SpeechEngineToB-bitdummy.m"
+    ],
+    "public_header_files": [
+        "pod/classes/SpeechEngine/SpeechEngineDefines.h",
+        "pod/classes/SpeechEngine/SpeechEngine.h",
+        "pod/classes/ResourceManager/SpeechResourceManager.h",
+        "pod/classes/Net/Ws/SpeechWsClientProtocol.h",
+        "pod/classes/Net/Ws/SpeechWsListenerProtocol.h",
+        "pod/classes/Net/Ws/SpeechWsConnectionConfig.h"
+    ],
+    "ios": {
+        "frameworks": [
+            "AudioToolbox",
+            "AVFoundation",
+            "Accelerate",
+            "MetalPerformanceShaders",
+            "UIKit",
+            "Foundation",
+            "JavaScriptCore"
+        ],
+        "vendored_libraries": "ios-arch-iphone/*_SpeechEngineToB_*awesome_*.a"
+    },
+    "vendored_libraries": [
+        "pod/libs/*.a",
+        "pod/frontier/libSpeechTTNetRuntime.a"
+    ],
+    "libraries": [
+        "c++",
+        "speechsdk",
+        "z",
+        "resolv"
+    ],
+    "dependencies": {
+        "SocketRocket": []
+    },
+    "vendored_frameworks": "pod/frontier/Frameworks/*.framework",
+    "resources": [
+        "pod/frontier/Resources/*"
+    ],
+    "frameworks": [
+        "CFNetwork",
+        "CoreTelephony",
+        "JavaScriptCore",
+        "MobileCoreServices",
+        "SystemConfiguration"
+    ],
+    "weak_frameworks": [
+        "Network"
+    ],
+    "preserve_paths": [
+        "pod/frontier/Headers/**/*",
+        "pod/frontier/runtime.json",
+        "**/*.bwp"
+    ],
+    "user_target_xcconfig": {
+        "OTHER_LDFLAGS": "$(inherited) -ObjC"
+    },
+    "repoId": "41718",
+    "prepare_command": ""
+}
