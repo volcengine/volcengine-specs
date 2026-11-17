@@ -1,0 +1,57 @@
+{
+    "name": "VolcEngineMMT",
+    "version": "1.6.0.16250",
+    "summary": "framework_summary",
+    "homepage": "https://www.volcengine.com/",
+    "license": {
+        "type": "Copyright",
+        "text": "Bytedance copyright"
+    },
+    "authors": "ByteDance",
+    "source": {
+        "http": "https://hstob-cdn-tos.volccdn.com/volcengine/VolcEngineMMT/1.6.0.16250/ByteMMT.zip"
+    },
+    "platforms": {
+        "ios": "12.0"
+    },
+    "vendored_frameworks": [
+        "ByteMMT.xcframework"
+    ],
+    "user_target_xcconfig": {
+        "BMMT_POD_ROOT": "$(PODS_ROOT)/VolcEngineMMT",
+        "HEADER_SEARCH_PATHS": "$(inherited) \"$(PODS_XCFRAMEWORKS_BUILD_DIR)/ByteMMT/ByteMMT.framework/Headers\""
+    },
+    "frameworks": [
+        "Accelerate",
+        "AVFoundation",
+        "CoreGraphics",
+        "CoreMedia",
+        "CoreMotion",
+        "CoreVideo",
+        "Foundation",
+        "GLKit",
+        "Metal",
+        "OpenGLES",
+        "QuartzCore",
+        "ReplayKit",
+        "UIKit",
+        "VideoToolbox"
+    ],
+    "weak_frameworks": [
+        "Network"
+    ],
+    "static_framework": false,
+    "dependencies": {
+        "boringssl": [
+            "~> 0.3"
+        ],
+        "libbytevc0enc": [
+            ">= 1.6.8.7"
+        ],
+        "libbytevc1enc": [
+            ">= 1.10.2.5"
+        ]
+    },
+    "repoId": "58853",
+    "description": "framework_description"
+}
